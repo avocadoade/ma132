@@ -1,0 +1,43 @@
+--- 
+title: "MA132: Foundations Lecture Notes"
+author: "Jo Evans"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is a minimal example of using the bookdown package to write a book.
+  The HTML output format for this example is bookdown::gitbook,
+  set in the _output.yml file.
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# About
+
+These are the 2024-25 lecture course for the Warwick undergraduate course MA132: Foundations.
+
+These notes are heavily based on previous notes of Saul Schleimer, though all mistakes are my own!
+
+Please send me any typos (or possible typos) that you find. And be on the look out for typos.
+
+## How to use these notes
+
+These notes are designed to generate both a html version (which should work well with screen readers) and a latex generated pdf and epub (which will work better if you want to print the notes). You can access the pdf/epub by pressing the download button in the top right (little down arrow).
+
+Everything you need to know for the exam and future courses should be contained in these notes. There will also be examples, some discussions and some non-examinable sections.
+
+Similarly, everything you need to know will be written by me on the board in lectures. 
+
+There are three main ways that undergraduates typically use printed lecture notes:
+
+1. They take their own notes during the lecture (or take none) and refer to these notes outside the lecture to supplement those notes, to check things, when doing exercises, or during revision.
+
+2. They print out a copy of these notes/or have them available as a pdf on a tablet and annotate them during the lectures. 
+
+3. They take a copy of these notes to lectures to refer to but don't annotate them.
+
+
+
