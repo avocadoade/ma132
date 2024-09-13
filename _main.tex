@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-09-03}
+\date{2024-09-13}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -1045,7 +1045,7 @@ We can relate two real numbers \(x\) and \(y\) with the relationship \emph{is le
 \end{example}
 
 \begin{example}
-Is equal to is also a relation. This can be more complicated that just trivially equating elements of the same set. For example we might want to write a relation between \(\mathbb{N}\) and \(\mathbb{R}\) by equating integers with their counterpart in the natural numbers. This is very subtle, and not very useful, so if it doesn't make sense don't worry!
+Is equal to is also a relation. This can be more complicated that just trivially equating elements of the same set. For example we might want to write a relation between \(\mathbb{N}\) and \(\mathbb{R}\) by equating integers with their counterpart in the natural numbers.
 \end{example}
 
 \begin{remark}
@@ -1921,6 +1921,67 @@ This allows us to write a better definition of coprime
 \begin{definition}[coprime]
 If \(gcd(n,m)=1\) then \(n\) and \(m\) are coprime.
 \end{definition}
+
+\begin{theorem}[division with remainder]
+Suppose that \(a \in \mathbb{Z}, b \in \mathbb{N}-\{0\}\) then there exists \(q \in \mathbb{Z}\) and \(r \in [[b]]\) such that
+\[ a =bq+r.  \]
+\end{theorem}
+
+\begin{proof}
+If \(b=1\) we just take \(q=a, r=0\) so we can work in the case \(b >1\).
+
+Let us fix \(b\) and prove the result by induction on \(a\). If \(a=1\) then \(a=0\times b+1\). This is the base case.
+
+Now if we assume that there exists \(q,r\) such that \(a-1 = qb +r\) then either \(r \in [[b-1]]\) in which case \(a = qb + (r+1)\) is a solution to our problem, or \(r=b-1\) in which case we write \(a = (q+1)b\).
+\end{proof}
+
+\begin{example}
+How can we find the greatest common divisor of two numbers. One way to do it is by repeated division.
+
+We can apply repeated division with \(81\) and \(51\). We have
+\begin{align*}
+81 & = 1 \times 51 + 30,\\
+51 & = 1 \times 30 + 21,\\
+30 & = 1 \times 21 + 9,\\
+21 & = 2 \times 9 + 3,\\
+9 & = 3 \times 3.
+\end{align*}
+
+We can also do this backwards to get
+\begin{align*}
+9 & = 3 \times 3,\\
+21 & = 2 \times 9 + 3 = (2 \times 3 +1) \times 3 = 7 \times 3,\\
+30 & = 1 \times 21 + 9 = (1 \times 7 + 3) \times 3 = 10 \times 3,\\
+51 & = (1 \times  10 + 7) \times 3 = 17 \times 3,\\
+81 & = (1 \times 17 + 10) \times 3 = 27 \times 3.
+\end{align*}
+
+And we deduce from the that \(gcd(81,51) = 3\).
+
+Why does this work? We notice that if \(c|a, c|b\) then if \(a=qb+r\) then we must have that \(c|r\). Continuing on if \(c|b\) and \(c|r\) and \(b=q_2 r+ r_2\) then \(c|r_2\) and so on. If eventually you end up with a remainder term which is 0 then we terminate. This shoes that if we terminate with remainder \(r_k\) then \(r_k|a\) and \(r_k| b\) and that nothing larger than \(r_k\) can divide both \(a\) and \(b\).
+\end{example}
+
+\section{Euclid's Algorithm}\label{euclids-algorithm}
+
+Taking inspiration from calculations like the one above we can write down a procedure to find the greatest common divisor of \(a,b\).
+
+\begin{definition}[Euclid's Algorithm]
+Given \(a, b \in \mathbb{N}\) with \(a < b\) we can write
+\begin{align*}
+b &= q_1a + r_1, \quad q_1 \in \mathbb{N}, r_1 \in [[a]],\\
+a &= q_2r_1 + r_2, \quad q_2 \in \mathbb{N}, r_2 \in [[r_1]],\\
+r_1 &= q_3r_2 + r_3, \quad q_3 \in \mathbb{N}, r_3 \in [[r_2]],\\
+r_2 & = \dots
+\end{align*}
+Eventually this process will terminate because we will have \(r_k = 0\) for some \(k\) and then we have \(r_k = gcd(a,b)\).
+\end{definition}
+
+\begin{theorem}[Euclid's Algorithm]
+Given the algorithm above we have the following
+- This algorithm will terminate. i.e.~eventually we have \(r_{k-2} = q_k r_{k-1} + 0\).
+- In this case \(r_{k+1} = gcd(a,b)\)
+- There exists \(x,y \in \mathbb{Z}\) such that \(gcd(a,b) = xa+by\).
+\end{theorem}
 
   \bibliography{book.bib,packages.bib}
 
