@@ -1,0 +1,316 @@
+# Logic
+
+## Booleans
+
+This section is about Boolean operators. These are a way of describing how the truth of one statement are contingent of the truth of statements it is made of. An example is if \(P\) and \(Q\) are two statements and we are interested in whether the statement \(P\) and \(Q\) is true. This is only the case if both \(P\) and \(Q\) are true. So we can think of this as a function from the truth values of \(P\) and \(Q\) to another truth value.
+
+::: {.definition name="Boolean"}
+
+Booleans are elements of the set \(\mathcal{B}=\{T,F\}\). Where \(T\) is *true* and \(F\) is *false*.
+
+:::
+
+```{r echo=FALSE ,out.width="30%", fig.cap="A picture of George Boole"}
+knitr::include_graphics("George_Boole_color.jpg")
+```
+
+
+Booleans are named after George Boole who was an English mathematician. He is notable for a few things including writing a book with the impressive title *The Laws of Thought*. He also became a professor of mathematics at the university of Cork despite being largely self taught after primary school. His wife, Mary Everest Boole is also interesting and an example of a woman who made a career on the borders of academic mathematics when it was extremely hostile. Its worth looking them both up!
+
+
+::: {.definition name="Boolean operator"}
+
+A Boolean operator is a function from \(f: \mathcal{B}^n \rightarrow \mathcal{B}\).
+
+The value of \(n\) is called the *arity* of \(f\).
+
+:::
+
+::: {.example}
+
+There are some key examples of *arity* 1 which we write by \(P\) and \(\neg P\). 
+
+\(P\) is the identity operator under which \(T \mapsto T\) and \(F \mapsto F\). 
+
+\(\neg P\) is the negation operator under which \(T \mapsto F\) and \(F \mapsto T\). We say that \(\neg P\) is true if \(P\) is false and \(\neg P\) is false if \(P\) is true.
+
+:::
+
+::: {.example}
+
+The operators of arity 2 are very helpful for understading what is going on. A first example is \(P \wedge Q\) or \(P\) and \(Q\). Under this function 
+\begin{align*}
+(T,T) & \mapsto T, \\
+(T,F) & \mapsto F, \\
+(F,T) & \mapsto F, \\
+(F,F) & \mapsto F.
+\end{align*}
+
+
+We have further *basic* operators of arity two, these are \(P \vee Q\) (spoken \(P\) or \(Q\)), \(P \Rightarrow Q\) (spoken \(P\) implies \(Q\) ) of \(P \Leftrightarrow Q\) (spoken \(P\) is equivalent to \(Q\)).
+
+We can express the way these functions work in a table
+\begin{equation}
+\begin{array}{cc|ccc}
+P & Q & (P \vee Q) & (P \Rightarrow Q) & (P \Leftrightarrow Q)\\
+\hline
+T & T & T & T & T \\
+T & F & T & F & F \\
+F & T & T & T & F \\
+F & F & F & T & T
+\end{array}
+\end{equation}
+
+:::
+
+We can compose Boolean operators and rewrite them in various different ways
+
+::: {.example}
+
+The operator \( \neg (P \wedge Q) \) is given by 
+\begin{align*}
+(T,T) \mapsto F,
+(T,F) \mapsto T,
+(F,T) \mapsto T,
+(F,F) \mapsto T.
+\end{align*}
+
+The operator \( (\neg P) \vee (\neg Q)\) is given by
+\begin{align*}
+(T,T) \mapsto F,
+(T,F) \mapsto T,
+(F,T) \mapsto T,
+(F,F) \mapsto T.
+\end{align*}
+
+Therefore, \(\neg(P \wedge Q)\) and \((\neg P) \vee (\neg Q)\) are in some sense the same function. We can say \(\neg(P \wedge Q)=(\neg P) \vee (\neg Q)\).
+
+:::
+
+More generally we have the following definition
+
+::: {.definition}
+
+We say two Boolean operators \(f\) and \(g\) or arity \(n\) are the same if they are equal as functions (they map the same elements to the same elements).
+
+We call a way of writing a Boolean operator \(f\) in terms of the basic operators \( \neg, \wedge, \vee, \Rightarrow, \Leftrightarrow\) an *expression* for \(f\).
+
+:::
+
+::: {.example}
+
+Both \(P\) and \(P \wedge P\) are expressions for the identity operator.
+
+:::
+
+::: {.theorem}
+
+Every Boolean operator has an expression in terms of the basic operators. 
+
+:::
+
+We don't quite have all the technology to prove this. If you are curious you can get a sense of why this is true by working out how you would go from knowing it is true for all operators of arity two to knowing it is true for all operators of arity three.
+
+We can actually do better than this
+
+::: {.theorem}
+
+Every Boolean operator has an expression in terms of \(\neg\) and \(\vee\)
+
+:::
+
+::: {.proof}
+
+First we check that we can express all our basic operations like this. 
+
+\begin{align*}
+P \wedge Q &= \neg ( (\neg P) \vee (\neg Q)),\\
+P \Rightarrow Q &= (\neg P) \vee Q, \\
+P \Leftrightarrow Q &= (P \Rightarrow Q) \wedge (Q \rightarrow P)\\
+&= \neg ( (\neg(P \Rightarrow Q)) \vee (\neg(Q \Rightarrow P))) \\
+& = \neg ((\neg((\neg P) \vee Q)) \vee (\neg ((\neg Q) \vee P))).
+\end{align*}
+
+Now suppose that we have an expression for \(f\) in terms of our basic operations we can then replace all instances of \(\wedge, \Rightarrow, \Leftrightarrow\) by their expression in terms of \(\neg, \vee\) in exactly the way we have when expanding out the expression of \(P \Leftrightarrow Q\).
+
+:::
+
+## Boolean algebra
+
+The basic Boolean operators interact with eachother in much the same way set operations do. We have the following results whose proofs are omitted.
+
+::: {.lemma}
+
+Suppose that \(P, Q, R\) are Booleans then we have the following about \(\vee\):
+
+- \(P \vee T = T\) and \(P \vee F = P\),
+
+- \(P \vee (Q \vee R)) =(P\vee Q) \vee R \),
+
+- \( P \vee Q = Q \vee P \),
+
+- \( (P \Rightarrow Q) = T\) if and only if \(P \vee Q = Q\),
+
+- \( P \vee P = P\).
+
+:::
+
+
+::: {.lemma}
+
+Suppose that \(P, Q, R\) are Booleans then we have the following about \(\wedge\):
+
+- \(P \wedge T = P\) and \(P \wedge F = F\),
+
+- \(P \wedge (Q \wedge R)= (P\wedge Q) \wedge R\),
+
+- \(P \wedge Q = Q \wedge P\),
+
+- \( (P \Rightarrow Q)= T\) if and only if \( P \wedge Q = P\),
+
+- \(P \wedge P = P\).
+
+:::
+
+::: {.lemma}
+
+Here are some distributive laws. Suppose that \(P, Q, R\) are Boolean's then
+
+- \( P \wedge (Q \vee R) = (P \wedge Q) \vee (P \wedge R)\),
+
+- \(P \vee (Q \wedge R) = (P \vee Q) \wedge (P \vee R)\).
+
+:::
+
+::: {.lemma}
+
+And finally we get to De Morgan's law's again:
+Suppose \(P\) and \(Q\) are Booleans then
+
+- \( \neg (P \vee Q) = (\neg P) \wedge (\neg Q)\),
+
+- \( \neg (P \wedge Q) = (\neg P) \vee (\neg Q) \).
+
+:::
+
+::: {.proof}
+
+We give just one example of how you would prove such a statement
+
+\begin{equation*}
+\begin{array}{cc|ccccc}
+P & Q & (P \vee Q) & \neg (P \vee Q) & \neg P & \neg Q & ((\neg P) \wedge (\neg Q)) \\
+\hline
+T & T & T & F & F & F & F\\
+T & F & T & F & F & T & F\\
+F & T & T & F & T & F & F\\
+F & F & F & T & T & T & T \\
+\end{array}
+\end{equation*}
+
+Observing that the fourth column \( \neg (P \vee Q)\) and the seventh column \(((\neg P) \wedge (\neg Q))\) are always the same proves that these expressions are the same as functions.
+
+:::
+
+::: {.definition name="tautologies"}
+
+If \(f: \mathcal{B}^n \rightarrow \mathcal{B}\) is a Boolean operator then we call \(f\) a *tautology* if \(f(x) = T\) for all \(x \in \mathcal{B}^n\). We call \(f\) an *antinomy* if \(f(x) = F\) for all \(x \in \mathcal{B}^n\).
+
+:::
+
+Tautologies are useful because they describe ways in which we can make logical arguments. For example, if we are arguing by contradiction (more on this later) we wish to prove \(P\). We assume \(\neg P\) and arise at a contradiction, so we know \(\neg P\) is false then we move from this to saying \(P\) must be true. 
+
+Here are some useful tautologies and their names
+
+\begin{equation}
+\begin{array}{lr}
+\neg (\neg P) \Leftrightarrow P & \mbox{double negation elimination}\\
+(P \Rightarrow Q) \Leftrightarrow ((\neg Q) \rightarrow (\neg P)) & \mbox{contraposition}\\
+(P \Rightarrow Q) \Leftrightarrow ((\neg P) \vee Q) & \mbox{definition of implication}\\
+(P \Leftrightarrow Q) \Leftrightarrow ((P \Rightarrow Q) \wedge (Q \Rightarrow P)) & \mbox{definition of equivalence}\\
+(P \vee \neg P) & \mbox{law of the excluded middle}\\
+(P \wedge (P \Rightarrow Q)) \Rightarrow Q & \mbox{modus ponens}\\
+((P \Rightarrow Q) \wedge (Q \Rightarrow R)) \Rightarrow (P \Rightarrow R) & \mbox{transitivity of implication}\\
+((\neg P)\Rightarrow F)\Rightarrow P & \mbox{argument by contradiction}
+\end{array}
+\end{equation}
+
+## Truth tables
+
+::: {.definition name="Truth tables"}
+
+A truth table is table which allows you to look up the output of a Boolean operator given its variables. Given a Boolean operator \(f\) of arity three the truth table will look like
+
+\begin{equation}
+\begin{array}{ccc|c}
+P & Q & R & \mbox{an expression for \(f\)} \\
+\hline
+T & T & T & f(T,T,T)\\
+T & T & F & f(T,T,F)\\
+T & F & T & f(T,F,T)\\
+T & F & F & f(T,F,F)\\
+F & T & T & f(F,T,T)\\
+F & T & F & f(F,T,F)\\
+F & F & T & f(F,F,T)\\
+F & F & F & f(F,F,F)
+\end{array}
+\end{equation}
+
+We extend this in the way you would expect to Boolean operators of different arity. We also often evaluate more than one expression.
+
+You have already seen a lot of truth tables in the previous section without me having given them a name.
+
+:::
+
+We often wish to compute truth tables by breaking expressions down to their constituent parts. For example if we want to check that the transitivity of implication is indeed a tautology we can do as follows
+
+\begin{equation}
+\begin{array}{ccc|ccccc}
+P & Q & R & (P \Rightarrow Q) & (Q \Rightarrow R) & (P \Rightarrow R) & ((P\rightarrow Q)\wedge (Q\rightarrow P)) & (((P\rightarrow Q)\wedge (Q\rightarrow P))\\
+ \, & \, & \, & \, & \, & \, & \, &\Rightarrow (P \Rightarrow R)) \\
+\hline
+T & T & T & T & T & T & T & T\\
+T & T & F & T & F & F & F & T\\
+T & F & T & F & T & T & F & T\\
+T & F & F & F & T & F & F & T\\
+F & T & T & T & T & T & T & T\\
+F & T & F & T & F & T & F & T\\
+F & F & T & T & T & T & T & T\\
+F & F & F & T & T & T & T & T
+\end{array}
+\end{equation}
+
+## Quantifiers
+
+Quantifiers are \(\forall\) and \(\exists\) we want to start using these in our logical expressions. 
+
+We can use quantifiers to turn the sentence "for all \(n \in \mathbb{N}\) there exists a \(p > n\) such that \(p\) is prime. First we define the function \(Prime: \mathbb{N} \rightarrow \{T, F\}\) by \(Prime(n) =T\) when \(n\) is prime, and \(F\) otherwise. Then we can write
+\[\forall n (\exists p((p>n)\wedge(Prime(p)))).  \]
+The order of quantifiers is very important 
+\[\exists p (\forall n ((p>n)\wedge (Prime(p))))  \] means that there exists a prime \(p\) that is bigger than every natural number \(n\). Which definitely isn't true.
+
+::: {.remark}
+
+When we are using quantifiers there is an ambient set sitting behind our language. We often surpress this set but in the previous expressions above we are always saying *for all \(n\) in \(\mathbb{N}\)* and *for every \(p\) in \(\mathbb{N}\)*.
+
+:::
+
+As with earlier we also have rules for negation and distribution with quantifiers.
+
+::: {.lemma}
+Quantifiers distribute as follows:
+
+- \((\forall a \in A, S(a)\wedge T(a)) = (\forall a \in A, S(a))\wedge(\forall a \in A, T(a))\),
+
+- \(\exists a \in A, S(a)\vee T(a)) = (\exists a \in A, S(a))\vee (\exists a \in A, T(a))\).
+
+We also have the negation rules:
+
+- \(\neg(\forall a \in A, S(a))= (\exists a \in A, \neg S(a))\),
+
+- \(\neg(\exists a \in A, S(a)) = (\forall a \in A, \neg S(a))\).
+
+
+:::
+
+As with earlier results these are fairly straightforward to prove just by writing out exactly what everything means.

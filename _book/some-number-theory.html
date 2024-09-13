@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Some number theory | MA132: Foundations Lecture Notes</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Some number theory | MA132: Foundations Lecture Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Some number theory | MA132: Foundations Lecture Notes" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Jo Evans" />
+
+
+<meta name="date" content="2024-09-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="proof.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MA132: Foundations</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-use-these-notes"><i class="fa fa-check"></i><b>1.1</b> How to use these notes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sets-and-functions.html"><a href="sets-and-functions.html"><i class="fa fa-check"></i><b>2</b> Sets and Functions</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="sets-and-functions.html"><a href="sets-and-functions.html#what-is-a-set"><i class="fa fa-check"></i><b>2.1</b> What is a set?</a></li>
+<li class="chapter" data-level="2.2" data-path="sets-and-functions.html"><a href="sets-and-functions.html#subsets"><i class="fa fa-check"></i><b>2.2</b> Subsets</a></li>
+<li class="chapter" data-level="2.3" data-path="sets-and-functions.html"><a href="sets-and-functions.html#power-sets-and-specification"><i class="fa fa-check"></i><b>2.3</b> Power sets and specification</a></li>
+<li class="chapter" data-level="2.4" data-path="sets-and-functions.html"><a href="sets-and-functions.html#functions"><i class="fa fa-check"></i><b>2.4</b> Functions</a></li>
+<li class="chapter" data-level="2.5" data-path="sets-and-functions.html"><a href="sets-and-functions.html#properties-of-functions"><i class="fa fa-check"></i><b>2.5</b> Properties of functions</a></li>
+<li class="chapter" data-level="2.6" data-path="sets-and-functions.html"><a href="sets-and-functions.html#cardinality"><i class="fa fa-check"></i><b>2.6</b> Cardinality</a></li>
+<li class="chapter" data-level="2.7" data-path="sets-and-functions.html"><a href="sets-and-functions.html#ordered-pairs-and-cartesian-products"><i class="fa fa-check"></i><b>2.7</b> Ordered pairs and Cartesian products</a></li>
+<li class="chapter" data-level="2.8" data-path="sets-and-functions.html"><a href="sets-and-functions.html#graphs-and-a-better-definition-of-functions"><i class="fa fa-check"></i><b>2.8</b> Graphs and a better definition of functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="operations-on-sets-and-functions.html"><a href="operations-on-sets-and-functions.html"><i class="fa fa-check"></i><b>3</b> Operations on sets and functions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="operations-on-sets-and-functions.html"><a href="operations-on-sets-and-functions.html#set-operations"><i class="fa fa-check"></i><b>3.1</b> Set operations</a></li>
+<li class="chapter" data-level="3.2" data-path="operations-on-sets-and-functions.html"><a href="operations-on-sets-and-functions.html#using-set-operations-together"><i class="fa fa-check"></i><b>3.2</b> Using set operations together</a></li>
+<li class="chapter" data-level="3.3" data-path="operations-on-sets-and-functions.html"><a href="operations-on-sets-and-functions.html#operations-on-functions"><i class="fa fa-check"></i><b>3.3</b> Operations on functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="relations.html"><a href="relations.html"><i class="fa fa-check"></i><b>4</b> Relations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="relations.html"><a href="relations.html#equivalence-relations-equivalence-classes-and-quotients"><i class="fa fa-check"></i><b>4.1</b> Equivalence relations, Equivalence classes and Quotients</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="relations.html"><a href="relations.html#quotients"><i class="fa fa-check"></i><b>4.1.1</b> Quotients</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="relations.html"><a href="relations.html#integers-via-quotients"><i class="fa fa-check"></i><b>4.2</b> Integers via quotients</a></li>
+<li class="chapter" data-level="4.3" data-path="relations.html"><a href="relations.html#order-relations"><i class="fa fa-check"></i><b>4.3</b> Order relations</a></li>
+<li class="chapter" data-level="4.4" data-path="relations.html"><a href="relations.html#modular-arithmetic"><i class="fa fa-check"></i><b>4.4</b> Modular arithmetic</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="logic.html"><a href="logic.html"><i class="fa fa-check"></i><b>5</b> Logic</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="logic.html"><a href="logic.html#booleans"><i class="fa fa-check"></i><b>5.1</b> Booleans</a></li>
+<li class="chapter" data-level="5.2" data-path="logic.html"><a href="logic.html#boolean-algebra"><i class="fa fa-check"></i><b>5.2</b> Boolean algebra</a></li>
+<li class="chapter" data-level="5.3" data-path="logic.html"><a href="logic.html#truth-tables"><i class="fa fa-check"></i><b>5.3</b> Truth tables</a></li>
+<li class="chapter" data-level="5.4" data-path="logic.html"><a href="logic.html#quantifiers"><i class="fa fa-check"></i><b>5.4</b> Quantifiers</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="proof.html"><a href="proof.html"><i class="fa fa-check"></i><b>6</b> Proof</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="proof.html"><a href="proof.html#patterns-of-proof"><i class="fa fa-check"></i><b>6.1</b> Patterns of proof</a></li>
+<li class="chapter" data-level="6.2" data-path="proof.html"><a href="proof.html#proof-by-induction"><i class="fa fa-check"></i><b>6.2</b> Proof by induction</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="some-number-theory.html"><a href="some-number-theory.html"><i class="fa fa-check"></i><b>7</b> Some number theory</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="some-number-theory.html"><a href="some-number-theory.html#divisors-and-prime-numbers"><i class="fa fa-check"></i><b>7.1</b> Divisors and prime numbers</a></li>
+<li class="chapter" data-level="7.2" data-path="some-number-theory.html"><a href="some-number-theory.html#euclids-algorithm"><i class="fa fa-check"></i><b>7.2</b> Euclid’s Algorithm</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MA132: Foundations Lecture Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="some-number-theory" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Some number theory<a href="some-number-theory.html#some-number-theory" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="divisors-and-prime-numbers" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Divisors and prime numbers<a href="some-number-theory.html#divisors-and-prime-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let us recall the definition of divisor and prime numbers</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 7.1  (divisor) </strong></span>Given two natural numbers <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> we say <span class="math inline">\(n\)</span> is a divisor of <span class="math inline">\(m\)</span> (or <span class="math inline">\(n|m\)</span>) if there exists <span class="math inline">\(k \in \mathbb{N}\)</span> such that <span class="math inline">\(m=n\times k\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 7.2  (prime number) </strong></span>While we define divisor it is worth defining a prime number. We call <span class="math inline">\(p \in \mathbb{N}\)</span> a <em>prime number</em> if the only divisors of <span class="math inline">\(p\)</span> are <span class="math inline">\(1, p\)</span>.</p>
+</div>
+<p>Now we have some new definitions</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 7.3  (greatest common divisor) </strong></span>Given two natural numbers <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> a number <span class="math inline">\(q\)</span> that divides both of them is a common divisor and the largest such number is called the <em>greatest common divisor</em> we write <span class="math inline">\(gcd(n,m)\)</span>.</p>
+</div>
+<p>This allows us to write a better definition of coprime</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-4" class="definition"><strong>Definition 7.4  (coprime) </strong></span>If <span class="math inline">\(gcd(n,m)=1\)</span> then <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> are coprime.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-5" class="theorem"><strong>Theorem 7.1  (division with remainder) </strong></span>Suppose that <span class="math inline">\(a \in \mathbb{Z}, b \in \mathbb{N}-\{0\}\)</span> then there exists <span class="math inline">\(q \in \mathbb{Z}\)</span> and <span class="math inline">\(r \in [[b]]\)</span> such that
+<span class="math display">\[ a =bq+r.  \]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-6" class="proof"><em>Proof</em>. </span>If <span class="math inline">\(b=1\)</span> we just take <span class="math inline">\(q=a, r=0\)</span> so we can work in the case <span class="math inline">\(b &gt;1\)</span>.</p>
+<p>Let us fix <span class="math inline">\(b\)</span> and prove the result by induction on <span class="math inline">\(a\)</span>. If <span class="math inline">\(a=1\)</span> then <span class="math inline">\(a=0\times b+1\)</span>. This is the base case.</p>
+<p>Now if we assume that there exists <span class="math inline">\(q,r\)</span> such that <span class="math inline">\(a-1 = qb +r\)</span> then either <span class="math inline">\(r \in [[b-1]]\)</span> in which case <span class="math inline">\(a = qb + (r+1)\)</span> is a solution to our problem, or <span class="math inline">\(r=b-1\)</span> in which case we write <span class="math inline">\(a = (q+1)b\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-7" class="example"><strong>Example 7.1  </strong></span>How can we find the greatest common divisor of two numbers. One way to do it is by repeated division.</p>
+<p>We can apply repeated division with <span class="math inline">\(81\)</span> and <span class="math inline">\(51\)</span>. We have
+<span class="math display">\[\begin{align*}
+81 &amp; = 1 \times 51 + 30,\\
+51 &amp; = 1 \times 30 + 21,\\
+30 &amp; = 1 \times 21 + 9,\\
+21 &amp; = 2 \times 9 + 3,\\
+9 &amp; = 3 \times 3.
+\end{align*}\]</span></p>
+<p>We can also do this backwards to get
+<span class="math display">\[\begin{align*}
+9 &amp; = 3 \times 3,\\
+21 &amp; = 2 \times 9 + 3 = (2 \times 3 +1) \times 3 = 7 \times 3,\\
+30 &amp; = 1 \times 21 + 9 = (1 \times 7 + 3) \times 3 = 10 \times 3,\\
+51 &amp; = (1 \times  10 + 7) \times 3 = 17 \times 3,\\
+81 &amp; = (1 \times 17 + 10) \times 3 = 27 \times 3.
+\end{align*}\]</span></p>
+<p>And we deduce from the that <span class="math inline">\(gcd(81,51) = 3\)</span>.</p>
+<p>Why does this work? We notice that if <span class="math inline">\(c|a, c|b\)</span> then if <span class="math inline">\(a=qb+r\)</span> then we must have that <span class="math inline">\(c|r\)</span>. Continuing on if <span class="math inline">\(c|b\)</span> and <span class="math inline">\(c|r\)</span> and <span class="math inline">\(b=q_2 r+ r_2\)</span> then <span class="math inline">\(c|r_2\)</span> and so on. If eventually you end up with a remainder term which is 0 then we terminate. This shoes that if we terminate with remainder <span class="math inline">\(r_k\)</span> then <span class="math inline">\(r_k|a\)</span> and <span class="math inline">\(r_k| b\)</span> and that nothing larger than <span class="math inline">\(r_k\)</span> can divide both <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
+</div>
+</div>
+<div id="euclids-algorithm" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Euclid’s Algorithm<a href="some-number-theory.html#euclids-algorithm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Taking inspiration from calculations like the one above we can write down a procedure to find the greatest common divisor of <span class="math inline">\(a,b\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-8" class="definition"><strong>Definition 7.5  (Euclid's Algorithm) </strong></span>Given <span class="math inline">\(a, b \in \mathbb{N}\)</span> with <span class="math inline">\(a &lt; b\)</span> we can write
+<span class="math display">\[\begin{align*}
+b &amp;= q_1a + r_1, \quad q_1 \in \mathbb{N}, r_1 \in [[a]],\\
+a &amp;= q_2r_1 + r_2, \quad q_2 \in \mathbb{N}, r_2 \in [[r_1]],\\
+r_1 &amp;= q_3r_2 + r_3, \quad q_3 \in \mathbb{N}, r_3 \in [[r_2]],\\
+r_2 &amp; = \dots
+\end{align*}\]</span>
+Eventually this process will terminate because we will have <span class="math inline">\(r_k = 0\)</span> for some <span class="math inline">\(k\)</span> and then we have <span class="math inline">\(r_k = gcd(a,b)\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-9" class="theorem"><strong>Theorem 7.2  (Euclid's Algorithm) </strong></span>Given the algorithm above we have the following
+- This algorithm will terminate. i.e. eventually we have <span class="math inline">\(r_{k-2} = q_k r_{k-1} + 0\)</span>.
+- In this case <span class="math inline">\(r_{k+1} = gcd(a,b)\)</span>
+- There exists <span class="math inline">\(x,y \in \mathbb{Z}\)</span> such that <span class="math inline">\(gcd(a,b) = xa+by\)</span>.</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="proof.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/06-Numbers.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

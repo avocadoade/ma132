@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Functions | MA132: Foundations Lecture Notes</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Functions | MA132: Foundations Lecture Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Functions | MA132: Foundations Lecture Notes" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Jo Evans" />
+
+
+<meta name="date" content="2024-08-08" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sets.html"/>
+<link rel="next" href="footnotes-and-citations.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MA132: Foundations</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>2</b> Hello bookdown</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="hello-bookdown.html"><a href="hello-bookdown.html#a-section"><i class="fa fa-check"></i><b>2.1</b> A section</a>
+<ul>
+<li class="chapter" data-level="" data-path="hello-bookdown.html"><a href="hello-bookdown.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sets.html"><a href="sets.html"><i class="fa fa-check"></i><b>3</b> Sets</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sets.html"><a href="sets.html#what-is-a-set"><i class="fa fa-check"></i><b>3.1</b> What is a set?</a></li>
+<li class="chapter" data-level="3.2" data-path="sets.html"><a href="sets.html#subsets"><i class="fa fa-check"></i><b>3.2</b> Subsets</a></li>
+<li class="chapter" data-level="3.3" data-path="sets.html"><a href="sets.html#power-sets-and-specification"><i class="fa fa-check"></i><b>3.3</b> Power sets and specification</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>4</b> Functions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="functions.html"><a href="functions.html#properties-of-functions"><i class="fa fa-check"></i><b>4.1</b> Properties of functions</a></li>
+<li class="chapter" data-level="4.2" data-path="functions.html"><a href="functions.html#cardinality"><i class="fa fa-check"></i><b>4.2</b> Cardinality</a></li>
+<li class="chapter" data-level="4.3" data-path="functions.html"><a href="functions.html#ordered-pairs-and-cartesian-products"><i class="fa fa-check"></i><b>4.3</b> Ordered pairs and Cartesian products</a></li>
+<li class="chapter" data-level="4.4" data-path="functions.html"><a href="functions.html#relations"><i class="fa fa-check"></i><b>4.4</b> Relations</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>5</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>5.1</b> Footnotes</a></li>
+<li class="chapter" data-level="5.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>5.2</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>6</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>6.1</b> Equations</a></li>
+<li class="chapter" data-level="6.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>6.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="6.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>6.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>7</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>7.1</b> Publishing</a></li>
+<li class="chapter" data-level="7.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>7.2</b> 404 pages</a></li>
+<li class="chapter" data-level="7.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>7.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MA132: Foundations Lecture Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="functions" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Functions<a href="functions.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="definition">
+<p><span id="def:unlabeled-div-23" class="definition"><strong>Definition 4.1  (function) </strong></span>A function is comprised of three objects, a domain <span class="math inline">\(X\)</span> which is a set, a co-domain <span class="math inline">\(Y\)</span> which is another set and a rule <span class="math inline">\(f\)</span> which assigns an element <span class="math inline">\(f(x) \in Y\)</span> to each element <span class="math inline">\(x\)</span> of <span class="math inline">\(X\)</span>.</p>
+<p>We write <span class="math inline">\(f: X \rightarrow Y\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-24" class="example"><strong>Example 4.1  </strong></span><span class="math inline">\(f(x) = x^2 : \mathbb{R} \rightarrow \mathbb{R}\)</span> is a function and technically <span class="math inline">\(f(x) = x^2: \mathbb{R} \rightarrow [0,\infty)\)</span> is a different function.</p>
+</div>
+<p>A function can only take one value so we have to be careful when dealing with things like square roots. Similarly a function needs to take exactly one value so we also need to make sure it is defined everywhere.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-25" class="definition"><strong>Definition 4.2  </strong></span>If <span class="math inline">\(f: X \rightarrow Y\)</span> is a function then if <span class="math inline">\(y = f(x)\)</span> we call <span class="math inline">\(y\)</span> the <em>image</em> of <span class="math inline">\(x\)</span> under <span class="math inline">\(f\)</span>. We also call <span class="math inline">\(x\)</span> a <em>preimage</em> of <span class="math inline">\(y\)</span> under <span class="math inline">\(f\)</span>.</p>
+<p>Notice that an element of <span class="math inline">\(X\)</span> can have only one image but an element of <span class="math inline">\(Y\)</span> can have multiple or zero preimages.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-26" class="definition"><strong>Definition 4.3  </strong></span>The identity function on <span class="math inline">\(X\)</span> is written <span class="math inline">\(Id_X : X \rightarrow X\)</span> and is defined by <span class="math inline">\(Id_X(x)=x\)</span>.</p>
+</div>
+<div id="properties-of-functions" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Properties of functions<a href="functions.html#properties-of-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-27" class="definition"><strong>Definition 4.4  (injectivity) </strong></span>A function <span class="math inline">\(f:X\rightarrow Y\)</span> is called <em>injective</em> if <span class="math inline">\(f(x)=f(x&#39;)\)</span> implies that <span class="math inline">\(x=x&#39;\)</span>. That is to say there are no two elements of <span class="math inline">\(X\)</span> where <span class="math inline">\(f(x)\)</span> takes the same value, or <span class="math inline">\(y\)</span> has at most one preimage under <span class="math inline">\(f\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-28" class="example"><strong>Example 4.2  </strong></span>The function <span class="math inline">\(f: \mathbb{R} \rightarrow \mathbb{R}\)</span> defined by <span class="math inline">\(f(x) =x^2\)</span> is not injective because for every <span class="math inline">\(y&gt;0\)</span> there are two possible values of <span class="math inline">\(x\)</span> such that <span class="math inline">\(x^2 = y\)</span>.</p>
+<p>However, the function <span class="math inline">\(f: [0, \infty) \rightarrow \mathbb{R}\)</span> is injective because now for every <span class="math inline">\(y\geq 0\)</span> there is exactly one <span class="math inline">\(x\)</span> such that <span class="math inline">\(x^2=y\)</span> and for every <span class="math inline">\(y &lt;0\)</span> there are no elements <span class="math inline">\(x\)</span> in the set such that <span class="math inline">\(x^2 = y\)</span> (so for any <span class="math inline">\(y\)</span> in the codomain there is never more than one element <span class="math inline">\(x\)</span> in the domain so that <span class="math inline">\(x^2 = y\)</span>).</p>
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="functions.html#cb3-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;injective.png&quot;</span>)</span></code></pre></div>
+<p><img src="injective.png" /><!-- --></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-29" class="definition"><strong>Definition 4.5  (surjectivity) </strong></span>A function <span class="math inline">\(f: X \rightarrow Y\)</span> is called <em>surjective</em> if for every <span class="math inline">\(y \in Y\)</span> there exists <span class="math inline">\(x \in X\)</span> with <span class="math inline">\(f(x)=y\)</span>. That is to say the function <span class="math inline">\(f\)</span> hits every element of the set <span class="math inline">\(Y\)</span> or that <span class="math inline">\(y\)</span> has at least one preimage under <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-30" class="example"><strong>Example 4.3  </strong></span>The function <span class="math inline">\(f:\mathbb{R} \rightarrow \mathbb{R}\)</span> defined by <span class="math inline">\(f(x) = x^2\)</span> is not surjective because for <span class="math inline">\(y&lt;0\)</span> there is no element <span class="math inline">\(x\)</span> of the domain so that <span class="math inline">\(x^2=y\)</span>.</p>
+<p>However, the function <span class="math inline">\(f: \mathbb{R} \rightarrow [0,\infty)\)</span> is surjective because for every element <span class="math inline">\(y\)</span> of the codomain we have some <span class="math inline">\(x\)</span> in the domain with <span class="math inline">\(x^2 =y\)</span>.</p>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="functions.html#cb4-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;surjective.png&quot;</span>)</span></code></pre></div>
+<p><img src="surjective.png" /><!-- --></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-31" class="definition"><strong>Definition 4.6  (bijectivity) </strong></span>A function is called <em>bijective</em> if it is both <em>surjective</em> and <em>injective</em>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-32" class="remark"><em>Remark</em>. </span>Bijective functions are often called matchings because if <span class="math inline">\(f: X \rightarrow Y\)</span> is a bijection then we <em>match</em> every element of <span class="math inline">\(x\)</span> with an element of <span class="math inline">\(Y\)</span>.</p>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="functions.html#cb5-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;bijective.png&quot;</span>)</span></code></pre></div>
+<p><img src="bijective.png" /><!-- --></p>
+</div>
+<div id="cardinality" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Cardinality<a href="functions.html#cardinality" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If <span class="math inline">\(f: X \rightarrow Y\)</span> is a bijection then that tells us something important about the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-33" class="definition"><strong>Definition 4.7  (Cardinality) </strong></span>We say that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have the same <em>cardinality</em> (informally the same size) if there exists a bijection between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. We often write <span class="math inline">\(|X| = |Y|\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-34" class="definition"><strong>Definition 4.8  (Finiteness) </strong></span>Cardinality allows us to give a rigorous notion for a set to be <em>finite</em>/have a finite number of elements.</p>
+<p>Given a set <span class="math inline">\(X\)</span>, if there is some natural number <span class="math inline">\(n\)</span> such that <span class="math inline">\(|X|=|\{1,\dots,n\}|\)</span> then we say <span class="math inline">\(X\)</span> has size <span class="math inline">\(n\)</span>.</p>
+<p>If <span class="math inline">\(X\)</span> has size <span class="math inline">\(n\)</span> for some <span class="math inline">\(n\)</span> then we say <span class="math inline">\(X\)</span> is finite.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-35" class="definition"><strong>Definition 4.9  (infinite) </strong></span>We say a set is <em>infinite</em> if it isn’t finite.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-36" class="theorem"><strong>Theorem 4.1  (Cantor's Theorem) </strong></span>Let <span class="math inline">\(X\)</span> be a set and <span class="math inline">\(f: X \rightarrow \mathcal{P}(X)\)</span> then <span class="math inline">\(f\)</span> cannot be a surjection.</p>
+<p>You could also say: there is no surjection between a set and its power set.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-37" class="remark"><em>Remark</em>. </span>One implication of this theorem is that a set cannot be the same size as its power set. This is obvious for finite sets; if <span class="math inline">\(|X|=n\)</span> then <span class="math inline">\(|\mathcal{P}(X)|= 2^n\)</span> but it isn’t clear for infinite sets.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-38" class="proof"><em>Proof</em>. </span>We notice that for every <span class="math inline">\(x \in X\)</span> we have <span class="math inline">\(f(x)\)</span> which is a subset of <span class="math inline">\(X\)</span>. This brings up two possibilities we could have <span class="math inline">\(x \in f(x)\)</span> or <span class="math inline">\(x \notin f(x)\)</span>. We can form a set <span class="math inline">\(C\)</span> by writing
+<span class="math display">\[ C = \{ x \in X\,:\, x \notin f(x)\}.  \]</span></p>
+<p>Now suppose for contradiction that <span class="math inline">\(f\)</span> is surjective. This implies that there exists some <span class="math inline">\(c \in X\)</span> such that <span class="math inline">\(f(c) = C\)</span>.</p>
+<p>Now there are two possibilities.</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(c \in C\)</span> which is a contradiction because we defined <span class="math inline">\(C\)</span> to be the set of <span class="math inline">\(x\)</span> for which <span class="math inline">\(x \notin f(x)\)</span>.</p></li>
+<li><p><span class="math inline">\(c \notin C\)</span> which is also a contradiction because then if <span class="math inline">\(C\)</span> is the set of all <span class="math inline">\(x\)</span> for which <span class="math inline">\(x \notin f(x)\)</span> so should contain <span class="math inline">\(c\)</span>.</p></li>
+</ol>
+<p>Therefore we have a contradiction to <span class="math inline">\(f\)</span> being surjective.</p>
+</div>
+</div>
+<div id="ordered-pairs-and-cartesian-products" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Ordered pairs and Cartesian products<a href="functions.html#ordered-pairs-and-cartesian-products" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-39" class="definition"><strong>Definition 4.10  (ordered pairs) </strong></span>If we have two sets <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and <span class="math inline">\(x \in X, y \in Y\)</span> then we can form an ordered pair of these two elements that we write <span class="math inline">\((x,y)\)</span>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-40" class="remark"><em>Remark</em>. </span>Here we say <em>ordered</em> pair because the order matters. So <span class="math inline">\((1,2) \neq (2,1)\)</span>. This is different to how sets behave where <span class="math inline">\(\{1,2\} = \{2,1\}\)</span>. Also unlike setes we keep repeats. We can have a pair <span class="math inline">\(x,x\)</span> if <span class="math inline">\(x \in X\)</span> and <span class="math inline">\(x \in Y\)</span> and this is different to the element <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-41" class="definition"><strong>Definition 4.11  (cartesian product) </strong></span>Given two sets <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> we can form a new set <span class="math inline">\(X \times Y\)</span> called the <em>Cartesian product</em> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and defined by
+<span class="math display">\[ X \times Y = \{ (x,y) \,:\, x \in X, y \in Y\}.  \]</span></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-42" class="remark"><em>Remark</em>. </span>We have a special notation for the Cartesian product between a set and itself. We write
+<span class="math display">\[ X^2 = X \times X,  \]</span> and
+<span class="math display">\[ X^n = X \times X^{n-1}.  \]</span> You will have probably seen this before e.g. <span class="math inline">\(\mathbb{R}^d\)</span>.</p>
+</div>
+</div>
+<div id="relations" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Relations<a href="functions.html#relations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Relations are an important mathematical object that you might not have thought about before. At first they seem quite similar to functions but they can appear in a very different setting. Before we define them formally let us look at some examples.</p>
+<p>For a generic relationship <span class="math inline">\(R\)</span> we write <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are related under <span class="math inline">\(R\)</span> by <span class="math inline">\(xRy\)</span>. Here the ordering matters as you can see in the example.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-43" class="example"><strong>Example 4.4  </strong></span>We can relate two real numbers <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> with the relationship <em>is less than</em>. So we can write <span class="math inline">\(xRy\)</span> if <span class="math inline">\(x &lt;y\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-44" class="example"><strong>Example 4.5  </strong></span>Is equal to is also a relation. This can be more complicated that just trivially equating elements of the same set. For example we might want to write a relation between <span class="math inline">\(\mathbb{N}\)</span> and <span class="math inline">\(\mathbb{R}\)</span> by equating integers with their counterpart in the natural numbers. This is very subtle, and not very useful, so if it doesn’t make sense don’t worry!</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-45" class="remark"><em>Remark</em>. </span>Something that isn’t a relation but might seem similar is a <em>property</em>. So for example the statement <span class="math inline">\(3\)</span> is a prime number is just talking about a property that may or may not hold for the integers. We can come up with a relation to the set <span class="math inline">\(\{1\}\)</span> by saying <span class="math inline">\(n R 1\)</span> if and only if <span class="math inline">\(n\)</span> is prime.</p>
+</div>
+<p>The formal definition of a relation is as follows</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-46" class="definition"><strong>Definition 4.12  (relation) </strong></span>A relation consists of three parts</p>
+<ul>
+<li><p>A set <span class="math inline">\(X\)</span> called the <em>domain</em>,</p></li>
+<li><p>A set <span class="math inline">\(Y\)</span> called teh <em>co-domain</em></p></li>
+<li><p>A subset of <span class="math inline">\(X \times Y\)</span>.</p></li>
+</ul>
+<p>Using the notation from before we write <span class="math inline">\(xRy\)</span> iff <span class="math inline">\((x,y)\)</span> is in the subset of <span class="math inline">\(X \times Y\)</span> defining the relation.</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sets.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="footnotes-and-citations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-functions.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
