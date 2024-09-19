@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-09-13}
+\date{2024-09-19}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -108,9 +108,9 @@
 }
 \chapter{About}\label{about}
 
-These are the 2024-25 lecture course for the Warwick undergraduate course MA132: Foundations.
+These are the 2024-25 lecture course for the Warwick undergraduate course MA132: Foundations. The material up to chapter 7 is also relevant to joint degree students taking Sets and Numbers.
 
-These notes are heavily based on previous notes of Saul Schleimer, though all mistakes are my own!
+These notes are heavily based on previous notes of Saul Schleimer and Dave Wood, though all mistakes are my own!
 
 Please send me any typos (or possible typos) that you find. And be on the look out for typos.
 
@@ -120,7 +120,7 @@ These notes are designed to generate both a html version (which should work well
 
 Everything you need to know for the exam and future courses should be contained in these notes. There will also be examples, some discussions and some non-examinable sections.
 
-Similarly, everything you need to know will be written by me on the board in lectures.
+Similarly, almost everything you need to know will be written by me on the board in lectures. There may be some exceptions which I will warn you about!
 
 There are three main ways that undergraduates typically use printed lecture notes:
 
@@ -1853,6 +1853,8 @@ Every natural number \(n \geq 2\) has a \emph{unique} prime factorisation.
 \end{theorem}
 
 \begin{proof}
+In this proof we are going to assume the fact that if \(p\) is a prime and \(p|ab\) then \(p|a\) or \(p|b\). If you are doing ma132 you will see this proved later.
+
 For the base case \(2\) has a unique prime factorisation.
 
 Suppose that for every \(k < n\) that \(k\) has a unique prime factorisation.
@@ -1973,15 +1975,237 @@ a &= q_2r_1 + r_2, \quad q_2 \in \mathbb{N}, r_2 \in [[r_1]],\\
 r_1 &= q_3r_2 + r_3, \quad q_3 \in \mathbb{N}, r_3 \in [[r_2]],\\
 r_2 & = \dots
 \end{align*}
-Eventually this process will terminate because we will have \(r_k = 0\) for some \(k\) and then we have \(r_k = gcd(a,b)\).
+Eventually this process will terminate because we will have \(r_k = 0\) for some \(k\) and then we have \(r_{k-1} = gcd(a,b)\).
 \end{definition}
 
 \begin{theorem}[Euclid's Algorithm]
 Given the algorithm above we have the following
-- This algorithm will terminate. i.e.~eventually we have \(r_{k-2} = q_k r_{k-1} + 0\).
-- In this case \(r_{k+1} = gcd(a,b)\)
+- This algorithm will terminate. i.e.~eventually we have \(r_{k-1} = q_{k+1} r_{k} + 0\).
+- In this case \(r_{k} = gcd(a,b)\)
 - There exists \(x,y \in \mathbb{Z}\) such that \(gcd(a,b) = xa+by\).
 \end{theorem}
+
+\begin{proof}
+We take each point in turn.
+
+Firstly we can see that, for every \(j\), \(r_j> r_{j+1} > r_{j+2}\) so eventually we must get to 0. Therefore the sequence terminates.
+
+Secondly, we prove this by showing that in each step of the algorithm we preserve the set of common divisors. If \(m|r_j\) and \(m|r_{j+1}\) then since \(r_j = q_{j+2}r_{j+1} + r_{j+2}\) so \(m|r_{j+2}\) as well. Equally if \(n|r_{j+1}\) and \(n|r_{j+2}\) then we must have \(n|r_j\) as well. So the set of divisors of \(r_j, r_{j+1}\) is the same as the set of divisors of \(r_{j+1},r_{j+2}\). From this it follows that \(gcd(r_j,r_{j+1})=gcd(r_{j+1},r_{j+2})\). Therefore itterating backwards we have that for every \(j\) that \(gcd(r_j, r_{j+1}) = gcd(a,b)\). Consequently at the point where the algorithm terminates, \(r_k = gcd(r_k,0)=gcd(r_k,r_{k+1})=gcd(a,b)\).
+
+For the last point let us make the claim: For every \(j\) we can write \(r_j = x_j a + y_j b\) for some \(x_j, y_j \in \mathbb{Z}\). Then we can prove this recursively. First we know that \(b=q_1 a + r_1\) so \(r_1 = -q_1 a + 1*b\). Now suppose that \(r_{j-1}, r_{j-2}\) can be expressed as above. We know \(r_{j-2} = q_j r_{j-1} + r_j\) so \(r_j = r_{j-2} - q_j r_{j-1} = x_{j-2} a + y_{j-2} b - q_j(x_{j-1}a + y_{j-1}b) = (x_{j-2}-q_j x_{j-1})a + (y_{j-2} - q_j y_{j-1})b\). So this shows the claim by induction. Now the claim implied in particular that \(r_k = x_k a + y_k b\) proving the third point in the theorem.
+\end{proof}
+
+\subsection{Geometric interpretation of Euclid's algorithm}\label{geometric-interpretation-of-euclids-algorithm}
+
+We can think of this algorithm pictorially by drawing a rectangle of length \(a\) and height \(b\) and then \(q_1\) squares of side length \(b\) inside it leaving a rectangle of length \(r_1\) and height \(b\) and so on\ldots{}
+
+\begin{figure}
+\centering
+\includegraphics{geomeuclid.png}
+\caption{\label{fig:unnamed-chunk-28}Picture showing Euclid's algorithm pictorially}
+\end{figure}
+
+Here is a specific example with the numbers \(24\) and \(15\)
+
+\includegraphics{geomeuclidnumbers.png}
+\#\#\# Continued fractions
+
+Another way of looking at Euclid's algorithm is continued fractions. If \(a = qb+r\) then
+\[ \frac{a}{b} = q + \frac{r}{b}.  \]
+If \(b = q_2 r + r_2\) then
+\[  \frac{b}{r} = q_2 + \frac{r_2}{r},\] so
+\[ \frac{a}{b} = q + \frac{1}{q_2 + \frac{r_2}{r}}.  \]
+Continuing on like this we can express
+\[ \frac{a}{b} = q + \frac{1}{q_2 + \frac{1}{q_3 + \dots}}.  \]
+
+In a similar way if we take some real number \(x\) we can write it in continued fraction form by writing \(q_1 = [x]\) and \(q_2 = [1/(x-[x])]\) and so on. Unlike when expressing a rational number this process might not terminate.
+
+In both situations we call this the continued fraction representation of a number.
+
+\subsection{Bezout's lemma}\label{bezouts-lemma}
+
+The final statement in Euclid's algorithm is called Bezout's lemma
+
+\begin{lemma}[Bezout's Lemma]
+If \(a,b\) are two natural numbers then there exists \(x,y \in \mathbb{Z}\) such that
+\[ gcd(a,b) = x a + b c.  \]
+
+As a result of this if \(a,b\) are coprime and \(n\) is any integer then there exists \(x, y \in \mathbb{Z}\) such that
+\[ n = xa + yb.\]
+\end{lemma}
+
+\begin{proof}
+We have already proved the first part in the discussion of Euclid's algorithm.
+
+For the second if \(a,b\) are coprime then \(gcd(a,b) =1\) (this is the definition of being coprime). Then by the first part of the theorem there exists \(\tilde{x}, \tilde{y} \in \mathbb{Z}\) such that
+\[ 1= \tilde{x}a + \tilde{y}b,  \] using this
+\[ n = (n\tilde{x})a + (n \tilde{y})b.  \]
+\end{proof}
+
+Using this we can show a powerful result which we have already seen
+
+Suppose that \(a,b \in \mathbb{N}\) and \(p\) is a prime number and \(p|ab\) then either \(p|a\) or \(p|b\).
+
+If \(p|a\) then we are done so suppose that \(p\) does not divide \(a\). Then \(a,p\) are coprime so by Bezout's lemma we can write
+\[1 = xa + yp\] and hence
+\[b = xab + ypb.  \] As \(p|ab\) we know \(p|xab\) and from the expression we can see that \(p|ypb\) so \(p | (xab + ybp)\) so \(p|b\).
+
+Now let us use this to prove the fundamental theorem of arithmetic again. Everything is a bit smoother now with more results.
+
+\begin{theorem}[Fundamental Theorem of Arithmetic]
+Any natural number \(n\) has a unique factorisation into prime numbers.
+\end{theorem}
+
+\begin{proof}
+First let us use strong induction to prove that there is a prime factorisation. The base case is \(n=2\) which is already in prime factorisation. Now suppose that every number less than \(n\) can be written as a product of prime factors. Then either \(n\) is prime, so it is in prime factorisation or \(n=ab\) then \(a,b < n\) so they have prime factorisations which allows us to write a prime factorisation for \(n\).
+
+Second we want to prove this factorisation is unique. Suppose \(n = p_1 p_2 \dots p_k = q_1 q_2 \dots q_j\) where all the \(p_i, q_i\) are primes. Then \(p_1 | n\) so \(p_1|q_1\) or \(p_1 |q_2\dots q_j\). In the first case we must have \(p_1=q_1\) since \(q_1\) is prime. In the second case we have \(p_1|q_2\) or \(p_1 |q_3 \dots q_j\) and so on. We can keep itterating to show that \(p_1\) must appear in the list \(q_1, \dots q_j\). We can then repeat this with all the \(p_i\).
+\end{proof}
+
+\section{Chinese remainder theorem}\label{chinese-remainder-theorem}
+
+\begin{theorem}[Chinese Remainder Theorem]
+Suppose that \(n_1, \dots, n_k\) are pairwise coprime integers and \(a_1, \dots, a_k\) are integers with \(a_i \in [[n_i]]\) for every \(i\). Then there exists an integer \(x\) with
+\[ x \equiv a_i \quad \mbox{mod} n_i, \quad i = 1, \dots, k.  \]
+\end{theorem}
+
+\begin{proof}
+Let \(m_i = \Pi_{j \neq i} n_j\). Then \(n_i\) and \(m_i\) are coprime so by Euclid's algorithm there exists \(x_i,y_i\) such that \(1 = x_i n_i + y_i m_i\) so \(e_i =y_i m_i = 1- x_i n_i\) so \(e_i \equiv 1 \quad \mbox{mod} \, n_i\) and \(e_i \equiv 0 \quad \mbox{mod} \, n_j\).
+
+Then let \(x = \sum_{i=1}^k a_i e_i\) then this satisfies the conditions of the theorem.
+\end{proof}
+
+\begin{remark}
+The Chinese remainder theorem is very old. It dates back to Sunzi in the 3rd to 5th Century. It can be used to do apparently complicated computations very quickly and is used in important algorithms today such as RSA cryptography and Fast Fourier transform.
+\end{remark}
+
+\section{Fermat's Little Theorem and Euler's Theorem}\label{fermats-little-theorem-and-eulers-theorem}
+
+\begin{definition}
+A number \(a\) is called a emph\{unit\} modulo \(n\) if there exists \(b\) such that \(ab = 1 \quad \mbox{mod} \, n\). (We call \(b\) a multiplicative inverse modulo \(n\).)
+\end{definition}
+
+\begin{lemma}
+A number \(a\) is a unite modulo \(n\) if and only if \(a\) and \(n\) are coprime.
+\end{lemma}
+
+\begin{proof}
+If \(a\) and \(n\) are coprime then \(1 = xa + yn\) in which case \(xa\equiv 1 \quad \mbox{mod} \, n\).
+
+If there exists \(x\) such that \(xa \equiv 1 \quad \mbox{mod} \, n\) then \(x a = 1 + y n\) and \(gcd(a,n) | (xa-yn)\) so \(gcd(a,n) = 1\).
+\end{proof}
+
+::: \{.definition ``Euler Totient Function''\}
+
+The Euler Totient function \(\phi(n)\) counts the number of natural numbers smaller than \(n\) that are coprime to \(n\). Alternatively the number of units modulo \(n\).
+
+:::
+
+\begin{lemma}
+If \(p\) is prime then \(\phi(p) = p-1\).
+\end{lemma}
+
+\begin{example}
+Another example is \(n=12\) the numbers smaller than \(n\) which are coprime are \(1,5,7,11\) so \(\phi(12)=4\)
+\end{example}
+
+\begin{proposition}
+If \(p\) is prime and \(a\) is not a multiple of \(p\) then
+\[ a^{p-1} \equiv 1 \quad \mbox{mod} \, p.  \]
+\end{proposition}
+
+\begin{proof}
+Let us consider \(a, 2a, 3a, \dots, (p-1)a\) as elements in \(\mathbb{Z}/p\mathbb{Z}\). We claim that they are all distinct. This is because since \(a,p\) are coprime, there exists \(x\) such that \(xa =1\) modulo \(p\). So if \(ka \equiv ja \quad, \mbox{mod} \,p\) then \(kab \equiv jab \quad \mbox{mod} \, p\) so \(k \equiv j \quad \mbox{mod}\, p\). So if \(k, j \in [[p]]\) this would imply \(k = j\).
+
+So \(a, 2a, \dots, (p-1)a\) considered modulo \(p\) must be \(1, 2, \dots, (p-1)\) in some order. Hence
+\[ a \times 2a \times \dots \times (p-1)a \equiv (p-1)! \quad \mbox{mod}\, p. \] Which rewriting is
+\[ a^{p-1} (p-1)! \equiv (p-1)! \quad \mbox{mod} \, p. \] Now \((p-1)!\) is coprime to \(p\) since \(p\) is prime. So there exists \(c\) such that \(c(p-1)! \equiv 1 \quad \mbox{mod}\, p\) hence multiplying the equation above by \(c\) we get
+\[ a^{p-1} \equiv 1 \quad \mbox{mod} \, p.  \]
+\end{proof}
+
+::: \{.theorem name=``Fermat's Little Theorem\}
+
+Suppose that \(gcd(a,n) =1\) then \(a^{\phi(n)-1} \equiv 1 \quad \mbox{mod} \, n\).
+
+:::
+
+\begin{proof}
+The proof is very similar to above so I will leave the details to you!
+
+Consider the set of integers \{ka\} where \(gcd(k,n) =1\) and \(k \in [[n]]\) and multiply them all together.
+\end{proof}
+
+\chapter{Algorithms and Algorithmic complexity}\label{algorithms-and-algorithmic-complexity}
+
+\section{Algorithmic Complexity}\label{algorithmic-complexity}
+
+Algorithmic complexity is a measure of how complicated a procedure is by counting roughly how many operations are required to complete it.
+
+\subsection{Big and little O notation}\label{big-and-little-o-notation}
+
+When we are talking about complexity (and in lots of other situations later in your degree) we are often only interested in the asymptotic behaviour of a function.
+
+For example if we want to know the complexity of an algorithm to multiply two numbers with at most \(n\) digits together we have a function of \(n\) and we are only really interested in describing how it behaves when \(n\) is very large. Big and little O notation is a way of doing this.
+
+::: \{definition name=``Big O''\}
+
+Suppose \(f(n)\) and \(g(n)\) are function of \(n\) and there exist real numbers \(C, n_0\) such that for \(n \geq n_0\) then
+\[|f(n)| \leq C g(n)\] then we say
+\[ f(n) = O(g(n)).  \]
+
+:::
+
+This is most commonly used when \(g(n)\) is a simple function like \(n^k\) for some \(k\) or \(\log(n)\) or \(a^n\) or something similar.
+
+\begin{example}
+
+\begin{itemize}
+\item
+  The function \(2n^3 + 3n - 102 = O(n^3)\).
+\item
+  \(\phi(n) = O(n)\) since \(\phi(n) \leq n\).
+\end{itemize}
+
+\end{example}
+
+While we are defining big O notation it is useful to define little o notation
+
+\begin{definition}[little o notation]
+If \(f(n), g(n)\) are functions and for every \(c >0\) there exists \(n_c\) such that if \(n >n_c\) then
+\[ |f(n)| \leq c g(n).\]
+
+We can think of this as saying \(f(n)\) becomes insignificant compared to \(g(n)\) as \(n\) becomes large.
+\end{definition}
+
+\begin{example}
+We have \(n^2 = o(n^3)\).
+\end{example}
+
+\section{Running times of algorithms}\label{running-times-of-algorithms}
+
+We use big O notation to talk about how long it will take to run an algorithm as the input becomes large. It is easiest to understand this by looking at some examples.
+
+\begin{example}[Addition]
+Suppose we are adding two \(n\) digit numbers \(a_1\dots a_n\) and \(b_1\dots b_n\) using our standard method of addition where we do \(a_n+b_n\) and enter the unit part of this as the unit part of the sum then possibly carry the 1 if \(a_n + b_n \geq 10\). Then we add \(a_{n-1} + b_{n-1}\) and possibly add the additional \(1\) we carried if necessary.
+
+If we want to count the steps it depends on precisely what we list as a step. If we only think we are doing 1 step when adding and carrying for each place value then we are performing \(n\) steps. If we think of each addition and carrying step as a separate step then we do \(3n\) steps. However in either case we say the algorithm is \(O(n)\).
+\end{example}
+
+\begin{example}[Multiplication]
+Now suppose we think about multiplication using the long multiplication algorithm then for two \(n\) digit numbers we need to multiply \(a_k\) by \(b_j\) for each \(k, j\) (which is \(n^2\) steps) and then perform \(n^2\) addition steps of what are effectively at most two digit numbers. So this algorithm is O(n\^{}2).
+\end{example}
+
+\begin{example}[Checking divisibility]
+Division is no worse than multiplication. The algorithms are a bit more complicated to state. One example is given an \(n\) digit number, \(a\) and an \(m\) digit number, \(b\) with \(m\leq n\) and we want to know whether \(b|a\) then if \(a/b\) were an integer it would have at most \(n-m+1\) digits and at least \(n-m\). So we are have around \(20\) possible candidate for \(a/b\). Now we just check multiplying all \(20\) candidates with \(m\) which is a multiplication operation with \(m\times(n-m+1)\) steps so \(O(n^2)\) and we do this 20 times so checking divisibility is \(O(n^2)\).
+\end{example}
+
+\begin{example}[Naive primality testing]
+Suppose we want to test whether a number \(n\) is prime. The most obvious way to do this is to check whether we can find any other \(m \neq n\) such that \(m|n\). We notice here that we only need to check \(m \leq \sqrt{n}\) as if \(ab=n\) then one of \(a, b\) must be smaller than \(sqrt{n}\). If we suppose it is one step to check whether \(n\) is divisible by \(m\). Now each division operation is a check and the number of digits in \(n\) is around \(\log_{10}(n)\) so each division operation is \(O(\log(n)^2)\) and there are \(\sqrt(n)\) division so our overall order is \(O(\sqrt{n}\log(n)^2 )\).
+\end{example}
+
+\begin{remark}
+Notice in all of these examples we are using our understanding of the complexity of less complicated operations to find the complexity of more complicated operations.
+\end{remark}
 
   \bibliography{book.bib,packages.bib}
 
