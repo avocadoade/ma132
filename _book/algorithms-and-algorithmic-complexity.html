@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Algorithms and Algorithmic complexity | MA132: Foundations Lecture Notes</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Algorithms and Algorithmic complexity | MA132: Foundations Lecture Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Algorithms and Algorithmic complexity | MA132: Foundations Lecture Notes" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Jo Evans" />
+
+
+<meta name="date" content="2024-09-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="some-number-theory.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MA132: Foundations</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-use-these-notes"><i class="fa fa-check"></i><b>1.1</b> How to use these notes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sets-and-functions.html"><a href="sets-and-functions.html"><i class="fa fa-check"></i><b>2</b> Sets and Functions</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="sets-and-functions.html"><a href="sets-and-functions.html#what-is-a-set"><i class="fa fa-check"></i><b>2.1</b> What is a set?</a></li>
+<li class="chapter" data-level="2.2" data-path="sets-and-functions.html"><a href="sets-and-functions.html#subsets"><i class="fa fa-check"></i><b>2.2</b> Subsets</a></li>
+<li class="chapter" data-level="2.3" data-path="sets-and-functions.html"><a href="sets-and-functions.html#power-sets-and-specification"><i class="fa fa-check"></i><b>2.3</b> Power sets and specification</a></li>
+<li class="chapter" data-level="2.4" data-path="sets-and-functions.html"><a href="sets-and-functions.html#functions"><i class="fa fa-check"></i><b>2.4</b> Functions</a></li>
+<li class="chapter" data-level="2.5" data-path="sets-and-functions.html"><a href="sets-and-functions.html#properties-of-functions"><i class="fa fa-check"></i><b>2.5</b> Properties of functions</a></li>
+<li class="chapter" data-level="2.6" data-path="sets-and-functions.html"><a href="sets-and-functions.html#cardinality"><i class="fa fa-check"></i><b>2.6</b> Cardinality</a></li>
+<li class="chapter" data-level="2.7" data-path="sets-and-functions.html"><a href="sets-and-functions.html#ordered-pairs-and-cartesian-products"><i class="fa fa-check"></i><b>2.7</b> Ordered pairs and Cartesian products</a></li>
+<li class="chapter" data-level="2.8" data-path="sets-and-functions.html"><a href="sets-and-functions.html#graphs-and-a-better-definition-of-functions"><i class="fa fa-check"></i><b>2.8</b> Graphs and a better definition of functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="operations-on-sets-and-functions.html"><a href="operations-on-sets-and-functions.html"><i class="fa fa-check"></i><b>3</b> Operations on sets and functions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="operations-on-sets-and-functions.html"><a href="operations-on-sets-and-functions.html#set-operations"><i class="fa fa-check"></i><b>3.1</b> Set operations</a></li>
+<li class="chapter" data-level="3.2" data-path="operations-on-sets-and-functions.html"><a href="operations-on-sets-and-functions.html#using-set-operations-together"><i class="fa fa-check"></i><b>3.2</b> Using set operations together</a></li>
+<li class="chapter" data-level="3.3" data-path="operations-on-sets-and-functions.html"><a href="operations-on-sets-and-functions.html#operations-on-functions"><i class="fa fa-check"></i><b>3.3</b> Operations on functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="relations.html"><a href="relations.html"><i class="fa fa-check"></i><b>4</b> Relations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="relations.html"><a href="relations.html#equivalence-relations-equivalence-classes-and-quotients"><i class="fa fa-check"></i><b>4.1</b> Equivalence relations, Equivalence classes and Quotients</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="relations.html"><a href="relations.html#quotients"><i class="fa fa-check"></i><b>4.1.1</b> Quotients</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="relations.html"><a href="relations.html#integers-via-quotients"><i class="fa fa-check"></i><b>4.2</b> Integers via quotients</a></li>
+<li class="chapter" data-level="4.3" data-path="relations.html"><a href="relations.html#order-relations"><i class="fa fa-check"></i><b>4.3</b> Order relations</a></li>
+<li class="chapter" data-level="4.4" data-path="relations.html"><a href="relations.html#modular-arithmetic"><i class="fa fa-check"></i><b>4.4</b> Modular arithmetic</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="logic.html"><a href="logic.html"><i class="fa fa-check"></i><b>5</b> Logic</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="logic.html"><a href="logic.html#booleans"><i class="fa fa-check"></i><b>5.1</b> Booleans</a></li>
+<li class="chapter" data-level="5.2" data-path="logic.html"><a href="logic.html#boolean-algebra"><i class="fa fa-check"></i><b>5.2</b> Boolean algebra</a></li>
+<li class="chapter" data-level="5.3" data-path="logic.html"><a href="logic.html#truth-tables"><i class="fa fa-check"></i><b>5.3</b> Truth tables</a></li>
+<li class="chapter" data-level="5.4" data-path="logic.html"><a href="logic.html#quantifiers"><i class="fa fa-check"></i><b>5.4</b> Quantifiers</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="proof.html"><a href="proof.html"><i class="fa fa-check"></i><b>6</b> Proof</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="proof.html"><a href="proof.html#patterns-of-proof"><i class="fa fa-check"></i><b>6.1</b> Patterns of proof</a></li>
+<li class="chapter" data-level="6.2" data-path="proof.html"><a href="proof.html#proof-by-induction"><i class="fa fa-check"></i><b>6.2</b> Proof by induction</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="some-number-theory.html"><a href="some-number-theory.html"><i class="fa fa-check"></i><b>7</b> Some number theory</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="some-number-theory.html"><a href="some-number-theory.html#divisors-and-prime-numbers"><i class="fa fa-check"></i><b>7.1</b> Divisors and prime numbers</a></li>
+<li class="chapter" data-level="7.2" data-path="some-number-theory.html"><a href="some-number-theory.html#euclids-algorithm"><i class="fa fa-check"></i><b>7.2</b> Euclid’s Algorithm</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="some-number-theory.html"><a href="some-number-theory.html#geometric-interpretation-of-euclids-algorithm"><i class="fa fa-check"></i><b>7.2.1</b> Geometric interpretation of Euclid’s algorithm</a></li>
+<li class="chapter" data-level="7.2.2" data-path="some-number-theory.html"><a href="some-number-theory.html#continued-fractions"><i class="fa fa-check"></i><b>7.2.2</b> Continued fractions</a></li>
+<li class="chapter" data-level="7.2.3" data-path="some-number-theory.html"><a href="some-number-theory.html#bezouts-lemma"><i class="fa fa-check"></i><b>7.2.3</b> Bezout’s lemma</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="some-number-theory.html"><a href="some-number-theory.html#chinese-remainder-theorem"><i class="fa fa-check"></i><b>7.3</b> Chinese remainder theorem</a></li>
+<li class="chapter" data-level="7.4" data-path="some-number-theory.html"><a href="some-number-theory.html#fermats-little-theorem-and-eulers-theorem"><i class="fa fa-check"></i><b>7.4</b> Fermat’s Little Theorem and Euler’s Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="algorithms-and-algorithmic-complexity.html"><a href="algorithms-and-algorithmic-complexity.html"><i class="fa fa-check"></i><b>8</b> Algorithms and Algorithmic complexity</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="algorithms-and-algorithmic-complexity.html"><a href="algorithms-and-algorithmic-complexity.html#algorithmic-complexity"><i class="fa fa-check"></i><b>8.1</b> Algorithmic Complexity</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="algorithms-and-algorithmic-complexity.html"><a href="algorithms-and-algorithmic-complexity.html#big-and-little-o-notation"><i class="fa fa-check"></i><b>8.1.1</b> Big and little O notation</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="algorithms-and-algorithmic-complexity.html"><a href="algorithms-and-algorithmic-complexity.html#running-times-of-algorithms"><i class="fa fa-check"></i><b>8.2</b> Running times of algorithms</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MA132: Foundations Lecture Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="algorithms-and-algorithmic-complexity" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Algorithms and Algorithmic complexity<a href="algorithms-and-algorithmic-complexity.html#algorithms-and-algorithmic-complexity" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="algorithmic-complexity" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Algorithmic Complexity<a href="algorithms-and-algorithmic-complexity.html#algorithmic-complexity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Algorithmic complexity is a measure of how complicated a procedure is by counting roughly how many operations are required to complete it.</p>
+<div id="big-and-little-o-notation" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Big and little O notation<a href="algorithms-and-algorithmic-complexity.html#big-and-little-o-notation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When we are talking about complexity (and in lots of other situations later in your degree) we are often only interested in the asymptotic behaviour of a function.</p>
+<p>For example if we want to know the complexity of an algorithm to multiply two numbers with at most <span class="math inline">\(n\)</span> digits together we have a function of <span class="math inline">\(n\)</span> and we are only really interested in describing how it behaves when <span class="math inline">\(n\)</span> is very large. Big and little O notation is a way of doing this.</p>
+<p>::: {definition name=“Big O”}</p>
+<p>Suppose <span class="math inline">\(f(n)\)</span> and <span class="math inline">\(g(n)\)</span> are function of <span class="math inline">\(n\)</span> and there exist real numbers <span class="math inline">\(C, n_0\)</span> such that for <span class="math inline">\(n \geq n_0\)</span> then
+<span class="math display">\[|f(n)| \leq C g(n)\]</span> then we say
+<span class="math display">\[ f(n) = O(g(n)).  \]</span></p>
+<p>:::</p>
+<p>This is most commonly used when <span class="math inline">\(g(n)\)</span> is a simple function like <span class="math inline">\(n^k\)</span> for some <span class="math inline">\(k\)</span> or <span class="math inline">\(\log(n)\)</span> or <span class="math inline">\(a^n\)</span> or something similar.</p>
+<div class="example">
+<ul>
+<li><span id="exm:unlabeled-div-191" class="example"><strong>Example 8.1  </strong></span></li>
+<li><p>The function <span class="math inline">\(2n^3 + 3n - 102 = O(n^3)\)</span>.</p></li>
+<li><p><span class="math inline">\(\phi(n) = O(n)\)</span> since <span class="math inline">\(\phi(n) \leq n\)</span>.</p></li>
+</ul>
+</div>
+<p>While we are defining big O notation it is useful to define little o notation</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-192" class="definition"><strong>Definition 8.1  (little o notation) </strong></span>If <span class="math inline">\(f(n), g(n)\)</span> are functions and for every <span class="math inline">\(c &gt;0\)</span> there exists <span class="math inline">\(n_c\)</span> such that if <span class="math inline">\(n &gt;n_c\)</span> then
+<span class="math display">\[ |f(n)| \leq c g(n).\]</span></p>
+<p>We can think of this as saying <span class="math inline">\(f(n)\)</span> becomes insignificant compared to <span class="math inline">\(g(n)\)</span> as <span class="math inline">\(n\)</span> becomes large.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-193" class="example"><strong>Example 8.2  </strong></span>We have <span class="math inline">\(n^2 = o(n^3)\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="running-times-of-algorithms" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Running times of algorithms<a href="algorithms-and-algorithmic-complexity.html#running-times-of-algorithms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We use big O notation to talk about how long it will take to run an algorithm as the input becomes large. It is easiest to understand this by looking at some examples.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-194" class="example"><strong>Example 8.3  (Addition) </strong></span>Suppose we are adding two <span class="math inline">\(n\)</span> digit numbers <span class="math inline">\(a_1\dots a_n\)</span> and <span class="math inline">\(b_1\dots b_n\)</span> using our standard method of addition where we do <span class="math inline">\(a_n+b_n\)</span> and enter the unit part of this as the unit part of the sum then possibly carry the 1 if <span class="math inline">\(a_n + b_n \geq 10\)</span>. Then we add <span class="math inline">\(a_{n-1} + b_{n-1}\)</span> and possibly add the additional <span class="math inline">\(1\)</span> we carried if necessary.</p>
+<p>If we want to count the steps it depends on precisely what we list as a step. If we only think we are doing 1 step when adding and carrying for each place value then we are performing <span class="math inline">\(n\)</span> steps. If we think of each addition and carrying step as a separate step then we do <span class="math inline">\(3n\)</span> steps. However in either case we say the algorithm is <span class="math inline">\(O(n)\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-195" class="example"><strong>Example 8.4  (Multiplication) </strong></span>Now suppose we think about multiplication using the long multiplication algorithm then for two <span class="math inline">\(n\)</span> digit numbers we need to multiply <span class="math inline">\(a_k\)</span> by <span class="math inline">\(b_j\)</span> for each <span class="math inline">\(k, j\)</span> (which is <span class="math inline">\(n^2\)</span> steps) and then perform <span class="math inline">\(n^2\)</span> addition steps of what are effectively at most two digit numbers. So this algorithm is O(n^2).</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-196" class="example"><strong>Example 8.5  (Checking divisibility) </strong></span>Division is no worse than multiplication. The algorithms are a bit more complicated to state. One example is given an <span class="math inline">\(n\)</span> digit number, <span class="math inline">\(a\)</span> and an <span class="math inline">\(m\)</span> digit number, <span class="math inline">\(b\)</span> with <span class="math inline">\(m\leq n\)</span> and we want to know whether <span class="math inline">\(b|a\)</span> then if <span class="math inline">\(a/b\)</span> were an integer it would have at most <span class="math inline">\(n-m+1\)</span> digits and at least <span class="math inline">\(n-m\)</span>. So we are have around <span class="math inline">\(20\)</span> possible candidate for <span class="math inline">\(a/b\)</span>. Now we just check multiplying all <span class="math inline">\(20\)</span> candidates with <span class="math inline">\(m\)</span> which is a multiplication operation with <span class="math inline">\(m\times(n-m+1)\)</span> steps so <span class="math inline">\(O(n^2)\)</span> and we do this 20 times so checking divisibility is <span class="math inline">\(O(n^2)\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-197" class="example"><strong>Example 8.6  (Naive primality testing) </strong></span>Suppose we want to test whether a number <span class="math inline">\(n\)</span> is prime. The most obvious way to do this is to check whether we can find any other <span class="math inline">\(m \neq n\)</span> such that <span class="math inline">\(m|n\)</span>. We notice here that we only need to check <span class="math inline">\(m \leq \sqrt{n}\)</span> as if <span class="math inline">\(ab=n\)</span> then one of <span class="math inline">\(a, b\)</span> must be smaller than <span class="math inline">\(sqrt{n}\)</span>. If we suppose it is one step to check whether <span class="math inline">\(n\)</span> is divisible by <span class="math inline">\(m\)</span>. Now each division operation is a check and the number of digits in <span class="math inline">\(n\)</span> is around <span class="math inline">\(\log_{10}(n)\)</span> so each division operation is <span class="math inline">\(O(\log(n)^2)\)</span> and there are <span class="math inline">\(\sqrt(n)\)</span> division so our overall order is <span class="math inline">\(O(\sqrt{n}\log(n)^2 )\)</span>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-198" class="remark"><em>Remark</em>. </span>Notice in all of these examples we are using our understanding of the complexity of less complicated operations to find the complexity of more complicated operations.</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="some-number-theory.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/07-algorithms.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

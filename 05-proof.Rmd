@@ -221,6 +221,8 @@ Every natural number \(n \geq 2\) has a *unique* prime factorisation.
 
 ::: {.proof}
 
+In this proof we are going to assume the fact that if \(p\) is a prime and \(p|ab\) then \(p|a\) or \(p|b\). If you are doing ma132 you will see this proved later.
+
 For the base case \(2\) has a unique prime factorisation. 
 
 Suppose that for every \(k < n\) that \(k\) has a unique prime factorisation.

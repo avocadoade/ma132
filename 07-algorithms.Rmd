@@ -1,0 +1,86 @@
+# Algorithms and Algorithmic complexity
+
+## Algorithmic Complexity
+
+Algorithmic complexity is a measure of how complicated a procedure is by counting roughly how many operations are required to complete it.
+
+### Big and little O notation
+
+When we are talking about complexity (and in lots of other situations later in your degree) we are often only interested in the asymptotic behaviour of a function. 
+
+For example if we want to know the complexity of an algorithm to multiply two numbers with at most \(n\) digits together we have a function of \(n\) and we are only really interested in describing how it behaves when \(n\) is very large. Big and little O notation is a way of doing this.
+
+::: {definition name="Big O"}
+
+Suppose \(f(n)\) and \(g(n)\) are function of \(n\) and there exist real numbers \(C, n_0\) such that for \(n \geq n_0\) then
+\[|f(n)| \leq C g(n)\] then we say 
+\[ f(n) = O(g(n)).  \]
+
+:::
+
+
+
+This is most commonly used when \(g(n)\) is a simple function like \(n^k\) for some \(k\) or \(\log(n)\) or \(a^n\) or something similar.
+
+::: {.example}
+
+ - The function \(2n^3 + 3n - 102 = O(n^3)\).
+ 
+ - \(\phi(n) = O(n)\) since \(\phi(n) \leq n\).
+ 
+:::
+
+While we are defining big O notation it is useful to define little o notation
+
+::: {.definition name="little o notation"}
+
+If \(f(n), g(n)\) are functions and for every \(c >0\) there exists \(n_c\) such that if \(n >n_c\) then
+\[ |f(n)| \leq c g(n).\]
+
+We can think of this as saying \(f(n)\) becomes insignificant compared to \(g(n)\) as \(n\) becomes large. 
+
+:::
+
+::: {.example}
+
+We have \(n^2 = o(n^3)\).
+
+:::
+
+## Running times of algorithms
+
+We use big O notation to talk about how long it will take to run an algorithm as the input becomes large. It is easiest to understand this by looking at some examples.
+
+::: {.example name="Addition"}
+
+Suppose we are adding two \(n\) digit numbers \(a_1\dots a_n\) and \(b_1\dots b_n\) using our standard method of addition where we do \(a_n+b_n\) and enter the unit part of this as the unit part of the sum then possibly carry the 1 if \(a_n + b_n \geq 10\). Then we add \(a_{n-1} + b_{n-1}\) and possibly add the additional \(1\) we carried if necessary. 
+
+If we want to count the steps it depends on precisely what we list as a step. If we only think we are doing 1 step when adding and carrying for each place value then we are performing \(n\) steps. If we think of each addition and carrying step as a separate step then we do \(3n\) steps. However in either case we say the algorithm is \(O(n)\). 
+
+:::
+
+::: {.example name="Multiplication"}
+
+Now suppose we think about multiplication using the long multiplication algorithm then for two \(n\) digit numbers we need to multiply \(a_k\) by \(b_j\) for each \(k, j\) (which is \(n^2\) steps) and then perform \(n^2\) addition steps of what are effectively at most two digit numbers. So this algorithm is O(n^2).
+
+:::
+
+::: {.example name="Checking divisibility"}
+
+Division is no worse than multiplication. The algorithms are a bit more complicated to state. One example is given an \(n\) digit number, \(a\) and an \(m\) digit number, \(b\) with \(m\leq n\) and we want to know whether \(b|a\) then if \(a/b\) were an integer it would have at most \(n-m+1\) digits and at least \(n-m\). So we are have around \(20\) possible candidate for \(a/b\). Now we just check multiplying all \(20\) candidates with \(m\) which is a multiplication operation with \(m\times(n-m+1)\) steps so \(O(n^2)\) and we do this 20 times so checking divisibility is \(O(n^2)\).
+
+:::
+
+
+
+::: {.example name="Naive primality testing"}
+
+Suppose we want to test whether a number \(n\) is prime. The most obvious way to do this is to check whether we can find any other \(m \neq n\) such that \(m|n\). We notice here that we only need to check \(m \leq \sqrt{n}\) as if \(ab=n\) then one of \(a, b\) must be smaller than \(sqrt{n}\). If we suppose it is one step to check whether \(n\) is divisible by \(m\). Now each division operation is a check and the number of digits in \(n\) is around \(\log_{10}(n)\) so each division operation is \(O(\log(n)^2)\) and there are \(\sqrt(n)\) division so our overall order is \(O(\sqrt{n}\log(n)^2 )\).
+
+:::
+
+::: {.remark}
+
+Notice in all of these examples we are using our understanding of the complexity of less complicated operations to find the complexity of more complicated operations.
+
+:::

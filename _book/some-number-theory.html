@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2024-09-13" />
+<meta name="date" content="2024-09-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,7 +37,7 @@ set in the _output.yml file.</p>" />
   
   
 <link rel="prev" href="proof.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="algorithms-and-algorithmic-complexity.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -78,7 +78,7 @@ set in the _output.yml file.</p>" />
 <li><a href="./">MA132: Foundations</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-use-these-notes"><i class="fa fa-check"></i><b>1.1</b> How to use these notes</a></li>
 </ul></li>
@@ -124,9 +124,23 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="7" data-path="some-number-theory.html"><a href="some-number-theory.html"><i class="fa fa-check"></i><b>7</b> Some number theory</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="some-number-theory.html"><a href="some-number-theory.html#divisors-and-prime-numbers"><i class="fa fa-check"></i><b>7.1</b> Divisors and prime numbers</a></li>
-<li class="chapter" data-level="7.2" data-path="some-number-theory.html"><a href="some-number-theory.html#euclids-algorithm"><i class="fa fa-check"></i><b>7.2</b> Euclid’s Algorithm</a></li>
+<li class="chapter" data-level="7.2" data-path="some-number-theory.html"><a href="some-number-theory.html#euclids-algorithm"><i class="fa fa-check"></i><b>7.2</b> Euclid’s Algorithm</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="some-number-theory.html"><a href="some-number-theory.html#geometric-interpretation-of-euclids-algorithm"><i class="fa fa-check"></i><b>7.2.1</b> Geometric interpretation of Euclid’s algorithm</a></li>
+<li class="chapter" data-level="7.2.2" data-path="some-number-theory.html"><a href="some-number-theory.html#continued-fractions"><i class="fa fa-check"></i><b>7.2.2</b> Continued fractions</a></li>
+<li class="chapter" data-level="7.2.3" data-path="some-number-theory.html"><a href="some-number-theory.html#bezouts-lemma"><i class="fa fa-check"></i><b>7.2.3</b> Bezout’s lemma</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="7.3" data-path="some-number-theory.html"><a href="some-number-theory.html#chinese-remainder-theorem"><i class="fa fa-check"></i><b>7.3</b> Chinese remainder theorem</a></li>
+<li class="chapter" data-level="7.4" data-path="some-number-theory.html"><a href="some-number-theory.html#fermats-little-theorem-and-eulers-theorem"><i class="fa fa-check"></i><b>7.4</b> Fermat’s Little Theorem and Euler’s Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="algorithms-and-algorithmic-complexity.html"><a href="algorithms-and-algorithmic-complexity.html"><i class="fa fa-check"></i><b>8</b> Algorithms and Algorithmic complexity</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="algorithms-and-algorithmic-complexity.html"><a href="algorithms-and-algorithmic-complexity.html#algorithmic-complexity"><i class="fa fa-check"></i><b>8.1</b> Algorithmic Complexity</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="algorithms-and-algorithmic-complexity.html"><a href="algorithms-and-algorithmic-complexity.html#big-and-little-o-notation"><i class="fa fa-check"></i><b>8.1.1</b> Big and little O notation</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="algorithms-and-algorithmic-complexity.html"><a href="algorithms-and-algorithmic-complexity.html#running-times-of-algorithms"><i class="fa fa-check"></i><b>8.2</b> Running times of algorithms</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -153,30 +167,30 @@ set in the _output.yml file.</p>" />
 <h2><span class="header-section-number">7.1</span> Divisors and prime numbers<a href="some-number-theory.html#divisors-and-prime-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let us recall the definition of divisor and prime numbers</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 7.1  (divisor) </strong></span>Given two natural numbers <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> we say <span class="math inline">\(n\)</span> is a divisor of <span class="math inline">\(m\)</span> (or <span class="math inline">\(n|m\)</span>) if there exists <span class="math inline">\(k \in \mathbb{N}\)</span> such that <span class="math inline">\(m=n\times k\)</span>.</p>
+<p><span id="def:unlabeled-div-166" class="definition"><strong>Definition 7.1  (divisor) </strong></span>Given two natural numbers <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> we say <span class="math inline">\(n\)</span> is a divisor of <span class="math inline">\(m\)</span> (or <span class="math inline">\(n|m\)</span>) if there exists <span class="math inline">\(k \in \mathbb{N}\)</span> such that <span class="math inline">\(m=n\times k\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 7.2  (prime number) </strong></span>While we define divisor it is worth defining a prime number. We call <span class="math inline">\(p \in \mathbb{N}\)</span> a <em>prime number</em> if the only divisors of <span class="math inline">\(p\)</span> are <span class="math inline">\(1, p\)</span>.</p>
+<p><span id="def:unlabeled-div-167" class="definition"><strong>Definition 7.2  (prime number) </strong></span>While we define divisor it is worth defining a prime number. We call <span class="math inline">\(p \in \mathbb{N}\)</span> a <em>prime number</em> if the only divisors of <span class="math inline">\(p\)</span> are <span class="math inline">\(1, p\)</span>.</p>
 </div>
 <p>Now we have some new definitions</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 7.3  (greatest common divisor) </strong></span>Given two natural numbers <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> a number <span class="math inline">\(q\)</span> that divides both of them is a common divisor and the largest such number is called the <em>greatest common divisor</em> we write <span class="math inline">\(gcd(n,m)\)</span>.</p>
+<p><span id="def:unlabeled-div-168" class="definition"><strong>Definition 7.3  (greatest common divisor) </strong></span>Given two natural numbers <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> a number <span class="math inline">\(q\)</span> that divides both of them is a common divisor and the largest such number is called the <em>greatest common divisor</em> we write <span class="math inline">\(gcd(n,m)\)</span>.</p>
 </div>
 <p>This allows us to write a better definition of coprime</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-4" class="definition"><strong>Definition 7.4  (coprime) </strong></span>If <span class="math inline">\(gcd(n,m)=1\)</span> then <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> are coprime.</p>
+<p><span id="def:unlabeled-div-169" class="definition"><strong>Definition 7.4  (coprime) </strong></span>If <span class="math inline">\(gcd(n,m)=1\)</span> then <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> are coprime.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-5" class="theorem"><strong>Theorem 7.1  (division with remainder) </strong></span>Suppose that <span class="math inline">\(a \in \mathbb{Z}, b \in \mathbb{N}-\{0\}\)</span> then there exists <span class="math inline">\(q \in \mathbb{Z}\)</span> and <span class="math inline">\(r \in [[b]]\)</span> such that
+<p><span id="thm:unlabeled-div-170" class="theorem"><strong>Theorem 7.1  (division with remainder) </strong></span>Suppose that <span class="math inline">\(a \in \mathbb{Z}, b \in \mathbb{N}-\{0\}\)</span> then there exists <span class="math inline">\(q \in \mathbb{Z}\)</span> and <span class="math inline">\(r \in [[b]]\)</span> such that
 <span class="math display">\[ a =bq+r.  \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-6" class="proof"><em>Proof</em>. </span>If <span class="math inline">\(b=1\)</span> we just take <span class="math inline">\(q=a, r=0\)</span> so we can work in the case <span class="math inline">\(b &gt;1\)</span>.</p>
+<p><span id="unlabeled-div-171" class="proof"><em>Proof</em>. </span>If <span class="math inline">\(b=1\)</span> we just take <span class="math inline">\(q=a, r=0\)</span> so we can work in the case <span class="math inline">\(b &gt;1\)</span>.</p>
 <p>Let us fix <span class="math inline">\(b\)</span> and prove the result by induction on <span class="math inline">\(a\)</span>. If <span class="math inline">\(a=1\)</span> then <span class="math inline">\(a=0\times b+1\)</span>. This is the base case.</p>
 <p>Now if we assume that there exists <span class="math inline">\(q,r\)</span> such that <span class="math inline">\(a-1 = qb +r\)</span> then either <span class="math inline">\(r \in [[b-1]]\)</span> in which case <span class="math inline">\(a = qb + (r+1)\)</span> is a solution to our problem, or <span class="math inline">\(r=b-1\)</span> in which case we write <span class="math inline">\(a = (q+1)b\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-7" class="example"><strong>Example 7.1  </strong></span>How can we find the greatest common divisor of two numbers. One way to do it is by repeated division.</p>
+<p><span id="exm:unlabeled-div-172" class="example"><strong>Example 7.1  </strong></span>How can we find the greatest common divisor of two numbers. One way to do it is by repeated division.</p>
 <p>We can apply repeated division with <span class="math inline">\(81\)</span> and <span class="math inline">\(51\)</span>. We have
 <span class="math display">\[\begin{align*}
 81 &amp; = 1 \times 51 + 30,\\
@@ -201,20 +215,142 @@ set in the _output.yml file.</p>" />
 <h2><span class="header-section-number">7.2</span> Euclid’s Algorithm<a href="some-number-theory.html#euclids-algorithm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Taking inspiration from calculations like the one above we can write down a procedure to find the greatest common divisor of <span class="math inline">\(a,b\)</span>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-8" class="definition"><strong>Definition 7.5  (Euclid's Algorithm) </strong></span>Given <span class="math inline">\(a, b \in \mathbb{N}\)</span> with <span class="math inline">\(a &lt; b\)</span> we can write
+<p><span id="def:unlabeled-div-173" class="definition"><strong>Definition 7.5  (Euclid's Algorithm) </strong></span>Given <span class="math inline">\(a, b \in \mathbb{N}\)</span> with <span class="math inline">\(a &lt; b\)</span> we can write
 <span class="math display">\[\begin{align*}
 b &amp;= q_1a + r_1, \quad q_1 \in \mathbb{N}, r_1 \in [[a]],\\
 a &amp;= q_2r_1 + r_2, \quad q_2 \in \mathbb{N}, r_2 \in [[r_1]],\\
 r_1 &amp;= q_3r_2 + r_3, \quad q_3 \in \mathbb{N}, r_3 \in [[r_2]],\\
 r_2 &amp; = \dots
 \end{align*}\]</span>
-Eventually this process will terminate because we will have <span class="math inline">\(r_k = 0\)</span> for some <span class="math inline">\(k\)</span> and then we have <span class="math inline">\(r_k = gcd(a,b)\)</span>.</p>
+Eventually this process will terminate because we will have <span class="math inline">\(r_k = 0\)</span> for some <span class="math inline">\(k\)</span> and then we have <span class="math inline">\(r_{k-1} = gcd(a,b)\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-9" class="theorem"><strong>Theorem 7.2  (Euclid's Algorithm) </strong></span>Given the algorithm above we have the following
-- This algorithm will terminate. i.e. eventually we have <span class="math inline">\(r_{k-2} = q_k r_{k-1} + 0\)</span>.
-- In this case <span class="math inline">\(r_{k+1} = gcd(a,b)\)</span>
+<p><span id="thm:unlabeled-div-174" class="theorem"><strong>Theorem 7.2  (Euclid's Algorithm) </strong></span>Given the algorithm above we have the following
+- This algorithm will terminate. i.e. eventually we have <span class="math inline">\(r_{k-1} = q_{k+1} r_{k} + 0\)</span>.
+- In this case <span class="math inline">\(r_{k} = gcd(a,b)\)</span>
 - There exists <span class="math inline">\(x,y \in \mathbb{Z}\)</span> such that <span class="math inline">\(gcd(a,b) = xa+by\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-175" class="proof"><em>Proof</em>. </span>We take each point in turn.</p>
+<p>Firstly we can see that, for every <span class="math inline">\(j\)</span>, <span class="math inline">\(r_j&gt; r_{j+1} &gt; r_{j+2}\)</span> so eventually we must get to 0. Therefore the sequence terminates.</p>
+<p>Secondly, we prove this by showing that in each step of the algorithm we preserve the set of common divisors. If <span class="math inline">\(m|r_j\)</span> and <span class="math inline">\(m|r_{j+1}\)</span> then since <span class="math inline">\(r_j = q_{j+2}r_{j+1} + r_{j+2}\)</span> so <span class="math inline">\(m|r_{j+2}\)</span> as well. Equally if <span class="math inline">\(n|r_{j+1}\)</span> and <span class="math inline">\(n|r_{j+2}\)</span> then we must have <span class="math inline">\(n|r_j\)</span> as well. So the set of divisors of <span class="math inline">\(r_j, r_{j+1}\)</span> is the same as the set of divisors of <span class="math inline">\(r_{j+1},r_{j+2}\)</span>. From this it follows that <span class="math inline">\(gcd(r_j,r_{j+1})=gcd(r_{j+1},r_{j+2})\)</span>. Therefore itterating backwards we have that for every <span class="math inline">\(j\)</span> that <span class="math inline">\(gcd(r_j, r_{j+1}) = gcd(a,b)\)</span>. Consequently at the point where the algorithm terminates, <span class="math inline">\(r_k = gcd(r_k,0)=gcd(r_k,r_{k+1})=gcd(a,b)\)</span>.</p>
+<p>For the last point let us make the claim: For every <span class="math inline">\(j\)</span> we can write <span class="math inline">\(r_j = x_j a + y_j b\)</span> for some <span class="math inline">\(x_j, y_j \in \mathbb{Z}\)</span>. Then we can prove this recursively. First we know that <span class="math inline">\(b=q_1 a + r_1\)</span> so <span class="math inline">\(r_1 = -q_1 a + 1*b\)</span>. Now suppose that <span class="math inline">\(r_{j-1}, r_{j-2}\)</span> can be expressed as above. We know <span class="math inline">\(r_{j-2} = q_j r_{j-1} + r_j\)</span> so <span class="math inline">\(r_j = r_{j-2} - q_j r_{j-1} = x_{j-2} a + y_{j-2} b - q_j(x_{j-1}a + y_{j-1}b) = (x_{j-2}-q_j x_{j-1})a + (y_{j-2} - q_j y_{j-1})b\)</span>. So this shows the claim by induction. Now the claim implied in particular that <span class="math inline">\(r_k = x_k a + y_k b\)</span> proving the third point in the theorem.</p>
+</div>
+<div id="geometric-interpretation-of-euclids-algorithm" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Geometric interpretation of Euclid’s algorithm<a href="some-number-theory.html#geometric-interpretation-of-euclids-algorithm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can think of this algorithm pictorially by drawing a rectangle of length <span class="math inline">\(a\)</span> and height <span class="math inline">\(b\)</span> and then <span class="math inline">\(q_1\)</span> squares of side length <span class="math inline">\(b\)</span> inside it leaving a rectangle of length <span class="math inline">\(r_1\)</span> and height <span class="math inline">\(b\)</span> and so on…</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-28"></span>
+<img src="geomeuclid.png" alt="Picture showing Euclid's algorithm pictorially"  />
+<p class="caption">
+Figure 7.1: Picture showing Euclid’s algorithm pictorially
+</p>
+</div>
+<p>Here is a specific example with the numbers <span class="math inline">\(24\)</span> and <span class="math inline">\(15\)</span></p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-29"></span>
+<img src="geomeuclidnumbers.png" alt="Picture showing Euclid's algorithm pictorially for 24 and 15"  />
+<p class="caption">
+Figure 7.2: Picture showing Euclid’s algorithm pictorially for 24 and 15
+</p>
+</div>
+</div>
+<div id="continued-fractions" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Continued fractions<a href="some-number-theory.html#continued-fractions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Another way of looking at Euclid’s algorithm is continued fractions. If <span class="math inline">\(a = qb+r\)</span> then
+<span class="math display">\[ \frac{a}{b} = q + \frac{r}{b}.  \]</span>
+If <span class="math inline">\(b = q_2 r + r_2\)</span> then
+<span class="math display">\[  \frac{b}{r} = q_2 + \frac{r_2}{r},\]</span> so
+<span class="math display">\[ \frac{a}{b} = q + \frac{1}{q_2 + \frac{r_2}{r}}.  \]</span>
+Continuing on like this we can express
+<span class="math display">\[ \frac{a}{b} = q + \frac{1}{q_2 + \frac{1}{q_3 + \dots}}.  \]</span></p>
+<p>In a similar way if we take some real number <span class="math inline">\(x\)</span> we can write it in continued fraction form by writing <span class="math inline">\(q_1 = [x]\)</span> and <span class="math inline">\(q_2 = [1/(x-[x])]\)</span> and so on. Unlike when expressing a rational number this process might not terminate.</p>
+<p>In both situations we call this the continued fraction representation of a number.</p>
+</div>
+<div id="bezouts-lemma" class="section level3 hasAnchor" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> Bezout’s lemma<a href="some-number-theory.html#bezouts-lemma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The final statement in Euclid’s algorithm is called Bezout’s lemma</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-176" class="lemma"><strong>Lemma 7.1  (Bezout's Lemma) </strong></span>If <span class="math inline">\(a,b\)</span> are two natural numbers then there exists <span class="math inline">\(x,y \in \mathbb{Z}\)</span> such that
+<span class="math display">\[ gcd(a,b) = x a + b c.  \]</span></p>
+<p>As a result of this if <span class="math inline">\(a,b\)</span> are coprime and <span class="math inline">\(n\)</span> is any integer then there exists <span class="math inline">\(x, y \in \mathbb{Z}\)</span> such that
+<span class="math display">\[ n = xa + yb.\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-177" class="proof"><em>Proof</em>. </span>We have already proved the first part in the discussion of Euclid’s algorithm.</p>
+<p>For the second if <span class="math inline">\(a,b\)</span> are coprime then <span class="math inline">\(gcd(a,b) =1\)</span> (this is the definition of being coprime). Then by the first part of the theorem there exists <span class="math inline">\(\tilde{x}, \tilde{y} \in \mathbb{Z}\)</span> such that
+<span class="math display">\[ 1= \tilde{x}a + \tilde{y}b,  \]</span> using this
+<span class="math display">\[ n = (n\tilde{x})a + (n \tilde{y})b.  \]</span></p>
+</div>
+<p>Using this we can show a powerful result which we have already seen</p>
+<div class="{theorem}">
+<p>Suppose that <span class="math inline">\(a,b \in \mathbb{N}\)</span> and <span class="math inline">\(p\)</span> is a prime number and <span class="math inline">\(p|ab\)</span> then either <span class="math inline">\(p|a\)</span> or <span class="math inline">\(p|b\)</span>.</p>
+</div>
+<div class="{proof}">
+<p>If <span class="math inline">\(p|a\)</span> then we are done so suppose that <span class="math inline">\(p\)</span> does not divide <span class="math inline">\(a\)</span>. Then <span class="math inline">\(a,p\)</span> are coprime so by Bezout’s lemma we can write
+<span class="math display">\[1 = xa + yp\]</span> and hence
+<span class="math display">\[b = xab + ypb.  \]</span> As <span class="math inline">\(p|ab\)</span> we know <span class="math inline">\(p|xab\)</span> and from the expression we can see that <span class="math inline">\(p|ypb\)</span> so <span class="math inline">\(p | (xab + ybp)\)</span> so <span class="math inline">\(p|b\)</span>.</p>
+</div>
+<p>Now let us use this to prove the fundamental theorem of arithmetic again. Everything is a bit smoother now with more results.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-178" class="theorem"><strong>Theorem 7.3  (Fundamental Theorem of Arithmetic) </strong></span>Any natural number <span class="math inline">\(n\)</span> has a unique factorisation into prime numbers.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-179" class="proof"><em>Proof</em>. </span>First let us use strong induction to prove that there is a prime factorisation. The base case is <span class="math inline">\(n=2\)</span> which is already in prime factorisation. Now suppose that every number less than <span class="math inline">\(n\)</span> can be written as a product of prime factors. Then either <span class="math inline">\(n\)</span> is prime, so it is in prime factorisation or <span class="math inline">\(n=ab\)</span> then <span class="math inline">\(a,b &lt; n\)</span> so they have prime factorisations which allows us to write a prime factorisation for <span class="math inline">\(n\)</span>.</p>
+<p>Second we want to prove this factorisation is unique. Suppose <span class="math inline">\(n = p_1 p_2 \dots p_k = q_1 q_2 \dots q_j\)</span> where all the <span class="math inline">\(p_i, q_i\)</span> are primes. Then <span class="math inline">\(p_1 | n\)</span> so <span class="math inline">\(p_1|q_1\)</span> or <span class="math inline">\(p_1 |q_2\dots q_j\)</span>. In the first case we must have <span class="math inline">\(p_1=q_1\)</span> since <span class="math inline">\(q_1\)</span> is prime. In the second case we have <span class="math inline">\(p_1|q_2\)</span> or <span class="math inline">\(p_1 |q_3 \dots q_j\)</span> and so on. We can keep itterating to show that <span class="math inline">\(p_1\)</span> must appear in the list <span class="math inline">\(q_1, \dots q_j\)</span>. We can then repeat this with all the <span class="math inline">\(p_i\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="chinese-remainder-theorem" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Chinese remainder theorem<a href="some-number-theory.html#chinese-remainder-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-180" class="theorem"><strong>Theorem 7.4  (Chinese Remainder Theorem) </strong></span>Suppose that <span class="math inline">\(n_1, \dots, n_k\)</span> are pairwise coprime integers and <span class="math inline">\(a_1, \dots, a_k\)</span> are integers with <span class="math inline">\(a_i \in [[n_i]]\)</span> for every <span class="math inline">\(i\)</span>. Then there exists an integer <span class="math inline">\(x\)</span> with
+<span class="math display">\[ x \equiv a_i \quad \mbox{mod} n_i, \quad i = 1, \dots, k.  \]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-181" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(m_i = \Pi_{j \neq i} n_j\)</span>. Then <span class="math inline">\(n_i\)</span> and <span class="math inline">\(m_i\)</span> are coprime so by Euclid’s algorithm there exists <span class="math inline">\(x_i,y_i\)</span> such that <span class="math inline">\(1 = x_i n_i + y_i m_i\)</span> so <span class="math inline">\(e_i =y_i m_i = 1- x_i n_i\)</span> so <span class="math inline">\(e_i \equiv 1 \quad \mbox{mod} \, n_i\)</span> and <span class="math inline">\(e_i \equiv 0 \quad \mbox{mod} \, n_j\)</span>.</p>
+<p>Then let <span class="math inline">\(x = \sum_{i=1}^k a_i e_i\)</span> then this satisfies the conditions of the theorem.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-182" class="remark"><em>Remark</em>. </span>The Chinese remainder theorem is very old. It dates back to Sunzi in the 3rd to 5th Century. It can be used to do apparently complicated computations very quickly and is used in important algorithms today such as RSA cryptography and Fast Fourier transform.</p>
+</div>
+</div>
+<div id="fermats-little-theorem-and-eulers-theorem" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Fermat’s Little Theorem and Euler’s Theorem<a href="some-number-theory.html#fermats-little-theorem-and-eulers-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-183" class="definition"><strong>Definition 7.6  </strong></span>A number <span class="math inline">\(a\)</span> is called a emph{unit} modulo <span class="math inline">\(n\)</span> if there exists <span class="math inline">\(b\)</span> such that <span class="math inline">\(ab = 1 \quad \mbox{mod} \, n\)</span>. (We call <span class="math inline">\(b\)</span> a multiplicative inverse modulo <span class="math inline">\(n\)</span>.)</p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-184" class="lemma"><strong>Lemma 7.2  </strong></span>A number <span class="math inline">\(a\)</span> is a unite modulo <span class="math inline">\(n\)</span> if and only if <span class="math inline">\(a\)</span> and <span class="math inline">\(n\)</span> are coprime.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-185" class="proof"><em>Proof</em>. </span>If <span class="math inline">\(a\)</span> and <span class="math inline">\(n\)</span> are coprime then <span class="math inline">\(1 = xa + yn\)</span> in which case <span class="math inline">\(xa\equiv 1 \quad \mbox{mod} \, n\)</span>.</p>
+<p>If there exists <span class="math inline">\(x\)</span> such that <span class="math inline">\(xa \equiv 1 \quad \mbox{mod} \, n\)</span> then <span class="math inline">\(x a = 1 + y n\)</span> and <span class="math inline">\(gcd(a,n) | (xa-yn)\)</span> so <span class="math inline">\(gcd(a,n) = 1\)</span>.</p>
+</div>
+<p>::: {.definition “Euler Totient Function”}</p>
+<p>The Euler Totient function <span class="math inline">\(\phi(n)\)</span> counts the number of natural numbers smaller than <span class="math inline">\(n\)</span> that are coprime to <span class="math inline">\(n\)</span>. Alternatively the number of units modulo <span class="math inline">\(n\)</span>.</p>
+<p>:::</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-186" class="lemma"><strong>Lemma 7.3  </strong></span>If <span class="math inline">\(p\)</span> is prime then <span class="math inline">\(\phi(p) = p-1\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-187" class="example"><strong>Example 7.2  </strong></span>Another example is <span class="math inline">\(n=12\)</span> the numbers smaller than <span class="math inline">\(n\)</span> which are coprime are <span class="math inline">\(1,5,7,11\)</span> so <span class="math inline">\(\phi(12)=4\)</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-188" class="proposition"><strong>Proposition 7.1  </strong></span>If <span class="math inline">\(p\)</span> is prime and <span class="math inline">\(a\)</span> is not a multiple of <span class="math inline">\(p\)</span> then
+<span class="math display">\[ a^{p-1} \equiv 1 \quad \mbox{mod} \, p.  \]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-189" class="proof"><em>Proof</em>. </span>Let us consider <span class="math inline">\(a, 2a, 3a, \dots, (p-1)a\)</span> as elements in <span class="math inline">\(\mathbb{Z}/p\mathbb{Z}\)</span>. We claim that they are all distinct. This is because since <span class="math inline">\(a,p\)</span> are coprime, there exists <span class="math inline">\(x\)</span> such that <span class="math inline">\(xa =1\)</span> modulo <span class="math inline">\(p\)</span>. So if <span class="math inline">\(ka \equiv ja \quad, \mbox{mod} \,p\)</span> then <span class="math inline">\(kab \equiv jab \quad \mbox{mod} \, p\)</span> so <span class="math inline">\(k \equiv j \quad \mbox{mod}\, p\)</span>. So if <span class="math inline">\(k, j \in [[p]]\)</span> this would imply <span class="math inline">\(k = j\)</span>.</p>
+<p>So <span class="math inline">\(a, 2a, \dots, (p-1)a\)</span> considered modulo <span class="math inline">\(p\)</span> must be <span class="math inline">\(1, 2, \dots, (p-1)\)</span> in some order. Hence
+<span class="math display">\[ a \times 2a \times \dots \times (p-1)a \equiv (p-1)! \quad \mbox{mod}\, p. \]</span> Which rewriting is
+<span class="math display">\[ a^{p-1} (p-1)! \equiv (p-1)! \quad \mbox{mod} \, p. \]</span> Now <span class="math inline">\((p-1)!\)</span> is coprime to <span class="math inline">\(p\)</span> since <span class="math inline">\(p\)</span> is prime. So there exists <span class="math inline">\(c\)</span> such that <span class="math inline">\(c(p-1)! \equiv 1 \quad \mbox{mod}\, p\)</span> hence multiplying the equation above by <span class="math inline">\(c\)</span> we get
+<span class="math display">\[ a^{p-1} \equiv 1 \quad \mbox{mod} \, p.  \]</span></p>
+</div>
+<p>::: {.theorem name=“Fermat’s Little Theorem}</p>
+<p>Suppose that <span class="math inline">\(gcd(a,n) =1\)</span> then <span class="math inline">\(a^{\phi(n)-1} \equiv 1 \quad \mbox{mod} \, n\)</span>.</p>
+<p>:::</p>
+<div class="proof">
+<p><span id="unlabeled-div-190" class="proof"><em>Proof</em>. </span>The proof is very similar to above so I will leave the details to you!</p>
+<p>Consider the set of integers {ka} where <span class="math inline">\(gcd(k,n) =1\)</span> and <span class="math inline">\(k \in [[n]]\)</span> and multiply them all together.</p>
 </div>
 
 </div>
@@ -225,7 +361,7 @@ Eventually this process will terminate because we will have <span class="math in
         </div>
       </div>
 <a href="proof.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="algorithms-and-algorithmic-complexity.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

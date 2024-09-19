@@ -17,9 +17,9 @@ github-repo: rstudio/bookdown-demo
 
 # About
 
-These are the 2024-25 lecture course for the Warwick undergraduate course MA132: Foundations.
+These are the 2024-25 lecture course for the Warwick undergraduate course MA132: Foundations. The material up to chapter 7 is also relevant to joint degree students taking Sets and Numbers.
 
-These notes are heavily based on previous notes of Saul Schleimer, though all mistakes are my own!
+These notes are heavily based on previous notes of Saul Schleimer and Dave Wood, though all mistakes are my own!
 
 Please send me any typos (or possible typos) that you find. And be on the look out for typos.
 
@@ -29,7 +29,7 @@ These notes are designed to generate both a html version (which should work well
 
 Everything you need to know for the exam and future courses should be contained in these notes. There will also be examples, some discussions and some non-examinable sections.
 
-Similarly, everything you need to know will be written by me on the board in lectures. 
+Similarly, almost everything you need to know will be written by me on the board in lectures. There may be some exceptions which I will warn you about!
 
 There are three main ways that undergraduates typically use printed lecture notes:
 

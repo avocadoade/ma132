@@ -29,3 +29,12 @@
 \contentsline {section}{\numberline {6.2}Proof by induction}{52}{section.6.2}%
 \contentsline {chapter}{\numberline {7}Some number theory}{55}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Divisors and prime numbers}{55}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Euclid's Algorithm}{56}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Geometric interpretation of Euclid's algorithm}{57}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Bezout's lemma}{58}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}Chinese remainder theorem}{60}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Fermat's Little Theorem and Euler's Theorem}{60}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Algorithms and Algorithmic complexity}{63}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Algorithmic Complexity}{63}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Big and little O notation}{63}{subsection.8.1.1}%
+\contentsline {section}{\numberline {8.2}Running times of algorithms}{64}{section.8.2}%
