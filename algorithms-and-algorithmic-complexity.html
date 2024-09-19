@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | MA132: Foundations Lecture Notes</title>
+  <title>Chapter 8 Algorithms and Algorithmic complexity | MA132: Foundations Lecture Notes</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | MA132: Foundations Lecture Notes" />
+  <meta property="og:title" content="Chapter 8 Algorithms and Algorithmic complexity | MA132: Foundations Lecture Notes" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | MA132: Foundations Lecture Notes" />
+  <meta name="twitter:title" content="Chapter 8 Algorithms and Algorithmic complexity | MA132: Foundations Lecture Notes" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,7 +36,7 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
+<link rel="prev" href="some-number-theory.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -161,18 +161,67 @@ set in the _output.yml file.</p>" />
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="algorithms-and-algorithmic-complexity" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Algorithms and Algorithmic complexity<a href="algorithms-and-algorithmic-complexity.html#algorithms-and-algorithmic-complexity" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="algorithmic-complexity" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Algorithmic Complexity<a href="algorithms-and-algorithmic-complexity.html#algorithmic-complexity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Algorithmic complexity is a measure of how complicated a procedure is by counting roughly how many operations are required to complete it.</p>
+<div id="big-and-little-o-notation" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Big and little O notation<a href="algorithms-and-algorithmic-complexity.html#big-and-little-o-notation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When we are talking about complexity (and in lots of other situations later in your degree) we are often only interested in the asymptotic behaviour of a function.</p>
+<p>For example if we want to know the complexity of an algorithm to multiply two numbers with at most <span class="math inline">\(n\)</span> digits together we have a function of <span class="math inline">\(n\)</span> and we are only really interested in describing how it behaves when <span class="math inline">\(n\)</span> is very large. Big and little O notation is a way of doing this.</p>
+<p>::: {definition name=“Big O”}</p>
+<p>Suppose <span class="math inline">\(f(n)\)</span> and <span class="math inline">\(g(n)\)</span> are function of <span class="math inline">\(n\)</span> and there exist real numbers <span class="math inline">\(C, n_0\)</span> such that for <span class="math inline">\(n \geq n_0\)</span> then
+<span class="math display">\[|f(n)| \leq C g(n)\]</span> then we say
+<span class="math display">\[ f(n) = O(g(n)).  \]</span></p>
+<p>:::</p>
+<p>This is most commonly used when <span class="math inline">\(g(n)\)</span> is a simple function like <span class="math inline">\(n^k\)</span> for some <span class="math inline">\(k\)</span> or <span class="math inline">\(\log(n)\)</span> or <span class="math inline">\(a^n\)</span> or something similar.</p>
+<div class="example">
+<ul>
+<li><span id="exm:unlabeled-div-1" class="example"><strong>Example 8.1  </strong></span></li>
+<li><p>The function <span class="math inline">\(2n^3 + 3n - 102 = O(n^3)\)</span>.</p></li>
+<li><p><span class="math inline">\(\phi(n) = O(n)\)</span> since <span class="math inline">\(\phi(n) \leq n\)</span>.</p></li>
+</ul>
+</div>
+<p>While we are defining big O notation it is useful to define little o notation</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 8.1  (little o notation) </strong></span>If <span class="math inline">\(f(n), g(n)\)</span> are functions and for every <span class="math inline">\(c &gt;0\)</span> there exists <span class="math inline">\(n_c\)</span> such that if <span class="math inline">\(n &gt;n_c\)</span> then
+<span class="math display">\[ |f(n)| \leq c g(n).\]</span></p>
+<p>We can think of this as saying <span class="math inline">\(f(n)\)</span> becomes insignificant compared to <span class="math inline">\(g(n)\)</span> as <span class="math inline">\(n\)</span> becomes large.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-3" class="example"><strong>Example 8.2  </strong></span>We have <span class="math inline">\(n^2 = o(n^3)\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="running-times-of-algorithms" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Running times of algorithms<a href="algorithms-and-algorithmic-complexity.html#running-times-of-algorithms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We use big O notation to talk about how long it will take to run an algorithm as the input becomes large. It is easiest to understand this by looking at some examples.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-4" class="example"><strong>Example 8.3  (Addition) </strong></span>Suppose we are adding two <span class="math inline">\(n\)</span> digit numbers <span class="math inline">\(a_1\dots a_n\)</span> and <span class="math inline">\(b_1\dots b_n\)</span> using our standard method of addition where we do <span class="math inline">\(a_n+b_n\)</span> and enter the unit part of this as the unit part of the sum then possibly carry the 1 if <span class="math inline">\(a_n + b_n \geq 10\)</span>. Then we add <span class="math inline">\(a_{n-1} + b_{n-1}\)</span> and possibly add the additional <span class="math inline">\(1\)</span> we carried if necessary.</p>
+<p>If we want to count the steps it depends on precisely what we list as a step. If we only think we are doing 1 step when adding and carrying for each place value then we are performing <span class="math inline">\(n\)</span> steps. If we think of each addition and carrying step as a separate step then we do <span class="math inline">\(3n\)</span> steps. However in either case we say the algorithm is <span class="math inline">\(O(n)\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-5" class="example"><strong>Example 8.4  (Multiplication) </strong></span>Now suppose we think about multiplication using the long multiplication algorithm then for two <span class="math inline">\(n\)</span> digit numbers we need to multiply <span class="math inline">\(a_k\)</span> by <span class="math inline">\(b_j\)</span> for each <span class="math inline">\(k, j\)</span> (which is <span class="math inline">\(n^2\)</span> steps) and then perform <span class="math inline">\(n^2\)</span> addition steps of what are effectively at most two digit numbers. So this algorithm is O(n^2).</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-6" class="example"><strong>Example 8.5  (Checking divisibility) </strong></span>Division is no worse than multiplication. The algorithms are a bit more complicated to state. One example is given an <span class="math inline">\(n\)</span> digit number, <span class="math inline">\(a\)</span> and an <span class="math inline">\(m\)</span> digit number, <span class="math inline">\(b\)</span> with <span class="math inline">\(m\leq n\)</span> and we want to know whether <span class="math inline">\(b|a\)</span> then if <span class="math inline">\(a/b\)</span> were an integer it would have at most <span class="math inline">\(n-m+1\)</span> digits and at least <span class="math inline">\(n-m\)</span>. So we are have around <span class="math inline">\(20\)</span> possible candidate for <span class="math inline">\(a/b\)</span>. Now we just check multiplying all <span class="math inline">\(20\)</span> candidates with <span class="math inline">\(m\)</span> which is a multiplication operation with <span class="math inline">\(m\times(n-m+1)\)</span> steps so <span class="math inline">\(O(n^2)\)</span> and we do this 20 times so checking divisibility is <span class="math inline">\(O(n^2)\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-7" class="example"><strong>Example 8.6  (Naive primality testing) </strong></span>Suppose we want to test whether a number <span class="math inline">\(n\)</span> is prime. The most obvious way to do this is to check whether we can find any other <span class="math inline">\(m \neq n\)</span> such that <span class="math inline">\(m|n\)</span>. We notice here that we only need to check <span class="math inline">\(m \leq \sqrt{n}\)</span> as if <span class="math inline">\(ab=n\)</span> then one of <span class="math inline">\(a, b\)</span> must be smaller than <span class="math inline">\(sqrt{n}\)</span>. If we suppose it is one step to check whether <span class="math inline">\(n\)</span> is divisible by <span class="math inline">\(m\)</span>. Now each division operation is a check and the number of digits in <span class="math inline">\(n\)</span> is around <span class="math inline">\(\log_{10}(n)\)</span> so each division operation is <span class="math inline">\(O(\log(n)^2)\)</span> and there are <span class="math inline">\(\sqrt(n)\)</span> division so our overall order is <span class="math inline">\(O(\sqrt{n}\log(n)^2 )\)</span>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-8" class="remark"><em>Remark</em>. </span>Notice in all of these examples we are using our understanding of the complexity of less complicated operations to find the complexity of more complicated operations.</p>
+</div>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
+<a href="some-number-theory.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -204,7 +253,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/%s",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/07-algorithms.Rmd",
 "text": "Edit"
 },
 "history": {
