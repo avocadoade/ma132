@@ -378,10 +378,10 @@ We wish to solve for \(x\) in this type of equation. From above we only need to 
 If we are interested in the congruence 
 \[ 2x \equiv 3 \quad \mbox{mod} 5,  \] our only way of doing this is to check all of \(x= 0,1, \dots 4\}\) we have
 \begin{align*}
-2\times 0 &\equiv 0 \not\equiv 3 \quad \mbox{mod} 5,
-2 \times 1 &\equiv 2 \not\equiv 3 \quad \mbox{mod} 5,
-2 \times 2 & \equiv 4 \not\equiv 3 \quad \mbox{mod} 5,
-2 \times 3 &\equiv 6 \equiv 1 \not\equiv 3 \quad \mbox{mod} 5,
+2\times 0 &\equiv 0 \not\equiv 3 \quad \mbox{mod} 5,\\
+2 \times 1 &\equiv 2 \not\equiv 3 \quad \mbox{mod} 5,\\
+2 \times 2 & \equiv 4 \not\equiv 3 \quad \mbox{mod} 5,\\
+2 \times 3 &\equiv 6 \equiv 1 \not\equiv 3 \quad \mbox{mod} 5,\\
 2 \times 4 &\equiv 8 \equiv 3 \quad \mbox{mod} 5,
 \end{align*}
 

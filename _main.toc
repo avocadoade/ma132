@@ -1,0 +1,43 @@
+\contentsline {chapter}{\numberline {1}About}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}How to use these notes}{5}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Sets and Functions}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}What is a set?}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Subsets}{10}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Power sets and specification}{11}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Functions}{12}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Properties of functions}{12}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Cardinality}{13}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Ordered pairs and Cartesian products}{16}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Graphs and a better definition of functions}{17}{section.2.8}%
+\contentsline {chapter}{\numberline {3}Operations on sets and functions}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Set operations}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Using set operations together}{25}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Operations on functions}{27}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Relations}{35}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Equivalence relations, Equivalence classes and Quotients}{36}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Quotients}{38}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}Integers via quotients}{39}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Order relations}{40}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Modular arithmetic}{40}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Logic}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Booleans}{43}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Boolean algebra}{45}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Truth tables}{47}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Quantifiers}{48}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Proof}{49}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Patterns of proof}{50}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Proof by induction}{52}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Some number theory}{55}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Divisors and prime numbers}{55}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Euclid's Algorithm}{56}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Geometric interpretation of Euclid's algorithm}{57}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Bezout's lemma}{58}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}Chinese remainder theorem}{60}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Fermat's Little Theorem and Euler's Theorem}{60}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Algorithms and Algorithmic complexity}{65}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Algorithmic Complexity}{65}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Big and little O notation}{65}{subsection.8.1.1}%
+\contentsline {section}{\numberline {8.2}Running times of algorithms}{66}{section.8.2}%
+\contentsline {chapter}{\numberline {9}Cryptography}{69}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Discrete logarithms and Diffie-Hellman}{69}{section.9.1}%
+\contentsline {section}{\numberline {9.2}RSA Cryptography}{70}{section.9.2}%

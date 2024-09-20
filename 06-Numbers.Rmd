@@ -254,7 +254,7 @@ If there exists \(x\) such that \(xa \equiv 1 \quad \mbox{mod} \, n\) then \(x a
 :::
 
 
-::: {.definition "Euler Totient Function"}
+::: {.definition name="Euler Totient Function"}
 
 The Euler Totient function \(\phi(n)\) counts the number of natural numbers smaller than \(n\) that are coprime to \(n\). Alternatively the number of units modulo \(n\). Notice that \(\phi(1)=1\).
 

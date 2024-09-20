@@ -10,7 +10,7 @@ When we are talking about complexity (and in lots of other situations later in y
 
 For example if we want to know the complexity of an algorithm to multiply two numbers with at most \(n\) digits together we have a function of \(n\) and we are only really interested in describing how it behaves when \(n\) is very large. Big and little O notation is a way of doing this.
 
-::: {definition name="Big O"}
+::: {.definition name="Big O"}
 
 Suppose \(f(n)\) and \(g(n)\) are function of \(n\) and there exist real numbers \(C, n_0\) such that for \(n \geq n_0\) then
 \[|f(n)| \leq C g(n)\] then we say 

@@ -32,7 +32,7 @@ The only straightforward way to do this is to compute \(3^y\) modulo \(5\) until
 
 ::: {.definition name="Discrete Logarithm problem"}
 
-Suppose \(p\) is a prime and \(a, b \in \(\left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\)\). The discrete logarithm problem is to find \(n\) so that \(a^n \equiv b \quad \mbox{mod} \, p\).
+Suppose \(p\) is a prime and \(a, b \in \left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\). The discrete logarithm problem is to find \(n\) so that \(a^n \equiv b \quad \mbox{mod} \, p\).
 
 :::
 
