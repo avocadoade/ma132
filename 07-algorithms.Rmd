@@ -75,7 +75,7 @@ Division is no worse than multiplication. The algorithms are a bit more complica
 
 ::: {.example name="Naive primality testing"}
 
-Suppose we want to test whether a number \(n\) is prime. The most obvious way to do this is to check whether we can find any other \(m \neq n\) such that \(m|n\). We notice here that we only need to check \(m \leq \sqrt{n}\) as if \(ab=n\) then one of \(a, b\) must be smaller than \(sqrt{n}\). If we suppose it is one step to check whether \(n\) is divisible by \(m\). Now each division operation is a check and the number of digits in \(n\) is around \(\log_{10}(n)\) so each division operation is \(O(\log(n)^2)\) and there are \(\sqrt(n)\) division so our overall order is \(O(\sqrt{n}\log(n)^2 )\).
+Suppose we want to test whether a number \(n\) is prime. The most obvious way to do this is to check whether we can find any other \(m \neq n\) such that \(m|n\). We notice here that we only need to check \(m \leq \sqrt{n}\) as if \(ab=n\) then one of \(a, b\) must be smaller than \(sqrt{n}\). If we suppose it is one step to check whether \(n\) is divisible by \(m\). Now each division operation is a check and the number of digits in \(n\) is around \(\log_{10}(n)\) so if we are interested in testing an \(N\) digit number to see if its prime we need around \(10^{N/2}N^2\) operations so the algorithm is \(O(10^{N/2} N^2)\).
 
 :::
 
@@ -84,3 +84,50 @@ Suppose we want to test whether a number \(n\) is prime. The most obvious way to
 Notice in all of these examples we are using our understanding of the complexity of less complicated operations to find the complexity of more complicated operations.
 
 :::
+
+::: {.definition name="Fibonacci Numbers"}
+
+The Fibonacci numbers are defined by 
+\[ f(k+2) = f(k+1 ) + f(k),  \] and \(f(0)=f(1)=1\).
+
+:::
+
+We discover that if we want to count how many steps Euclid's algorithm takes then the Fibonacci numbers appear.
+
+::: {.theorem name="Complexity of Euclid's Algorithm"}
+
+If \(a>b\) and Euclid's algorithm takes \(k\) steps to complete then \(a \geq f(k+2)\) and \(b \geq f(k+1)\).
+
+:::
+
+::: {.proof}
+
+We prove this by induction on \(k\). 
+
+In the base case if the algorithm takes \(1\) step then we must have \(b\geq 1=f(2)\) and \(a>b\) so \(a \geq 2 = f(3)\).
+
+Now we assume it is true for \(k-1\) steps. Then suppose we have \(a,b\) which need \(k\) steps for Euclid's algorithm. Then \(a=qb +r\) and \(b,r\) need \(k-1\) steps for Euclid's algorithm. So by our induction hypothesis we know that \(b\geq f(k+1), r \geq f(k)\). Then \(a = qb +r \geq b +r \geq f(k) + f(k+1) = f(k+2)\).
+
+:::
+
+::: {.remark}
+
+The above theorem means that the Fibonacci numbers represent the worst case for Euclid's algorithm. i.e. \(f(k+2), f(k+1)\) are the smallest numbers that will need \(k\) steps to complete Euclid's algorithm for.
+
+We can show that for \(k\) large \(f(k) \approx \frac{1}{\sqrt{5}} \left(\frac{1+\sqrt{5}}{2}\right)^k \) so \(k \approx \log(f(k))/\log((1+\sqrt{5})/2) \). Therfore the complexity of Euclid's algorithm when the larger number is \(n\) is \(O(\log(n))\).
+
+:::
+
+::: {.definition name="polynomial time"}
+
+We say that an algorithm takes *polynomial time* if the complexity is \(O(n^k)\) for some \(k\) (in the input size \(n\)).
+
+:::
+
+::: {.remark}
+
+Problems where there is no known polynomial time algorithm are considered very hard for computers to do. These provide a good oportunity for creating codes and encryptions which are hard to break.
+
+:::
+
+

@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2024-09-19" />
+<meta name="date" content="2024-09-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -141,6 +141,11 @@ set in the _output.yml file.</p>" />
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="algorithms-and-algorithmic-complexity.html"><a href="algorithms-and-algorithmic-complexity.html#running-times-of-algorithms"><i class="fa fa-check"></i><b>8.2</b> Running times of algorithms</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="cryptography.html"><a href="cryptography.html"><i class="fa fa-check"></i><b>9</b> Cryptography</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="cryptography.html"><a href="cryptography.html#discrete-logarithms-and-diffie-hellman"><i class="fa fa-check"></i><b>9.1</b> Discrete logarithms and Diffie-Hellman</a></li>
+<li class="chapter" data-level="9.2" data-path="cryptography.html"><a href="cryptography.html#rsa-cryptography"><i class="fa fa-check"></i><b>9.2</b> RSA Cryptography</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -167,7 +172,7 @@ set in the _output.yml file.</p>" />
 <h2><span class="header-section-number">5.1</span> Booleans<a href="logic.html#booleans" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This section is about Boolean operators. These are a way of describing how the truth of one statement are contingent of the truth of statements it is made of. An example is if <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are two statements and we are interested in whether the statement <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> is true. This is only the case if both <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are true. So we can think of this as a function from the truth values of <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> to another truth value.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-124" class="definition"><strong>Definition 5.1  (Boolean) </strong></span>Booleans are elements of the set <span class="math inline">\(\mathcal{B}=\{T,F\}\)</span>. Where <span class="math inline">\(T\)</span> is <em>true</em> and <span class="math inline">\(F\)</span> is <em>false</em>.</p>
+<p><span id="def:unlabeled-div-129" class="definition"><strong>Definition 5.1  (Boolean) </strong></span>Booleans are elements of the set <span class="math inline">\(\mathcal{B}=\{T,F\}\)</span>. Where <span class="math inline">\(T\)</span> is <em>true</em> and <span class="math inline">\(F\)</span> is <em>false</em>.</p>
 </div>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-26"></span>
 <img src="George_Boole_color.jpg" alt="A picture of George Boole" width="30%" />
@@ -177,16 +182,16 @@ Figure 5.1: A picture of George Boole
 </div>
 <p>Booleans are named after George Boole who was an English mathematician. He is notable for a few things including writing a book with the impressive title <em>The Laws of Thought</em>. He also became a professor of mathematics at the university of Cork despite being largely self taught after primary school. His wife, Mary Everest Boole is also interesting and an example of a woman who made a career on the borders of academic mathematics when it was extremely hostile. Its worth looking them both up!</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-125" class="definition"><strong>Definition 5.2  (Boolean operator) </strong></span>A Boolean operator is a function from <span class="math inline">\(f: \mathcal{B}^n \rightarrow \mathcal{B}\)</span>.</p>
+<p><span id="def:unlabeled-div-130" class="definition"><strong>Definition 5.2  (Boolean operator) </strong></span>A Boolean operator is a function from <span class="math inline">\(f: \mathcal{B}^n \rightarrow \mathcal{B}\)</span>.</p>
 <p>The value of <span class="math inline">\(n\)</span> is called the <em>arity</em> of <span class="math inline">\(f\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-126" class="example"><strong>Example 5.1  </strong></span>There are some key examples of <em>arity</em> 1 which we write by <span class="math inline">\(P\)</span> and <span class="math inline">\(\neg P\)</span>.</p>
+<p><span id="exm:unlabeled-div-131" class="example"><strong>Example 5.1  </strong></span>There are some key examples of <em>arity</em> 1 which we write by <span class="math inline">\(P\)</span> and <span class="math inline">\(\neg P\)</span>.</p>
 <p><span class="math inline">\(P\)</span> is the identity operator under which <span class="math inline">\(T \mapsto T\)</span> and <span class="math inline">\(F \mapsto F\)</span>.</p>
 <p><span class="math inline">\(\neg P\)</span> is the negation operator under which <span class="math inline">\(T \mapsto F\)</span> and <span class="math inline">\(F \mapsto T\)</span>. We say that <span class="math inline">\(\neg P\)</span> is true if <span class="math inline">\(P\)</span> is false and <span class="math inline">\(\neg P\)</span> is false if <span class="math inline">\(P\)</span> is true.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-127" class="example"><strong>Example 5.2  </strong></span>The operators of arity 2 are very helpful for understading what is going on. A first example is <span class="math inline">\(P \wedge Q\)</span> or <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>. Under this function
+<p><span id="exm:unlabeled-div-132" class="example"><strong>Example 5.2  </strong></span>The operators of arity 2 are very helpful for understading what is going on. A first example is <span class="math inline">\(P \wedge Q\)</span> or <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>. Under this function
 <span class="math display">\[\begin{align*}
 (T,T) &amp; \mapsto T, \\
 (T,F) &amp; \mapsto F, \\
@@ -208,7 +213,7 @@ F &amp; F &amp; F &amp; T &amp; T
 </div>
 <p>We can compose Boolean operators and rewrite them in various different ways</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-128" class="example"><strong>Example 5.3  </strong></span>The operator <span class="math inline">\(\neg (P \wedge Q)\)</span> is given by
+<p><span id="exm:unlabeled-div-133" class="example"><strong>Example 5.3  </strong></span>The operator <span class="math inline">\(\neg (P \wedge Q)\)</span> is given by
 <span class="math display">\[\begin{align*}
 (T,T) \mapsto F,
 (T,F) \mapsto T,
@@ -226,22 +231,22 @@ F &amp; F &amp; F &amp; T &amp; T
 </div>
 <p>More generally we have the following definition</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-129" class="definition"><strong>Definition 5.3  </strong></span>We say two Boolean operators <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> or arity <span class="math inline">\(n\)</span> are the same if they are equal as functions (they map the same elements to the same elements).</p>
+<p><span id="def:unlabeled-div-134" class="definition"><strong>Definition 5.3  </strong></span>We say two Boolean operators <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> or arity <span class="math inline">\(n\)</span> are the same if they are equal as functions (they map the same elements to the same elements).</p>
 <p>We call a way of writing a Boolean operator <span class="math inline">\(f\)</span> in terms of the basic operators <span class="math inline">\(\neg, \wedge, \vee, \Rightarrow, \Leftrightarrow\)</span> an <em>expression</em> for <span class="math inline">\(f\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-130" class="example"><strong>Example 5.4  </strong></span>Both <span class="math inline">\(P\)</span> and <span class="math inline">\(P \wedge P\)</span> are expressions for the identity operator.</p>
+<p><span id="exm:unlabeled-div-135" class="example"><strong>Example 5.4  </strong></span>Both <span class="math inline">\(P\)</span> and <span class="math inline">\(P \wedge P\)</span> are expressions for the identity operator.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-131" class="theorem"><strong>Theorem 5.1  </strong></span>Every Boolean operator has an expression in terms of the basic operators.</p>
+<p><span id="thm:unlabeled-div-136" class="theorem"><strong>Theorem 5.1  </strong></span>Every Boolean operator has an expression in terms of the basic operators.</p>
 </div>
 <p>We don’t quite have all the technology to prove this. If you are curious you can get a sense of why this is true by working out how you would go from knowing it is true for all operators of arity two to knowing it is true for all operators of arity three.</p>
 <p>We can actually do better than this</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-132" class="theorem"><strong>Theorem 5.2  </strong></span>Every Boolean operator has an expression in terms of <span class="math inline">\(\neg\)</span> and <span class="math inline">\(\vee\)</span></p>
+<p><span id="thm:unlabeled-div-137" class="theorem"><strong>Theorem 5.2  </strong></span>Every Boolean operator has an expression in terms of <span class="math inline">\(\neg\)</span> and <span class="math inline">\(\vee\)</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-133" class="proof"><em>Proof</em>. </span>First we check that we can express all our basic operations like this.</p>
+<p><span id="unlabeled-div-138" class="proof"><em>Proof</em>. </span>First we check that we can express all our basic operations like this.</p>
 <p><span class="math display">\[\begin{align*}
 P \wedge Q &amp;= \neg ( (\neg P) \vee (\neg Q)),\\
 P \Rightarrow Q &amp;= (\neg P) \vee Q, \\
@@ -256,7 +261,7 @@ P \Leftrightarrow Q &amp;= (P \Rightarrow Q) \wedge (Q \rightarrow P)\\
 <h2><span class="header-section-number">5.2</span> Boolean algebra<a href="logic.html#boolean-algebra" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The basic Boolean operators interact with eachother in much the same way set operations do. We have the following results whose proofs are omitted.</p>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-134" class="lemma"><strong>Lemma 5.1  </strong></span>Suppose that <span class="math inline">\(P, Q, R\)</span> are Booleans then we have the following about <span class="math inline">\(\vee\)</span>:</p>
+<p><span id="lem:unlabeled-div-139" class="lemma"><strong>Lemma 5.1  </strong></span>Suppose that <span class="math inline">\(P, Q, R\)</span> are Booleans then we have the following about <span class="math inline">\(\vee\)</span>:</p>
 <ul>
 <li><p><span class="math inline">\(P \vee T = T\)</span> and <span class="math inline">\(P \vee F = P\)</span>,</p></li>
 <li><p><span class="math inline">\(P \vee (Q \vee R)) =(P\vee Q) \vee R\)</span>,</p></li>
@@ -266,7 +271,7 @@ P \Leftrightarrow Q &amp;= (P \Rightarrow Q) \wedge (Q \rightarrow P)\\
 </ul>
 </div>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-135" class="lemma"><strong>Lemma 5.2  </strong></span>Suppose that <span class="math inline">\(P, Q, R\)</span> are Booleans then we have the following about <span class="math inline">\(\wedge\)</span>:</p>
+<p><span id="lem:unlabeled-div-140" class="lemma"><strong>Lemma 5.2  </strong></span>Suppose that <span class="math inline">\(P, Q, R\)</span> are Booleans then we have the following about <span class="math inline">\(\wedge\)</span>:</p>
 <ul>
 <li><p><span class="math inline">\(P \wedge T = P\)</span> and <span class="math inline">\(P \wedge F = F\)</span>,</p></li>
 <li><p><span class="math inline">\(P \wedge (Q \wedge R)= (P\wedge Q) \wedge R\)</span>,</p></li>
@@ -276,14 +281,14 @@ P \Leftrightarrow Q &amp;= (P \Rightarrow Q) \wedge (Q \rightarrow P)\\
 </ul>
 </div>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-136" class="lemma"><strong>Lemma 5.3  </strong></span>Here are some distributive laws. Suppose that <span class="math inline">\(P, Q, R\)</span> are Boolean’s then</p>
+<p><span id="lem:unlabeled-div-141" class="lemma"><strong>Lemma 5.3  </strong></span>Here are some distributive laws. Suppose that <span class="math inline">\(P, Q, R\)</span> are Boolean’s then</p>
 <ul>
 <li><p><span class="math inline">\(P \wedge (Q \vee R) = (P \wedge Q) \vee (P \wedge R)\)</span>,</p></li>
 <li><p><span class="math inline">\(P \vee (Q \wedge R) = (P \vee Q) \wedge (P \vee R)\)</span>.</p></li>
 </ul>
 </div>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-137" class="lemma"><strong>Lemma 5.4  </strong></span>And finally we get to De Morgan’s law’s again:
+<p><span id="lem:unlabeled-div-142" class="lemma"><strong>Lemma 5.4  </strong></span>And finally we get to De Morgan’s law’s again:
 Suppose <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are Booleans then</p>
 <ul>
 <li><p><span class="math inline">\(\neg (P \vee Q) = (\neg P) \wedge (\neg Q)\)</span>,</p></li>
@@ -291,7 +296,7 @@ Suppose <span class="math inline">\(P\)</span> and <span class="math inline">\(Q
 </ul>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-138" class="proof"><em>Proof</em>. </span>We give just one example of how you would prove such a statement</p>
+<p><span id="unlabeled-div-143" class="proof"><em>Proof</em>. </span>We give just one example of how you would prove such a statement</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{array}{cc|ccccc}
 P &amp; Q &amp; (P \vee Q) &amp; \neg (P \vee Q) &amp; \neg P &amp; \neg Q &amp; ((\neg P) \wedge (\neg Q)) \\
@@ -305,7 +310,7 @@ F &amp; F &amp; F &amp; T &amp; T &amp; T &amp; T \\
 <p>Observing that the fourth column <span class="math inline">\(\neg (P \vee Q)\)</span> and the seventh column <span class="math inline">\(((\neg P) \wedge (\neg Q))\)</span> are always the same proves that these expressions are the same as functions.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-139" class="definition"><strong>Definition 5.4  (tautologies) </strong></span>If <span class="math inline">\(f: \mathcal{B}^n \rightarrow \mathcal{B}\)</span> is a Boolean operator then we call <span class="math inline">\(f\)</span> a <em>tautology</em> if <span class="math inline">\(f(x) = T\)</span> for all <span class="math inline">\(x \in \mathcal{B}^n\)</span>. We call <span class="math inline">\(f\)</span> an <em>antinomy</em> if <span class="math inline">\(f(x) = F\)</span> for all <span class="math inline">\(x \in \mathcal{B}^n\)</span>.</p>
+<p><span id="def:unlabeled-div-144" class="definition"><strong>Definition 5.4  (tautologies) </strong></span>If <span class="math inline">\(f: \mathcal{B}^n \rightarrow \mathcal{B}\)</span> is a Boolean operator then we call <span class="math inline">\(f\)</span> a <em>tautology</em> if <span class="math inline">\(f(x) = T\)</span> for all <span class="math inline">\(x \in \mathcal{B}^n\)</span>. We call <span class="math inline">\(f\)</span> an <em>antinomy</em> if <span class="math inline">\(f(x) = F\)</span> for all <span class="math inline">\(x \in \mathcal{B}^n\)</span>.</p>
 </div>
 <p>Tautologies are useful because they describe ways in which we can make logical arguments. For example, if we are arguing by contradiction (more on this later) we wish to prove <span class="math inline">\(P\)</span>. We assume <span class="math inline">\(\neg P\)</span> and arise at a contradiction, so we know <span class="math inline">\(\neg P\)</span> is false then we move from this to saying <span class="math inline">\(P\)</span> must be true.</p>
 <p>Here are some useful tautologies and their names</p>
@@ -325,7 +330,7 @@ F &amp; F &amp; F &amp; T &amp; T &amp; T &amp; T \\
 <div id="truth-tables" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Truth tables<a href="logic.html#truth-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unlabeled-div-140" class="definition"><strong>Definition 5.5  (Truth tables) </strong></span>A truth table is table which allows you to look up the output of a Boolean operator given its variables. Given a Boolean operator <span class="math inline">\(f\)</span> of arity three the truth table will look like</p>
+<p><span id="def:unlabeled-div-145" class="definition"><strong>Definition 5.5  (Truth tables) </strong></span>A truth table is table which allows you to look up the output of a Boolean operator given its variables. Given a Boolean operator <span class="math inline">\(f\)</span> of arity three the truth table will look like</p>
 <p><span class="math display">\[\begin{equation}
 \begin{array}{ccc|c}
 P &amp; Q &amp; R &amp; \mbox{an expression for \(f\)} \\
@@ -368,11 +373,11 @@ F &amp; F &amp; F &amp; T &amp; T &amp; T &amp; T &amp; T
 The order of quantifiers is very important
 <span class="math display">\[\exists p (\forall n ((p&gt;n)\wedge (Prime(p))))  \]</span> means that there exists a prime <span class="math inline">\(p\)</span> that is bigger than every natural number <span class="math inline">\(n\)</span>. Which definitely isn’t true.</p>
 <div class="remark">
-<p><span id="unlabeled-div-141" class="remark"><em>Remark</em>. </span>When we are using quantifiers there is an ambient set sitting behind our language. We often surpress this set but in the previous expressions above we are always saying <em>for all <span class="math inline">\(n\)</span> in <span class="math inline">\(\mathbb{N}\)</span></em> and <em>for every <span class="math inline">\(p\)</span> in <span class="math inline">\(\mathbb{N}\)</span></em>.</p>
+<p><span id="unlabeled-div-146" class="remark"><em>Remark</em>. </span>When we are using quantifiers there is an ambient set sitting behind our language. We often surpress this set but in the previous expressions above we are always saying <em>for all <span class="math inline">\(n\)</span> in <span class="math inline">\(\mathbb{N}\)</span></em> and <em>for every <span class="math inline">\(p\)</span> in <span class="math inline">\(\mathbb{N}\)</span></em>.</p>
 </div>
 <p>As with earlier we also have rules for negation and distribution with quantifiers.</p>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-142" class="lemma"><strong>Lemma 5.5  </strong></span>Quantifiers distribute as follows:</p>
+<p><span id="lem:unlabeled-div-147" class="lemma"><strong>Lemma 5.5  </strong></span>Quantifiers distribute as follows:</p>
 <ul>
 <li><p><span class="math inline">\((\forall a \in A, S(a)\wedge T(a)) = (\forall a \in A, S(a))\wedge(\forall a \in A, T(a))\)</span>,</p></li>
 <li><p><span class="math inline">\(\exists a \in A, S(a)\vee T(a)) = (\exists a \in A, S(a))\vee (\exists a \in A, T(a))\)</span>.</p></li>

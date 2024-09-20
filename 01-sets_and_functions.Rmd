@@ -197,7 +197,7 @@ We also define some notation
 
 ::: {.definition}
 
-We write \([[n]]= \{ k\in \mathbb{N}, k \leq n\}\).
+We write \([[n]]= \{ k\in \mathbb{N}, k < n\}\).
 
 :::
 
@@ -279,6 +279,15 @@ The identity function on \(A\) is written \(Id_A : A \rightarrow A\) and is defi
 Suppose that \(A\) and \(B\) are sets and \(f : A \rightarrow B\) is a function, and suppose further that \(C \subset A\). Then we can define a new function called the restriction of \(f\) to \(C\) which we write \(f|_C\). This is a function with domain \(C\) and codomain \(B\) and for \(x \in C\) we have \(f|_C(x) = f(x)\).
 
 :::
+
+::: {.definition name="Indicator function"}
+
+Given a set \(A\) and a subset \(B \subset A\) we can define the indicator function of \(B\), from \(A\) to \(\{0,1\}\) by 
+\[ 1_B(x) = \left\{\begin{array}{cc} 0 & x \not\in B\\ 1 & x \in B \end{array} \right. \]
+
+:::
+
+
 
 ## Properties of functions
 

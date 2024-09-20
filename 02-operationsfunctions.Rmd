@@ -192,6 +192,26 @@ knitr::include_graphics("demorgan2.png")
 
 :::
 
+All these operations can be understood in terms of indicator functions as well
+
+::: {.lemma}
+
+Given a set \(A\) and subsets \(B, C, D\) we have the following:
+
+- \(1_{B \cap C} = 1_{B}1_{C}\).
+
+- \( 1_{B \cup C} = 1_B + 1_C - 1_B 1_C\).
+
+- If \(B \subset C\) then \(1_{C \setminus B} = 1_C - 1_B\).
+
+:::
+
+::: {.proof}
+
+If you want to you can check these yourself. It is mainly just symbol pushing. A more exciting thing to do is try and prove De Morgan's laws or distributative laws using these facts.
+
+:::
+
 ## Operations on functions
 
 ::: {.definition name="composition"}

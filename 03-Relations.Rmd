@@ -195,6 +195,12 @@ If we consider the set \(\mathbb{R}\) and the equivalence relation \( x \sim y \
 
 :::
 
+::: {.example}
+
+Quotienting by equivalence relations is one example of using mathematical abstraction. It is something you will already have been doing very frequently. A good example from school mathematics is congruent triangles. We call triangles similar if they have the same angles and side length. Regarding two triangles as *the same* if they are congruent is an example of quotienting by an equivalence relation. 
+
+:::
+
 
 
 ## Integers via quotients
@@ -297,7 +303,7 @@ While we define divisor it is worth defining a prime number. We call \(p \in \ma
 ::: {.definition name="congruence modulo n"}
 
 Given an number \(n \in \mathbb{N}-\{0\}\) we can define an equivalence relation on \(\mathbb{Z}\) called congruence modulo n (written \(\equiv\) mod \(n\)) by
-\[ p \equiv   q \. (\mbox{mod} \, n) \quad \mbox{when} \quad n\Big| |p-q|.   \]
+\[ p \equiv   q \, (\mbox{mod} \, n) \quad \mbox{when} \quad n\Big| |p-q|.   \]
 
 :::
 
@@ -334,7 +340,7 @@ Suppose we want to calculate \(7^{12}\) modulo \( 10\). The we can do it by work
 \begin{align*}
 7^2 &\equiv 49 \equiv 9 \quad \mbox{mod} \, 10 \\
 7^3 & \equiv 7^2 \times 7 \equiv 9 \times 7 \equiv 63 \equiv 3 \quad \mbox{mod} \, 10\\
-7^4 \&equiv 3\times 7 \equiv 21 \equiv 1 \quad \mbox{mod} \, 10\\
+7^4 & \equiv 3\times 7 \equiv 21 \equiv 1 \quad \mbox{mod} \, 10\\
 7^{12} &\equiv (7^4)^3 \equiv 1^3 \equiv 1 \quad \mbox{mod}\, 10.
 \end{align*}
 
@@ -342,6 +348,14 @@ Now if we supposed we wanted to work out \( 7^{2025} \quad \mbox{mod} \, 10\) th
 \[ 7^{2025} \equiv 7^{1006\times 4 +1} \equiv 1\times 7 = 7 \quad \mbox{mod} 10.  \]
 
 It isn't always the case that there is some \(k\) such that \(m^k \equiv 1 \quad \mbox{mod} \,n\). An example of this is that \(5^k \equiv 5 \quad \mbox{mod} 10\) for every \(k\).
+
+:::
+
+::: {.example}
+
+Modular arithmetic can sometimes be used to show equations cannot have solutions in the integers. An example is
+\[ 2a^2 + 3b^3 = 1.  \]
+If we had a solution then \( 2a^2 \equiv 1 \quad \mbox{mod} \, 3\) but \(2\times 0^2 \equiv 0 \quad \mbox{mod} \, 3\), \( 2 \times 1^2 \equiv 2 \quad \mbox{mod} \, 3\) and \( 2 \times 2^2 \equiv 2 \mbox{mod} \, 3\) so no such \(a\) can exist.
 
 :::
 

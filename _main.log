@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.21)  19 SEP 2024 10:24
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.21)  20 SEP 2024 11:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -409,7 +409,7 @@ Package: amsthm 2020/05/29 v2.20.6
 \c@example=\count328
 \c@exercise=\count329
 \c@hypothesis=\count330
-(./_main.aux)
+No file _main.aux.
 \openout1 = `_main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
@@ -657,6 +657,9 @@ LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 102.
 Package hyperref Info: Link coloring OFF on input line 102.
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
 (Font)              scaled to size 12.0pt on input line 104.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
@@ -746,11 +749,10 @@ File: subset.png Graphic file (type bmp)
 [10]
 
 [11]
-File: injective.png Graphic file (type bmp)
-<injective.png>
-
 
 [12]
+File: injective.png Graphic file (type bmp)
+<injective.png>
 File: surjective.png Graphic file (type bmp)
 <surjective.png>
 File: bijective.png Graphic file (type bmp)
@@ -760,11 +762,11 @@ File: bijective.png Graphic file (type bmp)
 [13]
 
 [14]
+
+[15]
 File: Cantor.jpg Graphic file (type bmp)
 <Cantor.jpg>
 
-
-[15]
 
 [16]
 File: less than.png Graphic file (type bmp)
@@ -816,45 +818,41 @@ File: demorgan1.png Graphic file (type bmp)
 File: demorgan2.png Graphic file (type bmp)
 <demorgan2.png>
 
-Underfull \vbox (badness 1331) has occurred while \output is active []
-
-
 
 [26]
 File: compositiondiagram.png Graphic file (type bmp)
 <compositiondiagram.png>
 File: compositionexample.png Graphic file (type bmp)
 <compositionexample.png>
-
-
-[27]
 File: compassoc.png Graphic file (type bmp)
 <compassoc.png>
 
 
+[27]
+
 [28]
+
+[29]
 File: leftrightinverse.png Graphic file (type bmp)
 <leftrightinverse.png>
 
 
-[29]
-
 [30]
+
+[31]
 File: CBS1.png Graphic file (type bmp)
 <CBS1.png>
 File: CBS2.png Graphic file (type bmp)
 <CBS2.png>
 
 
-[31]
-
 [32]
-Overfull \hbox (22.54765pt too wide) detected at line 1001
+Overfull \hbox (22.54765pt too wide) detected at line 1027
 [][] [] [][] [] []  []  [] [] [][][] [] [] [] [] [] [][][] [][][][][] [] [][] [][][][][][][][][] [] [][][]
  []
 
 
-Overfull \hbox (24.2276pt too wide) detected at line 1007
+Overfull \hbox (24.2276pt too wide) detected at line 1033
 [][] [] [][] [] []  []  [] [] [][][] [] [] [] [] [] [][][] [][][][][] [] [][] [][][][][][][][][] [] [][][]
  []
 
@@ -890,19 +888,14 @@ Overfull \hbox (35.92564pt too wide) has occurred while \output is active
 
 [39]
 
-LaTeX Warning: Command \. invalid in math mode on input line 1294.
-
-Missing character: There is no ̇ ("307) in font lmmi10!
-
-
 [40]
-Overfull \hbox (173.68163pt too wide) detected at line 1352
+
+[41]
+Overfull \hbox (173.68163pt too wide) detected at line 1388
 []
  []
 
 
-
-[41]
 
 [42]
 Chapter 5.
@@ -919,7 +912,7 @@ File: George_Boole_color.jpg Graphic file (type bmp)
 [45]
 
 [46]
-Overfull \hbox (74.03194pt too wide) detected at line 1621
+Overfull \hbox (74.03194pt too wide) detected at line 1657
 [][][][]
  []
 
@@ -970,31 +963,50 @@ File: geomeuclidnumbers.png Graphic file (type bmp)
 
 [61]
 
-[62
+[62]
+Overfull \hbox (79.71962pt too wide) in paragraph at lines 2267--2268
+[]\TU/lmr/m/n/10 We know that the total number of elements in $[][]$ is $[][] [] []$.
+ []
+
+
+
+[63]
+
+[64
 
 ]
 Chapter 8.
 
 
-[63]
+[65]
 
-[64]
-No file _main.bbl.
+[66]
+
+[67]
+
+[68
+
+]
+Chapter 9.
 
 
-[65] (./_main.aux)
- ***********
-LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2024-07-20>
- ***********
- ) 
+[69]
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2404 Suppose \(p\) is a prime and \(a, b \in \(
+                                                 \left(\mathbb{Z}/p\mathbb{Z... 
 Here is how much of TeX's memory you used:
- 17475 strings out of 476233
- 320231 string characters out of 5785602
+ 17402 strings out of 476233
+ 318770 string characters out of 5785602
  1942612 words of memory out of 5000000
- 39794 multiletter control sequences out of 15000+600000
+ 39724 multiletter control sequences out of 15000+600000
  564536 words of font info for 91 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 90i,8n,123p,699b,560s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,8n,123p,705b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.pdf (65 pages).
+Output written on _main.pdf (69 pages).

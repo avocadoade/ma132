@@ -1,0 +1,78 @@
+# Cryptography
+
+In this chapter we are going to look at how tools from this course can be used in encrypting information.
+
+::: {.definition name="key in cryptography and public key"}
+
+When we encrypt something we often use a *key* to encrypt and decrypt it. This key is a number or a sequence of letters (or sometimes something more complicated) which allows us to decrypt a code.
+
+A public key is used in a situation where A wants to send some information privately to B. They each have separate private information which the other doesn't know. There is also some public information which both can see. This is called the public key. We need this to work in such a way that A's private information and the public key are sufficient to encrypt the data so that B's private information and the key can decrypt the data but the public key alone is not sufficient to decrypt the data and A and B don't need each others private information to do the encryption or decryption.
+
+I think it is much easier to understand this concept once we've seen some examples.
+
+:::
+
+::: {.remark}
+
+In this course we aren't really interested in how you encrypt or decrypt data once you have the key. There are lots of ways of doing this! We just want to come up with some good methods for creating these public keys. Most of these methods will involve understanding algorithmic complexity. 
+
+:::
+
+## Discrete logarithms and Diffie-Hellman
+
+A discrete logarithm is essentially taking the logarithm in modular arithmetic.
+
+::: {.example}
+
+Suppose we know that \( 2 \equiv 3^x \quad \mbox{mod} 5\) and we want to find \(x\). We call \(x\) the discrete logarithm.
+
+The only straightforward way to do this is to compute \(3^y\) modulo \(5\) until we find a \(y\) satisfying this problem.
+
+:::
+
+::: {.definition name="Discrete Logarithm problem"}
+
+Suppose \(p\) is a prime and \(a, b \in \(\left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\)\). The discrete logarithm problem is to find \(n\) so that \(a^n \equiv b \quad \mbox{mod} \, p\).
+
+:::
+
+::: {.definition name="Diffie-Hillman problem"}
+
+Suppose \(p\) is a prime and \(a \in \left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\) and \(n, m\) are integers. Suppose we know \(a, a^n, a^m\) but we don't know \(n\) or \(m\) the Diffie-Hillman problem is to compute \(a^{nm}\).
+
+:::
+
+::: {.remark}
+
+At the moment nobody knows a polynomial time algorithm to solve either the discrete logarithm problem or the Diffie-Hillman problem. We can see that if we could solve the discrete logarithm then we could definitely solve Diffie-Hillman.
+
+:::
+
+::: {.definition name="Diffie-Hillman key exchange"}
+
+We are looking at encrypting and decrypting information using the key \(a^{nm} \quad \mbox{mod} \, p\). 
+
+Person A and B both generate a prime \(p\) and an element \(a \in \left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\) which are made public.
+
+Person A then decides their private number \(n\) and person B decides their private number \(m\). They don't exchange these numbers or tell anyone else. 
+
+Then person A computes \(a^n\) and person B computes \(a^m\) and they make this information public. This means that person A can compute \(a^{nm}\) since they know \(a^m\) and \(n\) so can compute \((a^m)^n\). Similarly person B can also compute \(a^{nm}\). However, no other person is able to compute \(a^{nm}\) without solving the Diffie-Hillman problem. 
+
+This means that A and B can safely use \(a^{nm}\) to encrypt and decrypt their secret messages without worrying about anyone being able to intercept them.
+
+:::
+
+## RSA Cryptography
+
+
+RSA Cryptography is named for Rivest, Shamir and Adelman who invented it. It is used in a more asymmetric setting to the Diffie-Hillman problem. Here we want anyone to be able to encrypt a message but only one person to be able to decrypt any of the messages. This comes up a lot with passwords sent to websites for example.
+
+::: {.definition name="RSA Cryptography"}
+
+Person A choose two large prime numbers \(p,q\) they then compute \(n=pq\) and \(\phi(n) = (p-1)(q-1)\). Person A then chooses \(e in [[\phi(n)]]\) which is coprime to \(\phi(n)\) (it is often a good idea to choose \(e\) prime). Using Euclid's algorithm they compute \(d\) such that \(ed \equiv 1 \quad \mbox{mod} n\). Now person A has the information \(p,q,n,\phi(n),e,d\). They make \(n,e\) public. It is very hard to compute (i.e. no known polynomial time algorithm) any of the private information from the public information (essentially you would have to factorise \(n\) then you can do it easily but it is very hard to factorise \(n\)).
+
+Now suppose person \(B\) wants to encrypt a message so that only person \(A\) can decrypt it. \(B\) doesn't need any of the private information. Person \(B\) encodes his message into a number \(m\) modulo \(n\) and then computes \(m^e\) modulo \(n\).
+
+Now if person \(A\) wants to decrypt the message they compute \((m^e)^d\) modulo \(n\). Then since \(de \equiv 1 \quad \mbox{mod}\, \phi(n)\) we know that \(de = k\phi(n)+1\) for some \(k\). Then \(m^{ed} \equiv m^{k\phi(n)+1} \equiv m \quad \mbox{mod} \, n\). Where here we used the fact that \(m^\phi(n) \equiv 1 \quad \mbox{mod} \, n\) using Fermat's little theorem. 
+
+:::

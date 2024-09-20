@@ -196,10 +196,20 @@ Second we want to prove this factorisation is unique. Suppose \(n = p_1 p_2 \dot
 
 ## Chinese remainder theorem
 
+Suppose we are interested in solving two or more linear congruences simultaneously. 
+
+::: {.example}
+
+Suppose we would like to find \(x\) such that \(x \equiv 1 \quad \mbox{mod} \, 3\) and \( x \equiv 3 \quad \mbox{mod} \, 4\). Then we can work modulo 12 since if we have a solution we can see we will get another solution by adding multiples of 12. If \( x \equiv 1 \quad \mbox{mod} \, 3\) then modulo 12 \(x \equiv 1, 4, 7\) or \(10\). Similarly, if \(x \equiv 3 \quad \mbox{mod}\, 4\) then \(x \equiv 3, 7\) or \(11\) modulo 12. Therefore \(x \equiv 7\) modulo 12 is our unique solution up to adding multiples of 12.
+
+Slightly differently suppose we would like to have \(x \equiv 2 \quad \mbox{mod} \, 6\) and \( x \equiv 3 \quad \mbox{mod} \, 4\) then again we want to work modulo 12. From the first constraint we have \(x \equiv 2\) or \(x \equiv 8\) and from the second we have \(x \equiv 3, 7\) or \(11\) as before. In this example we see there are no possible solutions.
+
+:::
+
 ::: {.theorem name="Chinese Remainder Theorem"}
 
 Suppose that \(n_1, \dots, n_k\) are pairwise coprime integers and \(a_1, \dots, a_k\) are integers with \(a_i \in [[n_i]]\) for every \(i\). Then there exists an integer \(x\) with 
-\[ x \equiv a_i \quad \mbox{mod} n_i, \quad i = 1, \dots, k.  \]
+\[ x \equiv a_i \quad \mbox{mod} n_i, \quad i = 1, \dots, k.  \] Furthermore all the solutions are equivalent modulo \(N=n_1 \dots n_k\).
 
 :::
 
@@ -208,6 +218,8 @@ Suppose that \(n_1, \dots, n_k\) are pairwise coprime integers and \(a_1, \dots,
 Let \(m_i = \Pi_{j \neq i} n_j\). Then \(n_i\) and \(m_i\) are coprime so by Euclid's algorithm there exists \(x_i,y_i\) such that \(1 = x_i n_i + y_i m_i\) so \( e_i =y_i m_i = 1- x_i n_i\) so \(e_i \equiv 1 \quad \mbox{mod} \, n_i\) and \(e_i \equiv 0 \quad \mbox{mod} \, n_j\). 
 
 Then let \(x = \sum_{i=1}^k a_i e_i\) then this satisfies the conditions of the theorem. 
+
+Now suppose we have another \(y\) satisfying the congruences. Then \(x \equiv y \quad \mbox{mod} \, n_i\) for every \(i\). Therefore, \(n_i| |x-y|\) for every \(i\). Since all the \(n_i\) are coprime this means that \(N | |x-y|\).
 
 
 :::
@@ -229,7 +241,7 @@ A number \(a\) is called a emph{unit} modulo \(n\) if there exists \(b\) such th
 
 ::: {.lemma}
 
-A number \(a\) is a unite modulo \(n\) if and only if \(a\) and \(n\) are coprime.
+A number \(a\) is a unit modulo \(n\) if and only if \(a\) and \(n\) are coprime.
 
 :::
 
@@ -244,7 +256,7 @@ If there exists \(x\) such that \(xa \equiv 1 \quad \mbox{mod} \, n\) then \(x a
 
 ::: {.definition "Euler Totient Function"}
 
-The Euler Totient function \(\phi(n)\) counts the number of natural numbers smaller than \(n\) that are coprime to \(n\). Alternatively the number of units modulo \(n\).
+The Euler Totient function \(\phi(n)\) counts the number of natural numbers smaller than \(n\) that are coprime to \(n\). Alternatively the number of units modulo \(n\). Notice that \(\phi(1)=1\).
 
 :::
 
@@ -257,6 +269,75 @@ If \(p\) is prime then \(\phi(p) = p-1\).
 ::: {.example}
 
 Another example is \(n=12\) the numbers smaller than \(n\) which are coprime are \(1,5,7,11\) so \(\phi(12)=4\)
+
+:::
+
+::: {.lemma}
+
+If \(p\) is a prime then
+\[ \phi(p^k) = p^k - p^{k-1}. \]
+
+:::
+
+::: {.proof}
+
+The only way that \(gcd(m,p^k) \neq 1 \) is if \(m\) is a multiple of \(p\). There are \(p^{k-1}\) multiples of \(p\) less than \(p^k\).
+
+:::
+
+::: {.lemma}
+
+If \(n\) and \(m\) are coprime integers then
+\[ \phi(nm) = \phi(n)\phi(m). \]
+
+:::
+
+::: {.proof}
+
+Recall that the units modulo \(n\) are exactly the numbers which are coprime to \(n\). Let us write the set of units modulo \(n\) as \(\left(\mathbb{Z}/n \mathbb{Z} \right)^{\times}\).
+
+Suppose that \(k\) is a unit modulo \(n\) and \(j\) is a unit modulo \(m\) then by the Chinese remainder theorem there exists a unique \(l\) such that \( l \equiv k \quad \mbox{mod} \, n\) and \( l \equiv j \quad \mbox{mod} \, m\). Equally if \(l\) is a unit modulo \(mn\) then there is some \(q\) such that \(lq \equiv 1 \quad \mbox{mod}\, mn\) so \(l\) is a unitt modulo \(n\) and a unit modulo \(m\). This shows we have a bijection between \(\left(\mathbb{Z}/n \mathbb{Z} \right)^{\times} \times \left(\mathbb{Z}/m \mathbb{Z} \right)^{\times} \) and \( \left(\mathbb{Z}/nm \mathbb{Z} \right)^{\times}\). Therefore the two sets have the same size. This gives our conclusion.
+
+:::
+
+::: {.proposition}
+
+We have a formula for Euler's totient function given by
+\[ \phi(n) = n \Pi_{p \, prime, p|n} (1-1/p).  \]
+
+:::
+
+::: {.proof}
+
+This follows from our previous results. By the fundamental theorem of arithmetic we can write \(n = p_1^{k_1} \dots p_j^{k_j} \) then 
+\begin{align*} \phi(n) &= \phi(p_1^{k_1}) \dots \phi(p_j^{k_j})  \\
+& = p_1^{k_1}(1-1/p_1) \dots p_j^{k_j}(1-1/p_j) \\
+& = n (1-1/p_1) \dots (1-1/p_j).
+\end{align*}
+
+:::
+
+::: {.theorem name="Divisor sum"}
+
+If \(n\) is an integer then 
+\[ n = \sum_{d|n} \phi(d)  \]
+
+:::
+
+::: {.proof}
+We prove this by strong induction. We can see that it is true when \(n=1\) then the only divisor of 1 is itself and \(\phi(1) =1\). This gives us the base case. 
+
+For the inductive step we assume that for all \(m < n\) we have 
+\[ m = \sum_{d|m} \phi(d).  \]
+
+Then there are two cases. If \(n\) is prime then \(n = n-1 +1 = \phi(n) + \phi(1)\) and we are done.
+
+If \(n\) isn't prime then \(n=pm\) where \(p\) is prime and \(m < n\). From this we can compute:
+\begin{align*} \sum_{d|n} \phi(d) &=  \sum_{d|m} (\phi(d)+\phi(pd))  \\
+& = \sum_{d|m} \phi(d)(1 + \phi(p))\\
+&= \sum_{d|m} \phi(d) p\\
+& = p m = n. 
+\end{align*}
 
 :::
 
@@ -278,7 +359,7 @@ So \(a, 2a, \dots, (p-1)a\) considered modulo \(p\) must be \(1, 2, \dots, (p-1)
 
 :::
 
-::: {.theorem name="Fermat's Little Theorem}
+::: {.theorem name="Fermat's Little Theorem"}
 
 Suppose that \(gcd(a,n) =1\) then \(a^{\phi(n)-1} \equiv 1 \quad \mbox{mod} \, n\).
 
@@ -289,5 +370,58 @@ Suppose that \(gcd(a,n) =1\) then \(a^{\phi(n)-1} \equiv 1 \quad \mbox{mod} \, n
 The proof is very similar to above so I will leave the details to you!
 
 Consider the set of integers \{ka\} where \(gcd(k,n) =1\) and \(k \in [[n]]\) and multiply them all together. 
+
+:::
+
+::: {.definition name="primitive root"}
+
+We say \(a\) is a *primitive root* modulo \(n\) if for every \(b \in \mathbb{Z}/n\mathbb{Z}\) with \(gcd(b,n)=1\) there exists an \(x\) such that \(b \equiv a^x \quad \mbox{mod}\, n\).
+
+:::
+
+You have hopefully seen in Algebra 1 that \((\mathbb{Z}/n\mathbb{Z})^{\times}\) is the set of elements in \(\mathbb{Z}/n\mathbb{Z}\) which have multiplicative inverses. This set forms a group under multiplication and the primitive roots are the generators of this group.
+
+::: {.example}
+
+Working modulo \(5\) the primitive roots are \(2,3\) we can see that \(4^2 = 1\) which means it cannot be a primitive root.
+
+:::
+
+::: {.lemma}
+
+Suppose that \(p\) is prime and \(r|p-1\) then there are exactly \(r\) elements, \(b\), of \(\left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\) with \(b^r \equiv 1 \quad \mbox{mod}\, p\).
+
+:::
+
+::: {.proof}
+
+This is straightforward once you can talk about polynomials modulo \(p\) but we don't want to talk about it so we're leaving it unproved.
+
+:::
+
+
+::: {.proposition}
+
+If \(p\) is prime and there exists an element \(a\) of order \(r\) then there are exactly \(\phi(r-1)\) elements of order \(r\). 
+
+:::
+
+::: {.proof}
+
+Give an element \(a\) of order \(r\) then we have distinct elements \(a, a^2, \dots, a^{r-1}\). There are at most \(r\) elements \(b\) such that \(b^r \equiv 1 \quad \mbox{mod}\, p\) so these are all the possible elements of order less than or equal to \(r\). Now if \(gcd(k,r-1) = 1\) then for every \(m < r-1\) we have \(mk \not\equiv 0 \quad \mbox{mod} \, r-1  \) so \(a^{mk} \not\equiv 1 \quad \mbox{mod} \, p\). However \(a^{rk} \equiv 1 \quad \mbox{mod} \, p\). Therefore \(a^k\) is another element of order \(r\). Therefore we have at least \(\phi(r-1)\) elements of order \(r\).
+
+:::
+
+::: {.corollary}
+
+If \(p\) is prime then there are exactly \(\phi(p-1)\) primitive roots.
+
+:::
+
+::: {.proof}
+
+We know that the total number of elements in \(\left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\) is \(\sum_{r} \mbox{number of elements of order}\, r \). We also know that the size of \(\left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\) is \(p-1\) and so there can only be elements of order \(r\) if \(r|p-1\).
+
+We also know know that \(p-1 = \sum_{d|p-1} \phi(d)\). Putting all this together gives our result.
 
 :::
