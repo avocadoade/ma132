@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-09-20}
+\date{2024-09-22}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -381,6 +381,19 @@ Suppose that \(A\) and \(B\) are sets and \(f : A \rightarrow B\) is a function,
 \begin{definition}[Indicator function]
 Given a set \(A\) and a subset \(B \subset A\) we can define the indicator function of \(B\), from \(A\) to \(\{0,1\}\) by
 \[ 1_B(x) = \left\{\begin{array}{cc} 0 & x \not\in B\\ 1 & x \in B \end{array} \right. \]
+\end{definition}
+
+\begin{definition}[image and pre-image]
+
+Given a function \(f:A \rightarrow B\) then
+
+\begin{itemize}
+\item
+  If \(C \subset A\) we write \(f(C) = \{y \in B \,:\, y = f(x) \, \mbox{for some} \, x \in C\}\). We call \(f(C)\) the \emph{image} of \(C\) under \(f\).
+\item
+  If \(D \in B\) we write \(f^{-1}(D)) = \{ x \in C \,:\, f(x) \in D\}\). We call \(f^{-1}(D)\) the \emph{pre-image} of \(D\) under \(f\).
+\end{itemize}
+
 \end{definition}
 
 \section{Properties of functions}\label{properties-of-functions}
@@ -2425,7 +2438,7 @@ This means that A and B can safely use \(a^{nm}\) to encrypt and decrypt their s
 RSA Cryptography is named for Rivest, Shamir and Adelman who invented it. It is used in a more asymmetric setting to the Diffie-Hillman problem. Here we want anyone to be able to encrypt a message but only one person to be able to decrypt any of the messages. This comes up a lot with passwords sent to websites for example.
 
 \begin{definition}[RSA Cryptography]
-Person A choose two large prime numbers \(p,q\) they then compute \(n=pq\) and \(\phi(n) = (p-1)(q-1)\). Person A then chooses \(e in [[\phi(n)]]\) which is coprime to \(\phi(n)\) (it is often a good idea to choose \(e\) prime). Using Euclid's algorithm they compute \(d\) such that \(ed \equiv 1 \quad \mbox{mod} n\). Now person A has the information \(p,q,n,\phi(n),e,d\). They make \(n,e\) public. It is very hard to compute (i.e.~no known polynomial time algorithm) any of the private information from the public information (essentially you would have to factorise \(n\) then you can do it easily but it is very hard to factorise \(n\)).
+Person A choose two large prime numbers \(p,q\) they then compute \(n=pq\) and \(\phi(n) = (p-1)(q-1)\). Person A then chooses \(e \in [[\phi(n)]]\) which is coprime to \(\phi(n)\) (it is often a good idea to choose \(e\) prime). Using Euclid's algorithm they compute \(d\) such that \(ed \equiv 1 \quad \mbox{mod} n\). Now person A has the information \(p,q,n,\phi(n),e,d\). They make \(n,e\) public. It is very hard to compute (i.e.~no known polynomial time algorithm) any of the private information from the public information (essentially you would have to factorise \(n\) then you can do it easily but it is very hard to factorise \(n\)).
 
 Now suppose person \(B\) wants to encrypt a message so that only person \(A\) can decrypt it. \(B\) doesn't need any of the private information. Person \(B\) encodes his message into a number \(m\) modulo \(n\) and then computes \(m^e\) modulo \(n\).
 
