@@ -172,6 +172,8 @@ Therefore we have shown \(P(n)\) holds for all \(n \geq 1\).
 
 :::
 
+
+
 ::: {.definition name="well ordering principle"}
 
 Suppose that \(S \subset \mathbb{N}\) and \(S \neq \emptyset\) then \(S\) has a *smallest element*.

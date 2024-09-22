@@ -274,6 +274,7 @@ The identity function on \(A\) is written \(Id_A : A \rightarrow A\) and is defi
 
 :::
 
+
 ::: {.definition name="restriction to a subset"}
 
 Suppose that \(A\) and \(B\) are sets and \(f : A \rightarrow B\) is a function, and suppose further that \(C \subset A\). Then we can define a new function called the restriction of \(f\) to \(C\) which we write \(f|_C\). This is a function with domain \(C\) and codomain \(B\) and for \(x \in C\) we have \(f|_C(x) = f(x)\).
@@ -287,13 +288,23 @@ Given a set \(A\) and a subset \(B \subset A\) we can define the indicator funct
 
 :::
 
+::: {.definition name="image and pre-image"}
+
+Given a function \(f:A \rightarrow B\) then 
+
+- If \(C \subset A\) we write \(f(C) = \{y \in B \,:\, y = f(x) \, \mbox{for some} \, x \in C\}\). We call \(f(C)\) the *image* of \(C\) under \(f\).
+
+- If \(D \in B\) we write \(f^{-1}(D)) = \{ x \in C \,:\, f(x) \in D\}\). We call \(f^{-1}(D)\) the *pre-image* of \(D\) under \(f\).
+
+:::
+
 
 
 ## Properties of functions
 
 ::: {.definition name="injectivity"}
 
-A function \(f:A\rightarrow B\) is called *injective* if \(f(x)=f(x')\) implies that \(x=x'\). That is to say there are no two elements of \(X\) where \(f(x)\) takes the same value, or \(y\) has at most one preimage under \(f\).
+A function \(f:A\rightarrow B\) is called *injective* if \(f(x)=f(x')\) implies that \(x=x'\). That is to say there are no two elements of \(X\) where \(f(x)\) takes the same value, or \(y\) has at most one preimage under \(f\). 
 
 :::
 
