@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2024-09-23" />
+<meta name="date" content="2024-09-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -203,6 +203,7 @@ set in the _output.yml file.</p>" />
 <li><p>The rationals, <span class="math inline">\(\mathbb{Q} = \{p/q \,:\, p \in \mathbb{Z}, q \in \mathbb{N}\}\)</span>,</p></li>
 <li><p>The real numbers, <span class="math inline">\(\mathbb{R} = (-\infty, \infty)\)</span>,</p></li>
 <li><p>The complex numbers, <span class="math inline">\(\mathbb{C} = \{x+iy \,:\, x \in \mathbb{R}, y \in \mathbb{R}\}\)</span> where <span class="math inline">\(i\)</span> is the complex unit.</p></li>
+<li><p>Something that will appear in this course <span class="math inline">\([[n]]= \{0,1,\dots, n-1\}\)</span>.</p></li>
 </ul>
 </div>
 <div class="definition">
@@ -283,59 +284,55 @@ Figure 2.1: Picture showing A as a subset of B with sets indicated by circles
 <div class="definition">
 <p><span id="def:unlabeled-div-19" class="definition"><strong>Definition 2.7  </strong></span>We call a set which contains only one element a <em>singleton set</em>.</p>
 </div>
-<p>We also define some notation</p>
-<div class="definition">
-<p><span id="def:unlabeled-div-20" class="definition"><strong>Definition 2.8  </strong></span>We write <span class="math inline">\([[n]]= \{ k\in \mathbb{N}, k &lt; n\}\)</span>.</p>
-</div>
 </div>
 <div id="power-sets-and-specification" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Power sets and specification<a href="sets-and-functions.html#power-sets-and-specification" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unlabeled-div-21" class="definition"><strong>Definition 2.9  (Power set (axiom)) </strong></span>Given a set <span class="math inline">\(A\)</span> there exists another set <span class="math inline">\(\mathcal{P}(A)\)</span> called the <em>power set</em> of <span class="math inline">\(A\)</span> which is the set of all possible subsets of <span class="math inline">\(A\)</span>.</p>
+<p><span id="def:unlabeled-div-20" class="definition"><strong>Definition 2.8  (Power set (axiom)) </strong></span>Given a set <span class="math inline">\(A\)</span> there exists another set <span class="math inline">\(\mathcal{P}(A)\)</span> called the <em>power set</em> of <span class="math inline">\(A\)</span> which is the set of all possible subsets of <span class="math inline">\(A\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-22" class="example"><strong>Example 2.6  </strong></span>The power set of <span class="math inline">\(\{0,1,2\}\)</span> is
+<p><span id="exm:unlabeled-div-21" class="example"><strong>Example 2.6  </strong></span>The power set of <span class="math inline">\(\{0,1,2\}\)</span> is
 <span class="math display">\[ \{ \emptyset, \{0\}, \{1\}, \{2\}, \{0,1\}, \{0,2\}, \{1,2\}, \{0,1,2\}\}.  \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-23" class="definition"><strong>Definition 2.10  (specification (axiom)) </strong></span><em>Specification</em> is a way of constructing subsets of a set (we’ve done this a lot already). Suppose <span class="math inline">\(P(A)\)</span> is a property that an element <span class="math inline">\(x\)</span> of <span class="math inline">\(A\)</span> could have. Then we can define the set
-<span class="math display">\[ B = \{ x \in A \,:\, P(A)\}.  \]</span></p>
+<p><span id="def:unlabeled-div-22" class="definition"><strong>Definition 2.9  (specification (axiom)) </strong></span><em>Specification</em> is a way of constructing subsets of a set (we’ve done this a lot already). Suppose <span class="math inline">\(P(A)\)</span> is a property that an element <span class="math inline">\(x\)</span> of <span class="math inline">\(A\)</span> could have. Then we can define the set
+<span class="math display">\[ B = \{ x \in A \,:\, P(x)\}.  \]</span></p>
 </div>
 <p>The <em>axiom of specification</em> is the set theory axiom positing that such a set exists. In this we would need a more precise notion of what a property is.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-24" class="example"><strong>Example 2.7  </strong></span>The very first set we defined was defined using specification
+<p><span id="exm:unlabeled-div-23" class="example"><strong>Example 2.7  </strong></span>The very first set we defined was defined using specification
 <span class="math display">\[ \{(x, y)\,:\, x \in \mathbb{R}, y \in \mathbb{R}, y=x^2\}.  \]</span></p>
 </div>
 </div>
 <div id="functions" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> Functions<a href="sets-and-functions.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unlabeled-div-25" class="definition"><strong>Definition 2.11  (function) </strong></span>A function is comprised of three objects, a domain <span class="math inline">\(A\)</span> which is a set, a co-domain <span class="math inline">\(B\)</span> which is another set and a rule <span class="math inline">\(f\)</span> which assigns an element <span class="math inline">\(f(x) \in B\)</span> to each element <span class="math inline">\(x\)</span> of <span class="math inline">\(A\)</span>.</p>
+<p><span id="def:unlabeled-div-24" class="definition"><strong>Definition 2.10  (function) </strong></span>A function is comprised of three objects, a domain <span class="math inline">\(A\)</span> which is a set, a co-domain <span class="math inline">\(B\)</span> which is another set and a rule <span class="math inline">\(f\)</span> which assigns an element <span class="math inline">\(f(x) \in B\)</span> to each element <span class="math inline">\(x\)</span> of <span class="math inline">\(A\)</span>.</p>
 <p>We write <span class="math inline">\(f: A \rightarrow B\)</span>.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-26" class="remark"><em>Remark</em>. </span>This is a slightly informal definition. This is because we don’t want to create an axiom saying functions exist. We are going to build functions out of more fundamental objects soon but first we want to have a useable definition.</p>
+<p><span id="unlabeled-div-25" class="remark"><em>Remark</em>. </span>This is a slightly informal definition. This is because we don’t want to create an axiom saying functions exist. We are going to build functions out of more fundamental objects soon but first we want to have a useable definition.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-27" class="example"><strong>Example 2.8  </strong></span><span class="math inline">\(f(x) = x^2 : \mathbb{R} \rightarrow \mathbb{R}\)</span> is a function and technically <span class="math inline">\(f(x) = x^2: \mathbb{R} \rightarrow [0,\infty)\)</span> is a different function.</p>
+<p><span id="exm:unlabeled-div-26" class="example"><strong>Example 2.8  </strong></span><span class="math inline">\(f(x) = x^2 : \mathbb{R} \rightarrow \mathbb{R}\)</span> is a function and technically <span class="math inline">\(f(x) = x^2: \mathbb{R} \rightarrow [0,\infty)\)</span> is a different function.</p>
 </div>
 <p>A function can only take one value so we have to be careful when dealing with things like square roots. Similarly a function needs to take exactly one value so we also need to make sure it is defined everywhere.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-28" class="definition"><strong>Definition 2.12  </strong></span>If <span class="math inline">\(f: A \rightarrow B\)</span> is a function then if <span class="math inline">\(y = f(x)\)</span> we call <span class="math inline">\(y\)</span> the <em>image</em> of <span class="math inline">\(x\)</span> under <span class="math inline">\(f\)</span>. We also call <span class="math inline">\(x\)</span> a <em>preimage</em> of <span class="math inline">\(y\)</span> under <span class="math inline">\(f\)</span>.</p>
+<p><span id="def:unlabeled-div-27" class="definition"><strong>Definition 2.11  </strong></span>If <span class="math inline">\(f: A \rightarrow B\)</span> is a function then if <span class="math inline">\(y = f(x)\)</span> we call <span class="math inline">\(y\)</span> the <em>image</em> of <span class="math inline">\(x\)</span> under <span class="math inline">\(f\)</span>. We also call <span class="math inline">\(x\)</span> a <em>preimage</em> of <span class="math inline">\(y\)</span> under <span class="math inline">\(f\)</span>.</p>
 <p>Notice that an element of <span class="math inline">\(X\)</span> can have only one image but an element of <span class="math inline">\(Y\)</span> can have multiple or zero preimages.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-29" class="definition"><strong>Definition 2.13  </strong></span>The identity function on <span class="math inline">\(A\)</span> is written <span class="math inline">\(Id_A : A \rightarrow A\)</span> and is defined by <span class="math inline">\(Id_A(x)=x\)</span>.</p>
+<p><span id="def:unlabeled-div-28" class="definition"><strong>Definition 2.12  </strong></span>The identity function on <span class="math inline">\(A\)</span> is written <span class="math inline">\(Id_A : A \rightarrow A\)</span> and is defined by <span class="math inline">\(Id_A(x)=x\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 2.14  (restriction to a subset) </strong></span>Suppose that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are sets and <span class="math inline">\(f : A \rightarrow B\)</span> is a function, and suppose further that <span class="math inline">\(C \subset A\)</span>. Then we can define a new function called the restriction of <span class="math inline">\(f\)</span> to <span class="math inline">\(C\)</span> which we write <span class="math inline">\(f|_C\)</span>. This is a function with domain <span class="math inline">\(C\)</span> and codomain <span class="math inline">\(B\)</span> and for <span class="math inline">\(x \in C\)</span> we have <span class="math inline">\(f|_C(x) = f(x)\)</span>.</p>
+<p><span id="def:unlabeled-div-29" class="definition"><strong>Definition 2.13  (restriction to a subset) </strong></span>Suppose that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are sets and <span class="math inline">\(f : A \rightarrow B\)</span> is a function, and suppose further that <span class="math inline">\(C \subset A\)</span>. Then we can define a new function called the restriction of <span class="math inline">\(f\)</span> to <span class="math inline">\(C\)</span> which we write <span class="math inline">\(f|_C\)</span>. This is a function with domain <span class="math inline">\(C\)</span> and codomain <span class="math inline">\(B\)</span> and for <span class="math inline">\(x \in C\)</span> we have <span class="math inline">\(f|_C(x) = f(x)\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-31" class="definition"><strong>Definition 2.15  (Indicator function) </strong></span>Given a set <span class="math inline">\(A\)</span> and a subset <span class="math inline">\(B \subset A\)</span> we can define the indicator function of <span class="math inline">\(B\)</span>, from <span class="math inline">\(A\)</span> to <span class="math inline">\(\{0,1\}\)</span> by
+<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 2.14  (Indicator function) </strong></span>Given a set <span class="math inline">\(A\)</span> and a subset <span class="math inline">\(B \subset A\)</span> we can define the indicator function of <span class="math inline">\(B\)</span>, from <span class="math inline">\(A\)</span> to <span class="math inline">\(\{0,1\}\)</span> by
 <span class="math display">\[ 1_B(x) = \left\{\begin{array}{cc} 0 &amp; x \not\in B\\ 1 &amp; x \in B \end{array} \right. \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-32" class="definition"><strong>Definition 2.16  (image and pre-image) </strong></span>Given a function <span class="math inline">\(f:A \rightarrow B\)</span> then</p>
+<p><span id="def:unlabeled-div-31" class="definition"><strong>Definition 2.15  (image and pre-image) </strong></span>Given a function <span class="math inline">\(f:A \rightarrow B\)</span> then</p>
 <ul>
 <li><p>If <span class="math inline">\(C \subset A\)</span> we write <span class="math inline">\(f(C) = \{y \in B \,:\, y = f(x) \, \mbox{for some} \, x \in C\}\)</span>. We call <span class="math inline">\(f(C)\)</span> the <em>image</em> of <span class="math inline">\(C\)</span> under <span class="math inline">\(f\)</span>.</p></li>
 <li><p>If <span class="math inline">\(D \in B\)</span> we write <span class="math inline">\(f^{-1}(D)) = \{ x \in C \,:\, f(x) \in D\}\)</span>. We call <span class="math inline">\(f^{-1}(D)\)</span> the <em>pre-image</em> of <span class="math inline">\(D\)</span> under <span class="math inline">\(f\)</span>.</p></li>
@@ -345,10 +342,10 @@ Figure 2.1: Picture showing A as a subset of B with sets indicated by circles
 <div id="properties-of-functions" class="section level2 hasAnchor" number="2.5">
 <h2><span class="header-section-number">2.5</span> Properties of functions<a href="sets-and-functions.html#properties-of-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unlabeled-div-33" class="definition"><strong>Definition 2.17  (injectivity) </strong></span>A function <span class="math inline">\(f:A\rightarrow B\)</span> is called <em>injective</em> if <span class="math inline">\(f(x)=f(x&#39;)\)</span> implies that <span class="math inline">\(x=x&#39;\)</span>. That is to say there are no two elements of <span class="math inline">\(X\)</span> where <span class="math inline">\(f(x)\)</span> takes the same value, or <span class="math inline">\(y\)</span> has at most one preimage under <span class="math inline">\(f\)</span>.</p>
+<p><span id="def:unlabeled-div-32" class="definition"><strong>Definition 2.16  (injectivity) </strong></span>A function <span class="math inline">\(f:A\rightarrow B\)</span> is called <em>injective</em> if <span class="math inline">\(f(x)=f(x&#39;)\)</span> implies that <span class="math inline">\(x=x&#39;\)</span>. That is to say there are no two elements of <span class="math inline">\(X\)</span> where <span class="math inline">\(f(x)\)</span> takes the same value, or <span class="math inline">\(y\)</span> has at most one preimage under <span class="math inline">\(f\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-34" class="example"><strong>Example 2.9  </strong></span>The function <span class="math inline">\(f: \mathbb{R} \rightarrow \mathbb{R}\)</span> defined by <span class="math inline">\(f(x) =x^2\)</span> is not injective because for every <span class="math inline">\(y&gt;0\)</span> there are two possible values of <span class="math inline">\(x\)</span> such that <span class="math inline">\(x^2 = y\)</span>.</p>
+<p><span id="exm:unlabeled-div-33" class="example"><strong>Example 2.9  </strong></span>The function <span class="math inline">\(f: \mathbb{R} \rightarrow \mathbb{R}\)</span> defined by <span class="math inline">\(f(x) =x^2\)</span> is not injective because for every <span class="math inline">\(y&gt;0\)</span> there are two possible values of <span class="math inline">\(x\)</span> such that <span class="math inline">\(x^2 = y\)</span>.</p>
 <p>However, the function <span class="math inline">\(f: [0, \infty) \rightarrow \mathbb{R}\)</span> is injective because now for every <span class="math inline">\(y\geq 0\)</span> there is exactly one <span class="math inline">\(x\)</span> such that <span class="math inline">\(x^2=y\)</span> and for every <span class="math inline">\(y &lt;0\)</span> there are no elements <span class="math inline">\(x\)</span> in the set such that <span class="math inline">\(x^2 = y\)</span> (so for any <span class="math inline">\(y\)</span> in the codomain there is never more than one element <span class="math inline">\(x\)</span> in the domain so that <span class="math inline">\(x^2 = y\)</span>).</p>
 </div>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
@@ -358,10 +355,10 @@ Figure 2.2: example of an injective function
 </p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-35" class="definition"><strong>Definition 2.18  (surjectivity) </strong></span>A function <span class="math inline">\(f: A \rightarrow B\)</span> is called <em>surjective</em> if for every <span class="math inline">\(y \in B\)</span> there exists <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(f(x)=y\)</span>. That is to say the function <span class="math inline">\(f\)</span> hits every element of the set <span class="math inline">\(B\)</span> or that <span class="math inline">\(y\)</span> has at least one preimage under <span class="math inline">\(x\)</span>.</p>
+<p><span id="def:unlabeled-div-34" class="definition"><strong>Definition 2.17  (surjectivity) </strong></span>A function <span class="math inline">\(f: A \rightarrow B\)</span> is called <em>surjective</em> if for every <span class="math inline">\(y \in B\)</span> there exists <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(f(x)=y\)</span>. That is to say the function <span class="math inline">\(f\)</span> hits every element of the set <span class="math inline">\(B\)</span> or that <span class="math inline">\(y\)</span> has at least one preimage under <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-36" class="example"><strong>Example 2.10  </strong></span>The function <span class="math inline">\(f:\mathbb{R} \rightarrow \mathbb{R}\)</span> defined by <span class="math inline">\(f(x) = x^2\)</span> is not surjective because for <span class="math inline">\(y&lt;0\)</span> there is no element <span class="math inline">\(x\)</span> of the domain so that <span class="math inline">\(x^2=y\)</span>.</p>
+<p><span id="exm:unlabeled-div-35" class="example"><strong>Example 2.10  </strong></span>The function <span class="math inline">\(f:\mathbb{R} \rightarrow \mathbb{R}\)</span> defined by <span class="math inline">\(f(x) = x^2\)</span> is not surjective because for <span class="math inline">\(y&lt;0\)</span> there is no element <span class="math inline">\(x\)</span> of the domain so that <span class="math inline">\(x^2=y\)</span>.</p>
 <p>However, the function <span class="math inline">\(f: \mathbb{R} \rightarrow [0,\infty)\)</span> is surjective because for every element <span class="math inline">\(y\)</span> of the codomain we have some <span class="math inline">\(x\)</span> in the domain with <span class="math inline">\(x^2 =y\)</span>.</p>
 </div>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
@@ -371,10 +368,10 @@ Figure 2.3: example of a surjective function
 </p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-37" class="definition"><strong>Definition 2.19  (bijectivity) </strong></span>A function is called <em>bijective</em> if it is both <em>surjective</em> and <em>injective</em>.</p>
+<p><span id="def:unlabeled-div-36" class="definition"><strong>Definition 2.18  (bijectivity) </strong></span>A function is called <em>bijective</em> if it is both <em>surjective</em> and <em>injective</em>.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-38" class="remark"><em>Remark</em>. </span>Bijective functions are often called matchings because if <span class="math inline">\(f: A \rightarrow B\)</span> is a bijection then we <em>match</em> every element of <span class="math inline">\(A\)</span> with an element of <span class="math inline">\(B\)</span>.</p>
+<p><span id="unlabeled-div-37" class="remark"><em>Remark</em>. </span>Bijective functions are often called matchings because if <span class="math inline">\(f: A \rightarrow B\)</span> is a bijection then we <em>match</em> every element of <span class="math inline">\(A\)</span> with an element of <span class="math inline">\(B\)</span>.</p>
 </div>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="bijective.png" alt="example of a bijective function"  />
@@ -387,40 +384,40 @@ Figure 2.4: example of a bijective function
 <h2><span class="header-section-number">2.6</span> Cardinality<a href="sets-and-functions.html#cardinality" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If <span class="math inline">\(f: A \rightarrow B\)</span> is a bijection then that tells us something important about the relationship between <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-39" class="definition"><strong>Definition 2.20  (Cardinality) </strong></span>We say that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have the same <em>cardinality</em> (informally the same size) if there exists a bijection between <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. We often write <span class="math inline">\(|A| = |B|\)</span>.</p>
+<p><span id="def:unlabeled-div-38" class="definition"><strong>Definition 2.19  (Cardinality) </strong></span>We say that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have the same <em>cardinality</em> (informally the same size) if there exists a bijection between <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. We often write <span class="math inline">\(|A| = |B|\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-40" class="definition"><strong>Definition 2.21  (Finiteness) </strong></span>Cardinality allows us to give a rigorous notion for a set to be <em>finite</em>/have a finite number of elements.</p>
+<p><span id="def:unlabeled-div-39" class="definition"><strong>Definition 2.20  (Finiteness) </strong></span>Cardinality allows us to give a rigorous notion for a set to be <em>finite</em>/have a finite number of elements.</p>
 <p>Given a set <span class="math inline">\(A\)</span>, if there is some natural number <span class="math inline">\(n\)</span> such that <span class="math inline">\(|A|=|[[n-1]]|\)</span> then we say <span class="math inline">\(A\)</span> has size <span class="math inline">\(n\)</span>.</p>
 <p>If <span class="math inline">\(A\)</span> has size <span class="math inline">\(n\)</span> for some <span class="math inline">\(n\)</span> then we say <span class="math inline">\(A\)</span> is finite.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-41" class="definition"><strong>Definition 2.22  (infinite) </strong></span>We say a set is <em>infinite</em> if it isn’t finite.</p>
+<p><span id="def:unlabeled-div-40" class="definition"><strong>Definition 2.21  (infinite) </strong></span>We say a set is <em>infinite</em> if it isn’t finite.</p>
 </div>
 <div class="defintion" name="pigeon hole principle">
 <p>Suppose <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are finite sets with <span class="math inline">\(|A| &gt; |B|\)</span> and <span class="math inline">\(f: A \rightarrow B\)</span> is a function then there exists some <span class="math inline">\(b \in B\)</span> for which there are at least two elements <span class="math inline">\(a_1,a_2\)</span> of <span class="math inline">\(A\)</span> for which <span class="math inline">\(f(a_1)=f(a_2)=b\)</span>.</p>
 <p>The name for this fact comes from the idea that if you have a dovecote with <span class="math inline">\(n\)</span> holes and you have more than <span class="math inline">\(n+1\)</span> pigeons then however you arrange the pigeons at least one hole must contain more than one pigoen.</p>
 </div>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-42" class="lemma"><strong>Lemma 2.3  </strong></span>Suppose that <span class="math inline">\(A,B\)</span> are sets and <span class="math inline">\(B\)</span> is finite.</p>
+<p><span id="lem:unlabeled-div-41" class="lemma"><strong>Lemma 2.3  </strong></span>Suppose that <span class="math inline">\(A,B\)</span> are sets and <span class="math inline">\(B\)</span> is finite.</p>
 <ul>
 <li><p>If there exists an injection <span class="math inline">\(f: A \rightarrow B\)</span> then <span class="math inline">\(A\)</span> is finite.</p></li>
 <li><p>If there exists a surjections <span class="math inline">\(g: B \rightarrow A\)</span> then <span class="math inline">\(A\)</span> is finite.</p></li>
 </ul>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-43" class="proof"><em>Proof</em>. </span>If <span class="math inline">\(B\)</span> is finite then there is a bijection between <span class="math inline">\(B\)</span> and some <span class="math inline">\([[n]]\)</span> and so composing <span class="math inline">\(f\)</span> and this bijection gives an injection form <span class="math inline">\(A\)</span> to some subset of <span class="math inline">\([[n]]\)</span>. Let us call this injection <span class="math inline">\(j\)</span>. Now let us create a bijection from <span class="math inline">\(A\)</span> to some <span class="math inline">\([[m]]\)</span> as follows. The image of <span class="math inline">\(j\)</span> is <span class="math inline">\(\{j_0, \dots, j_m\}\)</span> so let us map <span class="math inline">\(j^{-1}(j_k)\)</span> to <span class="math inline">\(k\)</span> for <span class="math inline">\(k=0,\dots, m\)</span>. This shows that <span class="math inline">\(A\)</span> is finite.</p>
+<p><span id="unlabeled-div-42" class="proof"><em>Proof</em>. </span>If <span class="math inline">\(B\)</span> is finite then there is a bijection between <span class="math inline">\(B\)</span> and some <span class="math inline">\([[n]]\)</span> and so composing <span class="math inline">\(f\)</span> and this bijection gives an injection form <span class="math inline">\(A\)</span> to some subset of <span class="math inline">\([[n]]\)</span>. Let us call this injection <span class="math inline">\(j\)</span>. Now let us create a bijection from <span class="math inline">\(A\)</span> to some <span class="math inline">\([[m]]\)</span> as follows. The image of <span class="math inline">\(j\)</span> is <span class="math inline">\(\{j_0, \dots, j_m\}\)</span> so let us map <span class="math inline">\(j^{-1}(j_k)\)</span> to <span class="math inline">\(k\)</span> for <span class="math inline">\(k=0,\dots, m\)</span>. This shows that <span class="math inline">\(A\)</span> is finite.</p>
 <p>Now considering the second point. We can choose a right inverse to <span class="math inline">\(g\)</span> which we call <span class="math inline">\(h\)</span>. This will be an injection since <span class="math inline">\(g\)</span> is a function so the first point proves that <span class="math inline">\(A\)</span> is finite also in this case.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-44" class="theorem"><strong>Theorem 2.1  (Cantor's Theorem) </strong></span>Let <span class="math inline">\(A\)</span> be a set and <span class="math inline">\(f: A \rightarrow \mathcal{P}(A)\)</span> then <span class="math inline">\(f\)</span> cannot be a surjection.</p>
+<p><span id="thm:unlabeled-div-43" class="theorem"><strong>Theorem 2.1  (Cantor's Theorem) </strong></span>Let <span class="math inline">\(A\)</span> be a set and <span class="math inline">\(f: A \rightarrow \mathcal{P}(A)\)</span> then <span class="math inline">\(f\)</span> cannot be a surjection.</p>
 <p>You could also say: there is no surjection between a set and its power set.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-45" class="remark"><em>Remark</em>. </span>One implication of this theorem is that a set cannot be the same size as its power set. This is obvious for finite sets; if <span class="math inline">\(|A|=n\)</span> then <span class="math inline">\(|\mathcal{P}(A)|= 2^n\)</span> but it isn’t clear for infinite sets.</p>
+<p><span id="unlabeled-div-44" class="remark"><em>Remark</em>. </span>One implication of this theorem is that a set cannot be the same size as its power set. This is obvious for finite sets; if <span class="math inline">\(|A|=n\)</span> then <span class="math inline">\(|\mathcal{P}(A)|= 2^n\)</span> but it isn’t clear for infinite sets.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-46" class="proof"><em>Proof</em>. </span>We notice that for every <span class="math inline">\(x \in A\)</span> we have <span class="math inline">\(f(x)\)</span> which is a subset of <span class="math inline">\(A\)</span>. This brings up two possibilities we could have <span class="math inline">\(x \in f(x)\)</span> or <span class="math inline">\(x \notin f(x)\)</span>. We can form a set <span class="math inline">\(C\)</span> by writing
+<p><span id="unlabeled-div-45" class="proof"><em>Proof</em>. </span>We notice that for every <span class="math inline">\(x \in A\)</span> we have <span class="math inline">\(f(x)\)</span> which is a subset of <span class="math inline">\(A\)</span>. This brings up two possibilities we could have <span class="math inline">\(x \in f(x)\)</span> or <span class="math inline">\(x \notin f(x)\)</span>. We can form a set <span class="math inline">\(C\)</span> by writing
 <span class="math display">\[ C = \{ x \in A\,:\, x \notin f(x)\}.  \]</span></p>
 <p>Now suppose for contradiction that <span class="math inline">\(f\)</span> is surjective. This implies that there exists some <span class="math inline">\(c \in A\)</span> such that <span class="math inline">\(f(c) = C\)</span>.</p>
 <p>Now there are two possibilities.</p>
@@ -438,7 +435,7 @@ Figure 2.5: A picture of Cantor
 </div>
 <p>Cantor was one of the pioneers of the foundations of mathematics and in particular set theory. His work was astonishingly controversial at the time. One of the implications of Cantor’s theorem which we haven’t explored is the existence of an infinity which is <em>larger</em> in some sense than the infinity that is the cardinality of the natural numbers. Some theologians believed this as a step towards pantheism. He was also described as a “corrupter of youth”.</p>
 <div class="remark">
-<p><span id="unlabeled-div-47" class="remark"><em>Remark</em> (non-examinable). </span>The proof of Cantor’s theorem is is strongly related to *Russel’s paradox”. Let us consider the set <span class="math inline">\(R= \{ \mbox{all sets}\, x \,\mbox{such that} \, x \notin x \}\)</span> then the question is whether <span class="math inline">\(R \in R\)</span>?</p>
+<p><span id="unlabeled-div-46" class="remark"><em>Remark</em> (non-examinable). </span>The proof of Cantor’s theorem is is strongly related to *Russel’s paradox”. Let us consider the set <span class="math inline">\(R= \{ \mbox{all sets}\, x \,\mbox{such that} \, x \notin x \}\)</span> then the question is whether <span class="math inline">\(R \in R\)</span>?</p>
 <p>It becomes clear from this that we cannot define the set <span class="math inline">\(R\)</span> so we do not want to build an axiom set which would allow us to define something like <span class="math inline">\(R\)</span>.</p>
 </div>
 </div>
@@ -446,17 +443,17 @@ Figure 2.5: A picture of Cantor
 <h2><span class="header-section-number">2.7</span> Ordered pairs and Cartesian products<a href="sets-and-functions.html#ordered-pairs-and-cartesian-products" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When we think about functions we often think about the graph of a function. Therefore is is useful to enhance our set theory in a way that allows us to talk about graphs.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-48" class="definition"><strong>Definition 2.23  (ordered pairs) </strong></span>If we have two sets <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and <span class="math inline">\(x \in X, y \in Y\)</span> then we can form an ordered pair of these two elements that we write <span class="math inline">\((x,y)\)</span>.</p>
+<p><span id="def:unlabeled-div-47" class="definition"><strong>Definition 2.22  (ordered pairs) </strong></span>If we have two sets <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and <span class="math inline">\(x \in X, y \in Y\)</span> then we can form an ordered pair of these two elements that we write <span class="math inline">\((x,y)\)</span>.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-49" class="remark"><em>Remark</em>. </span>Here we say <em>ordered</em> pair because the order matters. So <span class="math inline">\((1,2) \neq (2,1)\)</span>. This is different to how sets behave where <span class="math inline">\(\{1,2\} = \{2,1\}\)</span>. Also unlike setes we keep repeats. We can have a pair <span class="math inline">\(x,x\)</span> if <span class="math inline">\(x \in X\)</span> and <span class="math inline">\(x \in Y\)</span> and this is different to the element <span class="math inline">\(x\)</span>.</p>
+<p><span id="unlabeled-div-48" class="remark"><em>Remark</em>. </span>Here we say <em>ordered</em> pair because the order matters. So <span class="math inline">\((1,2) \neq (2,1)\)</span>. This is different to how sets behave where <span class="math inline">\(\{1,2\} = \{2,1\}\)</span>. Also unlike setes we keep repeats. We can have a pair <span class="math inline">\(x,x\)</span> if <span class="math inline">\(x \in X\)</span> and <span class="math inline">\(x \in Y\)</span> and this is different to the element <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-50" class="definition"><strong>Definition 2.24  (cartesian product) </strong></span>Given two sets <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> we can form a new set <span class="math inline">\(X \times Y\)</span> called the <em>Cartesian product</em> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and defined by
+<p><span id="def:unlabeled-div-49" class="definition"><strong>Definition 2.23  (cartesian product) </strong></span>Given two sets <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> we can form a new set <span class="math inline">\(X \times Y\)</span> called the <em>Cartesian product</em> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and defined by
 <span class="math display">\[ X \times Y = \{ (x,y) \,:\, x \in X, y \in Y\}.  \]</span></p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-51" class="remark"><em>Remark</em>. </span>We have a special notation for the Cartesian product between a set and itself. We write
+<p><span id="unlabeled-div-50" class="remark"><em>Remark</em>. </span>We have a special notation for the Cartesian product between a set and itself. We write
 <span class="math display">\[ X^2 = X \times X,  \]</span> and
 <span class="math display">\[ X^n = X \times X^{n-1}.  \]</span> You will have probably seen this before e.g. <span class="math inline">\(\mathbb{R}^d\)</span>.</p>
 </div>
@@ -465,7 +462,7 @@ Figure 2.5: A picture of Cantor
 <h2><span class="header-section-number">2.8</span> Graphs and a better definition of functions<a href="sets-and-functions.html#graphs-and-a-better-definition-of-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Relations are an important mathematical object that you might not have thought about before. At first they seem quite similar to functions but they can appear in a very different settings. Since this is a section a about functions we are just going to talk enough about relations to give a better definition of a function and then return to them later.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-52" class="definition"><strong>Definition 2.25  (Graphical relations) </strong></span>A <em>graphical relation</em> is formed of three objects</p>
+<p><span id="def:unlabeled-div-51" class="definition"><strong>Definition 2.24  (Graphical relations) </strong></span>A <em>graphical relation</em> is formed of three objects</p>
 <ul>
 <li><p>A domain <span class="math inline">\(X\)</span></p></li>
 <li><p>A codomain <span class="math inline">\(Y\)</span></p></li>
@@ -474,7 +471,7 @@ Figure 2.5: A picture of Cantor
 <p>If <span class="math inline">\((x,y) \in G\)</span> we write <span class="math inline">\(xGy\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-53" class="example"><strong>Example 2.11  </strong></span>The relation defined by <span class="math inline">\((x,y) \in G \Leftrightarrow x \leq y\)</span> is not graphical from <span class="math inline">\(\mathbb{R}\)</span> to itself because for every <span class="math inline">\(x\)</span> there are many <span class="math inline">\(y\)</span> with <span class="math inline">\(y \leq x\)</span>.</p>
+<p><span id="exm:unlabeled-div-52" class="example"><strong>Example 2.11  </strong></span>The relation defined by <span class="math inline">\((x,y) \in G \Leftrightarrow x \leq y\)</span> is not graphical from <span class="math inline">\(\mathbb{R}\)</span> to itself because for every <span class="math inline">\(x\)</span> there are many <span class="math inline">\(y\)</span> with <span class="math inline">\(y \leq x\)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
 <img src="less%20than.png" alt="A picture of the less than relation on the reals"  />
 <p class="caption">
@@ -498,10 +495,10 @@ Figure 2.8: A picture of the is the cube of relation
 </div>
 <p>Using this we can give a better definition of a function</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-54" class="definition"><strong>Definition 2.26  (function) </strong></span>Given a graphical relation <span class="math inline">\((x,Y,G)\)</span> we can define a function <span class="math inline">\(f\)</span> with domain <span class="math inline">\(X\)</span> and co-domain <span class="math inline">\(Y\)</span> by setting <span class="math inline">\(f(x) = y\)</span> for the unique <span class="math inline">\(y\)</span> such that <span class="math inline">\((x,y) \in G\)</span>.</p>
+<p><span id="def:unlabeled-div-53" class="definition"><strong>Definition 2.25  (function) </strong></span>Given a graphical relation <span class="math inline">\((x,Y,G)\)</span> we can define a function <span class="math inline">\(f\)</span> with domain <span class="math inline">\(X\)</span> and co-domain <span class="math inline">\(Y\)</span> by setting <span class="math inline">\(f(x) = y\)</span> for the unique <span class="math inline">\(y\)</span> such that <span class="math inline">\((x,y) \in G\)</span>.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-55" class="remark"><em>Remark</em>. </span>It is interesting <em>and subtle</em> to think about why this is a more satisfactory definition of a function. People who worked on the foundations of mathematics wanted to build all mathematical objects from sets using a fairly small set of axioms.</p>
+<p><span id="unlabeled-div-54" class="remark"><em>Remark</em>. </span>It is interesting <em>and subtle</em> to think about why this is a more satisfactory definition of a function. People who worked on the foundations of mathematics wanted to build all mathematical objects from sets using a fairly small set of axioms.</p>
 <p>We have done something in this direction, but starting only with sets and axioms it would take a very long time to define everything we need for this course. It is also challenging and not to everybodies taste. Here we have skipped some steps, hidden some subtleties, added axioms to make it simpler etc. For example, in the axiom of separation we have not really defined what we mean by a property, and we have used the natural numbers without defining them starting from sets.</p>
 <p>Most of the time when we’ve introduced new axioms, we are asserting that some set exists (e.g. a power set, union, etc.). If we wanted to add an axiom saying functions exist/make sense this would mean adding an axiom that doesn’t just say “another kind of set exists” it would say “a completely new kind of object exists” and this is in some sense very unsatisfactory. Therefore, this later more formal definition of function is <em>better</em> because it allows us to say what a function is using only concepts about sets and subsets.</p>
 </div>

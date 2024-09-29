@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-09-23}
+\date{2024-09-29}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -190,6 +190,8 @@ There are some important sets which have their own symbols and names. You have p
   The real numbers, \(\mathbb{R} = (-\infty, \infty)\),
 \item
   The complex numbers, \(\mathbb{C} = \{x+iy \,:\, x \in \mathbb{R}, y \in \mathbb{R}\}\) where \(i\) is the complex unit.
+\item
+  Something that will appear in this course \([[n]]= \{0,1,\dots, n-1\}\).
 \end{itemize}
 
 \end{definition}
@@ -317,12 +319,6 @@ Exercise!
 We call a set which contains only one element a \emph{singleton set}.
 \end{definition}
 
-We also define some notation
-
-\begin{definition}
-We write \([[n]]= \{ k\in \mathbb{N}, k < n\}\).
-\end{definition}
-
 \section{Power sets and specification}\label{power-sets-and-specification}
 
 \begin{definition}[Power set (axiom)]
@@ -336,7 +332,7 @@ The power set of \(\{0,1,2\}\) is
 
 \begin{definition}[specification (axiom)]
 \emph{Specification} is a way of constructing subsets of a set (we've done this a lot already). Suppose \(P(A)\) is a property that an element \(x\) of \(A\) could have. Then we can define the set
-\[ B = \{ x \in A \,:\, P(A)\}.  \]
+\[ B = \{ x \in A \,:\, P(x)\}.  \]
 \end{definition}
 
 The \emph{axiom of specification} is the set theory axiom positing that such a set exists. In this we would need a more precise notion of what a property is.
