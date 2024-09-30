@@ -69,7 +69,7 @@ There are some important sets which have their own symbols and names. You have p
 
 ::: {.definition name="equality of sets/axiom of extension"}
 
-Two sets are equal (the same) if they have exactly the same elements. We call this the axiom of extension. We can write it in formal language as: if for every \(x \in A\) we have \(x \in B\) and for every \(y \in B\) we have \(y \in B\) then \(A=B\).
+Two sets are equal (the same) if they have exactly the same elements. We call this the axiom of extension. We can write it in formal language as: if for every \(x \in A\) we have \(x \in B\) and for every \(y \in B\) we have \(y \in A\) then \(A=B\).
 
 :::
 
@@ -294,7 +294,7 @@ Given a function \(f:A \rightarrow B\) then
 
 - If \(C \subset A\) we write \(f(C) = \{y \in B \,:\, y = f(x) \, \mbox{for some} \, x \in C\}\). We call \(f(C)\) the *image* of \(C\) under \(f\).
 
-- If \(D \in B\) we write \(f^{-1}(D)) = \{ x \in C \,:\, f(x) \in D\}\). We call \(f^{-1}(D)\) the *pre-image* of \(D\) under \(f\).
+- If \(D \in B\) we write \(f^{-1}(D) = \{ x \in C \,:\, f(x) \in D\}\). We call \(f^{-1}(D)\) the *pre-image* of \(D\) under \(f\).
 
 :::
 
