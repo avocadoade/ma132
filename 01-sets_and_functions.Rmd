@@ -64,12 +64,14 @@ There are some important sets which have their own symbols and names. You have p
 
 - The complex numbers, \(\mathbb{C} = \{x+iy \,:\, x \in \mathbb{R}, y \in \mathbb{R}\}\) where \(i\) is the complex unit.
 
+- Something that will appear in this course \([[n]]= \{0,1,\dots, n-1\}\).
+
 :::
 
 
 ::: {.definition name="equality of sets/axiom of extension"}
 
-Two sets are equal (the same) if they have exactly the same elements. We call this the axiom of extension. We can write it in formal language as: if for every \(x \in A\) we have \(x \in B\) and for every \(y \in B\) we have \(y \in B\) then \(A=B\).
+Two sets are equal (the same) if they have exactly the same elements. We call this the axiom of extension. We can write it in formal language as: if for every \(x \in A\) we have \(x \in B\) and for every \(y \in B\) we have \(y \in A\) then \(A=B\).
 
 :::
 
@@ -100,7 +102,7 @@ There are several shorthand notations used in maths and particularly in logic. S
 :::
 
 Using this we can write the axiom of extension as 
-\[ \forall A \forall B ( (x \in A \Leftrightarrow x \in B) \Leftarrow (A=B)).   \] Which is a good illustration of why its often better to use words!
+\[ \forall A \forall B ( \forall x (x \in A \Leftrightarrow x \in B) \Rightarrow (A=B)).   \] Which is a good illustration of why its often better to use words!
 
 Given that sets are defined by their elements we sometimes need to consider that set that doesn't have any elements at all.
 
@@ -193,13 +195,7 @@ We call a set which contains only one element a *singleton set*.
 
 :::
 
-We also define some notation 
 
-::: {.definition}
-
-We write \([[n]]= \{ k\in \mathbb{N}, k < n\}\).
-
-:::
 
 
 
@@ -221,7 +217,7 @@ The power set of \(\{0,1,2\}\) is
 ::: {.definition name="specification (axiom)"}
 
 *Specification* is a way of constructing subsets of a set (we've done this a lot already). Suppose \(P(A)\) is a property that an element \(x\) of \(A\) could have. Then we can define the set 
-\[ B = \{ x \in A \,:\, P(A)\}.  \] 
+\[ B = \{ x \in A \,:\, P(x)\}.  \] 
 
 :::
 
@@ -294,17 +290,28 @@ Given a function \(f:A \rightarrow B\) then
 
 - If \(C \subset A\) we write \(f(C) = \{y \in B \,:\, y = f(x) \, \mbox{for some} \, x \in C\}\). We call \(f(C)\) the *image* of \(C\) under \(f\).
 
-- If \(D \in B\) we write \(f^{-1}(D)) = \{ x \in C \,:\, f(x) \in D\}\). We call \(f^{-1}(D)\) the *pre-image* of \(D\) under \(f\).
+- If \(D \subset B\) we write \(f^{-1}(D) = \{ x \in A \,:\, f(x) \in D\}\). We call \(f^{-1}(D)\) the *pre-image* of \(D\) under \(f\).
 
 :::
 
 
+::: {.example}
+
+We have to be particularly careful with preimages as this example demonstrates
+
+Let \(f: \mathbb{R} \rightarrow \mathbb{R}\) given by \(f(x) = x^2\) then \(f^{-1}(\{2\}) = \{-\sqrt{2}, \sqrt{2}\}\).
+
+Let \(f: \mathbb{Q} \rightarrow \mathbb{Q}\) given by \(f(x) = x^2\) then \(f^{-1}(\{2\})= \emptyset\). Because \(\pm sqrt{2}\) is irrational so \(2\) has no square roots in the rationals.
+
+Let \(f: [0, \infty) \rightarrow [0, \infty)\) given by \(f(x)=x^2\) then \( f^{-1}(\{2\}) = \{\sqrt{2}\}\).
+
+:::
 
 ## Properties of functions
 
 ::: {.definition name="injectivity"}
 
-A function \(f:A\rightarrow B\) is called *injective* if \(f(x)=f(x')\) implies that \(x=x'\). That is to say there are no two elements of \(X\) where \(f(x)\) takes the same value, or \(y\) has at most one preimage under \(f\). 
+A function \(f:A\rightarrow B\) is called *injective* if \(f(x)=f(x')\) implies that \(x=x'\). That is to say there are no two elements of \(A\) where \(f(x)\) takes the same value, or \(y\) has at most one preimage under \(f\). 
 
 :::
 
@@ -371,7 +378,7 @@ We say that \(A\) and \(B\) have the same *cardinality* (informally the same siz
 ::: {.definition name="Finiteness"}
 Cardinality allows us to give a rigorous notion for a set to be *finite*/have a finite number of elements. 
 
-Given a set \(A\), if there is some natural number \(n\) such that \(|A|=|[[n-1]]|\) then we say \(A\) has size \(n\).
+Given a set \(A\), if there is some natural number \(n\) such that \(|A|=|[[n]]|\) then we say \(A\) has size \(n\).
 
 If \(A\) has size \(n\) for some \(n\) then we say \(A\) is finite.
 
@@ -383,31 +390,6 @@ We say a set is *infinite* if it isn't finite.
 
 :::
 
-::: {.defintion name="pigeon hole principle"}
-
-Suppose \(A\) and \(B\) are finite sets with \(|A| > |B|\) and \(f: A \rightarrow B\) is a function then there exists some \(b \in B\) for which there are at least two elements \(a_1,a_2\) of \(A\) for which \(f(a_1)=f(a_2)=b\).
-
-The name for this fact comes from the idea that if you have a dovecote with \(n\) holes and you have more than \(n+1\) pigeons then however you arrange the pigeons at least one hole must contain more than one pigoen.
-
-:::
-
-::: {.lemma}
-
-Suppose that \(A,B\) are sets and \(B\) is finite.
-
-- If there exists an injection \(f: A \rightarrow B\) then \(A\) is finite.
-
-- If there exists a surjections \(g: B \rightarrow A\) then \(A\) is finite.
-
-:::
-
-::: {.proof}
-
-If \(B\) is finite then there is a bijection between \(B\) and some \([[n]]\) and so composing \(f\) and this bijection gives an injection form \(A\) to some subset of \([[n]]\). Let us call this injection \(j\). Now let us create a bijection from \(A\) to some \([[m]]\) as follows. The image of \(j\) is \(\{j_0, \dots, j_m\}\) so let us map \(j^{-1}(j_k)\) to \(k\) for \(k=0,\dots, m\). This shows that \(A\) is finite.
-
-Now considering the second point. We can choose a right inverse to \(g\) which we call \(h\). This will be an injection since \(g\) is a function so the first point proves that \(A\) is finite also in this case.
-
-:::
 
 
 ::: {.theorem name="Cantor's Theorem"}

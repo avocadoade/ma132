@@ -346,28 +346,35 @@ Now if we want to show bijectivity of \(f\) implies we must have an inverse we n
 
 :::
 
-::: {.definition name="image and preimage"}
 
-Suppose that \(A, B\) are sets and \(f: A \rightarrow B\) is a function. Suppose further that \(C \subset A, D \subset B\) then we write
+::: {.definition name="pigeon hole principle"}
 
-- \(f(C)= \{y \in B \,:\, y=f(x), \mbox{for some} \, x \in C\}\) and we call \(f(C)\) the *image* of \(C\) under \(f\).
+Suppose \(A\) and \(B\) are finite sets with \(|A| > |B|\) and \(f: A \rightarrow B\) is a function then there exists some \(b \in B\) for which there are at least two elements \(a_1,a_2\) of \(A\) for which \(f(a_1)=f(a_2)=b\).
 
-- \(f^{-1}(D)= \{ x \in A \,:\, f(x) \in D\}\) and we call \(f^{-1}(D)\) the *preimage* of \(D\) under \(f\).
+The name for this fact comes from the idea that if you have a dovecote with \(n\) holes and you have more than \(n+1\) pigeons then however you arrange the pigeons at least one hole must contain more than one pigeon.
+
+:::
+
+::: {.lemma}
+
+Suppose that \(A,B\) are sets and \(B\) is finite.
+
+- If there exists an injection \(f: A \rightarrow B\) then \(A\) is finite.
+
+- If there exists a surjections \(g: B \rightarrow A\) then \(A\) is finite.
+
+:::
+
+::: {.proof}
+
+If \(B\) is finite then there is a bijection between \(B\) and some \([[n]]\) and so composing \(f\) and this bijection gives an injection form \(A\) to some subset of \([[n]]\). Let us call this injection \(j\). Now let us create a bijection from \(A\) to some \([[m]]\) as follows. The image of \(j\) is \(\{j_0, \dots, j_m\}\) so let us map \(j^{-1}(j_k)\) to \(k\) for \(k=0,\dots, m\). This shows that \(A\) is finite.
+
+Now considering the second point. We can choose a right inverse to \(g\) which we call \(h\). This will be an injection since \(g\) is a function so the first point proves that \(A\) is finite also in this case.
 
 :::
 
 
-::: {.example}
 
-We have to be particularly careful with preimages as this example demonstrates
-
-Let \(f: \mathbb{R} \rightarrow \mathbb{R}\) given by \(f(x) = x^2\) then \(f^{-1}(\{2\}) = \{-\sqrt{2}, \sqrt{2}\}\).
-
-Let \(f: \mathbb{Q} \rightarrow \mathbb{Q}\) given by \(f(x) = x^2\) then \(f^{-1}(\{2\})= \emptyset\). Because \(\pm sqrt{2}\) is irrational so \(2\) has no square roots in the rationals.
-
-Let \(f: [0, \infty) \rightarrow [0, \infty)\) given by \(f(x)=x^2\) then \( f^{-1}(\{2\}) = \{\sqrt{2}\}\).
-
-:::
 
 Lastly in this section we have a deeper theorem whose proof is more complicated that those we have encountered before.
 
