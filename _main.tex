@@ -825,8 +825,8 @@ If you want to you can check these yourself. It is mainly just symbol pushing. A
 
 \begin{definition}[composition]
 
-Given sets \(A, B\) and \(C\) and functions \(f: A \rightarrow B\) and \(g: B \rightarrow C\) we can define a new function \(f \circ g\) from \(A\) to \(C\) by
-\[ f\circ g(x) = g(f(x)).  \]
+Given sets \(A, B\) and \(C\) and functions \(f: B \rightarrow C\) and \(g: A \rightarrow B\) we can define a new function \(f \circ g\) from \(A\) to \(C\) by
+\[ f\circ g(x) = f(g(x)).  \]
 
 \begin{figure}
 \centering
@@ -847,7 +847,7 @@ Given sets \(A, B\) and \(C\) and functions \(f: A \rightarrow B\) and \(g: B \r
 \end{example}
 
 \begin{example}
-Another example would be if \(f: \mathbb{R} \rightarrow [0,\infty)\) is defined by \(f(x) = x^2\) and \(g: [0,\infty) \rightarrow [0, \infty)\) is defined by \(g(y) = \sqrt{y}\) then \(f \circ g (x) = |x|\) and is defined from \(\mathbb{R}\) to \([0,\infty)\).
+Another example would be if \(f: \mathbb{R} \rightarrow [0,\infty)\) is defined by \(f(x) = x^2\) and \(g: [0,\infty) \rightarrow [0, \infty)\) is defined by \(g(y) = \sqrt{y}\) then \(g \circ g (x) = |x|\) and is defined from \(\mathbb{R}\) to \([0,\infty)\).
 \end{example}
 
 \begin{remark}
@@ -857,7 +857,7 @@ An important example of composition is if \(A\) is a set and \(f: A \rightarrow 
 \begin{lemma}[Associativity of composition]
 
 Composition of functions is associative. That is to say, if \(A,B,C\) and \(D\) are all sets and \(f:A \rightarrow B, g: B \rightarrow C\) and \(h: C \rightarrow D\) are all functions then
-\[ f \circ (g \circ h) = (f \circ g) \circ h  \]
+\[ h \circ (g \circ f) = (h \circ g) \circ f  \]
 
 \begin{figure}
 \centering
@@ -870,9 +870,9 @@ Composition of functions is associative. That is to say, if \(A,B,C\) and \(D\) 
 \begin{proof}
 To prove this we can evaluate the functions at a given \(x \in A\).
 
-\[f \circ (g \circ h)(x) = (g \circ h)(f(x)) = h(g(f(x))).\]
+\[h \circ (g \circ f)(x) = (h \circ g)(f(x)) = h(g(f(x))).\]
 
-\[(f\circ g) \circ h(x) = h (f\circ g(x)) = h(g(f(x))).\]
+\[(h\circ g) \circ f(x) = h (g\circ f(x)) = h(g(f(x))).\]
 \end{proof}
 
 We can relate composition of functions to injectivity and surjectivity
@@ -883,27 +883,27 @@ Suppose that \(A, B\) and \(C\) are sets and \(f: A \rightarrow B\) and \(g: B \
 
 \begin{itemize}
 \item
-  If both \(f\) and \(g\) are injective then so is \(f \circ g\),
+  If both \(f\) and \(g\) are injective then so is \(g \circ f\),
 \item
-  If both \(f\) and \(g\) are surjective then so is \(f \circ g\).
+  If both \(f\) and \(g\) are surjective then so is \(g \circ f\).
 \end{itemize}
 
 \end{lemma}
 
 \begin{proof}
-If both \(f\) and \(g\) are injective then given \(z \in C\) there is at most one \(y \in B\) with \(g(y)=z\) then for this \(y\) there is at most one \(x \in A\) with \(f(x) = y\) therefore there is at most one \(x \in A\) with \(f\circ g(x) = z\).
+If both \(f\) and \(g\) are injective then given \(z \in C\) there is at most one \(y \in B\) with \(g(y)=z\) then for this \(y\) there is at most one \(x \in A\) with \(f(x) = y\) therefore there is at most one \(x \in A\) with \(g\circ f(x) = z\).
 
-If both \(f\) and \(g\) are surjective then given \(z \in C\) there is at least one \(y \in B\) with \(g(y) = z\) and for this \(y\) there is at least one \(x \in A\) with \(f(x) = y\) therefore there is at least one \(x \in A\) with \(f \circ g (x) = z\).
+If both \(f\) and \(g\) are surjective then given \(z \in C\) there is at least one \(y \in B\) with \(g(y) = z\) and for this \(y\) there is at least one \(x \in A\) with \(f(x) = y\) therefore there is at least one \(x \in A\) with \(g \circ f (x) = z\).
 \end{proof}
 
 This next set of results is about what it means to be the \emph{inverse of a function}. This can be a subtle and quite complicated issue.
 
 \begin{example}
-As we just saw above if \(f: \mathbb{R} \rightarrow [0,\infty)\) is defined by \(f(x) = x^2\) and \(g: [0,\infty) \rightarrow [0, \infty)\) is defined by \(g(y) = \sqrt{y}\) then \(f \circ g (x) = |x|\). So even though we think of square root and squaring as inverses of each other in this case \(f \circ g\) is not equal to the identity function.
+As we just saw above if \(f: \mathbb{R} \rightarrow [0,\infty)\) is defined by \(f(x) = x^2\) and \(g: [0,\infty) \rightarrow [0, \infty)\) is defined by \(g(y) = \sqrt{y}\) then \(g \circ f (x) = |x|\). So even though we think of square root and squaring as inverses of each other in this case \(g \circ f\) is not equal to the identity function.
 
-On the other hand if \(f : [0, \infty) \rightarrow [0, \infty)\) defined by \(f(x)=x^2\) and \(g: [0,\infty) \rightarrow [0,\infty)\) is defined by \(g(y) = \sqrt(y)\) then \(f \circ g(x) = x\) so if we change the domain of \(f\) we can think for these functions as inverse to each other.
+On the other hand if \(f : [0, \infty) \rightarrow [0, \infty)\) defined by \(f(x)=x^2\) and \(g: [0,\infty) \rightarrow [0,\infty)\) is defined by \(g(y) = \sqrt(y)\) then \(g \circ f(x) = x\) so if we change the domain of \(f\) we can think for these functions as inverse to each other.
 
-We also have that if \(f: \mathbb{R} \rightarrow [0,\infty)\) defined by \(f(x) = x^2\) and \(g: [0, \infty) \rightarrow [0,\infty)\) defined by \(g(y) = \sqrt(y)\) (as in the first part of the example) then \(g\circ f)(y) = y\). we can think of these as inverse to eachother in one order but not in the other order.
+We also have that if \(f: \mathbb{R} \rightarrow [0,\infty)\) defined by \(f(x) = x^2\) and \(g: [0, \infty) \rightarrow [0,\infty)\) defined by \(g(y) = \sqrt(y)\) (as in the first part of the example) then \(g\circ g)(y) = y\). we can think of these as inverse to eachother in one order but not in the other order.
 \end{example}
 
 \begin{definition}[left and right inverses]
