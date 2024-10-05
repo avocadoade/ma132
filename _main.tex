@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-10-01}
+\date{2024-10-05}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -185,7 +185,7 @@ There are some important sets which have their own symbols and names. You have p
 \item
   The integers, \(\mathbb{Z} = \{ \dots, -3, -2, -1, 0, 1, 2, 3, \dots \}\),
 \item
-  The rationals, \(\mathbb{Q} = \{p/q \,:\, p \in \mathbb{Z}, q \in \mathbb{N}\}\),
+  The rationals, \(\mathbb{Q} = \{p/q \,:\, p \in \mathbb{Z}, q \in \mathbb{N}, q \neq 0\}\),
 \item
   The real numbers, \(\mathbb{R} = (-\infty, \infty)\),
 \item
@@ -397,7 +397,7 @@ We have to be particularly careful with preimages as this example demonstrates
 
 Let \(f: \mathbb{R} \rightarrow \mathbb{R}\) given by \(f(x) = x^2\) then \(f^{-1}(\{2\}) = \{-\sqrt{2}, \sqrt{2}\}\).
 
-Let \(f: \mathbb{Q} \rightarrow \mathbb{Q}\) given by \(f(x) = x^2\) then \(f^{-1}(\{2\})= \emptyset\). Because \(\pm sqrt{2}\) is irrational so \(2\) has no square roots in the rationals.
+Let \(f: \mathbb{Q} \rightarrow \mathbb{Q}\) given by \(f(x) = x^2\) then \(f^{-1}(\{2\})= \emptyset\). Because \(\pm \sqrt{2}\) is irrational so \(2\) has no square roots in the rationals.
 
 Let \(f: [0, \infty) \rightarrow [0, \infty)\) given by \(f(x)=x^2\) then \(f^{-1}(\{2\}) = \{\sqrt{2}\}\).
 \end{example}
@@ -563,7 +563,7 @@ The relation defined by \((x,y) \in G \Leftrightarrow x \leq y\) is not graphica
 \caption{\label{fig:unnamed-chunk-6}A picture of the less than relation on the reals}
 \end{figure}
 
-The relation defined by \((x,y) \in G \Leftrightarrow x=y^2\) is not graphical from \(\mathbb{R}\) to itself because if \(x\) is negative then it isn't the square of any real number so there are no \(y\)s with \(x G y\), and also because for \(x \geq 0\) there are two \(y\)s with \(x=y^2\).
+The relation defined by \((x,y) \in G \Leftrightarrow x=y^2\) is not graphical from \(\mathbb{R}\) to itself because if \(x\) is negative then it isn't the square of any real number so there are no \(y\)s with \(x G y\), and also because for \(x > 0\) there are two \(y\)s with \(x=y^2\).
 
 \begin{figure}
 \centering

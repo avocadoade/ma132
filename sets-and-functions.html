@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2024-10-01" />
+<meta name="date" content="2024-10-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -200,7 +200,7 @@ set in the _output.yml file.</p>" />
 <ul>
 <li><p>The natural numbers, <span class="math inline">\(\mathbb{N}= \{0, 1,2,3,\dots\}\)</span>,</p></li>
 <li><p>The integers, <span class="math inline">\(\mathbb{Z} = \{ \dots, -3, -2, -1, 0, 1, 2, 3, \dots \}\)</span>,</p></li>
-<li><p>The rationals, <span class="math inline">\(\mathbb{Q} = \{p/q \,:\, p \in \mathbb{Z}, q \in \mathbb{N}\}\)</span>,</p></li>
+<li><p>The rationals, <span class="math inline">\(\mathbb{Q} = \{p/q \,:\, p \in \mathbb{Z}, q \in \mathbb{N}, q \neq 0\}\)</span>,</p></li>
 <li><p>The real numbers, <span class="math inline">\(\mathbb{R} = (-\infty, \infty)\)</span>,</p></li>
 <li><p>The complex numbers, <span class="math inline">\(\mathbb{C} = \{x+iy \,:\, x \in \mathbb{R}, y \in \mathbb{R}\}\)</span> where <span class="math inline">\(i\)</span> is the complex unit.</p></li>
 <li><p>Something that will appear in this course <span class="math inline">\([[n]]= \{0,1,\dots, n-1\}\)</span>.</p></li>
@@ -341,7 +341,7 @@ Figure 2.1: Picture showing A as a subset of B with sets indicated by circles
 <div class="example">
 <p><span id="exm:unlabeled-div-32" class="example"><strong>Example 2.9  </strong></span>We have to be particularly careful with preimages as this example demonstrates</p>
 <p>Let <span class="math inline">\(f: \mathbb{R} \rightarrow \mathbb{R}\)</span> given by <span class="math inline">\(f(x) = x^2\)</span> then <span class="math inline">\(f^{-1}(\{2\}) = \{-\sqrt{2}, \sqrt{2}\}\)</span>.</p>
-<p>Let <span class="math inline">\(f: \mathbb{Q} \rightarrow \mathbb{Q}\)</span> given by <span class="math inline">\(f(x) = x^2\)</span> then <span class="math inline">\(f^{-1}(\{2\})= \emptyset\)</span>. Because <span class="math inline">\(\pm sqrt{2}\)</span> is irrational so <span class="math inline">\(2\)</span> has no square roots in the rationals.</p>
+<p>Let <span class="math inline">\(f: \mathbb{Q} \rightarrow \mathbb{Q}\)</span> given by <span class="math inline">\(f(x) = x^2\)</span> then <span class="math inline">\(f^{-1}(\{2\})= \emptyset\)</span>. Because <span class="math inline">\(\pm \sqrt{2}\)</span> is irrational so <span class="math inline">\(2\)</span> has no square roots in the rationals.</p>
 <p>Let <span class="math inline">\(f: [0, \infty) \rightarrow [0, \infty)\)</span> given by <span class="math inline">\(f(x)=x^2\)</span> then <span class="math inline">\(f^{-1}(\{2\}) = \{\sqrt{2}\}\)</span>.</p>
 </div>
 </div>
@@ -469,7 +469,7 @@ Figure 2.5: A picture of Cantor
 Figure 2.6: A picture of the less than relation on the reals
 </p>
 </div>
-<p>The relation defined by <span class="math inline">\((x,y) \in G \Leftrightarrow x=y^2\)</span> is not graphical from <span class="math inline">\(\mathbb{R}\)</span> to itself because if <span class="math inline">\(x\)</span> is negative then it isn’t the square of any real number so there are no <span class="math inline">\(y\)</span>s with <span class="math inline">\(x G y\)</span>, and also because for <span class="math inline">\(x \geq 0\)</span> there are two <span class="math inline">\(y\)</span>s with <span class="math inline">\(x=y^2\)</span>.</p>
+<p>The relation defined by <span class="math inline">\((x,y) \in G \Leftrightarrow x=y^2\)</span> is not graphical from <span class="math inline">\(\mathbb{R}\)</span> to itself because if <span class="math inline">\(x\)</span> is negative then it isn’t the square of any real number so there are no <span class="math inline">\(y\)</span>s with <span class="math inline">\(x G y\)</span>, and also because for <span class="math inline">\(x &gt; 0\)</span> there are two <span class="math inline">\(y\)</span>s with <span class="math inline">\(x=y^2\)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
 <img src="is%20the%20square%20of.png" alt="A picture of the is the square of relation"  />
 <p class="caption">
