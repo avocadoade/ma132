@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2024-10-05" />
+<meta name="date" content="2024-10-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -228,7 +228,9 @@ Figure 3.3: picture showing two disjoint sets
 <p><span id="exm:unlabeled-div-61" class="example"><strong>Example 3.3  </strong></span><span class="math display">\[ \{1,2,3\} \cap \{ 1,2,4\} = \{1,2\}.\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-62" class="example"><strong>Example 3.4  </strong></span><span class="math display">\[\bigcup_{n \in \mathbb{N}} [[n]] = {0}. \]</span></p>
+<p><span id="exm:unlabeled-div-62" class="example"><strong>Example 3.4  </strong></span><span class="math display">\[\bigcap_{n \in \mathbb{N}} [[n]] = \emptyset. \]</span></p>
+<p>and</p>
+<p><span class="math display">\[ \bigcap_{n \geq 2} [[n]] = [[2]].\]</span></p>
 </div>
 <div class="lemma">
 <p><span id="lem:unlabeled-div-63" class="lemma"><strong>Lemma 3.2  </strong></span>Given sets <span class="math inline">\(A, B, C\)</span> the following are true</p>
@@ -315,7 +317,7 @@ Figure 3.8: picture of De Morgan’s Laws 2
 <ul>
 <li><p><span class="math inline">\(1_{B \cap C} = 1_{B}1_{C}\)</span>.</p></li>
 <li><p><span class="math inline">\(1_{B \cup C} = 1_B + 1_C - 1_B 1_C\)</span>.</p></li>
-<li><p>If <span class="math inline">\(B \subset C\)</span> then <span class="math inline">\(1_{C \setminus B} = 1_C - 1_B\)</span>.</p></li>
+<li><p>If <span class="math inline">\(B \subset C\)</span> then <span class="math inline">\(1_{C - B} = 1_C - 1_B\)</span>.</p></li>
 </ul>
 </div>
 <div class="proof">

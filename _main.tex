@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-10-05}
+\date{2024-10-07}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -680,7 +680,11 @@ Again as with unions, we will more often see this definition applied to sequence
 \end{example}
 
 \begin{example}
-\[\bigcup_{n \in \mathbb{N}} [[n]] = {0}. \]
+\[\bigcap_{n \in \mathbb{N}} [[n]] = \emptyset. \]
+
+and
+
+\[ \bigcap_{n \geq 2} [[n]] = [[2]].\]
 \end{example}
 
 \begin{lemma}
@@ -812,7 +816,7 @@ Given a set \(A\) and subsets \(B, C, D\) we have the following:
 \item
   \(1_{B \cup C} = 1_B + 1_C - 1_B 1_C\).
 \item
-  If \(B \subset C\) then \(1_{C \setminus B} = 1_C - 1_B\).
+  If \(B \subset C\) then \(1_{C - B} = 1_C - 1_B\).
 \end{itemize}
 
 \end{lemma}
