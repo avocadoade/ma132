@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-10-07}
+\date{2024-10-09}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -829,8 +829,8 @@ If you want to you can check these yourself. It is mainly just symbol pushing. A
 
 \begin{definition}[composition]
 
-Given sets \(A, B\) and \(C\) and functions \(f: B \rightarrow C\) and \(g: A \rightarrow B\) we can define a new function \(f \circ g\) from \(A\) to \(C\) by
-\[ f\circ g(x) = f(g(x)).  \]
+Given sets \(A, B\) and \(C\) and functions \(f: A \rightarrow B\) and \(g: B \rightarrow C\) we can define a new function \(g \circ f\) from \(A\) to \(C\) by
+\[ g\circ f(x) = g(f(x)).  \]
 
 \begin{figure}
 \centering
@@ -851,7 +851,7 @@ Given sets \(A, B\) and \(C\) and functions \(f: B \rightarrow C\) and \(g: A \r
 \end{example}
 
 \begin{example}
-Another example would be if \(f: \mathbb{R} \rightarrow [0,\infty)\) is defined by \(f(x) = x^2\) and \(g: [0,\infty) \rightarrow [0, \infty)\) is defined by \(g(y) = \sqrt{y}\) then \(g \circ g (x) = |x|\) and is defined from \(\mathbb{R}\) to \([0,\infty)\).
+Another example would be if \(f: \mathbb{R} \rightarrow [0,\infty)\) is defined by \(f(x) = x^2\) and \(g: [0,\infty) \rightarrow [0, \infty)\) is defined by \(g(y) = \sqrt{y}\) then \(g \circ f (x) = |x|\) and is defined from \(\mathbb{R}\) to \([0,\infty)\).
 \end{example}
 
 \begin{remark}
@@ -905,9 +905,9 @@ This next set of results is about what it means to be the \emph{inverse of a fun
 \begin{example}
 As we just saw above if \(f: \mathbb{R} \rightarrow [0,\infty)\) is defined by \(f(x) = x^2\) and \(g: [0,\infty) \rightarrow [0, \infty)\) is defined by \(g(y) = \sqrt{y}\) then \(g \circ f (x) = |x|\). So even though we think of square root and squaring as inverses of each other in this case \(g \circ f\) is not equal to the identity function.
 
-On the other hand if \(f : [0, \infty) \rightarrow [0, \infty)\) defined by \(f(x)=x^2\) and \(g: [0,\infty) \rightarrow [0,\infty)\) is defined by \(g(y) = \sqrt(y)\) then \(g \circ f(x) = x\) so if we change the domain of \(f\) we can think for these functions as inverse to each other.
+On the other hand if \(f : [0, \infty) \rightarrow [0, \infty)\) defined by \(f(x)=x^2\) and \(g: [0,\infty) \rightarrow [0,\infty)\) is defined by \(g(y) = \sqrt{y}\) then \(g \circ f(x) = x\) so if we change the domain of \(f\) we can think for these functions as inverse to each other.
 
-We also have that if \(f: \mathbb{R} \rightarrow [0,\infty)\) defined by \(f(x) = x^2\) and \(g: [0, \infty) \rightarrow [0,\infty)\) defined by \(g(y) = \sqrt(y)\) (as in the first part of the example) then \(g\circ g)(y) = y\). we can think of these as inverse to eachother in one order but not in the other order.
+We also have that if \(f: \mathbb{R} \rightarrow [0,\infty)\) defined by \(f(x) = x^2\) and \(g: [0, \infty) \rightarrow [0,\infty)\) defined by \(g(y) = \sqrt{y}\) (as in the first part of the example) then \(f\circ g)(y) = y\). we can think of these as inverse to eachother in one order but not in the other order.
 \end{example}
 
 \begin{definition}[left and right inverses]
@@ -916,9 +916,9 @@ Let \(A\) and \(B\) be sets and let \(f: A \rightarrow B\) and \(g: B \rightarro
 
 \begin{itemize}
 \item
-  We call \(g\) a \emph{left inverse} of \(f\) if \(g\circ f = Id_B\),
+  We call \(g\) a \emph{left inverse} of \(f\) if \(g\circ f = Id_A\),
 \item
-  We call \(g\) a \emph{right inverse} of \(f\) if \(f\circ g = Id_A\).
+  We call \(g\) a \emph{right inverse} of \(f\) if \(f\circ g = Id_B\).
 \item
   We call \(g\) an \emph{inverse} of \(f\) if it is both a left inverse and a right inverse. If an inverse exists we often write \(g = f^{-1}\).
 \end{itemize}
