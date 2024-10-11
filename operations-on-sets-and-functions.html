@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2024-10-09" />
+<meta name="date" content="2024-10-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -78,7 +78,7 @@ set in the _output.yml file.</p>" />
 <li><a href="./">MA132: Foundations</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-use-these-notes"><i class="fa fa-check"></i><b>1.1</b> How to use these notes</a></li>
 </ul></li>
@@ -101,12 +101,12 @@ set in the _output.yml file.</p>" />
 </ul></li>
 <li class="chapter" data-level="4" data-path="relations.html"><a href="relations.html"><i class="fa fa-check"></i><b>4</b> Relations</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="relations.html"><a href="relations.html#equivalence-relations-equivalence-classes-and-quotients"><i class="fa fa-check"></i><b>4.1</b> Equivalence relations, Equivalence classes and Quotients</a>
+<li class="chapter" data-level="4.1" data-path="relations.html"><a href="relations.html#equivalence-relations-equivalence-classes-and-quotients"><i class="fa fa-check"></i><b>4.1</b> Equivalence relations, Equivalence classes and Quotients</a></li>
+<li class="chapter" data-level="4.2" data-path="relations.html"><a href="relations.html#order-relations"><i class="fa fa-check"></i><b>4.2</b> Order relations</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="relations.html"><a href="relations.html#quotients"><i class="fa fa-check"></i><b>4.1.1</b> Quotients</a></li>
+<li class="chapter" data-level="4.2.1" data-path="relations.html"><a href="relations.html#quotients"><i class="fa fa-check"></i><b>4.2.1</b> Quotients</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="relations.html"><a href="relations.html#integers-via-quotients"><i class="fa fa-check"></i><b>4.2</b> Integers via quotients</a></li>
-<li class="chapter" data-level="4.3" data-path="relations.html"><a href="relations.html#order-relations"><i class="fa fa-check"></i><b>4.3</b> Order relations</a></li>
+<li class="chapter" data-level="4.3" data-path="relations.html"><a href="relations.html#integers-via-quotients"><i class="fa fa-check"></i><b>4.3</b> Integers via quotients</a></li>
 <li class="chapter" data-level="4.4" data-path="relations.html"><a href="relations.html#modular-arithmetic"><i class="fa fa-check"></i><b>4.4</b> Modular arithmetic</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="logic.html"><a href="logic.html"><i class="fa fa-check"></i><b>5</b> Logic</a>
@@ -172,27 +172,29 @@ set in the _output.yml file.</p>" />
 <h2><span class="header-section-number">3.1</span> Set operations<a href="operations-on-sets-and-functions.html#set-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We have already seen a few ways of making new sets from old like specification or taking Cartesian products. We are now going to look at some common <em>set operations</em> which allow us to make lots of new sets.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-54" class="definition"><strong>Definition 3.1  (union) </strong></span>The union of two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is set containing all the elements that are in <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> (or both). We write it <span class="math inline">\(A\cup B\)</span>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 3.1  (union) </strong></span>The union of two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is set containing all the elements that are in <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> (or both). We write it <span class="math inline">\(A\cup B\)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
 <img src="union.png" alt="picture of a union of two sets, sets represented as overlapping circles"  />
 <p class="caption">
 Figure 3.1: picture of a union of two sets, sets represented as overlapping circles
 </p>
 </div>
 <p>We don’t just have to take unions over pairs of sets. In fact we can take a union over almost any collection of sets. Formally, suppose that <span class="math inline">\(C\)</span> is a set all of whose elements are sets then we can define a new set
-<span class="math display">\[ \bigcup C = \{ x \,:\, \exists S \in C\, \mbox{s.t.}\, x \in S\}.\]</span></p>
+<span class="math display">\[ \bigcup C = \{ x \,:\, \exists S \in C\, \mbox{s.t.}\, x \in S\}.\]</span>
+or we write
+[ _{S C}S ={ x ,:, S C, , x S}.]</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-55" class="remark"><em>Remark</em>. </span>In practice most unions we take over larger collections of sets won’t be written like they are in the formal definition. It is common so see a union taken of a sequence of sets <span class="math inline">\(A_1, A_2, A_3, \dots\)</span> then we write <span class="math inline">\(\bigcup_n A_n\)</span> to be the union of all these sets.</p>
+<p><span id="unlabeled-div-2" class="remark"><em>Remark</em>. </span>In practice most unions we take over larger collections of sets won’t be written like they are in the formal definition. It is common so see a union taken of a sequence of sets <span class="math inline">\(A_1, A_2, A_3, \dots\)</span> then we write <span class="math inline">\(\bigcup_n A_n\)</span> to be the union of all these sets.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-56" class="example"><strong>Example 3.1  </strong></span><span class="math display">\[ \{1,2,3\} \cup \{ 1,2, 4\} = \{1,2,3,4\}.\]</span></p>
+<p><span id="exm:unlabeled-div-3" class="example"><strong>Example 3.1  </strong></span><span class="math display">\[ \{1,2,3\} \cup \{ 1,2, 4\} = \{1,2,3,4\}.\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-57" class="example"><strong>Example 3.2  </strong></span><span class="math display">\[ \bigcup_{n \in \mathbb{N}} [[n]] = \mathbb{N}. \]</span></p>
+<p><span id="exm:unlabeled-div-4" class="example"><strong>Example 3.2  </strong></span><span class="math display">\[ \bigcup_{n \in \mathbb{N}} [[n]] = \mathbb{N}. \]</span></p>
 </div>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-58" class="lemma"><strong>Lemma 3.1  </strong></span>Suppose that <span class="math inline">\(A, B\)</span> and <span class="math inline">\(C\)</span> are sets then the following are true</p>
+<p><span id="lem:unlabeled-div-5" class="lemma"><strong>Lemma 3.1  </strong></span>Suppose that <span class="math inline">\(A, B\)</span> and <span class="math inline">\(C\)</span> are sets then the following are true</p>
 <ul>
 <li><p><span class="math inline">\(A \cup \emptyset = A\)</span>,</p></li>
 <li><p><span class="math inline">\(A \cup (B \cup C) = (A \cup B)\cup C\)</span>,</p></li>
@@ -203,17 +205,19 @@ Figure 3.1: picture of a union of two sets, sets represented as overlapping circ
 </div>
 <p>Another very important <em>set operation</em> is taking intersections.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-59" class="definition"><strong>Definition 3.2  (intersection) </strong></span>Given two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> the <em>intersection</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set containing the elements in <em>both</em> <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<p><span id="def:unlabeled-div-6" class="definition"><strong>Definition 3.2  (intersection) </strong></span>Given two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> the <em>intersection</em> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set containing the elements in <em>both</em> <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
 <img src="intersection.png" alt="picture of the intersection of two sets, sets represented by overlapping circles"  />
 <p class="caption">
 Figure 3.2: picture of the intersection of two sets, sets represented by overlapping circles
 </p>
 </div>
 <p>As with unions, we don’t have to do this with a pair of sets. If <span class="math inline">\(C\)</span> is a set all of whose elements are sets we can write
-<span class="math display">\[ \bigcap C = \{ x \,:\,  x \in S \, \forall \, S \in C\}.  \]</span></p>
+<span class="math display">\[ \bigcap C = \{ x \,:\,  x \in S \, \forall \, S \in C\}.  \]</span>
+or we write
+[ _{S C}S = { x ,:, x S , , S C}. ]</p>
 <p>An important piece of notation is that if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are sets with <span class="math inline">\(A \cap B = \emptyset\)</span> then we say that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <em>disjoint</em>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
 <img src="disjoint.png" alt="picture showing two disjoint sets"  />
 <p class="caption">
 Figure 3.3: picture showing two disjoint sets
@@ -221,19 +225,19 @@ Figure 3.3: picture showing two disjoint sets
 </div>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-60" class="remark"><em>Remark</em>. </span>Again as with unions, we will more often see this definition applied to sequences of sets using notation like
+<p><span id="unlabeled-div-7" class="remark"><em>Remark</em>. </span>Again as with unions, we will more often see this definition applied to sequences of sets using notation like
 <span class="math display">\[ \bigcap_n A_n.  \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-61" class="example"><strong>Example 3.3  </strong></span><span class="math display">\[ \{1,2,3\} \cap \{ 1,2,4\} = \{1,2\}.\]</span></p>
+<p><span id="exm:unlabeled-div-8" class="example"><strong>Example 3.3  </strong></span><span class="math display">\[ \{1,2,3\} \cap \{ 1,2,4\} = \{1,2\}.\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-62" class="example"><strong>Example 3.4  </strong></span><span class="math display">\[\bigcap_{n \in \mathbb{N}} [[n]] = \emptyset. \]</span></p>
+<p><span id="exm:unlabeled-div-9" class="example"><strong>Example 3.4  </strong></span><span class="math display">\[\bigcap_{n \in \mathbb{N}} [[n]] = \emptyset. \]</span></p>
 <p>and</p>
 <p><span class="math display">\[ \bigcap_{n \geq 2} [[n]] = [[2]].\]</span></p>
 </div>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-63" class="lemma"><strong>Lemma 3.2  </strong></span>Given sets <span class="math inline">\(A, B, C\)</span> the following are true</p>
+<p><span id="lem:unlabeled-div-10" class="lemma"><strong>Lemma 3.2  </strong></span>Given sets <span class="math inline">\(A, B, C\)</span> the following are true</p>
 <ul>
 <li><p><span class="math inline">\(A \cap \emptyset = \emptyset\)</span>,</p></li>
 <li><p><span class="math inline">\((A \cap B) \cap C = A \cap (B\cap C)\)</span>,</p></li>
@@ -243,9 +247,9 @@ Figure 3.3: picture showing two disjoint sets
 </ul>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-64" class="definition"><strong>Definition 3.3  (set difference) </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are sets the we define the <em>set difference</em> which we write <span class="math inline">\(A - B\)</span> (or sometimes <span class="math inline">\(A \setminus B\)</span>) by</p>
+<p><span id="def:unlabeled-div-11" class="definition"><strong>Definition 3.3  (set difference) </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are sets the we define the <em>set difference</em> which we write <span class="math inline">\(A - B\)</span> (or sometimes <span class="math inline">\(A \setminus B\)</span>) by</p>
 <p><span class="math display">\[ A - B = \{ x \,:\, x \in A, x \notin B\}.  \]</span></p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-12"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="setminus.png" alt="picture of setminus with sets represented by overlappying circles"  />
 <p class="caption">
 Figure 3.4: picture of setminus with sets represented by overlappying circles
@@ -253,21 +257,21 @@ Figure 3.4: picture of setminus with sets represented by overlappying circles
 </div>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-65" class="remark"><em>Remark</em>. </span>WARNING: Unlike union and intersection, set difference is not commutative.</p>
+<p><span id="unlabeled-div-12" class="remark"><em>Remark</em>. </span>WARNING: Unlike union and intersection, set difference is not commutative.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-66" class="example"><strong>Example 3.5  </strong></span><span class="math display">\[ \{1,2,3\} - \{1,2,4\} = \{3\}, \quad \{1,2,4\} - \{1,2,3\} = \{4\}.\]</span></p>
+<p><span id="exm:unlabeled-div-13" class="example"><strong>Example 3.5  </strong></span><span class="math display">\[ \{1,2,3\} - \{1,2,4\} = \{3\}, \quad \{1,2,4\} - \{1,2,3\} = \{4\}.\]</span></p>
 </div>
 </div>
 <div id="using-set-operations-together" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Using set operations together<a href="operations-on-sets-and-functions.html#using-set-operations-together" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There are some rules for how set operations interact with each other. Usually these are easy to remember/prove by drawing pictures or by writing out exactly what each operation means.</p>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-67" class="lemma"><strong>Lemma 3.3  </strong></span>Suppose that <span class="math inline">\(A, B\)</span> and <span class="math inline">\(C\)</span> are sets then we can distribute intersections and unions with each other in the following way</p>
+<p><span id="lem:unlabeled-div-14" class="lemma"><strong>Lemma 3.3  </strong></span>Suppose that <span class="math inline">\(A, B\)</span> and <span class="math inline">\(C\)</span> are sets then we can distribute intersections and unions with each other in the following way</p>
 <ul>
 <li><span class="math inline">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span></li>
 </ul>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-13"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
 <img src="distributive1.png" alt="picture of distibutivity of union"  />
 <p class="caption">
 Figure 3.5: picture of distibutivity of union
@@ -276,7 +280,7 @@ Figure 3.5: picture of distibutivity of union
 <ul>
 <li><span class="math inline">\(A\cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span></li>
 </ul>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-14"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
 <img src="distributive2.png" alt="picture of distibutivity of intersection"  />
 <p class="caption">
 Figure 3.6: picture of distibutivity of intersection
@@ -284,18 +288,18 @@ Figure 3.6: picture of distibutivity of intersection
 </div>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-68" class="proof"><em>Proof</em>. </span>These results are very straightforward to prove. We remember that that if <span class="math inline">\(x \in A \Rightarrow x \in B\)</span> and <span class="math inline">\(x \in B \Rightarrow x \in A\)</span> then <span class="math inline">\(A = B\)</span>.</p>
+<p><span id="unlabeled-div-15" class="proof"><em>Proof</em>. </span>These results are very straightforward to prove. We remember that that if <span class="math inline">\(x \in A \Rightarrow x \in B\)</span> and <span class="math inline">\(x \in B \Rightarrow x \in A\)</span> then <span class="math inline">\(A = B\)</span>.</p>
 <p>If <span class="math inline">\(x \in A \cap (B \cup C)\)</span> then we know <span class="math inline">\(x \in A\)</span> and <span class="math inline">\(x \in B\)</span> or <span class="math inline">\(x \in C\)</span>. Therefore <span class="math inline">\(x \in A\)</span> and <span class="math inline">\(x \in B\)</span> or <span class="math inline">\(x \in A\)</span> and <span class="math inline">\(x \in C\)</span> so <span class="math inline">\(x \in (A\cap B) \cup (A \cap C)\)</span>.</p>
 <p>The second result is proved similarly.</p>
 <p>As there are only 3 sets involved the pictures probably provide a clearer (and still rigorous) proof for most people. However with four or more sets it becomes impossible to draw sets with all the possible intersections, so we need to be able to use symbols too.</p>
 </div>
 <p>We also have a similar result involving setminuses.</p>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-69" class="lemma"><strong>Lemma 3.4  (De Morgan's Laws) </strong></span>Suppose <span class="math inline">\(A, B\)</span> and <span class="math inline">\(C\)</span> are sets then the following are true</p>
+<p><span id="lem:unlabeled-div-16" class="lemma"><strong>Lemma 3.4  (De Morgan's Laws) </strong></span>Suppose <span class="math inline">\(A, B\)</span> and <span class="math inline">\(C\)</span> are sets then the following are true</p>
 <ul>
 <li><span class="math inline">\(A - (B \cup C) = (A-B)\cap(A-C)\)</span>,</li>
 </ul>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
 <img src="demorgan1.png" alt="picture of De Morgan's Laws 1"  />
 <p class="caption">
 Figure 3.7: picture of De Morgan’s Laws 1
@@ -304,7 +308,7 @@ Figure 3.7: picture of De Morgan’s Laws 1
 <ul>
 <li><span class="math inline">\(A - (B \cap C) = (A-B)\cup(A-C)\)</span>.</li>
 </ul>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-16"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
 <img src="demorgan2.png" alt="picture of De Morgan's Laws 2"  />
 <p class="caption">
 Figure 3.8: picture of De Morgan’s Laws 2
@@ -313,7 +317,7 @@ Figure 3.8: picture of De Morgan’s Laws 2
 </div>
 <p>All these operations can be understood in terms of indicator functions as well</p>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-70" class="lemma"><strong>Lemma 3.5  </strong></span>Given a set <span class="math inline">\(A\)</span> and subsets <span class="math inline">\(B, C, D\)</span> we have the following:</p>
+<p><span id="lem:unlabeled-div-17" class="lemma"><strong>Lemma 3.5  </strong></span>Given a set <span class="math inline">\(A\)</span> and subsets <span class="math inline">\(B, C, D\)</span> we have the following:</p>
 <ul>
 <li><p><span class="math inline">\(1_{B \cap C} = 1_{B}1_{C}\)</span>.</p></li>
 <li><p><span class="math inline">\(1_{B \cup C} = 1_B + 1_C - 1_B 1_C\)</span>.</p></li>
@@ -321,15 +325,15 @@ Figure 3.8: picture of De Morgan’s Laws 2
 </ul>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-71" class="proof"><em>Proof</em>. </span>If you want to you can check these yourself. It is mainly just symbol pushing. A more exciting thing to do is try and prove De Morgan’s laws or distributative laws using these facts.</p>
+<p><span id="unlabeled-div-18" class="proof"><em>Proof</em>. </span>If you want to you can check these yourself. It is mainly just symbol pushing. A more exciting thing to do is try and prove De Morgan’s laws or distributative laws using these facts.</p>
 </div>
 </div>
 <div id="operations-on-functions" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Operations on functions<a href="operations-on-sets-and-functions.html#operations-on-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unlabeled-div-72" class="definition"><strong>Definition 3.4  (composition) </strong></span>Given sets <span class="math inline">\(A, B\)</span> and <span class="math inline">\(C\)</span> and functions <span class="math inline">\(f: A \rightarrow B\)</span> and <span class="math inline">\(g: B \rightarrow C\)</span> we can define a new function <span class="math inline">\(g \circ f\)</span> from <span class="math inline">\(A\)</span> to <span class="math inline">\(C\)</span> by
+<p><span id="def:unlabeled-div-19" class="definition"><strong>Definition 3.4  (composition) </strong></span>Given sets <span class="math inline">\(A, B\)</span> and <span class="math inline">\(C\)</span> and functions <span class="math inline">\(f: A \rightarrow B\)</span> and <span class="math inline">\(g: B \rightarrow C\)</span> we can define a new function <span class="math inline">\(g \circ f\)</span> from <span class="math inline">\(A\)</span> to <span class="math inline">\(C\)</span> by
 <span class="math display">\[ g\circ f(x) = g(f(x)).  \]</span></p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-17"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
 <img src="compositiondiagram.png" alt="diagram of function composition"  />
 <p class="caption">
 Figure 3.9: diagram of function composition
@@ -337,8 +341,8 @@ Figure 3.9: diagram of function composition
 </div>
 </div>
 <div class="example">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-18"></span>
-<span id="exm:unlabeled-div-73" class="example"><strong>Example 3.6  </strong></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<span id="exm:unlabeled-div-20" class="example"><strong>Example 3.6  </strong></span>
 <img src="compositionexample.png" alt="example of function composition"  />
 <p class="caption">
 Figure 3.10: example of function composition
@@ -346,15 +350,15 @@ Figure 3.10: example of function composition
 </div>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-74" class="example"><strong>Example 3.7  </strong></span>Another example would be if <span class="math inline">\(f: \mathbb{R} \rightarrow [0,\infty)\)</span> is defined by <span class="math inline">\(f(x) = x^2\)</span> and <span class="math inline">\(g: [0,\infty) \rightarrow [0, \infty)\)</span> is defined by <span class="math inline">\(g(y) = \sqrt{y}\)</span> then <span class="math inline">\(g \circ f (x) = |x|\)</span> and is defined from <span class="math inline">\(\mathbb{R}\)</span> to <span class="math inline">\([0,\infty)\)</span>.</p>
+<p><span id="exm:unlabeled-div-21" class="example"><strong>Example 3.7  </strong></span>Another example would be if <span class="math inline">\(f: \mathbb{R} \rightarrow [0,\infty)\)</span> is defined by <span class="math inline">\(f(x) = x^2\)</span> and <span class="math inline">\(g: [0,\infty) \rightarrow [0, \infty)\)</span> is defined by <span class="math inline">\(g(y) = \sqrt{y}\)</span> then <span class="math inline">\(g \circ f (x) = |x|\)</span> and is defined from <span class="math inline">\(\mathbb{R}\)</span> to <span class="math inline">\([0,\infty)\)</span>.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-75" class="remark"><em>Remark</em>. </span>An important example of composition is if <span class="math inline">\(A\)</span> is a set and <span class="math inline">\(f: A \rightarrow A\)</span> then we can compose <span class="math inline">\(A\)</span> with itself. We often write <span class="math inline">\(f\circ f = f^2\)</span> and <span class="math inline">\(f^n= f\circ f^{n-1}\)</span>.</p>
+<p><span id="unlabeled-div-22" class="remark"><em>Remark</em>. </span>An important example of composition is if <span class="math inline">\(A\)</span> is a set and <span class="math inline">\(f: A \rightarrow A\)</span> then we can compose <span class="math inline">\(A\)</span> with itself. We often write <span class="math inline">\(f\circ f = f^2\)</span> and <span class="math inline">\(f^n= f\circ f^{n-1}\)</span>.</p>
 </div>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-76" class="lemma"><strong>Lemma 3.6  (Associativity of composition) </strong></span>Composition of functions is associative. That is to say, if <span class="math inline">\(A,B,C\)</span> and <span class="math inline">\(D\)</span> are all sets and <span class="math inline">\(f:A \rightarrow B, g: B \rightarrow C\)</span> and <span class="math inline">\(h: C \rightarrow D\)</span> are all functions then
+<p><span id="lem:unlabeled-div-23" class="lemma"><strong>Lemma 3.6  (Associativity of composition) </strong></span>Composition of functions is associative. That is to say, if <span class="math inline">\(A,B,C\)</span> and <span class="math inline">\(D\)</span> are all sets and <span class="math inline">\(f:A \rightarrow B, g: B \rightarrow C\)</span> and <span class="math inline">\(h: C \rightarrow D\)</span> are all functions then
 <span class="math display">\[ h \circ (g \circ f) = (h \circ g) \circ f  \]</span></p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-19"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
 <img src="compassoc.png" alt="picture of associativity of composition of function"  />
 <p class="caption">
 Figure 3.11: picture of associativity of composition of function
@@ -362,44 +366,44 @@ Figure 3.11: picture of associativity of composition of function
 </div>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-77" class="proof"><em>Proof</em>. </span>To prove this we can evaluate the functions at a given <span class="math inline">\(x \in A\)</span>.</p>
+<p><span id="unlabeled-div-24" class="proof"><em>Proof</em>. </span>To prove this we can evaluate the functions at a given <span class="math inline">\(x \in A\)</span>.</p>
 <p><span class="math display">\[h \circ (g \circ f)(x) = (h \circ g)(f(x)) = h(g(f(x))).\]</span></p>
 <p><span class="math display">\[(h\circ g) \circ f(x) = h (g\circ f(x)) = h(g(f(x))).\]</span></p>
 </div>
 <p>We can relate composition of functions to injectivity and surjectivity</p>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-78" class="lemma"><strong>Lemma 3.7  </strong></span>Suppose that <span class="math inline">\(A, B\)</span> and <span class="math inline">\(C\)</span> are sets and <span class="math inline">\(f: A \rightarrow B\)</span> and <span class="math inline">\(g: B \rightarrow C\)</span> are functions then</p>
+<p><span id="lem:unlabeled-div-25" class="lemma"><strong>Lemma 3.7  </strong></span>Suppose that <span class="math inline">\(A, B\)</span> and <span class="math inline">\(C\)</span> are sets and <span class="math inline">\(f: A \rightarrow B\)</span> and <span class="math inline">\(g: B \rightarrow C\)</span> are functions then</p>
 <ul>
 <li><p>If both <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are injective then so is <span class="math inline">\(g \circ f\)</span>,</p></li>
 <li><p>If both <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are surjective then so is <span class="math inline">\(g \circ f\)</span>.</p></li>
 </ul>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-79" class="proof"><em>Proof</em>. </span>If both <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are injective then given <span class="math inline">\(z \in C\)</span> there is at most one <span class="math inline">\(y \in B\)</span> with <span class="math inline">\(g(y)=z\)</span> then for this <span class="math inline">\(y\)</span> there is at most one <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(f(x) = y\)</span> therefore there is at most one <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(g\circ f(x) = z\)</span>.</p>
+<p><span id="unlabeled-div-26" class="proof"><em>Proof</em>. </span>If both <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are injective then given <span class="math inline">\(z \in C\)</span> there is at most one <span class="math inline">\(y \in B\)</span> with <span class="math inline">\(g(y)=z\)</span> then for this <span class="math inline">\(y\)</span> there is at most one <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(f(x) = y\)</span> therefore there is at most one <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(g\circ f(x) = z\)</span>.</p>
 <p>If both <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are surjective then given <span class="math inline">\(z \in C\)</span> there is at least one <span class="math inline">\(y \in B\)</span> with <span class="math inline">\(g(y) = z\)</span> and for this <span class="math inline">\(y\)</span> there is at least one <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(f(x) = y\)</span> therefore there is at least one <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(g \circ f (x) = z\)</span>.</p>
 </div>
 <p>This next set of results is about what it means to be the <em>inverse of a function</em>. This can be a subtle and quite complicated issue.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-80" class="example"><strong>Example 3.8  </strong></span>As we just saw above if <span class="math inline">\(f: \mathbb{R} \rightarrow [0,\infty)\)</span> is defined by <span class="math inline">\(f(x) = x^2\)</span> and <span class="math inline">\(g: [0,\infty) \rightarrow [0, \infty)\)</span> is defined by <span class="math inline">\(g(y) = \sqrt{y}\)</span> then <span class="math inline">\(g \circ f (x) = |x|\)</span>. So even though we think of square root and squaring as inverses of each other in this case <span class="math inline">\(g \circ f\)</span> is not equal to the identity function.</p>
+<p><span id="exm:unlabeled-div-27" class="example"><strong>Example 3.8  </strong></span>As we just saw above if <span class="math inline">\(f: \mathbb{R} \rightarrow [0,\infty)\)</span> is defined by <span class="math inline">\(f(x) = x^2\)</span> and <span class="math inline">\(g: [0,\infty) \rightarrow [0, \infty)\)</span> is defined by <span class="math inline">\(g(y) = \sqrt{y}\)</span> then <span class="math inline">\(g \circ f (x) = |x|\)</span>. So even though we think of square root and squaring as inverses of each other in this case <span class="math inline">\(g \circ f\)</span> is not equal to the identity function.</p>
 <p>On the other hand if <span class="math inline">\(f : [0, \infty) \rightarrow [0, \infty)\)</span> defined by <span class="math inline">\(f(x)=x^2\)</span> and <span class="math inline">\(g: [0,\infty) \rightarrow [0,\infty)\)</span> is defined by <span class="math inline">\(g(y) = \sqrt{y}\)</span> then <span class="math inline">\(g \circ f(x) = x\)</span> so if we change the domain of <span class="math inline">\(f\)</span> we can think for these functions as inverse to each other.</p>
 <p>We also have that if <span class="math inline">\(f: \mathbb{R} \rightarrow [0,\infty)\)</span> defined by <span class="math inline">\(f(x) = x^2\)</span> and <span class="math inline">\(g: [0, \infty) \rightarrow [0,\infty)\)</span> defined by <span class="math inline">\(g(y) = \sqrt{y}\)</span> (as in the first part of the example) then <span class="math inline">\(f\circ g)(y) = y\)</span>. we can think of these as inverse to eachother in one order but not in the other order.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-81" class="definition"><strong>Definition 3.5  (left and right inverses) </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be sets and let <span class="math inline">\(f: A \rightarrow B\)</span> and <span class="math inline">\(g: B \rightarrow A\)</span>.</p>
+<p><span id="def:unlabeled-div-28" class="definition"><strong>Definition 3.5  (left and right inverses) </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be sets and let <span class="math inline">\(f: A \rightarrow B\)</span> and <span class="math inline">\(g: B \rightarrow A\)</span>.</p>
 <ul>
 <li><p>We call <span class="math inline">\(g\)</span> a <em>left inverse</em> of <span class="math inline">\(f\)</span> if <span class="math inline">\(g\circ f = Id_A\)</span>,</p></li>
 <li><p>We call <span class="math inline">\(g\)</span> a <em>right inverse</em> of <span class="math inline">\(f\)</span> if <span class="math inline">\(f\circ g = Id_B\)</span>.</p></li>
 <li><p>We call <span class="math inline">\(g\)</span> an <em>inverse</em> of <span class="math inline">\(f\)</span> if it is both a left inverse and a right inverse. If an inverse exists we often write <span class="math inline">\(g = f^{-1}\)</span>.</p></li>
 </ul>
 </div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-20"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-12"></span>
 <img src="leftrightinverse.png" alt="example of a function with a right inverse but no left inverse"  />
 <p class="caption">
 Figure 3.12: example of a function with a right inverse but no left inverse
 </p>
 </div>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-82" class="lemma"><strong>Lemma 3.8  </strong></span>Given two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> and a function <span class="math inline">\(f: A \rightarrow B\)</span>, we have the following equivalences</p>
+<p><span id="lem:unlabeled-div-29" class="lemma"><strong>Lemma 3.8  </strong></span>Given two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> and a function <span class="math inline">\(f: A \rightarrow B\)</span>, we have the following equivalences</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(f\)</span> is injective if and only if <span class="math inline">\(f\)</span> has a left inverse,</p></li>
 <li><p><span class="math inline">\(f\)</span> is surjective if and only if <span class="math inline">\(f\)</span> has a right inverse,</p></li>
@@ -407,7 +411,7 @@ Figure 3.12: example of a function with a right inverse but no left inverse
 </ol>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-83" class="proof"><em>Proof</em>. </span>Let us begin with point 1. in the direction <em>injective</em> <span class="math inline">\(\Rightarrow\)</span> <em>left inverse</em>. Injectivity means that for every <span class="math inline">\(y \in B\)</span> there is at most one <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(f(x) = y\)</span>. So we can define a left inverse as follows: if there exists an <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(f(x)=y\)</span> then set <span class="math inline">\(g(y) =x\)</span>. If there exists no <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(f(x)=y\)</span> then choose an arbitrary element <span class="math inline">\(x_0 \in A\)</span> and set <span class="math inline">\(g(y) = x_0\)</span>. This ensures that for every <span class="math inline">\(x \in A\)</span> we have <span class="math inline">\(g(f(x))= x\)</span>.</p>
+<p><span id="unlabeled-div-30" class="proof"><em>Proof</em>. </span>Let us begin with point 1. in the direction <em>injective</em> <span class="math inline">\(\Rightarrow\)</span> <em>left inverse</em>. Injectivity means that for every <span class="math inline">\(y \in B\)</span> there is at most one <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(f(x) = y\)</span>. So we can define a left inverse as follows: if there exists an <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(f(x)=y\)</span> then set <span class="math inline">\(g(y) =x\)</span>. If there exists no <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(f(x)=y\)</span> then choose an arbitrary element <span class="math inline">\(x_0 \in A\)</span> and set <span class="math inline">\(g(y) = x_0\)</span>. This ensures that for every <span class="math inline">\(x \in A\)</span> we have <span class="math inline">\(g(f(x))= x\)</span>.</p>
 <p>Now point 1 in the direction <em>left inverse</em> <span class="math inline">\(\Rightarrow\)</span> <em>injective</em>. So there exists <span class="math inline">\(g\)</span> with <span class="math inline">\(g(f(x))=x\)</span> for all <span class="math inline">\(x \in A\)</span>. Suppose <span class="math inline">\(f\)</span> isn’t injective then there exists <span class="math inline">\(y_0 \in B\)</span> and <span class="math inline">\(x_1 \neq x_2 \in A\)</span> such that <span class="math inline">\(f(x_1) = f(x_2) = y_0\)</span>. Then we have that <span class="math inline">\(g(y_0) = g(f(x_1))= x_1 = g(f(x_2))=x_2\)</span> which is a contradiction. Therefore <span class="math inline">\(f\)</span> must be injective.</p>
 <p>Now point 2 in the direction <em>surjective</em> <span class="math inline">\(\Rightarrow\)</span> <em>right inverse</em>. For every <span class="math inline">\(y \in B\)</span> there exists at least one <span class="math inline">\(x\)</span> such that <span class="math inline">\(f(x)=y\)</span> by surjectivity. So define a function <span class="math inline">\(g\)</span> by choosing <span class="math inline">\(g(y)\)</span> to be equal to one of the <span class="math inline">\(x \in A\)</span> with <span class="math inline">\(f(x) = y\)</span>. This means that <span class="math inline">\(f(g(y))= y\)</span> so <span class="math inline">\(g\)</span> is a right inverse to <span class="math inline">\(f\)</span>.</p>
 <p>Now point 2 in the direction <em>right inverse</em> <span class="math inline">\(\Rightarrow\)</span> <em>surjective</em>. So we have a function <span class="math inline">\(g\)</span> such that <span class="math inline">\(f(g(y))=y\)</span>. So for every <span class="math inline">\(y \in B\)</span> there exist one element in A, namely <span class="math inline">\(g(y)\)</span>, such that <span class="math inline">\(f(g(y))=y\)</span> so <span class="math inline">\(f\)</span> is surjective.</p>
@@ -415,35 +419,35 @@ Figure 3.12: example of a function with a right inverse but no left inverse
 <p>Now if we want to show bijectivity of <span class="math inline">\(f\)</span> implies we must have an inverse we not that if <span class="math inline">\(f\)</span> is bijective then for every <span class="math inline">\(y\in B\)</span> there exists exactly one <span class="math inline">\(x \in A\)</span> such that <span class="math inline">\(f(x) = y\)</span> so we can define <span class="math inline">\(g(y)\)</span> to be this unique <span class="math inline">\(x\)</span> and this ensures that <span class="math inline">\(g(f(x))= x\)</span> and <span class="math inline">\(f(g(y))= y\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-84" class="definition"><strong>Definition 3.6  (pigeon hole principle) </strong></span>Suppose <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are finite sets with <span class="math inline">\(|A| &gt; |B|\)</span> and <span class="math inline">\(f: A \rightarrow B\)</span> is a function then there exists some <span class="math inline">\(b \in B\)</span> for which there are at least two elements <span class="math inline">\(a_1,a_2\)</span> of <span class="math inline">\(A\)</span> for which <span class="math inline">\(f(a_1)=f(a_2)=b\)</span>.</p>
+<p><span id="def:unlabeled-div-31" class="definition"><strong>Definition 3.6  (pigeon hole principle) </strong></span>Suppose <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are finite sets with <span class="math inline">\(|A| &gt; |B|\)</span> and <span class="math inline">\(f: A \rightarrow B\)</span> is a function then there exists some <span class="math inline">\(b \in B\)</span> for which there are at least two elements <span class="math inline">\(a_1,a_2\)</span> of <span class="math inline">\(A\)</span> for which <span class="math inline">\(f(a_1)=f(a_2)=b\)</span>.</p>
 <p>The name for this fact comes from the idea that if you have a dovecote with <span class="math inline">\(n\)</span> holes and you have more than <span class="math inline">\(n+1\)</span> pigeons then however you arrange the pigeons at least one hole must contain more than one pigeon.</p>
 </div>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-85" class="lemma"><strong>Lemma 3.9  </strong></span>Suppose that <span class="math inline">\(A,B\)</span> are sets and <span class="math inline">\(B\)</span> is finite.</p>
+<p><span id="lem:unlabeled-div-32" class="lemma"><strong>Lemma 3.9  </strong></span>Suppose that <span class="math inline">\(A,B\)</span> are sets and <span class="math inline">\(B\)</span> is finite.</p>
 <ul>
 <li><p>If there exists an injection <span class="math inline">\(f: A \rightarrow B\)</span> then <span class="math inline">\(A\)</span> is finite.</p></li>
 <li><p>If there exists a surjections <span class="math inline">\(g: B \rightarrow A\)</span> then <span class="math inline">\(A\)</span> is finite.</p></li>
 </ul>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-86" class="proof"><em>Proof</em>. </span>If <span class="math inline">\(B\)</span> is finite then there is a bijection between <span class="math inline">\(B\)</span> and some <span class="math inline">\([[n]]\)</span> and so composing <span class="math inline">\(f\)</span> and this bijection gives an injection form <span class="math inline">\(A\)</span> to some subset of <span class="math inline">\([[n]]\)</span>. Let us call this injection <span class="math inline">\(j\)</span>. Now let us create a bijection from <span class="math inline">\(A\)</span> to some <span class="math inline">\([[m]]\)</span> as follows. The image of <span class="math inline">\(j\)</span> is <span class="math inline">\(\{j_0, \dots, j_m\}\)</span> so let us map <span class="math inline">\(j^{-1}(j_k)\)</span> to <span class="math inline">\(k\)</span> for <span class="math inline">\(k=0,\dots, m\)</span>. This shows that <span class="math inline">\(A\)</span> is finite.</p>
+<p><span id="unlabeled-div-33" class="proof"><em>Proof</em>. </span>If <span class="math inline">\(B\)</span> is finite then there is a bijection between <span class="math inline">\(B\)</span> and some <span class="math inline">\([[n]]\)</span> and so composing <span class="math inline">\(f\)</span> and this bijection gives an injection form <span class="math inline">\(A\)</span> to some subset of <span class="math inline">\([[n]]\)</span>. Let us call this injection <span class="math inline">\(j\)</span>. Now let us create a bijection from <span class="math inline">\(A\)</span> to some <span class="math inline">\([[m]]\)</span> as follows. The image of <span class="math inline">\(j\)</span> is <span class="math inline">\(\{j_0, \dots, j_m\}\)</span> so let us map <span class="math inline">\(j^{-1}(j_k)\)</span> to <span class="math inline">\(k\)</span> for <span class="math inline">\(k=0,\dots, m\)</span>. This shows that <span class="math inline">\(A\)</span> is finite.</p>
 <p>Now considering the second point. We can choose a right inverse to <span class="math inline">\(g\)</span> which we call <span class="math inline">\(h\)</span>. This will be an injection since <span class="math inline">\(g\)</span> is a function so the first point proves that <span class="math inline">\(A\)</span> is finite also in this case.</p>
 </div>
 <p>Lastly in this section we have a deeper theorem whose proof is more complicated that those we have encountered before.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-87" class="theorem"><strong>Theorem 3.1  (Cantor-Schoeder-Bernstein) </strong></span>Let <span class="math inline">\(A, B\)</span> be sets and let <span class="math inline">\(f: A \rightarrow B\)</span> be an injection and <span class="math inline">\(g: B \rightarrow A\)</span> be an injection. Then there exists a bijection <span class="math inline">\(h\)</span> between <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
+<p><span id="thm:unlabeled-div-34" class="theorem"><strong>Theorem 3.1  (Cantor-Schoeder-Bernstein) </strong></span>Let <span class="math inline">\(A, B\)</span> be sets and let <span class="math inline">\(f: A \rightarrow B\)</span> be an injection and <span class="math inline">\(g: B \rightarrow A\)</span> be an injection. Then there exists a bijection <span class="math inline">\(h\)</span> between <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-88" class="proof"><em>Proof</em> (NONEXAMINABLE). </span>Let us call <span class="math inline">\(C = f(A) \subset B\)</span> and <span class="math inline">\(D = g(B) \subset A\)</span>. Since <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are injective we can define <span class="math inline">\(f^{-1}:C \rightarrow A\)</span> and <span class="math inline">\(g^{-1}: D \rightarrow B\)</span>.</p>
+<p><span id="unlabeled-div-35" class="proof"><em>Proof</em> (NONEXAMINABLE). </span>Let us call <span class="math inline">\(C = f(A) \subset B\)</span> and <span class="math inline">\(D = g(B) \subset A\)</span>. Since <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are injective we can define <span class="math inline">\(f^{-1}:C \rightarrow A\)</span> and <span class="math inline">\(g^{-1}: D \rightarrow B\)</span>.</p>
 <p>So we end up with two bijective functions going from parts of <span class="math inline">\(A\)</span> to parts of <span class="math inline">\(B\)</span> namely <span class="math inline">\(f: A \rightarrow D\)</span> and <span class="math inline">\(g^{-1}: C \rightarrow B\)</span></p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-21"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-13"></span>
 <img src="CBS1.png" alt="Our two functions going from A to B"  />
 <p class="caption">
 Figure 3.13: Our two functions going from A to B
 </p>
 </div>
 <p>Now we want to create <span class="math inline">\(h\)</span> from both <span class="math inline">\(f\)</span> and <span class="math inline">\(g^{-1}\)</span>. To do this we want to split <span class="math inline">\(A\)</span> into two sets <span class="math inline">\(A_1\)</span> where we use <span class="math inline">\(f\)</span> to get to points in <span class="math inline">\(B\)</span> and <span class="math inline">\(A_2\)</span> where we use <span class="math inline">\(g^{-1}\)</span> to get to points in <span class="math inline">\(B\)</span>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-14"></span>
 <img src="CBS2.png" alt="A picture of how we want to split up A"  />
 <p class="caption">
 Figure 3.14: A picture of how we want to split up A
@@ -475,7 +479,7 @@ and
 <li><p><span class="math inline">\(f|_{A_1} : A_1 \rightarrow B_0\)</span> is a bijection and</p></li>
 <li><p><span class="math inline">\(g^{-1}|_{A_0} : A_0 \rightarrow B_1\)</span> is a bijection.</p></li>
 </ul>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-23"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
 <img src="CBS3.png" alt="A picture of the bijections we've constructed"  />
 <p class="caption">
 Figure 3.15: A picture of the bijections we’ve constructed
