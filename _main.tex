@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-10-09}
+\date{2024-10-11}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -612,6 +612,8 @@ The union of two sets \(A\) and \(B\) is set containing all the elements that ar
 
 We don't just have to take unions over pairs of sets. In fact we can take a union over almost any collection of sets. Formally, suppose that \(C\) is a set all of whose elements are sets then we can define a new set
 \[ \bigcup C = \{ x \,:\, \exists S \in C\, \mbox{s.t.}\, x \in S\}.\]
+or we write
+\[ \bigcup_{S \in C}S =\{ x \,:\, \exists S \in C\, \mbox{s.t.}\, x \in S\}.\]
 \end{definition}
 
 \begin{remark}
@@ -659,6 +661,8 @@ Given two sets \(A\) and \(B\) the \emph{intersection} of \(A\) and \(B\) is the
 
 As with unions, we don't have to do this with a pair of sets. If \(C\) is a set all of whose elements are sets we can write
 \[ \bigcap C = \{ x \,:\,  x \in S \, \forall \, S \in C\}.  \]
+or we write
+\[ \bigcap_{S \in C}S = \{ x \,:\,  x \in S \, \forall \, S \in C\}. \]
 
 An important piece of notation is that if \(A\) and \(B\) are sets with \(A \cap B = \emptyset\) then we say that \(A\) and \(B\) are \emph{disjoint}.
 
@@ -1227,6 +1231,38 @@ Now considering \(\sim\) defined in the lemma.
 If we consider the equivalence relation on \(\mathbb{Z}\) given by \(x \sim y\) when \(|x-y|\) is divisible by \(2\). Then under this relation we have two equivalence classes. The even integers and the odd integers.
 \end{example}
 
+\section{Order relations}\label{order-relations}
+
+\begin{definition}[antisymmetry]
+We call a relation \(R\) on \(X\) \emph{antisymmetric} if \(x R y\) and \(y R x\) implies that \(x=y\).
+\end{definition}
+
+\begin{example}
+The relation above \(x R y\) if and only if \(x-y=1\) is antisymmetric.
+\end{example}
+
+\begin{definition}[partial orders]
+Partial orders are another special kind of relation on a set. A relation \(R\) on a set \(X\) is a partial order if it is antisymmetric, transitive and reflexive.
+\end{definition}
+
+\begin{example}
+The most classical example of a partial order is the normal sense of order given by \(\leq\) on some set of numbers \(\mathbb{R}, \mathbb{Q}, \mathbb{Z}, \dots\).
+
+Another example of a partial order is if \(A\) is a set and \(X = \mathcal{P}(A)\) then we can put a partial order on \(X\) with \(B R C\) iff \(B \subset C\). You can check this satisfies all the conditions.
+\end{example}
+
+\begin{remark}
+These two examples show two key types of partial order. In the first for any two numbers \(x,y\) either \(x \leq y\) or \(y \leq x\). However for any two subsets \(B, C\) it is not the case that either \(B \subset C\) or \(C \subset B\).
+\end{remark}
+
+\begin{definition}[total relation]
+We call a relation \(R\) on \(X,Y\) \emph{total} if for every \((x,y) \in X \times Y\) we have either \(xRy\) or \(yRx\).
+\end{definition}
+
+\begin{definition}[total order]
+A total ordering on a set \(x\) is a partial order where for every \(x,y\) either \(xRy\) or \(yRx\).
+\end{definition}
+
 \subsection{Quotients}\label{quotients}
 
 While it probably won't be obvious in this course quotients are one of the most important concepts in mathematics. Quotienting by an equivalence relation is the act of considering two objects to be \emph{the same} if they lie in the same equivalence class. In further areas of mathematics you will be considering sets with structures on them (e.g.~groups in algebra) and when you quotient by things you will want to do so in such a way that you can preserve that structure. At the moment we are only interested in the structure of being a set. That is crucially the axiom of extension that a set is defined by its elements.
@@ -1276,34 +1312,6 @@ Suppose we have a set \(X\), and equivalence relation on \(X\) given by \(\sim\)
 \end{definition}
 
 You can now ``have fun'' by checking that negation, addition and multiplication as defined above are well defined.
-
-\section{Order relations}\label{order-relations}
-
-\begin{definition}[antisymmetry]
-We call a relation \(R\) on \(X\) \emph{antisymmetric} if \(x R y\) and \(y R x\) implies that \(x=y\).
-\end{definition}
-
-\begin{example}
-The relation above \(x R y\) if and only if \(x-y=1\) is antisymmetric.
-\end{example}
-
-\begin{definition}[partial orders]
-Partial orders are another special kind of relation on a set. A relation \(R\) on a set \(X\) is a partial order if it is antisymmetric, transitive and reflexive.
-\end{definition}
-
-\begin{example}
-The most classical example of a partial order is the normal sense of order given by \(\leq\) on some set of numbers \(\mathbb{R}, \mathbb{Q}, \mathbb{Z}, \dots\).
-
-Another example of a partial order is if \(A\) is a set and \(X = \mathcal{P}(A)\) then we can put a partial order on \(X\) with \(B R C\) iff \(B \subset C\). You can check this satisfies all the conditions.
-\end{example}
-
-\begin{remark}
-These two examples show two key types of partial order. In the first for any two numbers \(x,y\) either \(x \leq y\) or \(y \leq x\). However for any two subsets \(B, C\) it is not the case that either \(B \subset C\) or \(C \subset B\).
-\end{remark}
-
-\begin{definition}[total order]
-A total ordering on a set \(x\) is a partial order where for every \(x,y\) either \(xRy\) or \(yRx\).
-\end{definition}
 
 \section{Modular arithmetic}\label{modular-arithmetic}
 

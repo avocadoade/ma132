@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2024-10-09" />
+<meta name="date" content="2024-10-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,12 +101,12 @@ set in the _output.yml file.</p>" />
 </ul></li>
 <li class="chapter" data-level="4" data-path="relations.html"><a href="relations.html"><i class="fa fa-check"></i><b>4</b> Relations</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="relations.html"><a href="relations.html#equivalence-relations-equivalence-classes-and-quotients"><i class="fa fa-check"></i><b>4.1</b> Equivalence relations, Equivalence classes and Quotients</a>
+<li class="chapter" data-level="4.1" data-path="relations.html"><a href="relations.html#equivalence-relations-equivalence-classes-and-quotients"><i class="fa fa-check"></i><b>4.1</b> Equivalence relations, Equivalence classes and Quotients</a></li>
+<li class="chapter" data-level="4.2" data-path="relations.html"><a href="relations.html#order-relations"><i class="fa fa-check"></i><b>4.2</b> Order relations</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="relations.html"><a href="relations.html#quotients"><i class="fa fa-check"></i><b>4.1.1</b> Quotients</a></li>
+<li class="chapter" data-level="4.2.1" data-path="relations.html"><a href="relations.html#quotients"><i class="fa fa-check"></i><b>4.2.1</b> Quotients</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="relations.html"><a href="relations.html#integers-via-quotients"><i class="fa fa-check"></i><b>4.2</b> Integers via quotients</a></li>
-<li class="chapter" data-level="4.3" data-path="relations.html"><a href="relations.html#order-relations"><i class="fa fa-check"></i><b>4.3</b> Order relations</a></li>
+<li class="chapter" data-level="4.3" data-path="relations.html"><a href="relations.html#integers-via-quotients"><i class="fa fa-check"></i><b>4.3</b> Integers via quotients</a></li>
 <li class="chapter" data-level="4.4" data-path="relations.html"><a href="relations.html#modular-arithmetic"><i class="fa fa-check"></i><b>4.4</b> Modular arithmetic</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="logic.html"><a href="logic.html"><i class="fa fa-check"></i><b>5</b> Logic</a>
@@ -176,26 +176,26 @@ set in the _output.yml file.</p>" />
 <p>When we are talking about complexity (and in lots of other situations later in your degree) we are often only interested in the asymptotic behaviour of a function.</p>
 <p>For example if we want to know the complexity of an algorithm to multiply two numbers with at most <span class="math inline">\(n\)</span> digits together we have a function of <span class="math inline">\(n\)</span> and we are only really interested in describing how it behaves when <span class="math inline">\(n\)</span> is very large. Big and little O notation is a way of doing this.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-215" class="definition"><strong>Definition 8.1  (Big O) </strong></span>Suppose <span class="math inline">\(f(n)\)</span> and <span class="math inline">\(g(n)\)</span> are function of <span class="math inline">\(n\)</span> and there exist real numbers <span class="math inline">\(C, n_0\)</span> such that for <span class="math inline">\(n \geq n_0\)</span> then
+<p><span id="def:unlabeled-div-216" class="definition"><strong>Definition 8.1  (Big O) </strong></span>Suppose <span class="math inline">\(f(n)\)</span> and <span class="math inline">\(g(n)\)</span> are function of <span class="math inline">\(n\)</span> and there exist real numbers <span class="math inline">\(C, n_0\)</span> such that for <span class="math inline">\(n \geq n_0\)</span> then
 <span class="math display">\[|f(n)| \leq C g(n)\]</span> then we say
 <span class="math display">\[ f(n) = O(g(n)).  \]</span></p>
 </div>
 <p>This is most commonly used when <span class="math inline">\(g(n)\)</span> is a simple function like <span class="math inline">\(n^k\)</span> for some <span class="math inline">\(k\)</span> or <span class="math inline">\(\log(n)\)</span> or <span class="math inline">\(a^n\)</span> or something similar.</p>
 <div class="example">
 <ul>
-<li><span id="exm:unlabeled-div-216" class="example"><strong>Example 8.1  </strong></span></li>
+<li><span id="exm:unlabeled-div-217" class="example"><strong>Example 8.1  </strong></span></li>
 <li><p>The function <span class="math inline">\(2n^3 + 3n - 102 = O(n^3)\)</span>.</p></li>
 <li><p><span class="math inline">\(\phi(n) = O(n)\)</span> since <span class="math inline">\(\phi(n) \leq n\)</span>.</p></li>
 </ul>
 </div>
 <p>While we are defining big O notation it is useful to define little o notation</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-217" class="definition"><strong>Definition 8.2  (little o notation) </strong></span>If <span class="math inline">\(f(n), g(n)\)</span> are functions and for every <span class="math inline">\(c &gt;0\)</span> there exists <span class="math inline">\(n_c\)</span> such that if <span class="math inline">\(n &gt;n_c\)</span> then
+<p><span id="def:unlabeled-div-218" class="definition"><strong>Definition 8.2  (little o notation) </strong></span>If <span class="math inline">\(f(n), g(n)\)</span> are functions and for every <span class="math inline">\(c &gt;0\)</span> there exists <span class="math inline">\(n_c\)</span> such that if <span class="math inline">\(n &gt;n_c\)</span> then
 <span class="math display">\[ |f(n)| \leq c g(n).\]</span></p>
 <p>We can think of this as saying <span class="math inline">\(f(n)\)</span> becomes insignificant compared to <span class="math inline">\(g(n)\)</span> as <span class="math inline">\(n\)</span> becomes large.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-218" class="example"><strong>Example 8.2  </strong></span>We have <span class="math inline">\(n^2 = o(n^3)\)</span>.</p>
+<p><span id="exm:unlabeled-div-219" class="example"><strong>Example 8.2  </strong></span>We have <span class="math inline">\(n^2 = o(n^3)\)</span>.</p>
 </div>
 </div>
 </div>
@@ -203,43 +203,43 @@ set in the _output.yml file.</p>" />
 <h2><span class="header-section-number">8.2</span> Running times of algorithms<a href="algorithms-and-algorithmic-complexity.html#running-times-of-algorithms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We use big O notation to talk about how long it will take to run an algorithm as the input becomes large. It is easiest to understand this by looking at some examples.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-219" class="example"><strong>Example 8.3  (Addition) </strong></span>Suppose we are adding two <span class="math inline">\(n\)</span> digit numbers <span class="math inline">\(a_1\dots a_n\)</span> and <span class="math inline">\(b_1\dots b_n\)</span> using our standard method of addition where we do <span class="math inline">\(a_n+b_n\)</span> and enter the unit part of this as the unit part of the sum then possibly carry the 1 if <span class="math inline">\(a_n + b_n \geq 10\)</span>. Then we add <span class="math inline">\(a_{n-1} + b_{n-1}\)</span> and possibly add the additional <span class="math inline">\(1\)</span> we carried if necessary.</p>
+<p><span id="exm:unlabeled-div-220" class="example"><strong>Example 8.3  (Addition) </strong></span>Suppose we are adding two <span class="math inline">\(n\)</span> digit numbers <span class="math inline">\(a_1\dots a_n\)</span> and <span class="math inline">\(b_1\dots b_n\)</span> using our standard method of addition where we do <span class="math inline">\(a_n+b_n\)</span> and enter the unit part of this as the unit part of the sum then possibly carry the 1 if <span class="math inline">\(a_n + b_n \geq 10\)</span>. Then we add <span class="math inline">\(a_{n-1} + b_{n-1}\)</span> and possibly add the additional <span class="math inline">\(1\)</span> we carried if necessary.</p>
 <p>If we want to count the steps it depends on precisely what we list as a step. If we only think we are doing 1 step when adding and carrying for each place value then we are performing <span class="math inline">\(n\)</span> steps. If we think of each addition and carrying step as a separate step then we do <span class="math inline">\(3n\)</span> steps. However in either case we say the algorithm is <span class="math inline">\(O(n)\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-220" class="example"><strong>Example 8.4  (Multiplication) </strong></span>Now suppose we think about multiplication using the long multiplication algorithm then for two <span class="math inline">\(n\)</span> digit numbers we need to multiply <span class="math inline">\(a_k\)</span> by <span class="math inline">\(b_j\)</span> for each <span class="math inline">\(k, j\)</span> (which is <span class="math inline">\(n^2\)</span> steps) and then perform <span class="math inline">\(n^2\)</span> addition steps of what are effectively at most two digit numbers. So this algorithm is O(n^2).</p>
+<p><span id="exm:unlabeled-div-221" class="example"><strong>Example 8.4  (Multiplication) </strong></span>Now suppose we think about multiplication using the long multiplication algorithm then for two <span class="math inline">\(n\)</span> digit numbers we need to multiply <span class="math inline">\(a_k\)</span> by <span class="math inline">\(b_j\)</span> for each <span class="math inline">\(k, j\)</span> (which is <span class="math inline">\(n^2\)</span> steps) and then perform <span class="math inline">\(n^2\)</span> addition steps of what are effectively at most two digit numbers. So this algorithm is O(n^2).</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-221" class="example"><strong>Example 8.5  (Checking divisibility) </strong></span>Division is no worse than multiplication. The algorithms are a bit more complicated to state. One example is given an <span class="math inline">\(n\)</span> digit number, <span class="math inline">\(a\)</span> and an <span class="math inline">\(m\)</span> digit number, <span class="math inline">\(b\)</span> with <span class="math inline">\(m\leq n\)</span> and we want to know whether <span class="math inline">\(b|a\)</span> then if <span class="math inline">\(a/b\)</span> were an integer it would have at most <span class="math inline">\(n-m+1\)</span> digits and at least <span class="math inline">\(n-m\)</span>. So we are have around <span class="math inline">\(20\)</span> possible candidate for <span class="math inline">\(a/b\)</span>. Now we just check multiplying all <span class="math inline">\(20\)</span> candidates with <span class="math inline">\(m\)</span> which is a multiplication operation with <span class="math inline">\(m\times(n-m+1)\)</span> steps so <span class="math inline">\(O(n^2)\)</span> and we do this 20 times so checking divisibility is <span class="math inline">\(O(n^2)\)</span>.</p>
+<p><span id="exm:unlabeled-div-222" class="example"><strong>Example 8.5  (Checking divisibility) </strong></span>Division is no worse than multiplication. The algorithms are a bit more complicated to state. One example is given an <span class="math inline">\(n\)</span> digit number, <span class="math inline">\(a\)</span> and an <span class="math inline">\(m\)</span> digit number, <span class="math inline">\(b\)</span> with <span class="math inline">\(m\leq n\)</span> and we want to know whether <span class="math inline">\(b|a\)</span> then if <span class="math inline">\(a/b\)</span> were an integer it would have at most <span class="math inline">\(n-m+1\)</span> digits and at least <span class="math inline">\(n-m\)</span>. So we are have around <span class="math inline">\(20\)</span> possible candidate for <span class="math inline">\(a/b\)</span>. Now we just check multiplying all <span class="math inline">\(20\)</span> candidates with <span class="math inline">\(m\)</span> which is a multiplication operation with <span class="math inline">\(m\times(n-m+1)\)</span> steps so <span class="math inline">\(O(n^2)\)</span> and we do this 20 times so checking divisibility is <span class="math inline">\(O(n^2)\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-222" class="example"><strong>Example 8.6  (Naive primality testing) </strong></span>Suppose we want to test whether a number <span class="math inline">\(n\)</span> is prime. The most obvious way to do this is to check whether we can find any other <span class="math inline">\(m \neq n\)</span> such that <span class="math inline">\(m|n\)</span>. We notice here that we only need to check <span class="math inline">\(m \leq \sqrt{n}\)</span> as if <span class="math inline">\(ab=n\)</span> then one of <span class="math inline">\(a, b\)</span> must be smaller than <span class="math inline">\(sqrt{n}\)</span>. If we suppose it is one step to check whether <span class="math inline">\(n\)</span> is divisible by <span class="math inline">\(m\)</span>. Now each division operation is a check and the number of digits in <span class="math inline">\(n\)</span> is around <span class="math inline">\(\log_{10}(n)\)</span> so if we are interested in testing an <span class="math inline">\(N\)</span> digit number to see if its prime we need around <span class="math inline">\(10^{N/2}N^2\)</span> operations so the algorithm is <span class="math inline">\(O(10^{N/2} N^2)\)</span>.</p>
+<p><span id="exm:unlabeled-div-223" class="example"><strong>Example 8.6  (Naive primality testing) </strong></span>Suppose we want to test whether a number <span class="math inline">\(n\)</span> is prime. The most obvious way to do this is to check whether we can find any other <span class="math inline">\(m \neq n\)</span> such that <span class="math inline">\(m|n\)</span>. We notice here that we only need to check <span class="math inline">\(m \leq \sqrt{n}\)</span> as if <span class="math inline">\(ab=n\)</span> then one of <span class="math inline">\(a, b\)</span> must be smaller than <span class="math inline">\(sqrt{n}\)</span>. If we suppose it is one step to check whether <span class="math inline">\(n\)</span> is divisible by <span class="math inline">\(m\)</span>. Now each division operation is a check and the number of digits in <span class="math inline">\(n\)</span> is around <span class="math inline">\(\log_{10}(n)\)</span> so if we are interested in testing an <span class="math inline">\(N\)</span> digit number to see if its prime we need around <span class="math inline">\(10^{N/2}N^2\)</span> operations so the algorithm is <span class="math inline">\(O(10^{N/2} N^2)\)</span>.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-223" class="remark"><em>Remark</em>. </span>Notice in all of these examples we are using our understanding of the complexity of less complicated operations to find the complexity of more complicated operations.</p>
+<p><span id="unlabeled-div-224" class="remark"><em>Remark</em>. </span>Notice in all of these examples we are using our understanding of the complexity of less complicated operations to find the complexity of more complicated operations.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-224" class="definition"><strong>Definition 8.3  (Fibonacci Numbers) </strong></span>The Fibonacci numbers are defined by
+<p><span id="def:unlabeled-div-225" class="definition"><strong>Definition 8.3  (Fibonacci Numbers) </strong></span>The Fibonacci numbers are defined by
 <span class="math display">\[ f(k+2) = f(k+1 ) + f(k),  \]</span> and <span class="math inline">\(f(0)=f(1)=1\)</span>.</p>
 </div>
 <p>We discover that if we want to count how many steps Euclid’s algorithm takes then the Fibonacci numbers appear.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-225" class="theorem"><strong>Theorem 8.1  (Complexity of Euclid's Algorithm) </strong></span>If <span class="math inline">\(a&gt;b\)</span> and Euclid’s algorithm takes <span class="math inline">\(k\)</span> steps to complete then <span class="math inline">\(a \geq f(k+2)\)</span> and <span class="math inline">\(b \geq f(k+1)\)</span>.</p>
+<p><span id="thm:unlabeled-div-226" class="theorem"><strong>Theorem 8.1  (Complexity of Euclid's Algorithm) </strong></span>If <span class="math inline">\(a&gt;b\)</span> and Euclid’s algorithm takes <span class="math inline">\(k\)</span> steps to complete then <span class="math inline">\(a \geq f(k+2)\)</span> and <span class="math inline">\(b \geq f(k+1)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-226" class="proof"><em>Proof</em>. </span>We prove this by induction on <span class="math inline">\(k\)</span>.</p>
+<p><span id="unlabeled-div-227" class="proof"><em>Proof</em>. </span>We prove this by induction on <span class="math inline">\(k\)</span>.</p>
 <p>In the base case if the algorithm takes <span class="math inline">\(1\)</span> step then we must have <span class="math inline">\(b\geq 1=f(2)\)</span> and <span class="math inline">\(a&gt;b\)</span> so <span class="math inline">\(a \geq 2 = f(3)\)</span>.</p>
 <p>Now we assume it is true for <span class="math inline">\(k-1\)</span> steps. Then suppose we have <span class="math inline">\(a,b\)</span> which need <span class="math inline">\(k\)</span> steps for Euclid’s algorithm. Then <span class="math inline">\(a=qb +r\)</span> and <span class="math inline">\(b,r\)</span> need <span class="math inline">\(k-1\)</span> steps for Euclid’s algorithm. So by our induction hypothesis we know that <span class="math inline">\(b\geq f(k+1), r \geq f(k)\)</span>. Then <span class="math inline">\(a = qb +r \geq b +r \geq f(k) + f(k+1) = f(k+2)\)</span>.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-227" class="remark"><em>Remark</em>. </span>The above theorem means that the Fibonacci numbers represent the worst case for Euclid’s algorithm. i.e. <span class="math inline">\(f(k+2), f(k+1)\)</span> are the smallest numbers that will need <span class="math inline">\(k\)</span> steps to complete Euclid’s algorithm for.</p>
+<p><span id="unlabeled-div-228" class="remark"><em>Remark</em>. </span>The above theorem means that the Fibonacci numbers represent the worst case for Euclid’s algorithm. i.e. <span class="math inline">\(f(k+2), f(k+1)\)</span> are the smallest numbers that will need <span class="math inline">\(k\)</span> steps to complete Euclid’s algorithm for.</p>
 <p>We can show that for <span class="math inline">\(k\)</span> large <span class="math inline">\(f(k) \approx \frac{1}{\sqrt{5}} \left(\frac{1+\sqrt{5}}{2}\right)^k\)</span> so <span class="math inline">\(k \approx \log(f(k))/\log((1+\sqrt{5})/2)\)</span>. Therfore the complexity of Euclid’s algorithm when the larger number is <span class="math inline">\(n\)</span> is <span class="math inline">\(O(\log(n))\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-228" class="definition"><strong>Definition 8.4  (polynomial time) </strong></span>We say that an algorithm takes <em>polynomial time</em> if the complexity is <span class="math inline">\(O(n^k)\)</span> for some <span class="math inline">\(k\)</span> (in the input size <span class="math inline">\(n\)</span>).</p>
+<p><span id="def:unlabeled-div-229" class="definition"><strong>Definition 8.4  (polynomial time) </strong></span>We say that an algorithm takes <em>polynomial time</em> if the complexity is <span class="math inline">\(O(n^k)\)</span> for some <span class="math inline">\(k\)</span> (in the input size <span class="math inline">\(n\)</span>).</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-229" class="remark"><em>Remark</em>. </span>Problems where there is no known polynomial time algorithm are considered very hard for computers to do. These provide a good oportunity for creating codes and encryptions which are hard to break.</p>
+<p><span id="unlabeled-div-230" class="remark"><em>Remark</em>. </span>Problems where there is no known polynomial time algorithm are considered very hard for computers to do. These provide a good oportunity for creating codes and encryptions which are hard to break.</p>
 </div>
 
 </div>
