@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-10-11}
+\date{2024-09-03}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -108,9 +108,9 @@
 }
 \chapter{About}\label{about}
 
-These are the 2024-25 lecture course for the Warwick undergraduate course MA132: Foundations. The material up to chapter 7 is also relevant to joint degree students taking Sets and Numbers.
+These are the 2024-25 lecture course for the Warwick undergraduate course MA132: Foundations.
 
-These notes are heavily based on previous notes of Saul Schleimer and Dave Wood, though all mistakes are my own!
+These notes are heavily based on previous notes of Saul Schleimer, though all mistakes are my own!
 
 Please send me any typos (or possible typos) that you find. And be on the look out for typos.
 
@@ -120,7 +120,7 @@ These notes are designed to generate both a html version (which should work well
 
 Everything you need to know for the exam and future courses should be contained in these notes. There will also be examples, some discussions and some non-examinable sections.
 
-Similarly, almost everything you need to know will be written by me on the board in lectures. There may be some exceptions which I will warn you about!
+Similarly, everything you need to know will be written by me on the board in lectures.
 
 There are three main ways that undergraduates typically use printed lecture notes:
 
@@ -181,23 +181,21 @@ There are some important sets which have their own symbols and names. You have p
 
 \begin{itemize}
 \item
-  The natural numbers, \(\mathbb{N}= \{0, 1,2,3,\dots\}\),
+  The natural numbers, \(\mathbb{N}= \{1,2,3,\dots\}\),
 \item
   The integers, \(\mathbb{Z} = \{ \dots, -3, -2, -1, 0, 1, 2, 3, \dots \}\),
 \item
-  The rationals, \(\mathbb{Q} = \{p/q \,:\, p \in \mathbb{Z}, q \in \mathbb{N}, q \neq 0\}\),
+  The rationals, \(\mathbb{Q} = \{p/q \,:\, p \in \mathbb{Z}, q \in \mathbb{N}\}\),
 \item
   The real numbers, \(\mathbb{R} = (-\infty, \infty)\),
 \item
   The complex numbers, \(\mathbb{C} = \{x+iy \,:\, x \in \mathbb{R}, y \in \mathbb{R}\}\) where \(i\) is the complex unit.
-\item
-  Something that will appear in this course \([[n]]= \{0,1,\dots, n-1\}\).
 \end{itemize}
 
 \end{definition}
 
 \begin{definition}[equality of sets/axiom of extension]
-Two sets are equal (the same) if they have exactly the same elements. We call this the axiom of extension. We can write it in formal language as: if for every \(x \in A\) we have \(x \in B\) and for every \(y \in B\) we have \(y \in A\) then \(A=B\).
+Two sets are equal (the same) if they have exactly the same elements. We call this the axiom of extension. We can write it in formal language as: if for every \(x \in A\) we have \(x \in B\) and for every \(y \in B\) we have \(y \in B\) then \(A=B\).
 \end{definition}
 
 \begin{remark}
@@ -223,7 +221,7 @@ There are several shorthand notations used in maths and particularly in logic. S
 \end{definition}
 
 Using this we can write the axiom of extension as
-\[ \forall A \forall B ( \forall x (x \in A \Leftrightarrow x \in B) \Rightarrow (A=B)).   \] Which is a good illustration of why its often better to use words!
+\[ \forall A \forall B ( (x \in A \Leftrightarrow x \in B) \Leftarrow (A=B)).   \] Which is a good illustration of why its often better to use words!
 
 Given that sets are defined by their elements we sometimes need to consider that set that doesn't have any elements at all.
 
@@ -319,6 +317,12 @@ Exercise!
 We call a set which contains only one element a \emph{singleton set}.
 \end{definition}
 
+We also define some notation
+
+\begin{definition}
+We write \([[n]]= \{ k\in \mathbb{N}, k \leq n\}\).
+\end{definition}
+
 \section{Power sets and specification}\label{power-sets-and-specification}
 
 \begin{definition}[Power set (axiom)]
@@ -332,7 +336,7 @@ The power set of \(\{0,1,2\}\) is
 
 \begin{definition}[specification (axiom)]
 \emph{Specification} is a way of constructing subsets of a set (we've done this a lot already). Suppose \(P(A)\) is a property that an element \(x\) of \(A\) could have. Then we can define the set
-\[ B = \{ x \in A \,:\, P(x)\}.  \]
+\[ B = \{ x \in A \,:\, P(A)\}.  \]
 \end{definition}
 
 The \emph{axiom of specification} is the set theory axiom positing that such a set exists. In this we would need a more precise notion of what a property is.
@@ -374,38 +378,10 @@ The identity function on \(A\) is written \(Id_A : A \rightarrow A\) and is defi
 Suppose that \(A\) and \(B\) are sets and \(f : A \rightarrow B\) is a function, and suppose further that \(C \subset A\). Then we can define a new function called the restriction of \(f\) to \(C\) which we write \(f|_C\). This is a function with domain \(C\) and codomain \(B\) and for \(x \in C\) we have \(f|_C(x) = f(x)\).
 \end{definition}
 
-\begin{definition}[Indicator function]
-Given a set \(A\) and a subset \(B \subset A\) we can define the indicator function of \(B\), from \(A\) to \(\{0,1\}\) by
-\[ 1_B(x) = \left\{\begin{array}{cc} 0 & x \not\in B\\ 1 & x \in B \end{array} \right. \]
-\end{definition}
-
-\begin{definition}[image and pre-image]
-
-Given a function \(f:A \rightarrow B\) then
-
-\begin{itemize}
-\item
-  If \(C \subset A\) we write \(f(C) = \{y \in B \,:\, y = f(x) \, \mbox{for some} \, x \in C\}\). We call \(f(C)\) the \emph{image} of \(C\) under \(f\).
-\item
-  If \(D \subset B\) we write \(f^{-1}(D) = \{ x \in A \,:\, f(x) \in D\}\). We call \(f^{-1}(D)\) the \emph{pre-image} of \(D\) under \(f\).
-\end{itemize}
-
-\end{definition}
-
-\begin{example}
-We have to be particularly careful with preimages as this example demonstrates
-
-Let \(f: \mathbb{R} \rightarrow \mathbb{R}\) given by \(f(x) = x^2\) then \(f^{-1}(\{2\}) = \{-\sqrt{2}, \sqrt{2}\}\).
-
-Let \(f: \mathbb{Q} \rightarrow \mathbb{Q}\) given by \(f(x) = x^2\) then \(f^{-1}(\{2\})= \emptyset\). Because \(\pm \sqrt{2}\) is irrational so \(2\) has no square roots in the rationals.
-
-Let \(f: [0, \infty) \rightarrow [0, \infty)\) given by \(f(x)=x^2\) then \(f^{-1}(\{2\}) = \{\sqrt{2}\}\).
-\end{example}
-
 \section{Properties of functions}\label{properties-of-functions}
 
 \begin{definition}[injectivity]
-A function \(f:A\rightarrow B\) is called \emph{injective} if \(f(x)=f(x')\) implies that \(x=x'\). That is to say there are no two elements of \(A\) where \(f(x)\) takes the same value, or \(y\) has at most one preimage under \(f\).
+A function \(f:A\rightarrow B\) is called \emph{injective} if \(f(x)=f(x')\) implies that \(x=x'\). That is to say there are no two elements of \(X\) where \(f(x)\) takes the same value, or \(y\) has at most one preimage under \(f\).
 \end{definition}
 
 \begin{example}
@@ -461,7 +437,7 @@ We say that \(A\) and \(B\) have the same \emph{cardinality} (informally the sam
 \begin{definition}[Finiteness]
 Cardinality allows us to give a rigorous notion for a set to be \emph{finite}/have a finite number of elements.
 
-Given a set \(A\), if there is some natural number \(n\) such that \(|A|=|[[n]]|\) then we say \(A\) has size \(n\).
+Given a set \(A\), if there is some natural number \(n\) such that \(|A|=|[[n-1]]|\) then we say \(A\) has size \(n\).
 
 If \(A\) has size \(n\) for some \(n\) then we say \(A\) is finite.
 \end{definition}
@@ -469,6 +445,29 @@ If \(A\) has size \(n\) for some \(n\) then we say \(A\) is finite.
 \begin{definition}[infinite]
 We say a set is \emph{infinite} if it isn't finite.
 \end{definition}
+
+Suppose \(A\) and \(B\) are finite sets with \(|A| > |B|\) and \(f: A \rightarrow B\) is a function then there exists some \(b \in B\) for which there are at least two elements \(a_1,a_2\) of \(A\) for which \(f(a_1)=f(a_2)=b\).
+
+The name for this fact comes from the idea that if you have a dovecote with \(n\) holes and you have more than \(n+1\) pigeons then however you arrange the pigeons at least one hole must contain more than one pigoen.
+
+\begin{lemma}
+
+Suppose that \(A,B\) are sets and \(B\) is finite.
+
+\begin{itemize}
+\item
+  If there exists an injection \(f: A \rightarrow B\) then \(A\) is finite.
+\item
+  If there exists a surjections \(g: B \rightarrow A\) then \(A\) is finite.
+\end{itemize}
+
+\end{lemma}
+
+\begin{proof}
+If \(B\) is finite then there is a bijection between \(B\) and some \([[n]]\) and so composing \(f\) and this bijection gives an injection form \(A\) to some subset of \([[n]]\). Let us call this injection \(j\). Now let us create a bijection from \(A\) to some \([[m]]\) as follows. The image of \(j\) is \(\{j_0, \dots, j_m\}\) so let us map \(j^{-1}(j_k)\) to \(k\) for \(k=0,\dots, m\). This shows that \(A\) is finite.
+
+Now considering the second point. We can choose a right inverse to \(g\) which we call \(h\). This will be an injection since \(g\) is a function so the first point proves that \(A\) is finite also in this case.
+\end{proof}
 
 \begin{theorem}[Cantor's Theorem]
 Let \(A\) be a set and \(f: A \rightarrow \mathcal{P}(A)\) then \(f\) cannot be a surjection.
@@ -555,7 +554,7 @@ If \((x,y) \in G\) we write \(xGy\).
 
 \begin{example}
 
-The relation defined by \((x,y) \in G \Leftrightarrow x \leq y\) is not graphical from \(\mathbb{R}\) to itself because for every \(x\) there are many \(y\) with \(y \geq x\).
+The relation defined by \((x,y) \in G \Leftrightarrow x \leq y\) is not graphical from \(\mathbb{R}\) to itself because for every \(x\) there are many \(y\) with \(y \leq x\).
 
 \begin{figure}
 \centering
@@ -563,7 +562,7 @@ The relation defined by \((x,y) \in G \Leftrightarrow x \leq y\) is not graphica
 \caption{\label{fig:unnamed-chunk-6}A picture of the less than relation on the reals}
 \end{figure}
 
-The relation defined by \((x,y) \in G \Leftrightarrow x=y^2\) is not graphical from \(\mathbb{R}\) to itself because if \(x\) is negative then it isn't the square of any real number so there are no \(y\)s with \(x G y\), and also because for \(x > 0\) there are two \(y\)s with \(x=y^2\).
+The relation defined by \((x,y) \in G \Leftrightarrow x=y^2\) is not graphical from \(\mathbb{R}\) to itself because if \(x\) is negative then it isn't the square of any real number so there are no \(y\)s with \(x G y\), and also because for \(x \geq 0\) there are two \(y\)s with \(x=y^2\).
 
 \begin{figure}
 \centering
@@ -612,8 +611,6 @@ The union of two sets \(A\) and \(B\) is set containing all the elements that ar
 
 We don't just have to take unions over pairs of sets. In fact we can take a union over almost any collection of sets. Formally, suppose that \(C\) is a set all of whose elements are sets then we can define a new set
 \[ \bigcup C = \{ x \,:\, \exists S \in C\, \mbox{s.t.}\, x \in S\}.\]
-or we write
-\[ \bigcup_{S \in C}S =\{ x \,:\, \exists S \in C\, \mbox{s.t.}\, x \in S\}.\]
 \end{definition}
 
 \begin{remark}
@@ -661,8 +658,6 @@ Given two sets \(A\) and \(B\) the \emph{intersection} of \(A\) and \(B\) is the
 
 As with unions, we don't have to do this with a pair of sets. If \(C\) is a set all of whose elements are sets we can write
 \[ \bigcap C = \{ x \,:\,  x \in S \, \forall \, S \in C\}.  \]
-or we write
-\[ \bigcap_{S \in C}S = \{ x \,:\,  x \in S \, \forall \, S \in C\}. \]
 
 An important piece of notation is that if \(A\) and \(B\) are sets with \(A \cap B = \emptyset\) then we say that \(A\) and \(B\) are \emph{disjoint}.
 
@@ -684,11 +679,7 @@ Again as with unions, we will more often see this definition applied to sequence
 \end{example}
 
 \begin{example}
-\[\bigcap_{n \in \mathbb{N}} [[n]] = \emptyset. \]
-
-and
-
-\[ \bigcap_{n \geq 2} [[n]] = [[2]].\]
+\[\bigcup_{n \in \mathbb{N}} [[n]] = {0}. \]
 \end{example}
 
 \begin{lemma}
@@ -808,33 +799,12 @@ Suppose \(A, B\) and \(C\) are sets then the following are true
 
 \end{lemma}
 
-All these operations can be understood in terms of indicator functions as well
-
-\begin{lemma}
-
-Given a set \(A\) and subsets \(B, C, D\) we have the following:
-
-\begin{itemize}
-\item
-  \(1_{B \cap C} = 1_{B}1_{C}\).
-\item
-  \(1_{B \cup C} = 1_B + 1_C - 1_B 1_C\).
-\item
-  If \(B \subset C\) then \(1_{C - B} = 1_C - 1_B\).
-\end{itemize}
-
-\end{lemma}
-
-\begin{proof}
-If you want to you can check these yourself. It is mainly just symbol pushing. A more exciting thing to do is try and prove De Morgan's laws or distributative laws using these facts.
-\end{proof}
-
 \section{Operations on functions}\label{operations-on-functions}
 
 \begin{definition}[composition]
 
-Given sets \(A, B\) and \(C\) and functions \(f: A \rightarrow B\) and \(g: B \rightarrow C\) we can define a new function \(g \circ f\) from \(A\) to \(C\) by
-\[ g\circ f(x) = g(f(x)).  \]
+Given sets \(A, B\) and \(C\) and functions \(f: A \rightarrow B\) and \(g: B \rightarrow C\) we can define a new function \(f \circ g\) from \(A\) to \(C\) by
+\[ f\circ g(x) = g(f(x)).  \]
 
 \begin{figure}
 \centering
@@ -855,7 +825,7 @@ Given sets \(A, B\) and \(C\) and functions \(f: A \rightarrow B\) and \(g: B \r
 \end{example}
 
 \begin{example}
-Another example would be if \(f: \mathbb{R} \rightarrow [0,\infty)\) is defined by \(f(x) = x^2\) and \(g: [0,\infty) \rightarrow [0, \infty)\) is defined by \(g(y) = \sqrt{y}\) then \(g \circ f (x) = |x|\) and is defined from \(\mathbb{R}\) to \([0,\infty)\).
+Another example would be if \(f: \mathbb{R} \rightarrow [0,\infty)\) is defined by \(f(x) = x^2\) and \(g: [0,\infty) \rightarrow [0, \infty)\) is defined by \(g(y) = \sqrt{y}\) then \(f \circ g (x) = |x|\) and is defined from \(\mathbb{R}\) to \([0,\infty)\).
 \end{example}
 
 \begin{remark}
@@ -865,7 +835,7 @@ An important example of composition is if \(A\) is a set and \(f: A \rightarrow 
 \begin{lemma}[Associativity of composition]
 
 Composition of functions is associative. That is to say, if \(A,B,C\) and \(D\) are all sets and \(f:A \rightarrow B, g: B \rightarrow C\) and \(h: C \rightarrow D\) are all functions then
-\[ h \circ (g \circ f) = (h \circ g) \circ f  \]
+\[ f \circ (g \circ h) = (f \circ g) \circ h  \]
 
 \begin{figure}
 \centering
@@ -878,9 +848,9 @@ Composition of functions is associative. That is to say, if \(A,B,C\) and \(D\) 
 \begin{proof}
 To prove this we can evaluate the functions at a given \(x \in A\).
 
-\[h \circ (g \circ f)(x) = (h \circ g)(f(x)) = h(g(f(x))).\]
+\[f \circ (g \circ h)(x) = (g \circ h)(f(x)) = h(g(f(x))).\]
 
-\[(h\circ g) \circ f(x) = h (g\circ f(x)) = h(g(f(x))).\]
+\[(f\circ g) \circ h(x) = h (f\circ g(x)) = h(g(f(x))).\]
 \end{proof}
 
 We can relate composition of functions to injectivity and surjectivity
@@ -891,27 +861,27 @@ Suppose that \(A, B\) and \(C\) are sets and \(f: A \rightarrow B\) and \(g: B \
 
 \begin{itemize}
 \item
-  If both \(f\) and \(g\) are injective then so is \(g \circ f\),
+  If both \(f\) and \(g\) are injective then so is \(f \circ g\),
 \item
-  If both \(f\) and \(g\) are surjective then so is \(g \circ f\).
+  If both \(f\) and \(g\) are surjective then so is \(f \circ g\).
 \end{itemize}
 
 \end{lemma}
 
 \begin{proof}
-If both \(f\) and \(g\) are injective then given \(z \in C\) there is at most one \(y \in B\) with \(g(y)=z\) then for this \(y\) there is at most one \(x \in A\) with \(f(x) = y\) therefore there is at most one \(x \in A\) with \(g\circ f(x) = z\).
+If both \(f\) and \(g\) are injective then given \(z \in C\) there is at most one \(y \in B\) with \(g(y)=z\) then for this \(y\) there is at most one \(x \in A\) with \(f(x) = y\) therefore there is at most one \(x \in A\) with \(f\circ g(x) = z\).
 
-If both \(f\) and \(g\) are surjective then given \(z \in C\) there is at least one \(y \in B\) with \(g(y) = z\) and for this \(y\) there is at least one \(x \in A\) with \(f(x) = y\) therefore there is at least one \(x \in A\) with \(g \circ f (x) = z\).
+If both \(f\) and \(g\) are surjective then given \(z \in C\) there is at least one \(y \in B\) with \(g(y) = z\) and for this \(y\) there is at least one \(x \in A\) with \(f(x) = y\) therefore there is at least one \(x \in A\) with \(f \circ g (x) = z\).
 \end{proof}
 
 This next set of results is about what it means to be the \emph{inverse of a function}. This can be a subtle and quite complicated issue.
 
 \begin{example}
-As we just saw above if \(f: \mathbb{R} \rightarrow [0,\infty)\) is defined by \(f(x) = x^2\) and \(g: [0,\infty) \rightarrow [0, \infty)\) is defined by \(g(y) = \sqrt{y}\) then \(g \circ f (x) = |x|\). So even though we think of square root and squaring as inverses of each other in this case \(g \circ f\) is not equal to the identity function.
+As we just saw above if \(f: \mathbb{R} \rightarrow [0,\infty)\) is defined by \(f(x) = x^2\) and \(g: [0,\infty) \rightarrow [0, \infty)\) is defined by \(g(y) = \sqrt{y}\) then \(f \circ g (x) = |x|\). So even though we think of square root and squaring as inverses of each other in this case \(f \circ g\) is not equal to the identity function.
 
-On the other hand if \(f : [0, \infty) \rightarrow [0, \infty)\) defined by \(f(x)=x^2\) and \(g: [0,\infty) \rightarrow [0,\infty)\) is defined by \(g(y) = \sqrt{y}\) then \(g \circ f(x) = x\) so if we change the domain of \(f\) we can think for these functions as inverse to each other.
+On the other hand if \(f : [0, \infty) \rightarrow [0, \infty)\) defined by \(f(x)=x^2\) and \(g: [0,\infty) \rightarrow [0,\infty)\) is defined by \(g(y) = \sqrt(y)\) then \(f \circ g(x) = x\) so if we change the domain of \(f\) we can think for these functions as inverse to each other.
 
-We also have that if \(f: \mathbb{R} \rightarrow [0,\infty)\) defined by \(f(x) = x^2\) and \(g: [0, \infty) \rightarrow [0,\infty)\) defined by \(g(y) = \sqrt{y}\) (as in the first part of the example) then \(f\circ g)(y) = y\). we can think of these as inverse to eachother in one order but not in the other order.
+We also have that if \(f: \mathbb{R} \rightarrow [0,\infty)\) defined by \(f(x) = x^2\) and \(g: [0, \infty) \rightarrow [0,\infty)\) defined by \(g(y) = \sqrt(y)\) (as in the first part of the example) then \(g\circ f)(y) = y\). we can think of these as inverse to eachother in one order but not in the other order.
 \end{example}
 
 \begin{definition}[left and right inverses]
@@ -920,9 +890,9 @@ Let \(A\) and \(B\) be sets and let \(f: A \rightarrow B\) and \(g: B \rightarro
 
 \begin{itemize}
 \item
-  We call \(g\) a \emph{left inverse} of \(f\) if \(g\circ f = Id_A\),
+  We call \(g\) a \emph{left inverse} of \(f\) if \(g\circ f = Id_B\),
 \item
-  We call \(g\) a \emph{right inverse} of \(f\) if \(f\circ g = Id_B\).
+  We call \(g\) a \emph{right inverse} of \(f\) if \(f\circ g = Id_A\).
 \item
   We call \(g\) an \emph{inverse} of \(f\) if it is both a left inverse and a right inverse. If an inverse exists we often write \(g = f^{-1}\).
 \end{itemize}
@@ -965,30 +935,28 @@ Now for point 3 it looks at first like we can just apply the previous results. W
 Now if we want to show bijectivity of \(f\) implies we must have an inverse we not that if \(f\) is bijective then for every \(y\in B\) there exists exactly one \(x \in A\) such that \(f(x) = y\) so we can define \(g(y)\) to be this unique \(x\) and this ensures that \(g(f(x))= x\) and \(f(g(y))= y\).
 \end{proof}
 
-\begin{definition}[pigeon hole principle]
-Suppose \(A\) and \(B\) are finite sets with \(|A| > |B|\) and \(f: A \rightarrow B\) is a function then there exists some \(b \in B\) for which there are at least two elements \(a_1,a_2\) of \(A\) for which \(f(a_1)=f(a_2)=b\).
+\begin{definition}[image and preimage]
 
-The name for this fact comes from the idea that if you have a dovecote with \(n\) holes and you have more than \(n+1\) pigeons then however you arrange the pigeons at least one hole must contain more than one pigeon.
-\end{definition}
-
-\begin{lemma}
-
-Suppose that \(A,B\) are sets and \(B\) is finite.
+Suppose that \(A, B\) are sets and \(f: A \rightarrow B\) is a function. Suppose further that \(C \subset A, D \subset B\) then we write
 
 \begin{itemize}
 \item
-  If there exists an injection \(f: A \rightarrow B\) then \(A\) is finite.
+  \(f(C)= \{y \in B \,:\, y=f(x), \mbox{for some} \, x \in C\}\) and we call \(f(C)\) the \emph{image} of \(C\) under \(f\).
 \item
-  If there exists a surjections \(g: B \rightarrow A\) then \(A\) is finite.
+  \(f^{-1}(D)= \{ x \in A \,:\, f(x) \in D\}\) and we call \(f^{-1}(D)\) the \emph{preimage} of \(D\) under \(f\).
 \end{itemize}
 
-\end{lemma}
+\end{definition}
 
-\begin{proof}
-If \(B\) is finite then there is a bijection between \(B\) and some \([[n]]\) and so composing \(f\) and this bijection gives an injection form \(A\) to some subset of \([[n]]\). Let us call this injection \(j\). Now let us create a bijection from \(A\) to some \([[m]]\) as follows. The image of \(j\) is \(\{j_0, \dots, j_m\}\) so let us map \(j^{-1}(j_k)\) to \(k\) for \(k=0,\dots, m\). This shows that \(A\) is finite.
+\begin{example}
+We have to be particularly careful with preimages as this example demonstrates
 
-Now considering the second point. We can choose a right inverse to \(g\) which we call \(h\). This will be an injection since \(g\) is a function so the first point proves that \(A\) is finite also in this case.
-\end{proof}
+Let \(f: \mathbb{R} \rightarrow \mathbb{R}\) given by \(f(x) = x^2\) then \(f^{-1}(\{2\}) = \{-\sqrt{2}, \sqrt{2}\}\).
+
+Let \(f: \mathbb{Q} \rightarrow \mathbb{Q}\) given by \(f(x) = x^2\) then \(f^{-1}(\{2\})= \emptyset\). Because \(\pm sqrt{2}\) is irrational so \(2\) has no square roots in the rationals.
+
+Let \(f: [0, \infty) \rightarrow [0, \infty)\) given by \(f(x)=x^2\) then \(f^{-1}(\{2\}) = \{\sqrt{2}\}\).
+\end{example}
 
 Lastly in this section we have a deeper theorem whose proof is more complicated that those we have encountered before.
 
@@ -1077,7 +1045,7 @@ We can relate two real numbers \(x\) and \(y\) with the relationship \emph{is le
 \end{example}
 
 \begin{example}
-Is equal to is also a relation. This can be more complicated that just trivially equating elements of the same set. For example we might want to write a relation between \(\mathbb{N}\) and \(\mathbb{R}\) by equating integers with their counterpart in the natural numbers.
+Is equal to is also a relation. This can be more complicated that just trivially equating elements of the same set. For example we might want to write a relation between \(\mathbb{N}\) and \(\mathbb{R}\) by equating integers with their counterpart in the natural numbers. This is very subtle, and not very useful, so if it doesn't make sense don't worry!
 \end{example}
 
 \begin{remark}
@@ -1231,38 +1199,6 @@ Now considering \(\sim\) defined in the lemma.
 If we consider the equivalence relation on \(\mathbb{Z}\) given by \(x \sim y\) when \(|x-y|\) is divisible by \(2\). Then under this relation we have two equivalence classes. The even integers and the odd integers.
 \end{example}
 
-\section{Order relations}\label{order-relations}
-
-\begin{definition}[antisymmetry]
-We call a relation \(R\) on \(X\) \emph{antisymmetric} if \(x R y\) and \(y R x\) implies that \(x=y\).
-\end{definition}
-
-\begin{example}
-The relation above \(x R y\) if and only if \(x-y=1\) is antisymmetric.
-\end{example}
-
-\begin{definition}[partial orders]
-Partial orders are another special kind of relation on a set. A relation \(R\) on a set \(X\) is a partial order if it is antisymmetric, transitive and reflexive.
-\end{definition}
-
-\begin{example}
-The most classical example of a partial order is the normal sense of order given by \(\leq\) on some set of numbers \(\mathbb{R}, \mathbb{Q}, \mathbb{Z}, \dots\).
-
-Another example of a partial order is if \(A\) is a set and \(X = \mathcal{P}(A)\) then we can put a partial order on \(X\) with \(B R C\) iff \(B \subset C\). You can check this satisfies all the conditions.
-\end{example}
-
-\begin{remark}
-These two examples show two key types of partial order. In the first for any two numbers \(x,y\) either \(x \leq y\) or \(y \leq x\). However for any two subsets \(B, C\) it is not the case that either \(B \subset C\) or \(C \subset B\).
-\end{remark}
-
-\begin{definition}[total relation]
-We call a relation \(R\) on \(X,Y\) \emph{total} if for every \((x,y) \in X \times Y\) we have either \(xRy\) or \(yRx\).
-\end{definition}
-
-\begin{definition}[total order]
-A total ordering on a set \(x\) is a partial order where for every \(x,y\) either \(xRy\) or \(yRx\).
-\end{definition}
-
 \subsection{Quotients}\label{quotients}
 
 While it probably won't be obvious in this course quotients are one of the most important concepts in mathematics. Quotienting by an equivalence relation is the act of considering two objects to be \emph{the same} if they lie in the same equivalence class. In further areas of mathematics you will be considering sets with structures on them (e.g.~groups in algebra) and when you quotient by things you will want to do so in such a way that you can preserve that structure. At the moment we are only interested in the structure of being a set. That is crucially the axiom of extension that a set is defined by its elements.
@@ -1274,10 +1210,6 @@ Given a set \(X\) and an equivalence relation \(\sim\) then we define the quotie
 
 \begin{example}
 If we consider the set \(\mathbb{R}\) and the equivalence relation \(x \sim y\) when \(x-y \in \mathbb{Z}\). Then for any \(x\) the set \(E_x\) is the set of all real numbers who have the same decimal expansion after the decimal point we often call this set \(\mathbb{T}\) and think about it as wrapping the real numbers repeatedly around the set \([0,1)\).
-\end{example}
-
-\begin{example}
-Quotienting by equivalence relations is one example of using mathematical abstraction. It is something you will already have been doing very frequently. A good example from school mathematics is congruent triangles. We call triangles similar if they have the same angles and side length. Regarding two triangles as \emph{the same} if they are congruent is an example of quotienting by an equivalence relation.
 \end{example}
 
 \section{Integers via quotients}\label{integers-via-quotients}
@@ -1313,6 +1245,34 @@ Suppose we have a set \(X\), and equivalence relation on \(X\) given by \(\sim\)
 
 You can now ``have fun'' by checking that negation, addition and multiplication as defined above are well defined.
 
+\section{Order relations}\label{order-relations}
+
+\begin{definition}[antisymmetry]
+We call a relation \(R\) on \(X\) \emph{antisymmetric} if \(x R y\) and \(y R x\) implies that \(x=y\).
+\end{definition}
+
+\begin{example}
+The relation above \(x R y\) if and only if \(x-y=1\) is antisymmetric.
+\end{example}
+
+\begin{definition}[partial orders]
+Partial orders are another special kind of relation on a set. A relation \(R\) on a set \(X\) is a partial order if it is antisymmetric, transitive and reflexive.
+\end{definition}
+
+\begin{example}
+The most classical example of a partial order is the normal sense of order given by \(\leq\) on some set of numbers \(\mathbb{R}, \mathbb{Q}, \mathbb{Z}, \dots\).
+
+Another example of a partial order is if \(A\) is a set and \(X = \mathcal{P}(A)\) then we can put a partial order on \(X\) with \(B R C\) iff \(B \subset C\). You can check this satisfies all the conditions.
+\end{example}
+
+\begin{remark}
+These two examples show two key types of partial order. In the first for any two numbers \(x,y\) either \(x \leq y\) or \(y \leq x\). However for any two subsets \(B, C\) it is not the case that either \(B \subset C\) or \(C \subset B\).
+\end{remark}
+
+\begin{definition}[total order]
+A total ordering on a set \(x\) is a partial order where for every \(x,y\) either \(xRy\) or \(yRx\).
+\end{definition}
+
 \section{Modular arithmetic}\label{modular-arithmetic}
 
 We now return to \(\mathbb{N}\) we can define a relation called \emph{is a divisor of} which we write \(n|m\) as \(n\) is a divisor of \(m\).
@@ -1331,7 +1291,7 @@ While we define divisor it is worth defining a prime number. We call \(p \in \ma
 
 \begin{definition}[congruence modulo n]
 Given an number \(n \in \mathbb{N}-\{0\}\) we can define an equivalence relation on \(\mathbb{Z}\) called congruence modulo n (written \(\equiv\) mod \(n\)) by
-\[ p \equiv   q \, (\mbox{mod} \, n) \quad \mbox{when} \quad n\Big| |p-q|.   \]
+\[ p \equiv   q \. (\mbox{mod} \, n) \quad \mbox{when} \quad n\Big| |p-q|.   \]
 \end{definition}
 
 \begin{remark}
@@ -1362,7 +1322,7 @@ Suppose we want to calculate \(7^{12}\) modulo \(10\). The we can do it by worki
 \begin{align*}
 7^2 &\equiv 49 \equiv 9 \quad \mbox{mod} \, 10 \\
 7^3 & \equiv 7^2 \times 7 \equiv 9 \times 7 \equiv 63 \equiv 3 \quad \mbox{mod} \, 10\\
-7^4 & \equiv 3\times 7 \equiv 21 \equiv 1 \quad \mbox{mod} \, 10\\
+7^4 \&equiv 3\times 7 \equiv 21 \equiv 1 \quad \mbox{mod} \, 10\\
 7^{12} &\equiv (7^4)^3 \equiv 1^3 \equiv 1 \quad \mbox{mod}\, 10.
 \end{align*}
 
@@ -1370,12 +1330,6 @@ Now if we supposed we wanted to work out \(7^{2025} \quad \mbox{mod} \, 10\) thi
 \[ 7^{2025} \equiv 7^{1006\times 4 +1} \equiv 1\times 7 = 7 \quad \mbox{mod} 10.  \]
 
 It isn't always the case that there is some \(k\) such that \(m^k \equiv 1 \quad \mbox{mod} \,n\). An example of this is that \(5^k \equiv 5 \quad \mbox{mod} 10\) for every \(k\).
-\end{example}
-
-\begin{example}
-Modular arithmetic can sometimes be used to show equations cannot have solutions in the integers. An example is
-\[ 2a^2 + 3b^3 = 1.  \]
-If we had a solution then \(2a^2 \equiv 1 \quad \mbox{mod} \, 3\) but \(2\times 0^2 \equiv 0 \quad \mbox{mod} \, 3\), \(2 \times 1^2 \equiv 2 \quad \mbox{mod} \, 3\) and \(2 \times 2^2 \equiv 2 \mbox{mod} \, 3\) so no such \(a\) can exist.
 \end{example}
 
 \begin{definition}[linear congruences]
@@ -1390,10 +1344,10 @@ We wish to solve for \(x\) in this type of equation. From above we only need to 
 If we are interested in the congruence
 \[ 2x \equiv 3 \quad \mbox{mod} 5,  \] our only way of doing this is to check all of \(x= 0,1, \dots 4\}\) we have
 \begin{align*}
-2\times 0 &\equiv 0 \not\equiv 3 \quad \mbox{mod} 5,\\
-2 \times 1 &\equiv 2 \not\equiv 3 \quad \mbox{mod} 5,\\
-2 \times 2 & \equiv 4 \not\equiv 3 \quad \mbox{mod} 5,\\
-2 \times 3 &\equiv 6 \equiv 1 \not\equiv 3 \quad \mbox{mod} 5,\\
+2\times 0 &\equiv 0 \not\equiv 3 \quad \mbox{mod} 5,
+2 \times 1 &\equiv 2 \not\equiv 3 \quad \mbox{mod} 5,
+2 \times 2 & \equiv 4 \not\equiv 3 \quad \mbox{mod} 5,
+2 \times 3 &\equiv 6 \equiv 1 \not\equiv 3 \quad \mbox{mod} 5,
 2 \times 4 &\equiv 8 \equiv 3 \quad \mbox{mod} 5,
 \end{align*}
 
@@ -1899,8 +1853,6 @@ Every natural number \(n \geq 2\) has a \emph{unique} prime factorisation.
 \end{theorem}
 
 \begin{proof}
-In this proof we are going to assume the fact that if \(p\) is a prime and \(p|ab\) then \(p|a\) or \(p|b\). If you are doing ma132 you will see this proved later.
-
 For the base case \(2\) has a unique prime factorisation.
 
 Suppose that for every \(k < n\) that \(k\) has a unique prime factorisation.
@@ -1968,478 +1920,6 @@ This allows us to write a better definition of coprime
 
 \begin{definition}[coprime]
 If \(gcd(n,m)=1\) then \(n\) and \(m\) are coprime.
-\end{definition}
-
-\begin{theorem}[division with remainder]
-Suppose that \(a \in \mathbb{Z}, b \in \mathbb{N}-\{0\}\) then there exists \(q \in \mathbb{Z}\) and \(r \in [[b]]\) such that
-\[ a =bq+r.  \]
-\end{theorem}
-
-\begin{proof}
-If \(b=1\) we just take \(q=a, r=0\) so we can work in the case \(b >1\).
-
-Let us fix \(b\) and prove the result by induction on \(a\). If \(a=1\) then \(a=0\times b+1\). This is the base case.
-
-Now if we assume that there exists \(q,r\) such that \(a-1 = qb +r\) then either \(r \in [[b-1]]\) in which case \(a = qb + (r+1)\) is a solution to our problem, or \(r=b-1\) in which case we write \(a = (q+1)b\).
-\end{proof}
-
-\begin{example}
-How can we find the greatest common divisor of two numbers. One way to do it is by repeated division.
-
-We can apply repeated division with \(81\) and \(51\). We have
-\begin{align*}
-81 & = 1 \times 51 + 30,\\
-51 & = 1 \times 30 + 21,\\
-30 & = 1 \times 21 + 9,\\
-21 & = 2 \times 9 + 3,\\
-9 & = 3 \times 3.
-\end{align*}
-
-We can also do this backwards to get
-\begin{align*}
-9 & = 3 \times 3,\\
-21 & = 2 \times 9 + 3 = (2 \times 3 +1) \times 3 = 7 \times 3,\\
-30 & = 1 \times 21 + 9 = (1 \times 7 + 3) \times 3 = 10 \times 3,\\
-51 & = (1 \times  10 + 7) \times 3 = 17 \times 3,\\
-81 & = (1 \times 17 + 10) \times 3 = 27 \times 3.
-\end{align*}
-
-And we deduce from the that \(gcd(81,51) = 3\).
-
-Why does this work? We notice that if \(c|a, c|b\) then if \(a=qb+r\) then we must have that \(c|r\). Continuing on if \(c|b\) and \(c|r\) and \(b=q_2 r+ r_2\) then \(c|r_2\) and so on. If eventually you end up with a remainder term which is 0 then we terminate. This shoes that if we terminate with remainder \(r_k\) then \(r_k|a\) and \(r_k| b\) and that nothing larger than \(r_k\) can divide both \(a\) and \(b\).
-\end{example}
-
-\section{Euclid's Algorithm}\label{euclids-algorithm}
-
-Taking inspiration from calculations like the one above we can write down a procedure to find the greatest common divisor of \(a,b\).
-
-\begin{definition}[Euclid's Algorithm]
-Given \(a, b \in \mathbb{N}\) with \(a < b\) we can write
-\begin{align*}
-b &= q_1a + r_1, \quad q_1 \in \mathbb{N}, r_1 \in [[a]],\\
-a &= q_2r_1 + r_2, \quad q_2 \in \mathbb{N}, r_2 \in [[r_1]],\\
-r_1 &= q_3r_2 + r_3, \quad q_3 \in \mathbb{N}, r_3 \in [[r_2]],\\
-r_2 & = \dots
-\end{align*}
-Eventually this process will terminate because we will have \(r_k = 0\) for some \(k\) and then we have \(r_{k-1} = gcd(a,b)\).
-\end{definition}
-
-\begin{theorem}[Euclid's Algorithm]
-Given the algorithm above we have the following
-- This algorithm will terminate. i.e.~eventually we have \(r_{k-1} = q_{k+1} r_{k} + 0\).
-- In this case \(r_{k} = gcd(a,b)\)
-- There exists \(x,y \in \mathbb{Z}\) such that \(gcd(a,b) = xa+by\).
-\end{theorem}
-
-\begin{proof}
-We take each point in turn.
-
-Firstly we can see that, for every \(j\), \(r_j> r_{j+1} > r_{j+2}\) so eventually we must get to 0. Therefore the sequence terminates.
-
-Secondly, we prove this by showing that in each step of the algorithm we preserve the set of common divisors. If \(m|r_j\) and \(m|r_{j+1}\) then since \(r_j = q_{j+2}r_{j+1} + r_{j+2}\) so \(m|r_{j+2}\) as well. Equally if \(n|r_{j+1}\) and \(n|r_{j+2}\) then we must have \(n|r_j\) as well. So the set of divisors of \(r_j, r_{j+1}\) is the same as the set of divisors of \(r_{j+1},r_{j+2}\). From this it follows that \(gcd(r_j,r_{j+1})=gcd(r_{j+1},r_{j+2})\). Therefore itterating backwards we have that for every \(j\) that \(gcd(r_j, r_{j+1}) = gcd(a,b)\). Consequently at the point where the algorithm terminates, \(r_k = gcd(r_k,0)=gcd(r_k,r_{k+1})=gcd(a,b)\).
-
-For the last point let us make the claim: For every \(j\) we can write \(r_j = x_j a + y_j b\) for some \(x_j, y_j \in \mathbb{Z}\). Then we can prove this recursively. First we know that \(b=q_1 a + r_1\) so \(r_1 = -q_1 a + 1*b\). Now suppose that \(r_{j-1}, r_{j-2}\) can be expressed as above. We know \(r_{j-2} = q_j r_{j-1} + r_j\) so \(r_j = r_{j-2} - q_j r_{j-1} = x_{j-2} a + y_{j-2} b - q_j(x_{j-1}a + y_{j-1}b) = (x_{j-2}-q_j x_{j-1})a + (y_{j-2} - q_j y_{j-1})b\). So this shows the claim by induction. Now the claim implied in particular that \(r_k = x_k a + y_k b\) proving the third point in the theorem.
-\end{proof}
-
-\subsection{Geometric interpretation of Euclid's algorithm}\label{geometric-interpretation-of-euclids-algorithm}
-
-We can think of this algorithm pictorially by drawing a rectangle of length \(a\) and height \(b\) and then \(q_1\) squares of side length \(b\) inside it leaving a rectangle of length \(r_1\) and height \(b\) and so on\ldots{}
-
-\begin{figure}
-\centering
-\includegraphics{geomeuclid.png}
-\caption{\label{fig:unnamed-chunk-28}Picture showing Euclid's algorithm pictorially}
-\end{figure}
-
-Here is a specific example with the numbers \(24\) and \(15\)
-
-\includegraphics{geomeuclidnumbers.png}
-\#\#\# Continued fractions
-
-Another way of looking at Euclid's algorithm is continued fractions. If \(a = qb+r\) then
-\[ \frac{a}{b} = q + \frac{r}{b}.  \]
-If \(b = q_2 r + r_2\) then
-\[  \frac{b}{r} = q_2 + \frac{r_2}{r},\] so
-\[ \frac{a}{b} = q + \frac{1}{q_2 + \frac{r_2}{r}}.  \]
-Continuing on like this we can express
-\[ \frac{a}{b} = q + \frac{1}{q_2 + \frac{1}{q_3 + \dots}}.  \]
-
-In a similar way if we take some real number \(x\) we can write it in continued fraction form by writing \(q_1 = [x]\) and \(q_2 = [1/(x-[x])]\) and so on. Unlike when expressing a rational number this process might not terminate.
-
-In both situations we call this the continued fraction representation of a number.
-
-\subsection{Bezout's lemma}\label{bezouts-lemma}
-
-The final statement in Euclid's algorithm is called Bezout's lemma
-
-\begin{lemma}[Bezout's Lemma]
-If \(a,b\) are two natural numbers then there exists \(x,y \in \mathbb{Z}\) such that
-\[ gcd(a,b) = x a + b c.  \]
-
-As a result of this if \(a,b\) are coprime and \(n\) is any integer then there exists \(x, y \in \mathbb{Z}\) such that
-\[ n = xa + yb.\]
-\end{lemma}
-
-\begin{proof}
-We have already proved the first part in the discussion of Euclid's algorithm.
-
-For the second if \(a,b\) are coprime then \(gcd(a,b) =1\) (this is the definition of being coprime). Then by the first part of the theorem there exists \(\tilde{x}, \tilde{y} \in \mathbb{Z}\) such that
-\[ 1= \tilde{x}a + \tilde{y}b,  \] using this
-\[ n = (n\tilde{x})a + (n \tilde{y})b.  \]
-\end{proof}
-
-Using this we can show a powerful result which we have already seen
-
-Suppose that \(a,b \in \mathbb{N}\) and \(p\) is a prime number and \(p|ab\) then either \(p|a\) or \(p|b\).
-
-If \(p|a\) then we are done so suppose that \(p\) does not divide \(a\). Then \(a,p\) are coprime so by Bezout's lemma we can write
-\[1 = xa + yp\] and hence
-\[b = xab + ypb.  \] As \(p|ab\) we know \(p|xab\) and from the expression we can see that \(p|ypb\) so \(p | (xab + ybp)\) so \(p|b\).
-
-Now let us use this to prove the fundamental theorem of arithmetic again. Everything is a bit smoother now with more results.
-
-\begin{theorem}[Fundamental Theorem of Arithmetic]
-Any natural number \(n\) has a unique factorisation into prime numbers.
-\end{theorem}
-
-\begin{proof}
-First let us use strong induction to prove that there is a prime factorisation. The base case is \(n=2\) which is already in prime factorisation. Now suppose that every number less than \(n\) can be written as a product of prime factors. Then either \(n\) is prime, so it is in prime factorisation or \(n=ab\) then \(a,b < n\) so they have prime factorisations which allows us to write a prime factorisation for \(n\).
-
-Second we want to prove this factorisation is unique. Suppose \(n = p_1 p_2 \dots p_k = q_1 q_2 \dots q_j\) where all the \(p_i, q_i\) are primes. Then \(p_1 | n\) so \(p_1|q_1\) or \(p_1 |q_2\dots q_j\). In the first case we must have \(p_1=q_1\) since \(q_1\) is prime. In the second case we have \(p_1|q_2\) or \(p_1 |q_3 \dots q_j\) and so on. We can keep itterating to show that \(p_1\) must appear in the list \(q_1, \dots q_j\). We can then repeat this with all the \(p_i\).
-\end{proof}
-
-\section{Chinese remainder theorem}\label{chinese-remainder-theorem}
-
-Suppose we are interested in solving two or more linear congruences simultaneously.
-
-\begin{example}
-Suppose we would like to find \(x\) such that \(x \equiv 1 \quad \mbox{mod} \, 3\) and \(x \equiv 3 \quad \mbox{mod} \, 4\). Then we can work modulo 12 since if we have a solution we can see we will get another solution by adding multiples of 12. If \(x \equiv 1 \quad \mbox{mod} \, 3\) then modulo 12 \(x \equiv 1, 4, 7\) or \(10\). Similarly, if \(x \equiv 3 \quad \mbox{mod}\, 4\) then \(x \equiv 3, 7\) or \(11\) modulo 12. Therefore \(x \equiv 7\) modulo 12 is our unique solution up to adding multiples of 12.
-
-Slightly differently suppose we would like to have \(x \equiv 2 \quad \mbox{mod} \, 6\) and \(x \equiv 3 \quad \mbox{mod} \, 4\) then again we want to work modulo 12. From the first constraint we have \(x \equiv 2\) or \(x \equiv 8\) and from the second we have \(x \equiv 3, 7\) or \(11\) as before. In this example we see there are no possible solutions.
-\end{example}
-
-\begin{theorem}[Chinese Remainder Theorem]
-Suppose that \(n_1, \dots, n_k\) are pairwise coprime integers and \(a_1, \dots, a_k\) are integers with \(a_i \in [[n_i]]\) for every \(i\). Then there exists an integer \(x\) with
-\[ x \equiv a_i \quad \mbox{mod} n_i, \quad i = 1, \dots, k.  \] Furthermore all the solutions are equivalent modulo \(N=n_1 \dots n_k\).
-\end{theorem}
-
-\begin{proof}
-Let \(m_i = \Pi_{j \neq i} n_j\). Then \(n_i\) and \(m_i\) are coprime so by Euclid's algorithm there exists \(x_i,y_i\) such that \(1 = x_i n_i + y_i m_i\) so \(e_i =y_i m_i = 1- x_i n_i\) so \(e_i \equiv 1 \quad \mbox{mod} \, n_i\) and \(e_i \equiv 0 \quad \mbox{mod} \, n_j\).
-
-Then let \(x = \sum_{i=1}^k a_i e_i\) then this satisfies the conditions of the theorem.
-
-Now suppose we have another \(y\) satisfying the congruences. Then \(x \equiv y \quad \mbox{mod} \, n_i\) for every \(i\). Therefore, \(n_i| |x-y|\) for every \(i\). Since all the \(n_i\) are coprime this means that \(N | |x-y|\).
-\end{proof}
-
-\begin{remark}
-The Chinese remainder theorem is very old. It dates back to Sunzi in the 3rd to 5th Century. It can be used to do apparently complicated computations very quickly and is used in important algorithms today such as RSA cryptography and Fast Fourier transform.
-\end{remark}
-
-\section{Fermat's Little Theorem and Euler's Theorem}\label{fermats-little-theorem-and-eulers-theorem}
-
-\begin{definition}
-A number \(a\) is called a emph\{unit\} modulo \(n\) if there exists \(b\) such that \(ab = 1 \quad \mbox{mod} \, n\). (We call \(b\) a multiplicative inverse modulo \(n\).)
-\end{definition}
-
-\begin{lemma}
-A number \(a\) is a unit modulo \(n\) if and only if \(a\) and \(n\) are coprime.
-\end{lemma}
-
-\begin{proof}
-If \(a\) and \(n\) are coprime then \(1 = xa + yn\) in which case \(xa\equiv 1 \quad \mbox{mod} \, n\).
-
-If there exists \(x\) such that \(xa \equiv 1 \quad \mbox{mod} \, n\) then \(x a = 1 + y n\) and \(gcd(a,n) | (xa-yn)\) so \(gcd(a,n) = 1\).
-\end{proof}
-
-\begin{definition}[Euler Totient Function]
-The Euler Totient function \(\phi(n)\) counts the number of natural numbers smaller than \(n\) that are coprime to \(n\). Alternatively the number of units modulo \(n\). Notice that \(\phi(1)=1\).
-\end{definition}
-
-\begin{lemma}
-If \(p\) is prime then \(\phi(p) = p-1\).
-\end{lemma}
-
-\begin{example}
-Another example is \(n=12\) the numbers smaller than \(n\) which are coprime are \(1,5,7,11\) so \(\phi(12)=4\)
-\end{example}
-
-\begin{lemma}
-If \(p\) is a prime then
-\[ \phi(p^k) = p^k - p^{k-1}. \]
-\end{lemma}
-
-\begin{proof}
-The only way that \(gcd(m,p^k) \neq 1\) is if \(m\) is a multiple of \(p\). There are \(p^{k-1}\) multiples of \(p\) less than \(p^k\).
-\end{proof}
-
-\begin{lemma}
-If \(n\) and \(m\) are coprime integers then
-\[ \phi(nm) = \phi(n)\phi(m). \]
-\end{lemma}
-
-\begin{proof}
-Recall that the units modulo \(n\) are exactly the numbers which are coprime to \(n\). Let us write the set of units modulo \(n\) as \(\left(\mathbb{Z}/n \mathbb{Z} \right)^{\times}\).
-
-Suppose that \(k\) is a unit modulo \(n\) and \(j\) is a unit modulo \(m\) then by the Chinese remainder theorem there exists a unique \(l\) such that \(l \equiv k \quad \mbox{mod} \, n\) and \(l \equiv j \quad \mbox{mod} \, m\). Equally if \(l\) is a unit modulo \(mn\) then there is some \(q\) such that \(lq \equiv 1 \quad \mbox{mod}\, mn\) so \(l\) is a unitt modulo \(n\) and a unit modulo \(m\). This shows we have a bijection between \(\left(\mathbb{Z}/n \mathbb{Z} \right)^{\times} \times \left(\mathbb{Z}/m \mathbb{Z} \right)^{\times}\) and \(\left(\mathbb{Z}/nm \mathbb{Z} \right)^{\times}\). Therefore the two sets have the same size. This gives our conclusion.
-\end{proof}
-
-\begin{proposition}
-We have a formula for Euler's totient function given by
-\[ \phi(n) = n \Pi_{p \, prime, p|n} (1-1/p).  \]
-\end{proposition}
-
-\begin{proof}
-This follows from our previous results. By the fundamental theorem of arithmetic we can write \(n = p_1^{k_1} \dots p_j^{k_j}\) then
-\begin{align*} \phi(n) &= \phi(p_1^{k_1}) \dots \phi(p_j^{k_j})  \\
-& = p_1^{k_1}(1-1/p_1) \dots p_j^{k_j}(1-1/p_j) \\
-& = n (1-1/p_1) \dots (1-1/p_j).
-\end{align*}
-\end{proof}
-
-\begin{theorem}[Divisor sum]
-If \(n\) is an integer then
-\[ n = \sum_{d|n} \phi(d)  \]
-\end{theorem}
-
-\begin{proof}
-We prove this by strong induction. We can see that it is true when \(n=1\) then the only divisor of 1 is itself and \(\phi(1) =1\). This gives us the base case.
-
-For the inductive step we assume that for all \(m < n\) we have
-\[ m = \sum_{d|m} \phi(d).  \]
-
-Then there are two cases. If \(n\) is prime then \(n = n-1 +1 = \phi(n) + \phi(1)\) and we are done.
-
-If \(n\) isn't prime then \(n=pm\) where \(p\) is prime and \(m < n\). From this we can compute:
-\begin{align*} \sum_{d|n} \phi(d) &=  \sum_{d|m} (\phi(d)+\phi(pd))  \\
-& = \sum_{d|m} \phi(d)(1 + \phi(p))\\
-&= \sum_{d|m} \phi(d) p\\
-& = p m = n. 
-\end{align*}
-\end{proof}
-
-\begin{proposition}
-If \(p\) is prime and \(a\) is not a multiple of \(p\) then
-\[ a^{p-1} \equiv 1 \quad \mbox{mod} \, p.  \]
-\end{proposition}
-
-\begin{proof}
-Let us consider \(a, 2a, 3a, \dots, (p-1)a\) as elements in \(\mathbb{Z}/p\mathbb{Z}\). We claim that they are all distinct. This is because since \(a,p\) are coprime, there exists \(x\) such that \(xa =1\) modulo \(p\). So if \(ka \equiv ja \quad, \mbox{mod} \,p\) then \(kab \equiv jab \quad \mbox{mod} \, p\) so \(k \equiv j \quad \mbox{mod}\, p\). So if \(k, j \in [[p]]\) this would imply \(k = j\).
-
-So \(a, 2a, \dots, (p-1)a\) considered modulo \(p\) must be \(1, 2, \dots, (p-1)\) in some order. Hence
-\[ a \times 2a \times \dots \times (p-1)a \equiv (p-1)! \quad \mbox{mod}\, p. \] Which rewriting is
-\[ a^{p-1} (p-1)! \equiv (p-1)! \quad \mbox{mod} \, p. \] Now \((p-1)!\) is coprime to \(p\) since \(p\) is prime. So there exists \(c\) such that \(c(p-1)! \equiv 1 \quad \mbox{mod}\, p\) hence multiplying the equation above by \(c\) we get
-\[ a^{p-1} \equiv 1 \quad \mbox{mod} \, p.  \]
-\end{proof}
-
-\begin{theorem}[Fermat's Little Theorem]
-Suppose that \(gcd(a,n) =1\) then \(a^{\phi(n)-1} \equiv 1 \quad \mbox{mod} \, n\).
-\end{theorem}
-
-\begin{proof}
-The proof is very similar to above so I will leave the details to you!
-
-Consider the set of integers \{ka\} where \(gcd(k,n) =1\) and \(k \in [[n]]\) and multiply them all together.
-\end{proof}
-
-\begin{definition}[primitive root]
-We say \(a\) is a \emph{primitive root} modulo \(n\) if for every \(b \in \mathbb{Z}/n\mathbb{Z}\) with \(gcd(b,n)=1\) there exists an \(x\) such that \(b \equiv a^x \quad \mbox{mod}\, n\).
-\end{definition}
-
-You have hopefully seen in Algebra 1 that \((\mathbb{Z}/n\mathbb{Z})^{\times}\) is the set of elements in \(\mathbb{Z}/n\mathbb{Z}\) which have multiplicative inverses. This set forms a group under multiplication and the primitive roots are the generators of this group.
-
-\begin{example}
-Working modulo \(5\) the primitive roots are \(2,3\) we can see that \(4^2 = 1\) which means it cannot be a primitive root.
-\end{example}
-
-\begin{lemma}
-Suppose that \(p\) is prime and \(r|p-1\) then there are exactly \(r\) elements, \(b\), of \(\left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\) with \(b^r \equiv 1 \quad \mbox{mod}\, p\).
-\end{lemma}
-
-\begin{proof}
-This is straightforward once you can talk about polynomials modulo \(p\) but we don't want to talk about it so we're leaving it unproved.
-\end{proof}
-
-\begin{proposition}
-If \(p\) is prime and there exists an element \(a\) of order \(r\) then there are exactly \(\phi(r-1)\) elements of order \(r\).
-\end{proposition}
-
-\begin{proof}
-Give an element \(a\) of order \(r\) then we have distinct elements \(a, a^2, \dots, a^{r-1}\). There are at most \(r\) elements \(b\) such that \(b^r \equiv 1 \quad \mbox{mod}\, p\) so these are all the possible elements of order less than or equal to \(r\). Now if \(gcd(k,r-1) = 1\) then for every \(m < r-1\) we have \(mk \not\equiv 0 \quad \mbox{mod} \, r-1\) so \(a^{mk} \not\equiv 1 \quad \mbox{mod} \, p\). However \(a^{rk} \equiv 1 \quad \mbox{mod} \, p\). Therefore \(a^k\) is another element of order \(r\). Therefore we have at least \(\phi(r-1)\) elements of order \(r\).
-\end{proof}
-
-\begin{corollary}
-If \(p\) is prime then there are exactly \(\phi(p-1)\) primitive roots.
-\end{corollary}
-
-\begin{proof}
-We know that the total number of elements in \(\left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\) is \(\sum_{r} \mbox{number of elements of order}\, r\). We also know that the size of \(\left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\) is \(p-1\) and so there can only be elements of order \(r\) if \(r|p-1\).
-
-We also know know that \(p-1 = \sum_{d|p-1} \phi(d)\). Putting all this together gives our result.
-\end{proof}
-
-\chapter{Algorithms and Algorithmic complexity}\label{algorithms-and-algorithmic-complexity}
-
-\section{Algorithmic Complexity}\label{algorithmic-complexity}
-
-Algorithmic complexity is a measure of how complicated a procedure is by counting roughly how many operations are required to complete it.
-
-\subsection{Big and little O notation}\label{big-and-little-o-notation}
-
-When we are talking about complexity (and in lots of other situations later in your degree) we are often only interested in the asymptotic behaviour of a function.
-
-For example if we want to know the complexity of an algorithm to multiply two numbers with at most \(n\) digits together we have a function of \(n\) and we are only really interested in describing how it behaves when \(n\) is very large. Big and little O notation is a way of doing this.
-
-\begin{definition}[Big O]
-Suppose \(f(n)\) and \(g(n)\) are function of \(n\) and there exist real numbers \(C, n_0\) such that for \(n \geq n_0\) then
-\[|f(n)| \leq C g(n)\] then we say
-\[ f(n) = O(g(n)).  \]
-\end{definition}
-
-This is most commonly used when \(g(n)\) is a simple function like \(n^k\) for some \(k\) or \(\log(n)\) or \(a^n\) or something similar.
-
-\begin{example}
-
-\begin{itemize}
-\item
-  The function \(2n^3 + 3n - 102 = O(n^3)\).
-\item
-  \(\phi(n) = O(n)\) since \(\phi(n) \leq n\).
-\end{itemize}
-
-\end{example}
-
-While we are defining big O notation it is useful to define little o notation
-
-\begin{definition}[little o notation]
-If \(f(n), g(n)\) are functions and for every \(c >0\) there exists \(n_c\) such that if \(n >n_c\) then
-\[ |f(n)| \leq c g(n).\]
-
-We can think of this as saying \(f(n)\) becomes insignificant compared to \(g(n)\) as \(n\) becomes large.
-\end{definition}
-
-\begin{example}
-We have \(n^2 = o(n^3)\).
-\end{example}
-
-\section{Running times of algorithms}\label{running-times-of-algorithms}
-
-We use big O notation to talk about how long it will take to run an algorithm as the input becomes large. It is easiest to understand this by looking at some examples.
-
-\begin{example}[Addition]
-Suppose we are adding two \(n\) digit numbers \(a_1\dots a_n\) and \(b_1\dots b_n\) using our standard method of addition where we do \(a_n+b_n\) and enter the unit part of this as the unit part of the sum then possibly carry the 1 if \(a_n + b_n \geq 10\). Then we add \(a_{n-1} + b_{n-1}\) and possibly add the additional \(1\) we carried if necessary.
-
-If we want to count the steps it depends on precisely what we list as a step. If we only think we are doing 1 step when adding and carrying for each place value then we are performing \(n\) steps. If we think of each addition and carrying step as a separate step then we do \(3n\) steps. However in either case we say the algorithm is \(O(n)\).
-\end{example}
-
-\begin{example}[Multiplication]
-Now suppose we think about multiplication using the long multiplication algorithm then for two \(n\) digit numbers we need to multiply \(a_k\) by \(b_j\) for each \(k, j\) (which is \(n^2\) steps) and then perform \(n^2\) addition steps of what are effectively at most two digit numbers. So this algorithm is O(n\^{}2).
-\end{example}
-
-\begin{example}[Checking divisibility]
-Division is no worse than multiplication. The algorithms are a bit more complicated to state. One example is given an \(n\) digit number, \(a\) and an \(m\) digit number, \(b\) with \(m\leq n\) and we want to know whether \(b|a\) then if \(a/b\) were an integer it would have at most \(n-m+1\) digits and at least \(n-m\). So we are have around \(20\) possible candidate for \(a/b\). Now we just check multiplying all \(20\) candidates with \(m\) which is a multiplication operation with \(m\times(n-m+1)\) steps so \(O(n^2)\) and we do this 20 times so checking divisibility is \(O(n^2)\).
-\end{example}
-
-\begin{example}[Naive primality testing]
-Suppose we want to test whether a number \(n\) is prime. The most obvious way to do this is to check whether we can find any other \(m \neq n\) such that \(m|n\). We notice here that we only need to check \(m \leq \sqrt{n}\) as if \(ab=n\) then one of \(a, b\) must be smaller than \(sqrt{n}\). If we suppose it is one step to check whether \(n\) is divisible by \(m\). Now each division operation is a check and the number of digits in \(n\) is around \(\log_{10}(n)\) so if we are interested in testing an \(N\) digit number to see if its prime we need around \(10^{N/2}N^2\) operations so the algorithm is \(O(10^{N/2} N^2)\).
-\end{example}
-
-\begin{remark}
-Notice in all of these examples we are using our understanding of the complexity of less complicated operations to find the complexity of more complicated operations.
-\end{remark}
-
-\begin{definition}[Fibonacci Numbers]
-The Fibonacci numbers are defined by
-\[ f(k+2) = f(k+1 ) + f(k),  \] and \(f(0)=f(1)=1\).
-\end{definition}
-
-We discover that if we want to count how many steps Euclid's algorithm takes then the Fibonacci numbers appear.
-
-\begin{theorem}[Complexity of Euclid's Algorithm]
-If \(a>b\) and Euclid's algorithm takes \(k\) steps to complete then \(a \geq f(k+2)\) and \(b \geq f(k+1)\).
-\end{theorem}
-
-\begin{proof}
-We prove this by induction on \(k\).
-
-In the base case if the algorithm takes \(1\) step then we must have \(b\geq 1=f(2)\) and \(a>b\) so \(a \geq 2 = f(3)\).
-
-Now we assume it is true for \(k-1\) steps. Then suppose we have \(a,b\) which need \(k\) steps for Euclid's algorithm. Then \(a=qb +r\) and \(b,r\) need \(k-1\) steps for Euclid's algorithm. So by our induction hypothesis we know that \(b\geq f(k+1), r \geq f(k)\). Then \(a = qb +r \geq b +r \geq f(k) + f(k+1) = f(k+2)\).
-\end{proof}
-
-\begin{remark}
-The above theorem means that the Fibonacci numbers represent the worst case for Euclid's algorithm. i.e.~\(f(k+2), f(k+1)\) are the smallest numbers that will need \(k\) steps to complete Euclid's algorithm for.
-
-We can show that for \(k\) large \(f(k) \approx \frac{1}{\sqrt{5}} \left(\frac{1+\sqrt{5}}{2}\right)^k\) so \(k \approx \log(f(k))/\log((1+\sqrt{5})/2)\). Therfore the complexity of Euclid's algorithm when the larger number is \(n\) is \(O(\log(n))\).
-\end{remark}
-
-\begin{definition}[polynomial time]
-We say that an algorithm takes \emph{polynomial time} if the complexity is \(O(n^k)\) for some \(k\) (in the input size \(n\)).
-\end{definition}
-
-\begin{remark}
-Problems where there is no known polynomial time algorithm are considered very hard for computers to do. These provide a good oportunity for creating codes and encryptions which are hard to break.
-\end{remark}
-
-\chapter{Cryptography}\label{cryptography}
-
-In this chapter we are going to look at how tools from this course can be used in encrypting information.
-
-\begin{definition}[key in cryptography and public key]
-When we encrypt something we often use a \emph{key} to encrypt and decrypt it. This key is a number or a sequence of letters (or sometimes something more complicated) which allows us to decrypt a code.
-
-A public key is used in a situation where A wants to send some information privately to B. They each have separate private information which the other doesn't know. There is also some public information which both can see. This is called the public key. We need this to work in such a way that A's private information and the public key are sufficient to encrypt the data so that B's private information and the key can decrypt the data but the public key alone is not sufficient to decrypt the data and A and B don't need each others private information to do the encryption or decryption.
-
-I think it is much easier to understand this concept once we've seen some examples.
-\end{definition}
-
-\begin{remark}
-In this course we aren't really interested in how you encrypt or decrypt data once you have the key. There are lots of ways of doing this! We just want to come up with some good methods for creating these public keys. Most of these methods will involve understanding algorithmic complexity.
-\end{remark}
-
-\section{Discrete logarithms and Diffie-Hellman}\label{discrete-logarithms-and-diffie-hellman}
-
-A discrete logarithm is essentially taking the logarithm in modular arithmetic.
-
-\begin{example}
-Suppose we know that \(2 \equiv 3^x \quad \mbox{mod} 5\) and we want to find \(x\). We call \(x\) the discrete logarithm.
-
-The only straightforward way to do this is to compute \(3^y\) modulo \(5\) until we find a \(y\) satisfying this problem.
-\end{example}
-
-\begin{definition}[Discrete Logarithm problem]
-Suppose \(p\) is a prime and \(a, b \in \left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\). The discrete logarithm problem is to find \(n\) so that \(a^n \equiv b \quad \mbox{mod} \, p\).
-\end{definition}
-
-\begin{definition}[Diffie-Hillman problem]
-Suppose \(p\) is a prime and \(a \in \left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\) and \(n, m\) are integers. Suppose we know \(a, a^n, a^m\) but we don't know \(n\) or \(m\) the Diffie-Hillman problem is to compute \(a^{nm}\).
-\end{definition}
-
-\begin{remark}
-At the moment nobody knows a polynomial time algorithm to solve either the discrete logarithm problem or the Diffie-Hillman problem. We can see that if we could solve the discrete logarithm then we could definitely solve Diffie-Hillman.
-\end{remark}
-
-\begin{definition}[Diffie-Hillman key exchange]
-We are looking at encrypting and decrypting information using the key \(a^{nm} \quad \mbox{mod} \, p\).
-
-Person A and B both generate a prime \(p\) and an element \(a \in \left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\) which are made public.
-
-Person A then decides their private number \(n\) and person B decides their private number \(m\). They don't exchange these numbers or tell anyone else.
-
-Then person A computes \(a^n\) and person B computes \(a^m\) and they make this information public. This means that person A can compute \(a^{nm}\) since they know \(a^m\) and \(n\) so can compute \((a^m)^n\). Similarly person B can also compute \(a^{nm}\). However, no other person is able to compute \(a^{nm}\) without solving the Diffie-Hillman problem.
-
-This means that A and B can safely use \(a^{nm}\) to encrypt and decrypt their secret messages without worrying about anyone being able to intercept them.
-\end{definition}
-
-\section{RSA Cryptography}\label{rsa-cryptography}
-
-RSA Cryptography is named for Rivest, Shamir and Adelman who invented it. It is used in a more asymmetric setting to the Diffie-Hillman problem. Here we want anyone to be able to encrypt a message but only one person to be able to decrypt any of the messages. This comes up a lot with passwords sent to websites for example.
-
-\begin{definition}[RSA Cryptography]
-Person A choose two large prime numbers \(p,q\) they then compute \(n=pq\) and \(\phi(n) = (p-1)(q-1)\). Person A then chooses \(e \in [[\phi(n)]]\) which is coprime to \(\phi(n)\) (it is often a good idea to choose \(e\) prime). Using Euclid's algorithm they compute \(d\) such that \(ed \equiv 1 \quad \mbox{mod} n\). Now person A has the information \(p,q,n,\phi(n),e,d\). They make \(n,e\) public. It is very hard to compute (i.e.~no known polynomial time algorithm) any of the private information from the public information (essentially you would have to factorise \(n\) then you can do it easily but it is very hard to factorise \(n\)).
-
-Now suppose person \(B\) wants to encrypt a message so that only person \(A\) can decrypt it. \(B\) doesn't need any of the private information. Person \(B\) encodes his message into a number \(m\) modulo \(n\) and then computes \(m^e\) modulo \(n\).
-
-Now if person \(A\) wants to decrypt the message they compute \((m^e)^d\) modulo \(n\). Then since \(de \equiv 1 \quad \mbox{mod}\, \phi(n)\) we know that \(de = k\phi(n)+1\) for some \(k\). Then \(m^{ed} \equiv m^{k\phi(n)+1} \equiv m \quad \mbox{mod} \, n\). Where here we used the fact that \(m^\phi(n) \equiv 1 \quad \mbox{mod} \, n\) using Fermat's little theorem.
 \end{definition}
 
   \bibliography{book.bib,packages.bib}
