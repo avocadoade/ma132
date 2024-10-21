@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2024-10-16" />
+<meta name="date" content="2024-10-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -78,7 +78,7 @@ set in the _output.yml file.</p>" />
 <li><a href="./">MA132: Foundations</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-use-these-notes"><i class="fa fa-check"></i><b>1.1</b> How to use these notes</a></li>
 </ul></li>
@@ -171,17 +171,17 @@ set in the _output.yml file.</p>" />
 <p>Proof can be a difficult and subtle concept. During your first year you develop a good sense of proof by <em>seeing lots of proofs</em>. In this section we will work towards a rigorous notion of what a proof is and study some common proof techniques.</p>
 <p>First, to show this is really necessary let us look at some false proofs.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-1" class="theorem"><strong>Theorem 6.1  (untheorem) </strong></span><span class="math display">\[e^i =1\]</span></p>
+<p><span id="thm:unlabeled-div-150" class="theorem"><strong>Theorem 6.1  (untheorem) </strong></span><span class="math display">\[e^i =1\]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-2" class="proof"><em>Proof</em> (unproof). </span><span class="math display">\[ e^i = (e^i)^{2\pi/2\pi} = (e^{2\pi i})^{1/2\pi} = 1^{1/2\pi} = 1.\]</span></p>
+<p><span id="unlabeled-div-151" class="proof"><em>Proof</em> (unproof). </span><span class="math display">\[ e^i = (e^i)^{2\pi/2\pi} = (e^{2\pi i})^{1/2\pi} = 1^{1/2\pi} = 1.\]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-3" class="theorem"><strong>Theorem 6.2  (untheorem) </strong></span>All triangles are isoceles</p>
+<p><span id="thm:unlabeled-div-152" class="theorem"><strong>Theorem 6.2  (untheorem) </strong></span>All triangles are isoceles</p>
 </div>
 <div class="proof">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
-<span id="unlabeled-div-4" class="proof"><em>Proof</em> (unproof). </span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-27"></span>
+<span id="unlabeled-div-153" class="proof"><em>Proof</em> (unproof). </span>
 <img src="badtriangle.png" alt="A picture of a triangle"  />
 <p class="caption">
 Figure 6.1: A picture of a triangle
@@ -198,10 +198,10 @@ Figure 6.1: A picture of a triangle
 <h2><span class="header-section-number">6.1</span> Patterns of proof<a href="proof.html#patterns-of-proof" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this section I am going to write proofs out using largely the language of logic. My hope is that it will make the different patterns of proof clear. In general it is neither necessary nor desirable to do this.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-5" class="definition"><strong>Definition 6.1  </strong></span>Proof by <em>direct implication</em> is the most straightforward kind of proof. Here we want to prove <span class="math inline">\(P \Rightarrow Q\)</span>.</p>
+<p><span id="def:unlabeled-div-154" class="definition"><strong>Definition 6.1  </strong></span>Proof by <em>direct implication</em> is the most straightforward kind of proof. Here we want to prove <span class="math inline">\(P \Rightarrow Q\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-6" class="example"><strong>Example 6.1  </strong></span>Suppose we want to prove that <span class="math inline">\(n\)</span> being even implies that <span class="math inline">\(n^2\)</span> is even. We can do this directly:</p>
+<p><span id="exm:unlabeled-div-155" class="example"><strong>Example 6.1  </strong></span>Suppose we want to prove that <span class="math inline">\(n\)</span> being even implies that <span class="math inline">\(n^2\)</span> is even. We can do this directly:</p>
 <p><span class="math display">\[\begin{align*}
 &amp; n \, \mbox{even} \, \Rightarrow \, \exists \, k \in \mathbb{N} \, s.t. n=2k, \\
 &amp; n = 2k \, \Rightarrow \, n^2 = (2k)^2 = 2 (2k^2), \\
@@ -210,10 +210,10 @@ Figure 6.1: A picture of a triangle
 <p>So you see we just flow from one implication to the next.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-7" class="definition"><strong>Definition 6.2  </strong></span>Proof by <em>contraposition</em> is when we use the equivalence <span class="math inline">\((P\Rightarrow Q) \Leftrightarrow ((\neg Q) \Rightarrow (\neg P))\)</span>.</p>
+<p><span id="def:unlabeled-div-156" class="definition"><strong>Definition 6.2  </strong></span>Proof by <em>contraposition</em> is when we use the equivalence <span class="math inline">\((P\Rightarrow Q) \Leftrightarrow ((\neg Q) \Rightarrow (\neg P))\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-8" class="example"><strong>Example 6.2  </strong></span>Suppose we want to prove that if <span class="math inline">\(n\)</span> is odd then <span class="math inline">\(n^2\)</span> is odd by contraposition. We need to use the following facts:</p>
+<p><span id="exm:unlabeled-div-157" class="example"><strong>Example 6.2  </strong></span>Suppose we want to prove that if <span class="math inline">\(n\)</span> is odd then <span class="math inline">\(n^2\)</span> is odd by contraposition. We need to use the following facts:</p>
 <ul>
 <li><p>(H1) If <span class="math inline">\(p\)</span> is a prime and <span class="math inline">\(a,b \in \mathbb{N}\)</span> then <span class="math inline">\(p|ab \, \Rightarrow (p|a)\vee(p|b)\)</span>.</p></li>
 <li><p>(H2) 2 is a prime</p></li>
@@ -228,10 +228,10 @@ Figure 6.1: A picture of a triangle
 \end{align*}\]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-9" class="definition"><strong>Definition 6.3  (proof by contradiction) </strong></span>Proof by contradiction is when we use the fact that <span class="math inline">\((\neg P \Rightarrow F) \Rightarrow P\)</span>. So we assume the opposite of what we are trying to prove and get to a contradiction.</p>
+<p><span id="def:unlabeled-div-158" class="definition"><strong>Definition 6.3  (proof by contradiction) </strong></span>Proof by contradiction is when we use the fact that <span class="math inline">\((\neg P \Rightarrow F) \Rightarrow P\)</span>. So we assume the opposite of what we are trying to prove and get to a contradiction.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-10" class="example"><strong>Example 6.3  </strong></span>Suppose we want to prove there does not exist any <span class="math inline">\(r \in \mathbb{Q}\)</span> such that <span class="math inline">\(r^2=2\)</span>.
+<p><span id="exm:unlabeled-div-159" class="example"><strong>Example 6.3  </strong></span>Suppose we want to prove there does not exist any <span class="math inline">\(r \in \mathbb{Q}\)</span> such that <span class="math inline">\(r^2=2\)</span>.
 Again first we need another results:</p>
 <ul>
 <li><p>We say <span class="math inline">\(p,q \in \mathbb{Z}\)</span> are coprime if there is no prime number <span class="math inline">\(k\)</span> such that <span class="math inline">\(k|p\)</span> and <span class="math inline">\(k|q\)</span>. Let us write the function <span class="math inline">\(coprime: \mathbb{Z}^2 \rightarrow \{T,F\}\)</span> to tell us if two numbers are coprime.</p></li>
@@ -248,10 +248,10 @@ Again first we need another results:</p>
 \end{align*}\]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-11" class="definition"><strong>Definition 6.4  </strong></span>Proof by construction. This method of proof is about showing that something exists.</p>
+<p><span id="def:unlabeled-div-160" class="definition"><strong>Definition 6.4  </strong></span>Proof by construction. This method of proof is about showing that something exists.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-12" class="example"><strong>Example 6.4  </strong></span>Suppose we want to prove that every quadratic equation with integer coefficients has at least one solution in <span class="math inline">\(\mathbb{C}\)</span>. i.e. we want to show if <span class="math inline">\(a,b,c \in \mathbb{Z}\)</span> then the equation <span class="math display">\[ ax^2+bx+c = 0 \]</span> has at least one solution. We can check (and I’m sure you have before) that
+<p><span id="exm:unlabeled-div-161" class="example"><strong>Example 6.4  </strong></span>Suppose we want to prove that every quadratic equation with integer coefficients has at least one solution in <span class="math inline">\(\mathbb{C}\)</span>. i.e. we want to show if <span class="math inline">\(a,b,c \in \mathbb{Z}\)</span> then the equation <span class="math display">\[ ax^2+bx+c = 0 \]</span> has at least one solution. We can check (and I’m sure you have before) that
 <span class="math display">\[ x = \frac{-b\pm \sqrt{b^2-4ac}}{2a},  \]</span> is a solution. So we have demonstrated the existence of at least one solution.</p>
 <p>Another good example of proof by construction is the proof of Cantor-Schroeder-Bernstein.</p>
 </div>
@@ -260,7 +260,7 @@ Again first we need another results:</p>
 <h2><span class="header-section-number">6.2</span> Proof by induction<a href="proof.html#proof-by-induction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A particularly important pattern of proof is <em>proof by induction</em>. Induction is a key property of how the natural numbers work.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-13" class="definition"><strong>Definition 6.5  (proof by induction) </strong></span>Suppose that <span class="math inline">\(P\)</span> is a property that could or could not hold for each natural number. We can think of <span class="math inline">\(P\)</span> as a function <span class="math inline">\(\mathbb{N}\rightarrow \{T,F\}\)</span>. Suppose the following hold</p>
+<p><span id="def:unlabeled-div-162" class="definition"><strong>Definition 6.5  (proof by induction) </strong></span>Suppose that <span class="math inline">\(P\)</span> is a property that could or could not hold for each natural number. We can think of <span class="math inline">\(P\)</span> as a function <span class="math inline">\(\mathbb{N}\rightarrow \{T,F\}\)</span>. Suppose the following hold</p>
 <ul>
 <li><p><span class="math inline">\(P(0)=T\)</span> (alternatively we say <span class="math inline">\(P(0)\)</span> holds) - this is called the base case,</p></li>
 <li><p><span class="math inline">\(\forall \, n \in \mathbb{N} \, P(n) \Rightarrow P(n+1)\)</span> - this is called the inductive step,</p></li>
@@ -268,31 +268,31 @@ Again first we need another results:</p>
 <p>then we can conclude that <span class="math inline">\(P(n)\)</span> holds for every <span class="math inline">\(n\)</span>. We can write this as <span class="math inline">\(\forall n \in \mathbb{N} \, P(n)\)</span>.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-14" class="remark"><em>Remark</em>. </span>Proof by induction works equivalently (by relabling things) if we start at <span class="math inline">\(n=1\)</span> or in fact from any number <span class="math inline">\(k\)</span> we just have to alter the conclusion to say <span class="math inline">\(\forall n \geq k \, P(n)\)</span>.</p>
+<p><span id="unlabeled-div-163" class="remark"><em>Remark</em>. </span>Proof by induction works equivalently (by relabling things) if we start at <span class="math inline">\(n=1\)</span> or in fact from any number <span class="math inline">\(k\)</span> we just have to alter the conclusion to say <span class="math inline">\(\forall n \geq k \, P(n)\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-15" class="example"><strong>Example 6.5  </strong></span>Let <span class="math inline">\(P(n)\)</span> be the statement that the sum of the first <span class="math inline">\(n\)</span> odd numbers is <span class="math inline">\(n^2\)</span>.</p>
+<p><span id="exm:unlabeled-div-164" class="example"><strong>Example 6.5  </strong></span>Let <span class="math inline">\(P(n)\)</span> be the statement that the sum of the first <span class="math inline">\(n\)</span> odd numbers is <span class="math inline">\(n^2\)</span>.</p>
 <p>Base case: For <span class="math inline">\(n=1\)</span> the sum of the first odd number is <span class="math inline">\(1 = 1^2\)</span>.</p>
 <p>Inductive step: Suppose that <span class="math display">\[ \sigma_{k=1}^n (2k-1) = n^2 \]</span> then
 <span class="math display">\[ \sigma_{k=1}^{n+1} (2k-1) = n^2 + 2(n+1) -1 = n^2 +2n +1 = (n+1)^2.  \]</span> So we have shown <span class="math inline">\(P(n) \Rightarrow P(n+1)\)</span>.</p>
 <p>Therefore we have shown <span class="math inline">\(P(n)\)</span> holds for all <span class="math inline">\(n \geq 1\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-16" class="definition"><strong>Definition 6.6  (well ordering principle) </strong></span>Suppose that <span class="math inline">\(S \subset \mathbb{N}\)</span> and <span class="math inline">\(S \neq \emptyset\)</span> then <span class="math inline">\(S\)</span> has a <em>smallest element</em>.</p>
+<p><span id="def:unlabeled-div-165" class="definition"><strong>Definition 6.6  (well ordering principle) </strong></span>Suppose that <span class="math inline">\(S \subset \mathbb{N}\)</span> and <span class="math inline">\(S \neq \emptyset\)</span> then <span class="math inline">\(S\)</span> has a <em>smallest element</em>.</p>
 </div>
 <p>A classic example of using the well ordering principle is the prime factorisation theorem.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-17" class="theorem"><strong>Theorem 6.3  (prime factorisation) </strong></span>Every <span class="math inline">\(n \in \mathbb{N}-\{0\}\)</span> is the product of prime factors.</p>
+<p><span id="thm:unlabeled-div-166" class="theorem"><strong>Theorem 6.3  (prime factorisation) </strong></span>Every <span class="math inline">\(n \in \mathbb{N}-\{0\}\)</span> is the product of prime factors.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-18" class="proof"><em>Proof</em>. </span>Let C be the set of all natural numbers that aren’t the product of prime factors. We want to show <span class="math inline">\(C\)</span> is empty.</p>
+<p><span id="unlabeled-div-167" class="proof"><em>Proof</em>. </span>Let C be the set of all natural numbers that aren’t the product of prime factors. We want to show <span class="math inline">\(C\)</span> is empty.</p>
 <p>We assume for contradiction that <span class="math inline">\(C \neq \emptyset\)</span> then by the well ordering principle <span class="math inline">\(C\)</span> has a least element. Let us call this element <span class="math inline">\(m\)</span>.</p>
 <p>If <span class="math inline">\(m\)</span> only has divisors <span class="math inline">\(1\)</span> and <span class="math inline">\(m\)</span> then <span class="math inline">\(m\)</span> is prime so is the product of prime factors which would be a contradiction.</p>
 <p>If <span class="math inline">\(m\)</span> has another divisor <span class="math inline">\(k \neq 1,m\)</span> then we must have <span class="math inline">\(m=kj\)</span> for some <span class="math inline">\(k, j \in \mathbb{N}-\{0\}\)</span>. This implies <span class="math inline">\(k, j &lt; m\)</span> so both <span class="math inline">\(k\)</span> and <span class="math inline">\(j\)</span> are the product of prime factors. This implies <span class="math inline">\(m\)</span> is the product of prime factors which is a contradiction.</p>
 <p>Therefore <span class="math inline">\(C\)</span> must be empty.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-19" class="definition"><strong>Definition 6.7  (strong induction) </strong></span>Suppse <span class="math inline">\(P\)</span> is a property that could or could not hold for each of the natural numbers. Suppose that the following are true.</p>
+<p><span id="def:unlabeled-div-168" class="definition"><strong>Definition 6.7  (strong induction) </strong></span>Suppse <span class="math inline">\(P\)</span> is a property that could or could not hold for each of the natural numbers. Suppose that the following are true.</p>
 <ul>
 <li><p><span class="math inline">\(P(0)\)</span> holds,</p></li>
 <li><p>If <span class="math inline">\(P(k)\)</span> holds for all <span class="math inline">\(k&lt;n\)</span> then <span class="math inline">\(P(n)\)</span> holds,</p></li>
@@ -300,10 +300,10 @@ Again first we need another results:</p>
 <p>then we can conclude that <span class="math inline">\(P(n)\)</span> holds for all <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-20" class="theorem"><strong>Theorem 6.4  (unique prime factorisation) </strong></span>Every natural number <span class="math inline">\(n \geq 2\)</span> has a <em>unique</em> prime factorisation.</p>
+<p><span id="thm:unlabeled-div-169" class="theorem"><strong>Theorem 6.4  (unique prime factorisation) </strong></span>Every natural number <span class="math inline">\(n \geq 2\)</span> has a <em>unique</em> prime factorisation.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-21" class="proof"><em>Proof</em>. </span>In this proof we are going to assume the fact that if <span class="math inline">\(p\)</span> is a prime and <span class="math inline">\(p|ab\)</span> then <span class="math inline">\(p|a\)</span> or <span class="math inline">\(p|b\)</span>. If you are doing ma132 you will see this proved later.</p>
+<p><span id="unlabeled-div-170" class="proof"><em>Proof</em>. </span>In this proof we are going to assume the fact that if <span class="math inline">\(p\)</span> is a prime and <span class="math inline">\(p|ab\)</span> then <span class="math inline">\(p|a\)</span> or <span class="math inline">\(p|b\)</span>. If you are doing ma132 you will see this proved later.</p>
 <p>For the base case <span class="math inline">\(2\)</span> has a unique prime factorisation.</p>
 <p>Suppose that for every <span class="math inline">\(k &lt; n\)</span> that <span class="math inline">\(k\)</span> has a unique prime factorisation.</p>
 <p>We already know that <span class="math inline">\(n\)</span> has a prime factorisation from the prime factorisation theorem. It remains to show that it is unique.</p>
@@ -316,10 +316,10 @@ Again first we need another results:</p>
 <p>If we call <span class="math inline">\(m = (q_1-p_1)q_2 \dots q_n\)</span> then the expression on the left tells us that <span class="math inline">\(p_1|m\)</span> and the expression on the right tells us that <span class="math inline">\(m &lt; n\)</span> since <span class="math inline">\(q_1-p_1 &lt; q_1\)</span>. Therefore <span class="math inline">\(m\)</span> has a unique prime factorisation and <span class="math inline">\(p_1|m\)</span>. We know that <span class="math inline">\(q_k &gt; p_1\)</span> for all <span class="math inline">\(k\)</span> so we must have <span class="math inline">\(p_1|(q_1-p_1)\)</span> but this would imply that <span class="math inline">\(p_1|q_1\)</span> which is a contradiction to <span class="math inline">\(q_1\)</span> being prime with <span class="math inline">\(p_1&lt;q_1\)</span>. So we cannot have <span class="math inline">\(p_1 \neq q_1\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-22" class="theorem"><strong>Theorem 6.5  </strong></span>Induction, the well ordering principle and strong induction are all equivalent in the natural numbers.</p>
+<p><span id="thm:unlabeled-div-171" class="theorem"><strong>Theorem 6.5  </strong></span>Induction, the well ordering principle and strong induction are all equivalent in the natural numbers.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-23" class="proof"><em>Proof</em>. </span>(Induction <span class="math inline">\(\Rightarrow\)</span> Well ordering principle): Given a set <span class="math inline">\(S \subset \mathbb{N}\)</span> let us assume that <span class="math inline">\(S\)</span> has no least element. Then let <span class="math inline">\(P(n)\)</span> be the property than <span class="math inline">\(S \cap [[n]]= \emptyset\)</span>.</p>
+<p><span id="unlabeled-div-172" class="proof"><em>Proof</em>. </span>(Induction <span class="math inline">\(\Rightarrow\)</span> Well ordering principle): Given a set <span class="math inline">\(S \subset \mathbb{N}\)</span> let us assume that <span class="math inline">\(S\)</span> has no least element. Then let <span class="math inline">\(P(n)\)</span> be the property than <span class="math inline">\(S \cap [[n]]= \emptyset\)</span>.</p>
 <p>If <span class="math inline">\(0 \in S\)</span> then <span class="math inline">\(0\)</span> would be the least element of <span class="math inline">\(S\)</span> so <span class="math inline">\(S \cap [[0]]= \emptyset\)</span>. This is the base case.</p>
 <p>If <span class="math inline">\([[n]] \cap S = \emptyset\)</span> then if <span class="math inline">\(n+1 \in S\)</span> then <span class="math inline">\(n+1\)</span> would be the least element of <span class="math inline">\(S\)</span> so <span class="math inline">\([[n+1]] \cap S = \emptyset\)</span>.</p>
 <p>Therefore induction implies that <span class="math inline">\(S = \bigcup_n (S \cap [[n]])\)</span> is empty.</p>

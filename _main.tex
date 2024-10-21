@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-10-15}
+\date{2024-10-21}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -962,7 +962,7 @@ Now point 2 in the direction \emph{right inverse} \(\Rightarrow\) \emph{surjecti
 
 Now for point 3 it looks at first like we can just apply the previous results. We can in one direction. If \(f\) has an inverse then it has both a left inverse and a right inverse so by points 1 and 2 \(f\) must be both injective and surjective so it is bijective.
 
-Now if we want to show bijectivity of \(f\) implies we must have an inverse we not that if \(f\) is bijective then for every \(y\in B\) there exists exactly one \(x \in A\) such that \(f(x) = y\) so we can define \(g(y)\) to be this unique \(x\) and this ensures that \(g(f(x))= x\) and \(f(g(y))= y\).
+Now if we want to show bijectivity of \(f\) implies we must have an inverse we know that if \(f\) is bijective then for every \(y\in B\) there exists exactly one \(x \in A\) such that \(f(x) = y\) so we can define \(g(y)\) to be this unique \(x\) and this ensures that \(g(f(x))= x\) and \(f(g(y))= y\).
 \end{proof}
 
 \begin{definition}[pigeon hole principle]
@@ -1273,7 +1273,7 @@ Given a set \(X\) and an equivalence relation \(\sim\) then we define the quotie
 \end{definition}
 
 \begin{example}
-If we consider the set \(\mathbb{R}\) and the equivalence relation \(x \sim y\) when \(x-y \in \mathbb{Z}\). Then for any \(x\) the set \(E_x\) is the set of all real numbers who have the same decimal expansion after the decimal point we often call this set \(\mathbb{T}\) and think about it as wrapping the real numbers repeatedly around the set \([0,1)\).
+If we consider the set \(\mathbb{R}\) and the equivalence relation \(x \sim y\) when \(x-y \in \mathbb{Z}\). Then for any \(x\) the set \(E_x\) is the set of all real positive numbers who have the same decimal expansion after the decimal point (or negative numbers with the same decimal expansion as \(1-x\)) we often call this set \(\mathbb{T}\) and think about it as wrapping the real numbers repeatedly around the set \([0,1)\).
 \end{example}
 
 \begin{example}
@@ -1308,7 +1308,7 @@ Now we want to further define the arithmetic operations on \(\mathbb{Z}\) we do 
 These definitions show a very common subtlety. We have a function whose domain is a quotient and we specify the function by looking at one element of an equivalence class and specifying the function on that. What we want to do is:
 
 \begin{definition}[well defined function]
-Suppose we have a set \(X\), and equivalence relation on \(X\) given by \(\sim\) and we wish to define a function from \(f: X/\sim \rightarrow Y\) by \(f(E_x) = \tilde{f}(x)\) for some other function \(\tilde{f}\). We call \(f\) a \emph{well-defined function} if \(f(x) = f(x')\) whenever \(x \sim x'\).
+Suppose we have a set \(X\), and equivalence relation on \(X\) given by \(\sim\) and we wish to define a function from \(f: X/\sim \rightarrow Y\) by \(f(E_x) = \tilde{f}(x)\) for some other function \(\tilde{f}\). We call \(f\) a \emph{well-defined function} if \(\tilde{f}(x) = \tilde{f}(x')\) whenever \(x \sim x'\).
 \end{definition}
 
 You can now ``have fun'' by checking that negation, addition and multiplication as defined above are well defined.
@@ -1455,6 +1455,12 @@ F & F & F & T & T
 \end{array}
 \end{equation}
 \end{example}
+
+\begin{remark}[IMPORTANT notation]
+Logicians (and the quizzes) use \(\rightarrow\) in place of \(\Rightarrow\) exclusively when they are writing things in formal logic.
+
+This is important because you will have this notation in the quizzes.
+\end{remark}
 
 We can compose Boolean operators and rewrite them in various different ways
 
@@ -1923,7 +1929,7 @@ If we call \(m = (q_1-p_1)q_2 \dots q_n\) then the expression on the left tells 
 \end{proof}
 
 \begin{theorem}
-Induction, the well ordering principle and strong induction are all equivalent.
+Induction, the well ordering principle and strong induction are all equivalent in the natural numbers.
 \end{theorem}
 
 \begin{proof}
