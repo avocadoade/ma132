@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2024-10-21" />
+<meta name="date" content="2024-10-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -254,7 +254,7 @@ F &amp; F &amp; F &amp; T &amp; T
 <p><span class="math display">\[\begin{align*}
 P \wedge Q &amp;= \neg ( (\neg P) \vee (\neg Q)),\\
 P \Rightarrow Q &amp;= (\neg P) \vee Q, \\
-P \Leftrightarrow Q &amp;= (P \Rightarrow Q) \wedge (Q \rightarrow P)\\
+P \Leftrightarrow Q &amp;= (P \Rightarrow Q) \wedge (Q \Rightarrow P)\\
 &amp;= \neg ( (\neg(P \Rightarrow Q)) \vee (\neg(Q \Rightarrow P))) \\
 &amp; = \neg ((\neg((\neg P) \vee Q)) \vee (\neg ((\neg Q) \vee P))).
 \end{align*}\]</span></p>
@@ -321,7 +321,7 @@ F &amp; F &amp; F &amp; T &amp; T &amp; T &amp; T \\
 <p><span class="math display">\[\begin{equation}
 \begin{array}{lr}
 \neg (\neg P) \Leftrightarrow P &amp; \mbox{double negation elimination}\\
-(P \Rightarrow Q) \Leftrightarrow ((\neg Q) \rightarrow (\neg P)) &amp; \mbox{contraposition}\\
+(P \Rightarrow Q) \Leftrightarrow ((\neg Q) \Rightarrow (\neg P)) &amp; \mbox{contraposition}\\
 (P \Rightarrow Q) \Leftrightarrow ((\neg P) \vee Q) &amp; \mbox{definition of implication}\\
 (P \Leftrightarrow Q) \Leftrightarrow ((P \Rightarrow Q) \wedge (Q \Rightarrow P)) &amp; \mbox{definition of equivalence}\\
 (P \vee \neg P) &amp; \mbox{law of the excluded middle}\\
@@ -355,7 +355,7 @@ F &amp; F &amp; F &amp; f(F,F,F)
 <p>We often wish to compute truth tables by breaking expressions down to their constituent parts. For example if we want to check that the transitivity of implication is indeed a tautology we can do as follows</p>
 <p><span class="math display">\[\begin{equation}
 \begin{array}{ccc|ccccc}
-P &amp; Q &amp; R &amp; (P \Rightarrow Q) &amp; (Q \Rightarrow R) &amp; (P \Rightarrow R) &amp; ((P\rightarrow Q)\wedge (Q\rightarrow P)) &amp; (((P\rightarrow Q)\wedge (Q\rightarrow P))\\
+P &amp; Q &amp; R &amp; (P \Rightarrow Q) &amp; (Q \Rightarrow R) &amp; (P \Rightarrow R) &amp; ((P\Rightarrow Q)\wedge (Q\Rightarrow P)) &amp; (((P\Rightarrow Q)\wedge (Q\Rightarrow P))\\
 \, &amp; \, &amp; \, &amp; \, &amp; \, &amp; \, &amp; \, &amp;\Rightarrow (P \Rightarrow R)) \\
 \hline
 T &amp; T &amp; T &amp; T &amp; T &amp; T &amp; T &amp; T\\
