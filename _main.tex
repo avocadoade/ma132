@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-10-21}
+\date{2024-11-01}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -1514,7 +1514,7 @@ First we check that we can express all our basic operations like this.
 \begin{align*}
 P \wedge Q &= \neg ( (\neg P) \vee (\neg Q)),\\
 P \Rightarrow Q &= (\neg P) \vee Q, \\
-P \Leftrightarrow Q &= (P \Rightarrow Q) \wedge (Q \rightarrow P)\\
+P \Leftrightarrow Q &= (P \Rightarrow Q) \wedge (Q \Rightarrow P)\\
 &= \neg ( (\neg(P \Rightarrow Q)) \vee (\neg(Q \Rightarrow P))) \\
 & = \neg ((\neg((\neg P) \vee Q)) \vee (\neg ((\neg Q) \vee P))).
 \end{align*}
@@ -1619,7 +1619,7 @@ Here are some useful tautologies and their names
 \begin{equation}
 \begin{array}{lr}
 \neg (\neg P) \Leftrightarrow P & \mbox{double negation elimination}\\
-(P \Rightarrow Q) \Leftrightarrow ((\neg Q) \rightarrow (\neg P)) & \mbox{contraposition}\\
+(P \Rightarrow Q) \Leftrightarrow ((\neg Q) \Rightarrow (\neg P)) & \mbox{contraposition}\\
 (P \Rightarrow Q) \Leftrightarrow ((\neg P) \vee Q) & \mbox{definition of implication}\\
 (P \Leftrightarrow Q) \Leftrightarrow ((P \Rightarrow Q) \wedge (Q \Rightarrow P)) & \mbox{definition of equivalence}\\
 (P \vee \neg P) & \mbox{law of the excluded middle}\\
@@ -1658,7 +1658,7 @@ We often wish to compute truth tables by breaking expressions down to their cons
 
 \begin{equation}
 \begin{array}{ccc|ccccc}
-P & Q & R & (P \Rightarrow Q) & (Q \Rightarrow R) & (P \Rightarrow R) & ((P\rightarrow Q)\wedge (Q\rightarrow P)) & (((P\rightarrow Q)\wedge (Q\rightarrow P))\\
+P & Q & R & (P \Rightarrow Q) & (Q \Rightarrow R) & (P \Rightarrow R) & ((P\Rightarrow Q)\wedge (Q\Rightarrow P)) & (((P\Rightarrow Q)\wedge (Q\Rightarrow P))\\
  \, & \, & \, & \, & \, & \, & \, &\Rightarrow (P \Rightarrow R)) \\
 \hline
 T & T & T & T & T & T & T & T\\
@@ -1771,6 +1771,18 @@ Suppose we want to prove that \(n\) being even implies that \(n^2\) is even. We 
 So you see we just flow from one implication to the next.
 \end{example}
 
+\begin{definition}[case-checking]
+Sometimes when proving something is always true we need to check it is true in several different cases. More interestingly sometimes to prove something is true in one instance we can check several cases.
+\end{definition}
+
+\begin{example}
+If we want to know whether or not it is possible for an irrational power of an irrational number to be rational we can consider a chain of cases.
+
+\[ ((\sqrt{2})^{\sqrt{2}})^{\sqrt{2}} = (\sqrt{2})^2 = 2.  \]
+
+So either \(a=(\sqrt{2})^{\sqrt{2}}\) is rational (in which case it is an example of an irrational being taken to an irrational power and getting a rational) or it is irrational in which case \(a^{\sqrt{2}} =2\) is an example of an irrational number to an irrational number being rational.
+\end{example}
+
 \begin{definition}
 Proof by \emph{contraposition} is when we use the equivalence \((P\Rightarrow Q) \Leftrightarrow ((\neg Q) \Rightarrow (\neg P))\).
 \end{definition}
@@ -1859,8 +1871,8 @@ Let \(P(n)\) be the statement that the sum of the first \(n\) odd numbers is \(n
 
 Base case: For \(n=1\) the sum of the first odd number is \(1 = 1^2\).
 
-Inductive step: Suppose that \[ \sigma_{k=1}^n (2k-1) = n^2 \] then
-\[ \sigma_{k=1}^{n+1} (2k-1) = n^2 + 2(n+1) -1 = n^2 +2n +1 = (n+1)^2.  \] So we have shown \(P(n) \Rightarrow P(n+1)\).
+Inductive step: Suppose that \[ \Sigma_{k=1}^n (2k-1) = n^2 \] then
+\[ \Sigma_{k=1}^{n+1} (2k-1) = n^2 + 2(n+1) -1 = n^2 +2n +1 = (n+1)^2.  \] So we have shown \(P(n) \Rightarrow P(n+1)\).
 
 Therefore we have shown \(P(n)\) holds for all \(n \geq 1\).
 \end{example}
@@ -1928,11 +1940,17 @@ If \(p_1 \neq q_1\) then without loss of generality \(p_1 < q_1\).
 If we call \(m = (q_1-p_1)q_2 \dots q_n\) then the expression on the left tells us that \(p_1|m\) and the expression on the right tells us that \(m < n\) since \(q_1-p_1 < q_1\). Therefore \(m\) has a unique prime factorisation and \(p_1|m\). We know that \(q_k > p_1\) for all \(k\) so we must have \(p_1|(q_1-p_1)\) but this would imply that \(p_1|q_1\) which is a contradiction to \(q_1\) being prime with \(p_1<q_1\). So we cannot have \(p_1 \neq q_1\).
 \end{proof}
 
-\begin{theorem}
+\begin{definition}[Recursion]
+Recursion is the name we give to constructing something inductively. A good example is the Fibonnacci numbers. Instead of having a rule for what the \(n^{th}\) Fibonnacci number is we say that \(F_{n+2} = F_{n+1} + F_{n}\) and \(F_0 = F_1 =1\).
+\end{definition}
+
+\begin{theorem}[Non-Examinable and not quite true]
 Induction, the well ordering principle and strong induction are all equivalent in the natural numbers.
 \end{theorem}
 
 \begin{proof}
+As said in the name of the theorem this isn't \emph{quite} true for very subtle reasons. I think the result is still interesting.
+
 (Induction \(\Rightarrow\) Well ordering principle): Given a set \(S \subset \mathbb{N}\) let us assume that \(S\) has no least element. Then let \(P(n)\) be the property than \(S \cap [[n]]= \emptyset\).
 
 If \(0 \in S\) then \(0\) would be the least element of \(S\) so \(S \cap [[0]]= \emptyset\). This is the base case.
@@ -1975,6 +1993,22 @@ This allows us to write a better definition of coprime
 \begin{definition}[coprime]
 If \(gcd(n,m)=1\) then \(n\) and \(m\) are coprime.
 \end{definition}
+
+\begin{definition}[least common multiple]
+Given two numbers \(n\) and \(m\) in \(\mathbb{N}\). Then we define the \emph{least common multiple} of \(lcm(n,m)\) of \(n\) and \(m\) to be the smallest number \(k\) such that \(n|k\) and \(m|k\).
+\end{definition}
+
+\begin{lemma}
+Given \(n, m \in \mathbb{N}\) then \(lcm(n,m) \times gcd(n,m) = nm\).
+\end{lemma}
+
+\begin{proof}
+Let \(d = gcd(n,m)\). Then we know there exists \(k, j \in \mathbb{N}\) such that \(n =kd\) and \(m =jd\). Then we must have \(gcd(k,j) =1\) since otherwise there would be a divisor of \(n,m\) which is larger than \(d\).
+
+Then if we write \(l = lcm(n,m)\). We must have \(kd|l\) and \(jd|l\) so there exists \(a, b\) such that \(l=akd=bjd\). Dividing by \(d\) we know that \(l/d = ak = bj\) so since \(k,j\) are coprime we must have \(k|a\) and \(j|d\) so the least such numbers satisfying this are if \(a=j\) and \(b=k\). Therefore \(l=kjd\).
+
+So \(gcd(n,m)\times lcm(n,m) = kjd^2 = (kd)\times (jd) = nm\).
+\end{proof}
 
 \begin{theorem}[division with remainder]
 Suppose that \(a \in \mathbb{Z}, b \in \mathbb{N}-\{0\}\) then there exists \(q \in \mathbb{Z}\) and \(r \in [[b]]\) such that
@@ -2261,8 +2295,20 @@ Working modulo \(5\) the primitive roots are \(2,3\) we can see that \(4^2 = 1\)
 Suppose that \(p\) is prime and \(r|p-1\) then there are exactly \(r\) elements, \(b\), of \(\left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\) with \(b^r \equiv 1 \quad \mbox{mod}\, p\).
 \end{lemma}
 
-\begin{proof}
-This is straightforward once you can talk about polynomials modulo \(p\) but we don't want to talk about it so we're leaving it unproved.
+\begin{proof}[non-examinable]
+To prove this we have to consider polynomials equations modulo \(p\) (we can think of these like linear congruences). So for example the equation
+\[ a_0 + a_1 x + \dots + a_n x^n \equiv 0 \quad (mod \, p)\]
+There is a theorem called Lagrange's theorem that says a polynomial of this form can have at most \(n\) solutions. (The proof is actually essentially the same as for a polynomial whose coefficients are real).
+
+Now if \(x\) is an \(r^{th}\) root of unity then it is a solution to \[ x^r-1 \equiv 0 \quad (mod \, p).\] So we know by Lagranges theorem that there are \emph{at most} \(r\) solutions to this polynomial.
+
+We also know that if we write \(p-1=dk\)
+\[  x^{p-1} -1 \equiv (x^{d}-1)(x^{(k-1)d} + x^{(k-2)d} + \dots + 1) \quad (mod \, p).\]
+If we write \(P(x) = x^{(k-1)d} + x^{(k-2)d} + \dots + 1\) then we know \(P(x)\) has at most \((k-1)d\) solutions.
+
+We also know that there are exactly \(p-1\) solutions to \(x^{p-1}-1 \equiv 0 \quad (mod\, p)\). This is because everything in \(\mathbb{Z}/p\mathbb{Z}\) except 0 will be a solution.
+
+So if \(x\) is a solution to \(x^{p-1} -1 \equiv 0 \quad (mod\, p)\) then we must have that either \(x^r-1 \equiv 0\) or \(P(x) \equiv 0\). This means that \(x^r -1\) must have at least \(r\) solutions. Therefore we have exactly \(r\).
 \end{proof}
 
 \begin{proposition}
