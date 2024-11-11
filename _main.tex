@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-11-01}
+\date{2024-11-11}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -2005,7 +2005,7 @@ Given \(n, m \in \mathbb{N}\) then \(lcm(n,m) \times gcd(n,m) = nm\).
 \begin{proof}
 Let \(d = gcd(n,m)\). Then we know there exists \(k, j \in \mathbb{N}\) such that \(n =kd\) and \(m =jd\). Then we must have \(gcd(k,j) =1\) since otherwise there would be a divisor of \(n,m\) which is larger than \(d\).
 
-Then if we write \(l = lcm(n,m)\). We must have \(kd|l\) and \(jd|l\) so there exists \(a, b\) such that \(l=akd=bjd\). Dividing by \(d\) we know that \(l/d = ak = bj\) so since \(k,j\) are coprime we must have \(k|a\) and \(j|d\) so the least such numbers satisfying this are if \(a=j\) and \(b=k\). Therefore \(l=kjd\).
+Then if we write \(l = lcm(n,m)\). We must have \(kd|l\) and \(jd|l\) so there exists \(a, b\) such that \(l=akd=bjd\). Dividing by \(d\) we know that \(l/d = ak = bj\) so since \(k,j\) are coprime we must have \(j|a\) and \(k|b\) so the least such numbers satisfying this are if \(a=j\) and \(b=k\). Therefore \(l=kjd\).
 
 So \(gcd(n,m)\times lcm(n,m) = kjd^2 = (kd)\times (jd) = nm\).
 \end{proof}
@@ -2130,7 +2130,9 @@ For the second if \(a,b\) are coprime then \(gcd(a,b) =1\) (this is the definiti
 
 Using this we can show a powerful result which we have already seen
 
+\begin{theorem}
 Suppose that \(a,b \in \mathbb{N}\) and \(p\) is a prime number and \(p|ab\) then either \(p|a\) or \(p|b\).
+\end{theorem}
 
 If \(p|a\) then we are done so suppose that \(p\) does not divide \(a\). Then \(a,p\) are coprime so by Bezout's lemma we can write
 \[1 = xa + yp\] and hence
@@ -2178,7 +2180,7 @@ The Chinese remainder theorem is very old. It dates back to Sunzi in the 3rd to 
 \section{Fermat's Little Theorem and Euler's Theorem}\label{fermats-little-theorem-and-eulers-theorem}
 
 \begin{definition}
-A number \(a\) is called a emph\{unit\} modulo \(n\) if there exists \(b\) such that \(ab = 1 \quad \mbox{mod} \, n\). (We call \(b\) a multiplicative inverse modulo \(n\).)
+A number \(a\) is called a \emph{unit} modulo \(n\) if there exists \(b\) such that \(ab = 1 \quad \mbox{mod} \, n\). (We call \(b\) a multiplicative inverse modulo \(n\).)
 \end{definition}
 
 \begin{lemma}
@@ -2189,6 +2191,20 @@ A number \(a\) is a unit modulo \(n\) if and only if \(a\) and \(n\) are coprime
 If \(a\) and \(n\) are coprime then \(1 = xa + yn\) in which case \(xa\equiv 1 \quad \mbox{mod} \, n\).
 
 If there exists \(x\) such that \(xa \equiv 1 \quad \mbox{mod} \, n\) then \(x a = 1 + y n\) and \(gcd(a,n) | (xa-yn)\) so \(gcd(a,n) = 1\).
+\end{proof}
+
+\begin{theorem}[Wilson's Theorem]
+Let \(p\) be a prime then
+\[ (p-1)! \equiv -1 \quad \mbox{mod} \, p.\]
+\end{theorem}
+
+\begin{proof}
+Given any \(a \in [[p]]\) we know that \(a\) is coprime to \(p\) so is a unit modulo \(p\) by the previous result.
+
+Either we can pair up \(a\) with another number \(b \in [[p]]\) such that \(ab \equiv 1\) modulo \(p\) or \(a^2 \equiv 1\) modulo \(p\). There are only two solutions to the equation \(x^2 =1\) modulo \(p\) which are \(1\) and \(p-1 \equiv -1\). So each of \(2, \dots, p-2\) has a pair and this pair is unique since if \(ab \equiv 1\) and \(ac \equiv 1\) then we can multiply the first equation by \(c\) to get \(b \equiv 1\). Then the product \(2 \times 3 \times \dots \times (p-2)\) contains all the pairs so
+\[ 2 \times 3 \times \dots \times (p-2) \equiv 1 \quad \mbox{mod} \, p.  \]
+Hence
+\[(p-1)! \equiv -1 \quad \mbox{mod} \, p.  \]
 \end{proof}
 
 \begin{definition}[Euler Totient Function]
