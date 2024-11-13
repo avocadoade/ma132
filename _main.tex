@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-11-11}
+\date{2024-11-13}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -2177,6 +2177,73 @@ Now suppose we have another \(y\) satisfying the congruences. Then \(x \equiv y 
 The Chinese remainder theorem is very old. It dates back to Sunzi in the 3rd to 5th Century. It can be used to do apparently complicated computations very quickly and is used in important algorithms today such as RSA cryptography and Fast Fourier transform.
 \end{remark}
 
+\begin{lemma}
+If \(p\) is a prime and \(p \neq 2\) then the congruence
+\[ x^2 \equiv 1 \quad \mbox{mod} \,p  \]
+has exactly two solutions.
+\end{lemma}
+
+\begin{proof}
+Suppose \(x\) is a solution. Then \(x^2 \equiv 1\) modulo \(p\) then there is some \(k \in \mathbb{Z}\) such that \(x^2 = 1+kp\) so rearranging we have \((x-1)(x+1) = kp\). Using our result that \(p|ab\) implies \(p|a\) or \(p|b\) this tells us that \(p|(x+1)\) or \(p|(x-1)\). In which case \(x \equiv -1\) modulo \(p\) in the first case or \(x \equiv 1\) modulo \(p\) in the second case.
+
+N.b. in the case \(p=2\) this only gives one solution since \(1\equiv -1\) modulo 2.
+\end{proof}
+
+\begin{lemma}
+If \(n \in \mathbb{N}\) can be written as \(k\times j\) with \(k,j \neq 0,1,2, n\) and \(gcd(k,j)=1\) then the congruence
+\[ x^2 \equiv 1 \quad \mbox{mod} \, n  \]
+has at least \(4\) solutions.
+\end{lemma}
+
+\begin{proof}
+
+Arguing as in the previous proof there is some \(m\) such that \(x^2 = 1 + mkj\) so rearranging this gives \(mkj = (x+1)(x-1)\).
+
+Now we can consider 4 possibilities.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Both \(k\) and \(j\) divide \(x+1\) in which case \(n|(x+1)\) since \(k\) and \(j\) are coprime. So \(x \equiv -1\) modulo \(n\).
+\item
+  Both \(k\) and \(j\) divide \(x-1\) in whcih case \(n|(x-1)\) since both \(k\) and \(j\) are coprime. So \(x \equiv 1\) modulo \(n\).
+\item
+  \(k|(x+1)\) and \(j|(x-1)\) so \(x \equiv -1\) modulo \(k\) and \(x \equiv 1\) modulo \(j\). In this case the chinese remainder theorem guarentees a solution to these two congruences simultaneously modulo \(nm\) and the solution cannot be equivalent to \(\pm 1\) modulo \(n\) since this would break one or other of the congruence modulo \(j\) or \(k\).
+\item
+  \(k|(x-1)\) and \(j|(x+1)\) so \(x \equiv 1\) modulo \(k\) and \(x \equiv -1\) modulo \(j\). As with case \(3\) this gives another solution which must be different to the one in all previous cases.
+\end{enumerate}
+
+\end{proof}
+
+\begin{example}
+If \(n=77 = 7 \times 11\) then we can check all possible cases. We could have \(x \equiv 1\) modulo \(77\) or \(x \equiv -1 \equiv 76\) modulo 77). These are case 1 and 2.
+
+Or we could have \(x \equiv 1\) modulo \(7\) and \(x \equiv -1\) modulo \(11\) in which case we know by the chinese remainder theorem that there is a unique solution. To find it we need to follow the CRT proof strategy.
+\[11= 1\times 7 +4\]
+\[ 7 = 4 +3\]
+\[4 = 3+1\]
+So working backwards
+\[ 1=4-3\]
+\[ 1= 4 - (7-4) = 2 \times 4 -7\]
+\[ 1= 2\times(11-7) -7 = 2\times 11 -3\times 7\]
+So we have \(22\equiv 1 \, \mbox{mod} \,7\) and \(22 \equiv 0 \,\mbox{mod}\, 11\). We also have \(-21 \equiv 0 \, \mbox{mod} \,7\) and \(-21 \equiv 1 \, \mbox{mod} \,11\).
+
+So If we take
+\[ x = 1 \times 22 + (-1)\times (-21) = 43 \] then we have another solution to our congruences which mimics case 3.
+
+If we take
+\[ x=-1 \times 22 + 1 \times (-21) = -43\] and \(-43 \equiv 34\) modulo \(77\) so \(34\) gives us a fourth solution to the congruence.
+\end{example}
+
+\begin{example}
+We can also see there are some case where \(n\) is not prime but we do have only two solutions to
+\[ x^2 \equiv 1 \quad \mbox{mod}\, n\]
+
+For example if \(n=6\) we have \(1^2 \equiv 1, 2^2 \equiv 4, 3^2 \equiv 3, 4^2 \equiv 4, 5^2 \equiv 1\). This is because one of the factors of \(6\) is 2.
+
+Similarly if \(n=9\) we cannot write it with factors which are coprime. In this case we have \(1^2 \equiv 1, 2^2 \equiv 4, 3^2 \equiv 0, 4^2 \equiv 7, 5^2 \equiv 7, 6^2 \equiv 0, 7^2 \equiv 4, 8^2 \equiv 1\).
+\end{example}
+
 \section{Fermat's Little Theorem and Euler's Theorem}\label{fermats-little-theorem-and-eulers-theorem}
 
 \begin{definition}
@@ -2206,6 +2273,15 @@ Either we can pair up \(a\) with another number \(b \in [[p]]\) such that \(ab \
 Hence
 \[(p-1)! \equiv -1 \quad \mbox{mod} \, p.  \]
 \end{proof}
+
+\begin{remark}
+In fact we can go a bit further than Wilson's theorem and say that
+\[ (n-1)! \equiv -1 \quad \mbox{mod} \, n\]
+if and only if \(n\) is prime.
+
+If \(n\) is not prime then there exists some \(k, j\) such that \(1< k,j < n\) and \(n=k\times j\). Then both \(k\) and \(j\) appear in the product \((n-1)!\) so \(n|(n-1)!\). Hence if \(n\) is not prime then
+\[ (n-1)! \equiv 0 \quad \mbox{mod} \, n  \]
+\end{remark}
 
 \begin{definition}[Euler Totient Function]
 The Euler Totient function \(\phi(n)\) counts the number of natural numbers smaller than \(n\) that are coprime to \(n\). Alternatively the number of units modulo \(n\). Notice that \(\phi(1)=1\).
