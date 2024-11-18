@@ -2279,8 +2279,14 @@ In fact we can go a bit further than Wilson's theorem and say that
 \[ (n-1)! \equiv -1 \quad \mbox{mod} \, n\]
 if and only if \(n\) is prime.
 
-If \(n\) is not prime then there exists some \(k, j\) such that \(1< k,j < n\) and \(n=k\times j\). Then both \(k\) and \(j\) appear in the product \((n-1)!\) so \(n|(n-1)!\). Hence if \(n\) is not prime then
+If \(n\) is not prime and \(n \neq p^2\) for some prime then then there exists some \(k, j\) such that \(1< k,j < n\) and \(n=k\times j\). Then both \(k\) and \(j\) appear in the product \((n-1)!\) so \(n|(n-1)!\). Hence if \(n\) is not prime then
 \[ (n-1)! \equiv 0 \quad \mbox{mod} \, n  \]
+
+If \(n=p^2\) for a prime \(p \geq 3\) then both \(p\) and \(2p\) appear as factors in \((n-1)!\) so in this case
+\[ (n-1)! \equiv 0 \quad \mbox{mod}\, n.  \]
+
+Lastly if \(n=4\) then (uniquely)
+\[  (n-1)! \equiv 2 \mod n. \]
 \end{remark}
 
 \begin{definition}[Euler Totient Function]

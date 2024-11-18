@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2024-11-13" />
+<meta name="date" content="2024-11-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -408,8 +408,12 @@ Hence
 <p><span id="unlabeled-div-209" class="remark"><em>Remark</em>. </span>In fact we can go a bit further than Wilson’s theorem and say that
 <span class="math display">\[ (n-1)! \equiv -1 \quad \mbox{mod} \, n\]</span>
 if and only if <span class="math inline">\(n\)</span> is prime.</p>
-<p>If <span class="math inline">\(n\)</span> is not prime then there exists some <span class="math inline">\(k, j\)</span> such that <span class="math inline">\(1&lt; k,j &lt; n\)</span> and <span class="math inline">\(n=k\times j\)</span>. Then both <span class="math inline">\(k\)</span> and <span class="math inline">\(j\)</span> appear in the product <span class="math inline">\((n-1)!\)</span> so <span class="math inline">\(n|(n-1)!\)</span>. Hence if <span class="math inline">\(n\)</span> is not prime then
+<p>If <span class="math inline">\(n\)</span> is not prime and <span class="math inline">\(n \neq p^2\)</span> for some prime then then there exists some <span class="math inline">\(k, j\)</span> such that <span class="math inline">\(1&lt; k,j &lt; n\)</span> and <span class="math inline">\(n=k\times j\)</span>. Then both <span class="math inline">\(k\)</span> and <span class="math inline">\(j\)</span> appear in the product <span class="math inline">\((n-1)!\)</span> so <span class="math inline">\(n|(n-1)!\)</span>. Hence if <span class="math inline">\(n\)</span> is not prime then
 <span class="math display">\[ (n-1)! \equiv 0 \quad \mbox{mod} \, n  \]</span></p>
+<p>If <span class="math inline">\(n=p^2\)</span> for a prime <span class="math inline">\(p \geq 3\)</span> then both <span class="math inline">\(p\)</span> and <span class="math inline">\(2p\)</span> appear as factors in <span class="math inline">\((n-1)!\)</span> so in this case
+<span class="math display">\[ (n-1)! \equiv 0 \quad \mbox{mod}\, n.  \]</span></p>
+<p>Lastly if <span class="math inline">\(n=4\)</span> then (uniquely)
+<span class="math display">\[  (n-1)! \equiv 2 \mod n. \]</span></p>
 </div>
 <div class="definition">
 <p><span id="def:unlabeled-div-210" class="definition"><strong>Definition 7.8  (Euler Totient Function) </strong></span>The Euler Totient function <span class="math inline">\(\phi(n)\)</span> counts the number of natural numbers smaller than <span class="math inline">\(n\)</span> that are coprime to <span class="math inline">\(n\)</span>. Alternatively the number of units modulo <span class="math inline">\(n\)</span>. Notice that <span class="math inline">\(\phi(1)=1\)</span>.</p>
@@ -454,12 +458,13 @@ if and only if <span class="math inline">\(n\)</span> is prime.</p>
 <p><span id="unlabeled-div-220" class="proof"><em>Proof</em>. </span>We prove this by strong induction. We can see that it is true when <span class="math inline">\(n=1\)</span> then the only divisor of 1 is itself and <span class="math inline">\(\phi(1) =1\)</span>. This gives us the base case.</p>
 <p>For the inductive step we assume that for all <span class="math inline">\(m &lt; n\)</span> we have
 <span class="math display">\[ m = \sum_{d|m} \phi(d).  \]</span></p>
-<p>Then there are two cases. If <span class="math inline">\(n\)</span> is prime then <span class="math inline">\(n = n-1 +1 = \phi(n) + \phi(1)\)</span> and we are done.</p>
-<p>If <span class="math inline">\(n\)</span> isn’t prime then <span class="math inline">\(n=pm\)</span> where <span class="math inline">\(p\)</span> is prime and <span class="math inline">\(m &lt; n\)</span>. From this we can compute:
-<span class="math display">\[\begin{align*} \sum_{d|n} \phi(d) &amp;=  \sum_{d|m} (\phi(d)+\phi(pd))  \\
-&amp; = \sum_{d|m} \phi(d)(1 + \phi(p))\\
-&amp;= \sum_{d|m} \phi(d) p\\
-&amp; = p m = n.
+<p>Then there are two cases. If <span class="math inline">\(n= p^k\)</span> for some prime <span class="math inline">\(p\)</span> and some positive integer <span class="math inline">\(k\)</span> then the divisors of <span class="math inline">\(n\)</span> are <span class="math inline">\(1,p, p^2, p^3, \dots, p^k\)</span> so
+<span class="math display">\[ \sum_{d|n} \phi(d) = 1 + (p-1) +(p^2-p) + \dots +(p^k - p^{k-1}) = p^k =n.  \]</span></p>
+<p>If <span class="math inline">\(n\)</span> isn’t a prime power then <span class="math inline">\(n=kj\)</span> for some <span class="math inline">\(k, j &lt; n\)</span> and <span class="math inline">\(gcd(k,j)=1\)</span>.
+<span class="math display">\[\begin{align*} \sum_{d|n} \phi(d) &amp;=  \sum_{e|k} \sum_{f|j} \phi(ef)  \\
+&amp; = \sum_{e|k} \sum_{f|j}\phi(e)\phi(f)\\
+&amp;= \lef(\sum_{e|k} \phi(e)\right)\left(\sum_{f|j} \phi(f)\right)\\
+&amp; = kj = n.
 \end{align*}\]</span></p>
 </div>
 <div class="proposition">
