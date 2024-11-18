@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-11-13}
+\date{2024-11-18}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -2345,13 +2345,14 @@ We prove this by strong induction. We can see that it is true when \(n=1\) then 
 For the inductive step we assume that for all \(m < n\) we have
 \[ m = \sum_{d|m} \phi(d).  \]
 
-Then there are two cases. If \(n\) is prime then \(n = n-1 +1 = \phi(n) + \phi(1)\) and we are done.
+Then there are two cases. If \(n= p^k\) for some prime \(p\) and some positive integer \(k\) then the divisors of \(n\) are \(1,p, p^2, p^3, \dots, p^k\) so
+\[ \sum_{d|n} \phi(d) = 1 + (p-1) +(p^2-p) + \dots +(p^k - p^{k-1}) = p^k =n.  \]
 
-If \(n\) isn't prime then \(n=pm\) where \(p\) is prime and \(m < n\). From this we can compute:
-\begin{align*} \sum_{d|n} \phi(d) &=  \sum_{d|m} (\phi(d)+\phi(pd))  \\
-& = \sum_{d|m} \phi(d)(1 + \phi(p))\\
-&= \sum_{d|m} \phi(d) p\\
-& = p m = n. 
+If \(n\) isn't a prime power then \(n=kj\) for some \(k, j < n\) and \(gcd(k,j)=1\).
+\begin{align*} \sum_{d|n} \phi(d) &=  \sum_{e|k} \sum_{f|j} \phi(ef)  \\
+& = \sum_{e|k} \sum_{f|j}\phi(e)\phi(f)\\
+&= \left(\sum_{e|k} \phi(e)\right)\left(\sum_{f|j} \phi(f)\right)\\
+& = kj = n. 
 \end{align*}
 \end{proof}
 
@@ -2370,7 +2371,7 @@ So \(a, 2a, \dots, (p-1)a\) considered modulo \(p\) must be \(1, 2, \dots, (p-1)
 \end{proof}
 
 \begin{theorem}[Fermat's Little Theorem]
-Suppose that \(gcd(a,n) =1\) then \(a^{\phi(n)-1} \equiv 1 \quad \mbox{mod} \, n\).
+Suppose that \(gcd(a,n) =1\) then \(a^{\phi(n)} \equiv 1 \quad \mbox{mod} \, n\).
 \end{theorem}
 
 \begin{proof}

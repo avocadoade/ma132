@@ -463,7 +463,7 @@ if and only if <span class="math inline">\(n\)</span> is prime.</p>
 <p>If <span class="math inline">\(n\)</span> isn’t a prime power then <span class="math inline">\(n=kj\)</span> for some <span class="math inline">\(k, j &lt; n\)</span> and <span class="math inline">\(gcd(k,j)=1\)</span>.
 <span class="math display">\[\begin{align*} \sum_{d|n} \phi(d) &amp;=  \sum_{e|k} \sum_{f|j} \phi(ef)  \\
 &amp; = \sum_{e|k} \sum_{f|j}\phi(e)\phi(f)\\
-&amp;= \lef(\sum_{e|k} \phi(e)\right)\left(\sum_{f|j} \phi(f)\right)\\
+&amp;= \left(\sum_{e|k} \phi(e)\right)\left(\sum_{f|j} \phi(f)\right)\\
 &amp; = kj = n.
 \end{align*}\]</span></p>
 </div>
@@ -479,7 +479,7 @@ if and only if <span class="math inline">\(n\)</span> is prime.</p>
 <span class="math display">\[ a^{p-1} \equiv 1 \quad \mbox{mod} \, p.  \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-223" class="theorem"><strong>Theorem 7.8  (Fermat's Little Theorem) </strong></span>Suppose that <span class="math inline">\(gcd(a,n) =1\)</span> then <span class="math inline">\(a^{\phi(n)-1} \equiv 1 \quad \mbox{mod} \, n\)</span>.</p>
+<p><span id="thm:unlabeled-div-223" class="theorem"><strong>Theorem 7.8  (Fermat's Little Theorem) </strong></span>Suppose that <span class="math inline">\(gcd(a,n) =1\)</span> then <span class="math inline">\(a^{\phi(n)} \equiv 1 \quad \mbox{mod} \, n\)</span>.</p>
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-224" class="proof"><em>Proof</em>. </span>The proof is very similar to above so I will leave the details to you!</p>
