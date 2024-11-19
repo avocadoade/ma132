@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-11-18}
+\date{2024-11-19}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -2003,6 +2003,8 @@ Given \(n, m \in \mathbb{N}\) then \(lcm(n,m) \times gcd(n,m) = nm\).
 \end{lemma}
 
 \begin{proof}
+Note in this proof we use the fact that if \(a|bc\) and \(gcd(a,b) =1\) then \(a|c\). This is very similar to the fact that if \(p|ab\) then \(p|a\) or \(p|b\).
+
 Let \(d = gcd(n,m)\). Then we know there exists \(k, j \in \mathbb{N}\) such that \(n =kd\) and \(m =jd\). Then we must have \(gcd(k,j) =1\) since otherwise there would be a divisor of \(n,m\) which is larger than \(d\).
 
 Then if we write \(l = lcm(n,m)\). We must have \(kd|l\) and \(jd|l\) so there exists \(a, b\) such that \(l=akd=bjd\). Dividing by \(d\) we know that \(l/d = ak = bj\) so since \(k,j\) are coprime we must have \(j|a\) and \(k|b\) so the least such numbers satisfying this are if \(a=j\) and \(b=k\). Therefore \(l=kjd\).
@@ -2137,6 +2139,16 @@ Suppose that \(a,b \in \mathbb{N}\) and \(p\) is a prime number and \(p|ab\) the
 If \(p|a\) then we are done so suppose that \(p\) does not divide \(a\). Then \(a,p\) are coprime so by Bezout's lemma we can write
 \[1 = xa + yp\] and hence
 \[b = xab + ypb.  \] As \(p|ab\) we know \(p|xab\) and from the expression we can see that \(p|ypb\) so \(p | (xab + ybp)\) so \(p|b\).
+
+\begin{lemma}
+If \(a|bc\) and \(gcd(a,b)=1\) then \(a|c\).
+\end{lemma}
+
+\begin{proof}
+In a similar vein to above we can prove the fact we used when discussing least common multiples.
+
+By Bezout's lemma there exists \(x,y\) such that \(1=xa+yb\) then multplying through this gives \(c=xac +ybc\) then \(a|xac\) and \(a|ybc\) since \(a|bc\) so \(a|c\).
+\end{proof}
 
 Now let us use this to prove the fundamental theorem of arithmetic again. Everything is a bit smoother now with more results.
 
@@ -2411,11 +2423,11 @@ So if \(x\) is a solution to \(x^{p-1} -1 \equiv 0 \quad (mod\, p)\) then we mus
 \end{proof}
 
 \begin{proposition}
-If \(p\) is prime and there exists an element \(a\) of order \(r\) then there are exactly \(\phi(r-1)\) elements of order \(r\).
+If \(p\) is prime and there exists an element \(a\) of order \(r\) then there are exactly \(\phi(r)\) elements of order \(r\).
 \end{proposition}
 
 \begin{proof}
-Give an element \(a\) of order \(r\) then we have distinct elements \(a, a^2, \dots, a^{r-1}\). There are at most \(r\) elements \(b\) such that \(b^r \equiv 1 \quad \mbox{mod}\, p\) so these are all the possible elements of order less than or equal to \(r\). Now if \(gcd(k,r-1) = 1\) then for every \(m < r-1\) we have \(mk \not\equiv 0 \quad \mbox{mod} \, r-1\) so \(a^{mk} \not\equiv 1 \quad \mbox{mod} \, p\). However \(a^{rk} \equiv 1 \quad \mbox{mod} \, p\). Therefore \(a^k\) is another element of order \(r\). Therefore we have at least \(\phi(r-1)\) elements of order \(r\).
+Give an element \(a\) of order \(r\) then we have distinct elements \(a, a^2, \dots, a^{r-1}\). There are at most \(r\) elements \(b\) such that \(b^r \equiv 1 \quad \mbox{mod}\, p\) so these are all the possible elements of order less than or equal to \(r\). Now if \(gcd(k,r) = 1\) then for every \(m < r\) we have \(mk \not\equiv 0 \quad \mbox{mod} \, r\) so \(a^{mk} \not\equiv 1 \quad \mbox{mod} \, p\). However \(a^{rk} \equiv 1 \quad \mbox{mod} \, p\). Therefore \(a^k\) is another element of order \(r\). Therefore we have at least \(\phi(r)\) elements of order \(r\).
 \end{proof}
 
 \begin{corollary}
