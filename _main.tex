@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-11-19}
+\date{2024-11-20}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -2475,7 +2475,8 @@ While we are defining big O notation it is useful to define little o notation
 
 \begin{definition}[little o notation]
 If \(f(n), g(n)\) are functions and for every \(c >0\) there exists \(n_c\) such that if \(n >n_c\) then
-\[ |f(n)| \leq c g(n).\]
+\[ |f(n)| \leq c g(n),\]
+then we say \(f(n) = o(g(n))\).
 
 We can think of this as saying \(f(n)\) becomes insignificant compared to \(g(n)\) as \(n\) becomes large.
 \end{definition}
@@ -2496,10 +2497,16 @@ If we want to count the steps it depends on precisely what we list as a step. If
 
 \begin{example}[Multiplication]
 Now suppose we think about multiplication using the long multiplication algorithm then for two \(n\) digit numbers we need to multiply \(a_k\) by \(b_j\) for each \(k, j\) (which is \(n^2\) steps) and then perform \(n^2\) addition steps of what are effectively at most two digit numbers. So this algorithm is O(n\^{}2).
+
+There are multiplication algorithms that are much faster but they are all worse than \(O(n)\).
 \end{example}
 
 \begin{example}[Checking divisibility]
-Division is no worse than multiplication. The algorithms are a bit more complicated to state. One example is given an \(n\) digit number, \(a\) and an \(m\) digit number, \(b\) with \(m\leq n\) and we want to know whether \(b|a\) then if \(a/b\) were an integer it would have at most \(n-m+1\) digits and at least \(n-m\). So we are have around \(20\) possible candidate for \(a/b\). Now we just check multiplying all \(20\) candidates with \(m\) which is a multiplication operation with \(m\times(n-m+1)\) steps so \(O(n^2)\) and we do this 20 times so checking divisibility is \(O(n^2)\).
+Division is no worse than multiplication. The algorithms are a bit more complicated to state. In general division algorithms are also \(O(n^2)\).
+
+If we want to see whether an \(n\) digit number is divisible by an \(m\) digit number then we can do this by repeated subtraction of the \(m\) digit numbers and multiples of it by \(10\). Each subtraction step is \(O(m)\) and we need to do at most \(O(n)\) of them so the algorithm is \(O(n^2)\).
+
+We can also divide one number by the other and get some truncated decimal expansion by using Newton's method which you may have learnt at school.
 \end{example}
 
 \begin{example}[Naive primality testing]

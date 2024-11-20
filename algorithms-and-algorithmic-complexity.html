@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2024-11-19" />
+<meta name="date" content="2024-11-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -191,7 +191,8 @@ set in the _output.yml file.</p>" />
 <p>While we are defining big O notation it is useful to define little o notation</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-237" class="definition"><strong>Definition 8.2  (little o notation) </strong></span>If <span class="math inline">\(f(n), g(n)\)</span> are functions and for every <span class="math inline">\(c &gt;0\)</span> there exists <span class="math inline">\(n_c\)</span> such that if <span class="math inline">\(n &gt;n_c\)</span> then
-<span class="math display">\[ |f(n)| \leq c g(n).\]</span></p>
+<span class="math display">\[ |f(n)| \leq c g(n),\]</span>
+then we say <span class="math inline">\(f(n) = o(g(n))\)</span>.</p>
 <p>We can think of this as saying <span class="math inline">\(f(n)\)</span> becomes insignificant compared to <span class="math inline">\(g(n)\)</span> as <span class="math inline">\(n\)</span> becomes large.</p>
 </div>
 <div class="example">
@@ -208,9 +209,12 @@ set in the _output.yml file.</p>" />
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-240" class="example"><strong>Example 8.4  (Multiplication) </strong></span>Now suppose we think about multiplication using the long multiplication algorithm then for two <span class="math inline">\(n\)</span> digit numbers we need to multiply <span class="math inline">\(a_k\)</span> by <span class="math inline">\(b_j\)</span> for each <span class="math inline">\(k, j\)</span> (which is <span class="math inline">\(n^2\)</span> steps) and then perform <span class="math inline">\(n^2\)</span> addition steps of what are effectively at most two digit numbers. So this algorithm is O(n^2).</p>
+<p>There are multiplication algorithms that are much faster but they are all worse than <span class="math inline">\(O(n)\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-241" class="example"><strong>Example 8.5  (Checking divisibility) </strong></span>Division is no worse than multiplication. The algorithms are a bit more complicated to state. One example is given an <span class="math inline">\(n\)</span> digit number, <span class="math inline">\(a\)</span> and an <span class="math inline">\(m\)</span> digit number, <span class="math inline">\(b\)</span> with <span class="math inline">\(m\leq n\)</span> and we want to know whether <span class="math inline">\(b|a\)</span> then if <span class="math inline">\(a/b\)</span> were an integer it would have at most <span class="math inline">\(n-m+1\)</span> digits and at least <span class="math inline">\(n-m\)</span>. So we are have around <span class="math inline">\(20\)</span> possible candidate for <span class="math inline">\(a/b\)</span>. Now we just check multiplying all <span class="math inline">\(20\)</span> candidates with <span class="math inline">\(m\)</span> which is a multiplication operation with <span class="math inline">\(m\times(n-m+1)\)</span> steps so <span class="math inline">\(O(n^2)\)</span> and we do this 20 times so checking divisibility is <span class="math inline">\(O(n^2)\)</span>.</p>
+<p><span id="exm:unlabeled-div-241" class="example"><strong>Example 8.5  (Checking divisibility) </strong></span>Division is no worse than multiplication. The algorithms are a bit more complicated to state. In general division algorithms are also <span class="math inline">\(O(n^2)\)</span>.</p>
+<p>If we want to see whether an <span class="math inline">\(n\)</span> digit number is divisible by an <span class="math inline">\(m\)</span> digit number then we can do this by repeated subtraction of the <span class="math inline">\(m\)</span> digit numbers and multiples of it by <span class="math inline">\(10\)</span>. Each subtraction step is <span class="math inline">\(O(m)\)</span> and we need to do at most <span class="math inline">\(O(n)\)</span> of them so the algorithm is <span class="math inline">\(O(n^2)\)</span>.</p>
+<p>We can also divide one number by the other and get some truncated decimal expansion by using Newton’s method which you may have learnt at school.</p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-242" class="example"><strong>Example 8.6  (Naive primality testing) </strong></span>Suppose we want to test whether a number <span class="math inline">\(n\)</span> is prime. The most obvious way to do this is to check whether we can find any other <span class="math inline">\(m \neq n\)</span> such that <span class="math inline">\(m|n\)</span>. We notice here that we only need to check <span class="math inline">\(m \leq \sqrt{n}\)</span> as if <span class="math inline">\(ab=n\)</span> then one of <span class="math inline">\(a, b\)</span> must be smaller than <span class="math inline">\(sqrt{n}\)</span>. If we suppose it is one step to check whether <span class="math inline">\(n\)</span> is divisible by <span class="math inline">\(m\)</span>. Now each division operation is a check and the number of digits in <span class="math inline">\(n\)</span> is around <span class="math inline">\(\log_{10}(n)\)</span> so if we are interested in testing an <span class="math inline">\(N\)</span> digit number to see if its prime we need around <span class="math inline">\(10^{N/2}N^2\)</span> operations so the algorithm is <span class="math inline">\(O(10^{N/2} N^2)\)</span>.</p>
