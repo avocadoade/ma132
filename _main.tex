@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-11-20}
+\date{2024-11-25}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -2605,11 +2605,11 @@ This means that A and B can safely use \(a^{nm}\) to encrypt and decrypt their s
 RSA Cryptography is named for Rivest, Shamir and Adelman who invented it. It is used in a more asymmetric setting to the Diffie-Hillman problem. Here we want anyone to be able to encrypt a message but only one person to be able to decrypt any of the messages. This comes up a lot with passwords sent to websites for example.
 
 \begin{definition}[RSA Cryptography]
-Person A choose two large prime numbers \(p,q\) they then compute \(n=pq\) and \(\phi(n) = (p-1)(q-1)\). Person A then chooses \(e \in [[\phi(n)]]\) which is coprime to \(\phi(n)\) (it is often a good idea to choose \(e\) prime). Using Euclid's algorithm they compute \(d\) such that \(ed \equiv 1 \quad \mbox{mod} n\). Now person A has the information \(p,q,n,\phi(n),e,d\). They make \(n,e\) public. It is very hard to compute (i.e.~no known polynomial time algorithm) any of the private information from the public information (essentially you would have to factorise \(n\) then you can do it easily but it is very hard to factorise \(n\)).
+Person A choose two large prime numbers \(p,q\) they then compute \(n=pq\) and \(\phi(n) = (p-1)(q-1)\). Person A then chooses \(e \in [[\phi(n)]]\) which is coprime to \(\phi(n)\) (it is often a good idea to choose \(e\) prime). Using Euclid's algorithm they compute \(d\) such that \(ed \equiv 1 \quad \mbox{mod} \phi(n)\). Now person A has the information \(p,q,n,\phi(n),e,d\). They make \(n,e\) public. It is very hard to compute (i.e.~no known polynomial time algorithm) any of the private information from the public information (essentially you would have to factorise \(n\) then you can do it easily but it is very hard to factorise \(n\)).
 
 Now suppose person \(B\) wants to encrypt a message so that only person \(A\) can decrypt it. \(B\) doesn't need any of the private information. Person \(B\) encodes his message into a number \(m\) modulo \(n\) and then computes \(m^e\) modulo \(n\).
 
-Now if person \(A\) wants to decrypt the message they compute \((m^e)^d\) modulo \(n\). Then since \(de \equiv 1 \quad \mbox{mod}\, \phi(n)\) we know that \(de = k\phi(n)+1\) for some \(k\). Then \(m^{ed} \equiv m^{k\phi(n)+1} \equiv m \quad \mbox{mod} \, n\). Where here we used the fact that \(m^\phi(n) \equiv 1 \quad \mbox{mod} \, n\) using Fermat's little theorem.
+Now if person \(A\) wants to decrypt the message they compute \((m^e)^d\) modulo \(n\). Then since \(de \equiv 1 \quad \mbox{mod}\, \phi(n)\) we know that \(de = k\phi(n)+1\) for some \(k\). Then \(m^{ed} \equiv m^{k\phi(n)+1} \equiv m \quad \mbox{mod} \, n\). Where here we used the fact that \(m^{\phi(n)} \equiv 1 \quad \mbox{mod} \, n\) using Fermat's little theorem.
 \end{definition}
 
   \bibliography{book.bib,packages.bib}
