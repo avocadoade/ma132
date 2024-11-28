@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 Countability and infinite sets - non-examinable | MA132: Foundations Lecture Notes</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 Countability and infinite sets - non-examinable | MA132: Foundations Lecture Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 Countability and infinite sets - non-examinable | MA132: Foundations Lecture Notes" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Jo Evans" />
+
+
+<meta name="date" content="2024-11-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="cryptography.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MA132: Foundations</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-use-these-notes"><i class="fa fa-check"></i><b>1.1</b> How to use these notes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sets-and-functions.html"><a href="sets-and-functions.html"><i class="fa fa-check"></i><b>2</b> Sets and Functions</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="sets-and-functions.html"><a href="sets-and-functions.html#what-is-a-set"><i class="fa fa-check"></i><b>2.1</b> What is a set?</a></li>
+<li class="chapter" data-level="2.2" data-path="sets-and-functions.html"><a href="sets-and-functions.html#subsets"><i class="fa fa-check"></i><b>2.2</b> Subsets</a></li>
+<li class="chapter" data-level="2.3" data-path="sets-and-functions.html"><a href="sets-and-functions.html#power-sets-and-specification"><i class="fa fa-check"></i><b>2.3</b> Power sets and specification</a></li>
+<li class="chapter" data-level="2.4" data-path="sets-and-functions.html"><a href="sets-and-functions.html#functions"><i class="fa fa-check"></i><b>2.4</b> Functions</a></li>
+<li class="chapter" data-level="2.5" data-path="sets-and-functions.html"><a href="sets-and-functions.html#properties-of-functions"><i class="fa fa-check"></i><b>2.5</b> Properties of functions</a></li>
+<li class="chapter" data-level="2.6" data-path="sets-and-functions.html"><a href="sets-and-functions.html#cardinality"><i class="fa fa-check"></i><b>2.6</b> Cardinality</a></li>
+<li class="chapter" data-level="2.7" data-path="sets-and-functions.html"><a href="sets-and-functions.html#ordered-pairs-and-cartesian-products"><i class="fa fa-check"></i><b>2.7</b> Ordered pairs and Cartesian products</a></li>
+<li class="chapter" data-level="2.8" data-path="sets-and-functions.html"><a href="sets-and-functions.html#graphs-and-a-better-definition-of-functions"><i class="fa fa-check"></i><b>2.8</b> Graphs and a better definition of functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="operations-on-sets-and-functions.html"><a href="operations-on-sets-and-functions.html"><i class="fa fa-check"></i><b>3</b> Operations on sets and functions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="operations-on-sets-and-functions.html"><a href="operations-on-sets-and-functions.html#set-operations"><i class="fa fa-check"></i><b>3.1</b> Set operations</a></li>
+<li class="chapter" data-level="3.2" data-path="operations-on-sets-and-functions.html"><a href="operations-on-sets-and-functions.html#using-set-operations-together"><i class="fa fa-check"></i><b>3.2</b> Using set operations together</a></li>
+<li class="chapter" data-level="3.3" data-path="operations-on-sets-and-functions.html"><a href="operations-on-sets-and-functions.html#operations-on-functions"><i class="fa fa-check"></i><b>3.3</b> Operations on functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="relations.html"><a href="relations.html"><i class="fa fa-check"></i><b>4</b> Relations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="relations.html"><a href="relations.html#equivalence-relations-equivalence-classes-and-quotients"><i class="fa fa-check"></i><b>4.1</b> Equivalence relations, Equivalence classes and Quotients</a></li>
+<li class="chapter" data-level="4.2" data-path="relations.html"><a href="relations.html#order-relations"><i class="fa fa-check"></i><b>4.2</b> Order relations</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="relations.html"><a href="relations.html#quotients"><i class="fa fa-check"></i><b>4.2.1</b> Quotients</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="relations.html"><a href="relations.html#integers-via-quotients"><i class="fa fa-check"></i><b>4.3</b> Integers via quotients</a></li>
+<li class="chapter" data-level="4.4" data-path="relations.html"><a href="relations.html#modular-arithmetic"><i class="fa fa-check"></i><b>4.4</b> Modular arithmetic</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="logic.html"><a href="logic.html"><i class="fa fa-check"></i><b>5</b> Logic</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="logic.html"><a href="logic.html#booleans"><i class="fa fa-check"></i><b>5.1</b> Booleans</a></li>
+<li class="chapter" data-level="5.2" data-path="logic.html"><a href="logic.html#boolean-algebra"><i class="fa fa-check"></i><b>5.2</b> Boolean algebra</a></li>
+<li class="chapter" data-level="5.3" data-path="logic.html"><a href="logic.html#truth-tables"><i class="fa fa-check"></i><b>5.3</b> Truth tables</a></li>
+<li class="chapter" data-level="5.4" data-path="logic.html"><a href="logic.html#quantifiers"><i class="fa fa-check"></i><b>5.4</b> Quantifiers</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="proof.html"><a href="proof.html"><i class="fa fa-check"></i><b>6</b> Proof</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="proof.html"><a href="proof.html#patterns-of-proof"><i class="fa fa-check"></i><b>6.1</b> Patterns of proof</a></li>
+<li class="chapter" data-level="6.2" data-path="proof.html"><a href="proof.html#proof-by-induction"><i class="fa fa-check"></i><b>6.2</b> Proof by induction</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="some-number-theory.html"><a href="some-number-theory.html"><i class="fa fa-check"></i><b>7</b> Some number theory</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="some-number-theory.html"><a href="some-number-theory.html#divisors-and-prime-numbers"><i class="fa fa-check"></i><b>7.1</b> Divisors and prime numbers</a></li>
+<li class="chapter" data-level="7.2" data-path="some-number-theory.html"><a href="some-number-theory.html#euclids-algorithm"><i class="fa fa-check"></i><b>7.2</b> Euclid’s Algorithm</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="some-number-theory.html"><a href="some-number-theory.html#geometric-interpretation-of-euclids-algorithm"><i class="fa fa-check"></i><b>7.2.1</b> Geometric interpretation of Euclid’s algorithm</a></li>
+<li class="chapter" data-level="7.2.2" data-path="some-number-theory.html"><a href="some-number-theory.html#continued-fractions"><i class="fa fa-check"></i><b>7.2.2</b> Continued fractions</a></li>
+<li class="chapter" data-level="7.2.3" data-path="some-number-theory.html"><a href="some-number-theory.html#bezouts-lemma"><i class="fa fa-check"></i><b>7.2.3</b> Bezout’s lemma</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="some-number-theory.html"><a href="some-number-theory.html#chinese-remainder-theorem"><i class="fa fa-check"></i><b>7.3</b> Chinese remainder theorem</a></li>
+<li class="chapter" data-level="7.4" data-path="some-number-theory.html"><a href="some-number-theory.html#fermats-little-theorem-and-eulers-theorem"><i class="fa fa-check"></i><b>7.4</b> Fermat’s Little Theorem and Euler’s Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="algorithms-and-algorithmic-complexity.html"><a href="algorithms-and-algorithmic-complexity.html"><i class="fa fa-check"></i><b>8</b> Algorithms and Algorithmic complexity</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="algorithms-and-algorithmic-complexity.html"><a href="algorithms-and-algorithmic-complexity.html#algorithmic-complexity"><i class="fa fa-check"></i><b>8.1</b> Algorithmic Complexity</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="algorithms-and-algorithmic-complexity.html"><a href="algorithms-and-algorithmic-complexity.html#big-and-little-o-notation"><i class="fa fa-check"></i><b>8.1.1</b> Big and little O notation</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="algorithms-and-algorithmic-complexity.html"><a href="algorithms-and-algorithmic-complexity.html#running-times-of-algorithms"><i class="fa fa-check"></i><b>8.2</b> Running times of algorithms</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="cryptography.html"><a href="cryptography.html"><i class="fa fa-check"></i><b>9</b> Cryptography</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="cryptography.html"><a href="cryptography.html#discrete-logarithms-and-diffie-hellman"><i class="fa fa-check"></i><b>9.1</b> Discrete logarithms and Diffie-Hellman</a></li>
+<li class="chapter" data-level="9.2" data-path="cryptography.html"><a href="cryptography.html#rsa-cryptography"><i class="fa fa-check"></i><b>9.2</b> RSA Cryptography</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="countability-and-infinite-sets---non-examinable.html"><a href="countability-and-infinite-sets---non-examinable.html"><i class="fa fa-check"></i><b>10</b> Countability and infinite sets - non-examinable</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="countability-and-infinite-sets---non-examinable.html"><a href="countability-and-infinite-sets---non-examinable.html#infinite-sets"><i class="fa fa-check"></i><b>10.1</b> Infinite sets</a></li>
+<li class="chapter" data-level="10.2" data-path="countability-and-infinite-sets---non-examinable.html"><a href="countability-and-infinite-sets---non-examinable.html#countability"><i class="fa fa-check"></i><b>10.2</b> Countability</a></li>
+<li class="chapter" data-level="10.3" data-path="countability-and-infinite-sets---non-examinable.html"><a href="countability-and-infinite-sets---non-examinable.html#algebraic-and-trancendental-numbers"><i class="fa fa-check"></i><b>10.3</b> Algebraic and Trancendental numbers</a></li>
+<li class="chapter" data-level="10.4" data-path="countability-and-infinite-sets---non-examinable.html"><a href="countability-and-infinite-sets---non-examinable.html#infinite-cardinalities"><i class="fa fa-check"></i><b>10.4</b> Infinite cardinalities</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MA132: Foundations Lecture Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="countability-and-infinite-sets---non-examinable" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Countability and infinite sets - non-examinable<a href="countability-and-infinite-sets---non-examinable.html#countability-and-infinite-sets---non-examinable" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="infinite-sets" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Infinite sets<a href="countability-and-infinite-sets---non-examinable.html#infinite-sets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let us begin by recalling some stuff from earlier in the course.</p>
+<p>We say sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have the same cardinality if tthere exists a bijection <span class="math inline">\(f: A \rightarrow B\)</span>. We write this <span class="math inline">\(|A|=|B|\)</span>.</p>
+<p>We say <span class="math inline">\(A\)</span> has cardinality <span class="math inline">\(n\)</span> if there is a bijection <span class="math inline">\(f: A \rightarrow [[n]]\)</span>.</p>
+<p>We say <span class="math inline">\(A\)</span> is finite if <span class="math inline">\(|A|=n\)</span> for some <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
+<p>We think as cardinality as telling us about the size of a set. One of the peculiar properties of infinite sets is that we can have <span class="math inline">\(B \subset A\)</span> and <span class="math inline">\(|A| = |B|\)</span>.</p>
+<p>An example of this is <span class="math inline">\(S=\{m \in \mathbb{N} \,:\, \exists \, n \in \mathbb{N} \, m=n^2\}\)</span> the square numbers. Then there is a bijection between <span class="math inline">\(\mathbb{N}\)</span> and <span class="math inline">\(S\)</span> given by <span class="math inline">\(f(n) = n^2\)</span>. So <span class="math inline">\(|S| = |\mathbb{N}|\)</span>.</p>
+<p>This is a big contrast to final sets. If <span class="math inline">\(A \subset B\)</span> and <span class="math inline">\(A \neq B\)</span> and they are both finite then this implies that we must have <span class="math inline">\(|A| &lt; |B|\)</span>.</p>
+<p>In fact this difference characterises infinite sets</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-258" class="proposition"><strong>Proposition 10.1  </strong></span>A set <span class="math inline">\(A\)</span> is infinite if and only if there exists a set <span class="math inline">\(B \subset A\)</span> such that there is a bijection <span class="math inline">\(f: B \rightarrow A\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-259" class="proof"><em>Proof</em>. </span>We can see the only if part is fairly clear. If <span class="math inline">\(A\)</span> is finite suppose it has <span class="math inline">\(n\)</span> elements then <span class="math inline">\(B\)</span> must have <span class="math inline">\(n-1\)</span> elements or fewer. So we cannot form a bijection from <span class="math inline">\(B\)</span> to <span class="math inline">\(A\)</span>.</p>
+<p>Now if <span class="math inline">\(A\)</span> is infinite we first show that there is a subset <span class="math inline">\(C\)</span> which is in bijection with the natural numbers. So if first since <span class="math inline">\(A\)</span> is infinite it must contain some element <span class="math inline">\(a_0\)</span> then <span class="math inline">\(A \neq \{a_0\}\)</span> as its infinite there must be another element <span class="math inline">\(a_1\)</span>. We continue like this to form the subset <span class="math inline">\(C = \{a_0, a_1, a_2, \dots \}\)</span>. Then set <span class="math inline">\(\tilde{C} = \{a_i \in C \,:\, \exists \, j \, i=j^2\}\)</span> and set <span class="math inline">\(B = (A-C)\cup \tilde{C}\)</span>. We can then define <span class="math inline">\(f: B \rightarrow A\)</span> by <span class="math inline">\(f(a) = a\)</span> if <span class="math inline">\(a \in A-C\)</span> and <span class="math inline">\(f(a_i) = a_{\sqrt{i}}\)</span> for <span class="math inline">\(a_i \in \tilde{C}\)</span>.</p>
+</div>
+<p>Furthermore in this proof we can see that <span class="math inline">\(A-B\)</span> is actually infinite.</p>
+</div>
+<div id="countability" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Countability<a href="countability-and-infinite-sets---non-examinable.html#countability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-260" class="definition"><strong>Definition 10.1  (countability) </strong></span>We say a set <span class="math inline">\(A\)</span> is <em>countable</em> if <span class="math inline">\(A\)</span> is finie or has the same cardinality as <span class="math inline">\(\mathbb{N}\)</span>.</p>
+<p>We say <span class="math inline">\(A\)</span> is <em>uncountable</em> if it isn’t countable.</p>
+<p>If <span class="math inline">\(A\)</span> is countable and infinite it says its countably infinite.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-261" class="theorem"><strong>Theorem 10.1  </strong></span>The following are equivalent</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(A\)</span> is countable.</p></li>
+<li><p>There is an injection from <span class="math inline">\(A\)</span> to <span class="math inline">\(\mathbb{N}\)</span>.</p></li>
+<li><p><span class="math inline">\(A\)</span> is <span class="math inline">\(\emptyset\)</span> or there is a surjection from <span class="math inline">\(\mathbb{N}\)</span> to <span class="math inline">\(A\)</span>.</p></li>
+</ol>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-262" class="proof"><em>Proof</em>. </span>We can see that <span class="math inline">\((i) \Rightarrow (iii)\)</span> if <span class="math inline">\(A\)</span> is finite then there is a bijection <span class="math inline">\(f: A \rightarrow [[n]]\)</span> for some <span class="math inline">\(n\)</span> then define <span class="math inline">\(g: \mathbb{N} \rightarrow A\)</span> by <span class="math inline">\(g(m) = f^{-1}(m)\)</span> for <span class="math inline">\(m \in [[n]]\)</span> and <span class="math inline">\(g(m) = 0\)</span> for <span class="math inline">\(m \geq n\)</span>. This is a surjection.</p>
+<p>We can see <span class="math inline">\((iii) \Rightarrow (ii)\)</span> as if <span class="math inline">\(g: \mathbb{N} \rightarrow A\)</span> is a surjection then <span class="math inline">\(g\)</span> has a right inverse <span class="math inline">\(h\)</span> which must be an injection by previous results.</p>
+<p>We can see that <span class="math inline">\((ii) \Rightarrow (i)\)</span> as if <span class="math inline">\(h: A \rightarrow \mathbb{N}\)</span> is an injection then we can define <span class="math inline">\(S\)</span> to be the range of <span class="math inline">\(S\)</span>. Then as <span class="math inline">\(S\)</span> is a subset of <span class="math inline">\(\mathbb{N}\)</span> by itteratively using the well ordering principle we can list the elements of <span class="math inline">\(S\)</span> in size order <span class="math inline">\(s_0 &lt; s_1 &lt; s_2\)</span> etc. either there are finitely many elements <span class="math inline">\(n\)</span> in which case <span class="math inline">\(S = \{s_0 , \dots, s_{n-1}\}\)</span> or there are infinitely many elements in which case <span class="math inline">\(S = \{s_0, s_1, \dots\}\)</span>. In either case we can define a map <span class="math inline">\(i\)</span> whose domain is <span class="math inline">\(S\)</span> and codomain is either <span class="math inline">\([[n]]\)</span> or <span class="math inline">\(\mathbb{N}\)</span> by <span class="math inline">\(i(s_k)=k\)</span>. Then <span class="math inline">\(i\)</span> will be a bijection. Then <span class="math inline">\(f = i \circ h\)</span> is a bijection between <span class="math inline">\(A\)</span> and <span class="math inline">\([[n]]\)</span> or between <span class="math inline">\(A\)</span> and <span class="math inline">\(\mathbb{N}\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-263" class="example"><strong>Example 10.1  </strong></span><span class="math inline">\(\mathbb{Z}\)</span> is countable as <span class="math inline">\(f(n) = 2n\)</span> if <span class="math inline">\(n \geq 0\)</span> and <span class="math inline">\(f(n) = 2(-n)-1\)</span> if <span class="math inline">\(n &lt; 0\)</span> is a bijection from <span class="math inline">\(\mathbb{Z}\)</span> to <span class="math inline">\(\mathbb{N}\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-264" class="example"><strong>Example 10.2  </strong></span><span class="math inline">\(\mathbb{N} \times \mathbb{N}\)</span> is countable since <span class="math inline">\(f(n.m) = 2^n 3^m\)</span> gives an injection from <span class="math inline">\(\mathbb{N} \times \mathbb{N}\)</span> to <span class="math inline">\(\mathbb{N}\)</span>. In a similar way <span class="math inline">\(\mathbb{N}^k\)</span> is countable for any finite <span class="math inline">\(k\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-265" class="example"><strong>Example 10.3  </strong></span><span class="math inline">\(\mathbb{Z}^k\)</span> is countable. We can prove this because we know we have an injection <span class="math inline">\(g: \mathbb{Z} \rightarrow \mathbb{N}\)</span>. So given a finite set of distinct primes <span class="math inline">\(p_1, \dots, p_k\)</span> then <span class="math inline">\(f(z_1, \dots, z_k) = p_1^{g(z_1)} \dots p_k^{g(z_k)}\)</span> is an injection.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-266" class="theorem"><strong>Theorem 10.2  </strong></span>A countable union of countable sets is countable. That is to say suppose <span class="math inline">\(I\)</span> is a countable set and for each <span class="math inline">\(i \in I\)</span> we have a countable set <span class="math inline">\(A_i\)</span> then <span class="math inline">\(\bigcup_{i \in I} A_i\)</span> is countable.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-267" class="proof"><em>Proof</em>. </span>without loss of generality <span class="math inline">\(I\)</span> is countably infinite (otherwise its fairly obvious). There is a bijection between <span class="math inline">\(I\)</span> and <span class="math inline">\(\mathbb{N}\)</span> so we can use this to relable. So we might as well be working with
+<span class="math display">\[ \bigcup_n A_n.  \]</span>
+Then let us write <span class="math inline">\(B_n = A_n - \bigcup_{k=1}^{n-1}A_k\)</span>. So the <span class="math inline">\(B_n\)</span> are all disjoint. Then for each <span class="math inline">\(A_n\)</span> there is an injection <span class="math inline">\(f_n\)</span> into <span class="math inline">\(\mathbb{N}\)</span>. Given <span class="math inline">\(a \in \bigcup_n A_n\)</span> write <span class="math inline">\(g(a)\)</span> to be the unique <span class="math inline">\(m \in \mathbb{N}\)</span> such that <span class="math inline">\(a \in B_m\)</span>. Then define <span class="math inline">\(h(a) = (g(a), f_{g(a)}(a))\)</span>. This is an injection from <span class="math inline">\(\bigcup_n A_n\)</span> to <span class="math inline">\(\mathbb{N} \times \mathbb{N}\)</span>. We can chain this with an injection from <span class="math inline">\(\mathbb{N} \times \mathbb{N}\)</span> to <span class="math inline">\(\mathbb{N}\)</span> to create an injection from <span class="math inline">\(\bigcup_n A_n\)</span> to <span class="math inline">\(\mathbb{N}\)</span>.</p>
+</div>
+<p>We can use this to give a different proof of the fact that <span class="math inline">\(\mathbb{Q}\)</span> is rational (one was on an exercise sheet). We can write
+<span class="math display">\[ \mathbb{Q} = \bigcup_{n \geq 1} \{ \frac{m}{n} \, :\, m \in \mathbb{Z}\}.\]</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-268" class="theorem"><strong>Theorem 10.3  </strong></span><span class="math inline">\(\mathbb{R}\)</span> is uncountable.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-269" class="proof"><em>Proof</em>. </span>This is the famous Cantor diagonal argument.</p>
+<p>We prove by contradiction that <span class="math inline">\([0,1)\)</span> is uncountable. Suppose that it is then we can list its elements
+<span class="math display">\[\begin{align*}
+x_1 &amp;= 0. d_{1,1} d_{1,2} d_{1,2} \dots \\
+x_2 &amp;= 0. d_{2,1} d_{2,2} d_{2,3} \dots \\
+x_3 &amp;= 0. d_{3,1} d_{3,2} d_{3,3} \dots \\
+\end{align*}\]</span>
+and so on. Now we define <span class="math inline">\(e_n\)</span> by <span class="math inline">\(e_n = 0\)</span> if <span class="math inline">\(d_{n,n} \neq 0\)</span> and <span class="math inline">\(e_n = 1\)</span> if <span class="math inline">\(d_{n, n} =0\)</span>. Then set
+<span class="math display">\[ y = 0. e_1 e_2 e_3 \dots \]</span>
+Now <span class="math inline">\(y \neq x_n\)</span> because <span class="math inline">\(e_n \neq d_{n,n}\)</span>. So <span class="math inline">\(y\)</span> cannot be in our list. But <span class="math inline">\(y \in [0,1)\)</span> which is a contradiction.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-270" class="remark"><em>Remark</em>. </span>If you remember Cantor’s theorem says that there can be no surjection <span class="math inline">\(f: A \rightarrow \mathcal{P}(A)\)</span>. This means that <span class="math inline">\(A\)</span> and <span class="math inline">\(\mathcal{P}(A)\)</span> cannot have the same cardinality.</p>
+<p>This was obvious for finite sets but it has more interesting consequences for infinite sets. For example it implies that <span class="math inline">\(\mathbb{N}\)</span> and <span class="math inline">\(\mathcal{P}(\mathbb{N})\)</span> cannot have the same cardinality. So <span class="math inline">\(\mathbb{P}(N)\)</span> must be uncountable.</p>
+<p>The continuum hypothesis is the conjecture that <span class="math inline">\(|\mathbb{R}| = |\mathbb{P}(\mathbb{N})|\)</span>. This is famous because Godel showed that it cannot be falsified in our standard model of set theory and Cohen showed that it cannot be proved either.</p>
+</div>
+</div>
+<div id="algebraic-and-trancendental-numbers" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Algebraic and Trancendental numbers<a href="countability-and-infinite-sets---non-examinable.html#algebraic-and-trancendental-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-271" class="definition"><strong>Definition 10.2  (Algebraic number) </strong></span>We call <span class="math inline">\(x \in \mathbb{R}\)</span> <em>algebraic</em> if there exists <span class="math inline">\(n \in \mathbb{N}\)</span> and <span class="math inline">\(a_0, \dots a_n \in \mathbb{Z}\)</span> such that
+<span class="math display">\[ a_n x^n + \dots + a_1 x + a_0 = 0.  \]</span>
+So that is to say <span class="math inline">\(x\)</span> is algebraic if it is the root of some polynomial with integer coefficients.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-272" class="definition"><strong>Definition 10.3  (Trancendental number) </strong></span>We say <span class="math inline">\(x \in \mathbb{R}\)</span> is <em>trancendental</em> if <span class="math inline">\(x\)</span> is not algebraic.</p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-273" class="lemma"><strong>Lemma 10.1  </strong></span>All rational numbers are algebraic.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-274" class="proof"><em>Proof</em>. </span>If <span class="math inline">\(x = m/n\)</span> where <span class="math inline">\(m \in \mathbb{Z}\)</span> and <span class="math inline">\(n \in \mathbb{N} - \{0\}\)</span> then <span class="math inline">\(x\)</span> is a solution to <span class="math display">\[nx-m=0.\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-275" class="theorem"><strong>Theorem 10.4  </strong></span>The set of all algebraic numbers <span class="math inline">\(\mathcal{Alg}\)</span> is countable. (n.b. thtis is not standard notation)</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-276" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(\mathcal{P}_k\)</span> be the set of all <span class="math inline">\(k^{th}\)</span> order polynomials with integer coefficients. There is a bijection between <span class="math inline">\(\mathbb{Z}^{k+1}\)</span> and <span class="math inline">\(\mathcal{P}_k\)</span> given by
+<span class="math display">\[ (a_0, \dots, a_k) \mapsto a_0 + a_1 X + \dots + a_k X^k.  \]</span></p>
+<p>We have already shown that <span class="math inline">\(\mathbb{Z}^{k+1}\)</span> is countable so this shows that <span class="math inline">\(\mathcal{P}_k\)</span> is countable.</p>
+<p>Let <span class="math inline">\(\mathcal{P}\)</span> be the set of all polynomials with integer coefficients then <span class="math inline">\(\mathcal{P} = \bigcup_k \mathcal{P}_k\)</span> so is the countable union of countable sets so countable.</p>
+<p>Then given <span class="math inline">\(P \in \mathcal{P}\)</span> let <span class="math inline">\(r(P) = \{ x \in \mathbb{R} \,:\, P(x) =0\}\)</span> i.e. the set of roots of <span class="math inline">\(P\)</span>. Then for each <span class="math inline">\(P\)</span> we know that <span class="math inline">\(r(P)\)</span> is a finite set and
+<span class="math display">\[ \mathcal{Alg} = \bigcup_{P\in \mathcal{P}} r(P) \]</span> so is the countable union of countable sets so countable.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-277" class="corollary"><strong>Corollary 10.1  </strong></span>The set of all trancendental numbers in uncountable and therefore there exists at least one trancendental number.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-278" class="proof"><em>Proof</em>. </span>The reals is the disjoint union of the algebraic numbers and the transcendental numbers. If both these sets were countable it would imply that the reals were countable so this shows the set of trancendental numbers must be uncountable. This means it can’t be the empty set.</p>
+</div>
+</div>
+<div id="infinite-cardinalities" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Infinite cardinalities<a href="countability-and-infinite-sets---non-examinable.html#infinite-cardinalities" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>It is very complicated to do a serious set theoretic construction of cardinal numbers but that doesn’t stop us from thinking a bit more about different kinds of infinities.</p>
+<p>We can give a kind of order to cardinal numbers (this isn’t exactly an order relation as from before because we don’t know what set we are working in). We do this by saying <span class="math inline">\(|A| \leq |B|\)</span> if there exists an injection from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span>. We can also write <span class="math inline">\(|A| &lt; |B|\)</span> if there exists an injection from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span> but no bijection.</p>
+<p>Cantor-Schroeder-Bernstein theorem from the first chapter allows us to make more sense of this “order” because it tells us if there is an injection from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span> and an injection from <span class="math inline">\(B\)</span> to <span class="math inline">\(A\)</span> then there is a bijection between them. So in the language of cardinality this says if <span class="math inline">\(|A| \leq |B|\)</span> and <span class="math inline">\(|B| \leq |A|\)</span> then <span class="math inline">\(|A| = |B|\)</span>.</p>
+<p>These ideas were the motivation for proving theorems like Cantor’s theorem and Cantor-Schroeder-Bernstein.</p>
+<p>We can have some sense of how cardinals can be added and multiplies. If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are finite disjoint sets then
+<span class="math display">\[ |A| + |B| = |A \cup B|  \]</span> and
+<span class="math display">\[|A| |B| = |A \times B|.  \]</span>
+If we extend this logic to cardinals we get some surprising results
+<span class="math display">\[ |\mathbb{N}| + |\mathbb{N}| = |\mathbb{N}| \]</span> and
+<span class="math display">\[ |\mathbb{N}|^2 = |\mathbb{N}|. \]</span>
+This is peculiar but nevertheless you can do arithmetic with cardinals. You’ll have to take a set theory course to find out more about it though.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="cryptography.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/09-Countability.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

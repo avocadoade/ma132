@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2024-11-25" />
+<meta name="date" content="2024-11-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,7 +37,7 @@ set in the _output.yml file.</p>" />
   
   
 <link rel="prev" href="algorithms-and-algorithmic-complexity.html"/>
-
+<link rel="next" href="countability-and-infinite-sets---non-examinable.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -146,6 +146,13 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="9.1" data-path="cryptography.html"><a href="cryptography.html#discrete-logarithms-and-diffie-hellman"><i class="fa fa-check"></i><b>9.1</b> Discrete logarithms and Diffie-Hellman</a></li>
 <li class="chapter" data-level="9.2" data-path="cryptography.html"><a href="cryptography.html#rsa-cryptography"><i class="fa fa-check"></i><b>9.2</b> RSA Cryptography</a></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="countability-and-infinite-sets---non-examinable.html"><a href="countability-and-infinite-sets---non-examinable.html"><i class="fa fa-check"></i><b>10</b> Countability and infinite sets - non-examinable</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="countability-and-infinite-sets---non-examinable.html"><a href="countability-and-infinite-sets---non-examinable.html#infinite-sets"><i class="fa fa-check"></i><b>10.1</b> Infinite sets</a></li>
+<li class="chapter" data-level="10.2" data-path="countability-and-infinite-sets---non-examinable.html"><a href="countability-and-infinite-sets---non-examinable.html#countability"><i class="fa fa-check"></i><b>10.2</b> Countability</a></li>
+<li class="chapter" data-level="10.3" data-path="countability-and-infinite-sets---non-examinable.html"><a href="countability-and-infinite-sets---non-examinable.html#algebraic-and-trancendental-numbers"><i class="fa fa-check"></i><b>10.3</b> Algebraic and Trancendental numbers</a></li>
+<li class="chapter" data-level="10.4" data-path="countability-and-infinite-sets---non-examinable.html"><a href="countability-and-infinite-sets---non-examinable.html#infinite-cardinalities"><i class="fa fa-check"></i><b>10.4</b> Infinite cardinalities</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -188,13 +195,13 @@ set in the _output.yml file.</p>" />
 <p><span id="def:unlabeled-div-253" class="definition"><strong>Definition 9.2  (Discrete Logarithm problem) </strong></span>Suppose <span class="math inline">\(p\)</span> is a prime and <span class="math inline">\(a, b \in \left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\)</span>. The discrete logarithm problem is to find <span class="math inline">\(n\)</span> so that <span class="math inline">\(a^n \equiv b \quad \mbox{mod} \, p\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-254" class="definition"><strong>Definition 9.3  (Diffie-Hillman problem) </strong></span>Suppose <span class="math inline">\(p\)</span> is a prime and <span class="math inline">\(a \in \left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\)</span> and <span class="math inline">\(n, m\)</span> are integers. Suppose we know <span class="math inline">\(a, a^n, a^m\)</span> but we don’t know <span class="math inline">\(n\)</span> or <span class="math inline">\(m\)</span> the Diffie-Hillman problem is to compute <span class="math inline">\(a^{nm}\)</span>.</p>
+<p><span id="def:unlabeled-div-254" class="definition"><strong>Definition 9.3  (Diffie-Hellman problem) </strong></span>Suppose <span class="math inline">\(p\)</span> is a prime and <span class="math inline">\(a \in \left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\)</span> and <span class="math inline">\(n, m\)</span> are integers. Suppose we know <span class="math inline">\(a, a^n, a^m\)</span> but we don’t know <span class="math inline">\(n\)</span> or <span class="math inline">\(m\)</span> the Diffie-Hillman problem is to compute <span class="math inline">\(a^{nm}\)</span>.</p>
 </div>
 <div class="remark">
 <p><span id="unlabeled-div-255" class="remark"><em>Remark</em>. </span>At the moment nobody knows a polynomial time algorithm to solve either the discrete logarithm problem or the Diffie-Hillman problem. We can see that if we could solve the discrete logarithm then we could definitely solve Diffie-Hillman.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-256" class="definition"><strong>Definition 9.4  (Diffie-Hillman key exchange) </strong></span>We are looking at encrypting and decrypting information using the key <span class="math inline">\(a^{nm} \quad \mbox{mod} \, p\)</span>.</p>
+<p><span id="def:unlabeled-div-256" class="definition"><strong>Definition 9.4  (Diffie-Hellman key exchange) </strong></span>We are looking at encrypting and decrypting information using the key <span class="math inline">\(a^{nm} \quad \mbox{mod} \, p\)</span>.</p>
 <p>Person A and B both generate a prime <span class="math inline">\(p\)</span> and an element <span class="math inline">\(a \in \left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\)</span> which are made public.</p>
 <p>Person A then decides their private number <span class="math inline">\(n\)</span> and person B decides their private number <span class="math inline">\(m\)</span>. They don’t exchange these numbers or tell anyone else.</p>
 <p>Then person A computes <span class="math inline">\(a^n\)</span> and person B computes <span class="math inline">\(a^m\)</span> and they make this information public. This means that person A can compute <span class="math inline">\(a^{nm}\)</span> since they know <span class="math inline">\(a^m\)</span> and <span class="math inline">\(n\)</span> so can compute <span class="math inline">\((a^m)^n\)</span>. Similarly person B can also compute <span class="math inline">\(a^{nm}\)</span>. However, no other person is able to compute <span class="math inline">\(a^{nm}\)</span> without solving the Diffie-Hillman problem.</p>
@@ -217,8 +224,8 @@ set in the _output.yml file.</p>" />
           </div>
         </div>
       </div>
-<a href="algorithms-and-algorithmic-complexity.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="algorithms-and-algorithmic-complexity.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="countability-and-infinite-sets---non-examinable.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

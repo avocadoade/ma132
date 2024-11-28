@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-11-25}
+\date{2024-11-28}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -2580,7 +2580,7 @@ The only straightforward way to do this is to compute \(3^y\) modulo \(5\) until
 Suppose \(p\) is a prime and \(a, b \in \left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\). The discrete logarithm problem is to find \(n\) so that \(a^n \equiv b \quad \mbox{mod} \, p\).
 \end{definition}
 
-\begin{definition}[Diffie-Hillman problem]
+\begin{definition}[Diffie-Hellman problem]
 Suppose \(p\) is a prime and \(a \in \left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\) and \(n, m\) are integers. Suppose we know \(a, a^n, a^m\) but we don't know \(n\) or \(m\) the Diffie-Hillman problem is to compute \(a^{nm}\).
 \end{definition}
 
@@ -2588,7 +2588,7 @@ Suppose \(p\) is a prime and \(a \in \left(\mathbb{Z}/p\mathbb{Z} \right)^{\time
 At the moment nobody knows a polynomial time algorithm to solve either the discrete logarithm problem or the Diffie-Hillman problem. We can see that if we could solve the discrete logarithm then we could definitely solve Diffie-Hillman.
 \end{remark}
 
-\begin{definition}[Diffie-Hillman key exchange]
+\begin{definition}[Diffie-Hellman key exchange]
 We are looking at encrypting and decrypting information using the key \(a^{nm} \quad \mbox{mod} \, p\).
 
 Person A and B both generate a prime \(p\) and an element \(a \in \left(\mathbb{Z}/p\mathbb{Z} \right)^{\times}\) which are made public.
@@ -2611,6 +2611,185 @@ Now suppose person \(B\) wants to encrypt a message so that only person \(A\) ca
 
 Now if person \(A\) wants to decrypt the message they compute \((m^e)^d\) modulo \(n\). Then since \(de \equiv 1 \quad \mbox{mod}\, \phi(n)\) we know that \(de = k\phi(n)+1\) for some \(k\). Then \(m^{ed} \equiv m^{k\phi(n)+1} \equiv m \quad \mbox{mod} \, n\). Where here we used the fact that \(m^{\phi(n)} \equiv 1 \quad \mbox{mod} \, n\) using Fermat's little theorem.
 \end{definition}
+
+\chapter{Countability and infinite sets - non-examinable}\label{countability-and-infinite-sets---non-examinable}
+
+\section{Infinite sets}\label{infinite-sets}
+
+Let us begin by recalling some stuff from earlier in the course.
+
+We say sets \(A\) and \(B\) have the same cardinality if tthere exists a bijection \(f: A \rightarrow B\). We write this \(|A|=|B|\).
+
+We say \(A\) has cardinality \(n\) if there is a bijection \(f: A \rightarrow [[n]]\).
+
+We say \(A\) is finite if \(|A|=n\) for some \(n \in \mathbb{N}\).
+
+We think as cardinality as telling us about the size of a set. One of the peculiar properties of infinite sets is that we can have \(B \subset A\) and \(|A| = |B|\).
+
+An example of this is \(S=\{m \in \mathbb{N} \,:\, \exists \, n \in \mathbb{N} \, m=n^2\}\) the square numbers. Then there is a bijection between \(\mathbb{N}\) and \(S\) given by \(f(n) = n^2\). So \(|S| = |\mathbb{N}|\).
+
+This is a big contrast to final sets. If \(A \subset B\) and \(A \neq B\) and they are both finite then this implies that we must have \(|A| < |B|\).
+
+In fact this difference characterises infinite sets
+
+\begin{proposition}
+A set \(A\) is infinite if and only if there exists a set \(B \subset A\) such that there is a bijection \(f: B \rightarrow A\).
+\end{proposition}
+
+\begin{proof}
+We can see the only if part is fairly clear. If \(A\) is finite suppose it has \(n\) elements then \(B\) must have \(n-1\) elements or fewer. So we cannot form a bijection from \(B\) to \(A\).
+
+Now if \(A\) is infinite we first show that there is a subset \(C\) which is in bijection with the natural numbers. So if first since \(A\) is infinite it must contain some element \(a_0\) then \(A \neq \{a_0\}\) as its infinite there must be another element \(a_1\). We continue like this to form the subset \(C = \{a_0, a_1, a_2, \dots \}\). Then set \(\tilde{C} = \{a_i \in C \,:\, \exists \, j \, i=j^2\}\) and set \(B = (A-C)\cup \tilde{C}\). We can then define \(f: B \rightarrow A\) by \(f(a) = a\) if \(a \in A-C\) and \(f(a_i) = a_{\sqrt{i}}\) for \(a_i \in \tilde{C}\).
+\end{proof}
+
+Furthermore in this proof we can see that \(A-B\) is actually infinite.
+
+\section{Countability}\label{countability}
+
+\begin{definition}[countability]
+We say a set \(A\) is \emph{countable} if \(A\) is finie or has the same cardinality as \(\mathbb{N}\).
+
+We say \(A\) is \emph{uncountable} if it isn't countable.
+
+If \(A\) is countable and infinite it says its countably infinite.
+\end{definition}
+
+\begin{theorem}
+
+The following are equivalent
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(A\) is countable.
+\item
+  There is an injection from \(A\) to \(\mathbb{N}\).
+\item
+  \(A\) is \(\emptyset\) or there is a surjection from \(\mathbb{N}\) to \(A\).
+\end{enumerate}
+
+\end{theorem}
+
+\begin{proof}
+We can see that \((i) \Rightarrow (iii)\) if \(A\) is finite then there is a bijection \(f: A \rightarrow [[n]]\) for some \(n\) then define \(g: \mathbb{N} \rightarrow A\) by \(g(m) = f^{-1}(m)\) for \(m \in [[n]]\) and \(g(m) = 0\) for \(m \geq n\). This is a surjection.
+
+We can see \((iii) \Rightarrow (ii)\) as if \(g: \mathbb{N} \rightarrow A\) is a surjection then \(g\) has a right inverse \(h\) which must be an injection by previous results.
+
+We can see that \((ii) \Rightarrow (i)\) as if \(h: A \rightarrow \mathbb{N}\) is an injection then we can define \(S\) to be the range of \(S\). Then as \(S\) is a subset of \(\mathbb{N}\) by itteratively using the well ordering principle we can list the elements of \(S\) in size order \(s_0 < s_1 < s_2\) etc. either there are finitely many elements \(n\) in which case \(S = \{s_0 , \dots, s_{n-1}\}\) or there are infinitely many elements in which case \(S = \{s_0, s_1, \dots\}\). In either case we can define a map \(i\) whose domain is \(S\) and codomain is either \([[n]]\) or \(\mathbb{N}\) by \(i(s_k)=k\). Then \(i\) will be a bijection. Then \(f = i \circ h\) is a bijection between \(A\) and \([[n]]\) or between \(A\) and \(\mathbb{N}\).
+\end{proof}
+
+\begin{example}
+\(\mathbb{Z}\) is countable as \(f(n) = 2n\) if \(n \geq 0\) and \(f(n) = 2(-n)-1\) if \(n < 0\) is a bijection from \(\mathbb{Z}\) to \(\mathbb{N}\).
+\end{example}
+
+\begin{example}
+\(\mathbb{N} \times \mathbb{N}\) is countable since \(f(n.m) = 2^n 3^m\) gives an injection from \(\mathbb{N} \times \mathbb{N}\) to \(\mathbb{N}\). In a similar way \(\mathbb{N}^k\) is countable for any finite \(k\).
+\end{example}
+
+\begin{example}
+\(\mathbb{Z}^k\) is countable. We can prove this because we know we have an injection \(g: \mathbb{Z} \rightarrow \mathbb{N}\). So given a finite set of distinct primes \(p_1, \dots, p_k\) then \(f(z_1, \dots, z_k) = p_1^{g(z_1)} \dots p_k^{g(z_k)}\) is an injection.
+\end{example}
+
+\begin{theorem}
+A countable union of countable sets is countable. That is to say suppose \(I\) is a countable set and for each \(i \in I\) we have a countable set \(A_i\) then \(\bigcup_{i \in I} A_i\) is countable.
+\end{theorem}
+
+\begin{proof}
+without loss of generality \(I\) is countably infinite (otherwise its fairly obvious). There is a bijection between \(I\) and \(\mathbb{N}\) so we can use this to relable. So we might as well be working with
+\[ \bigcup_n A_n.  \]
+Then let us write \(B_n = A_n - \bigcup_{k=1}^{n-1}A_k\). So the \(B_n\) are all disjoint. Then for each \(A_n\) there is an injection \(f_n\) into \(\mathbb{N}\). Given \(a \in \bigcup_n A_n\) write \(g(a)\) to be the unique \(m \in \mathbb{N}\) such that \(a \in B_m\). Then define \(h(a) = (g(a), f_{g(a)}(a))\). This is an injection from \(\bigcup_n A_n\) to \(\mathbb{N} \times \mathbb{N}\). We can chain this with an injection from \(\mathbb{N} \times \mathbb{N}\) to \(\mathbb{N}\) to create an injection from \(\bigcup_n A_n\) to \(\mathbb{N}\).
+\end{proof}
+
+We can use this to give a different proof of the fact that \(\mathbb{Q}\) is rational (one was on an exercise sheet). We can write
+\[ \mathbb{Q} = \bigcup_{n \geq 1} \{ \frac{m}{n} \, :\, m \in \mathbb{Z}\}.\]
+
+\begin{theorem}
+\(\mathbb{R}\) is uncountable.
+\end{theorem}
+
+\begin{proof}
+This is the famous Cantor diagonal argument.
+
+We prove by contradiction that \([0,1)\) is uncountable. Suppose that it is then we can list its elements
+\begin{align*}
+x_1 &= 0. d_{1,1} d_{1,2} d_{1,2} \dots \\
+x_2 &= 0. d_{2,1} d_{2,2} d_{2,3} \dots \\
+x_3 &= 0. d_{3,1} d_{3,2} d_{3,3} \dots \\
+\end{align*}
+and so on. Now we define \(e_n\) by \(e_n = 0\) if \(d_{n,n} \neq 0\) and \(e_n = 1\) if \(d_{n, n} =0\). Then set
+\[ y = 0. e_1 e_2 e_3 \dots \]
+Now \(y \neq x_n\) because \(e_n \neq d_{n,n}\). So \(y\) cannot be in our list. But \(y \in [0,1)\) which is a contradiction.
+\end{proof}
+
+\begin{remark}
+If you remember Cantor's theorem says that there can be no surjection \(f: A \rightarrow \mathcal{P}(A)\). This means that \(A\) and \(\mathcal{P}(A)\) cannot have the same cardinality.
+
+This was obvious for finite sets but it has more interesting consequences for infinite sets. For example it implies that \(\mathbb{N}\) and \(\mathcal{P}(\mathbb{N})\) cannot have the same cardinality. So \(\mathbb{P}(N)\) must be uncountable.
+
+The continuum hypothesis is the conjecture that \(|\mathbb{R}| = |\mathbb{P}(\mathbb{N})|\). This is famous because Godel showed that it cannot be falsified in our standard model of set theory and Cohen showed that it cannot be proved either.
+\end{remark}
+
+\section{Algebraic and Trancendental numbers}\label{algebraic-and-trancendental-numbers}
+
+\begin{definition}[Algebraic number]
+We call \(x \in \mathbb{R}\) \emph{algebraic} if there exists \(n \in \mathbb{N}\) and \(a_0, \dots a_n \in \mathbb{Z}\) such that
+\[ a_n x^n + \dots + a_1 x + a_0 = 0.  \]
+So that is to say \(x\) is algebraic if it is the root of some polynomial with integer coefficients.
+\end{definition}
+
+\begin{definition}[Trancendental number]
+We say \(x \in \mathbb{R}\) is \emph{trancendental} if \(x\) is not algebraic.
+\end{definition}
+
+\begin{lemma}
+All rational numbers are algebraic.
+\end{lemma}
+
+\begin{proof}
+If \(x = m/n\) where \(m \in \mathbb{Z}\) and \(n \in \mathbb{N} - \{0\}\) then \(x\) is a solution to \[nx-m=0.\]
+\end{proof}
+
+\begin{theorem}
+The set of all algebraic numbers \(\mathcal{Alg}\) is countable. (n.b.~thtis is not standard notation)
+\end{theorem}
+
+\begin{proof}
+Let \(\mathcal{P}_k\) be the set of all \(k^{th}\) order polynomials with integer coefficients. There is a bijection between \(\mathbb{Z}^{k+1}\) and \(\mathcal{P}_k\) given by
+\[ (a_0, \dots, a_k) \mapsto a_0 + a_1 X + \dots + a_k X^k.  \]
+
+We have already shown that \(\mathbb{Z}^{k+1}\) is countable so this shows that \(\mathcal{P}_k\) is countable.
+
+Let \(\mathcal{P}\) be the set of all polynomials with integer coefficients then \(\mathcal{P} = \bigcup_k \mathcal{P}_k\) so is the countable union of countable sets so countable.
+
+Then given \(P \in \mathcal{P}\) let \(r(P) = \{ x \in \mathbb{R} \,:\, P(x) =0\}\) i.e.~the set of roots of \(P\). Then for each \(P\) we know that \(r(P)\) is a finite set and
+\[ \mathcal{Alg} = \bigcup_{P\in \mathcal{P}} r(P) \] so is the countable union of countable sets so countable.
+\end{proof}
+
+\begin{corollary}
+The set of all trancendental numbers in uncountable and therefore there exists at least one trancendental number.
+\end{corollary}
+
+\begin{proof}
+The reals is the disjoint union of the algebraic numbers and the transcendental numbers. If both these sets were countable it would imply that the reals were countable so this shows the set of trancendental numbers must be uncountable. This means it can't be the empty set.
+\end{proof}
+
+\section{Infinite cardinalities}\label{infinite-cardinalities}
+
+It is very complicated to do a serious set theoretic construction of cardinal numbers but that doesn't stop us from thinking a bit more about different kinds of infinities.
+
+We can give a kind of order to cardinal numbers (this isn't exactly an order relation as from before because we don't know what set we are working in). We do this by saying \(|A| \leq |B|\) if there exists an injection from \(A\) to \(B\). We can also write \(|A| < |B|\) if there exists an injection from \(A\) to \(B\) but no bijection.
+
+Cantor-Schroeder-Bernstein theorem from the first chapter allows us to make more sense of this ``order'' because it tells us if there is an injection from \(A\) to \(B\) and an injection from \(B\) to \(A\) then there is a bijection between them. So in the language of cardinality this says if \(|A| \leq |B|\) and \(|B| \leq |A|\) then \(|A| = |B|\).
+
+These ideas were the motivation for proving theorems like Cantor's theorem and Cantor-Schroeder-Bernstein.
+
+We can have some sense of how cardinals can be added and multiplies. If \(A\) and \(B\) are finite disjoint sets then
+\[ |A| + |B| = |A \cup B|  \] and
+\[|A| |B| = |A \times B|.  \]
+If we extend this logic to cardinals we get some surprising results
+\[ |\mathbb{N}| + |\mathbb{N}| = |\mathbb{N}| \] and
+\[ |\mathbb{N}|^2 = |\mathbb{N}|. \]
+This is peculiar but nevertheless you can do arithmetic with cardinals. You'll have to take a set theory course to find out more about it though.
 
   \bibliography{book.bib,packages.bib}
 
