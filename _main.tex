@@ -80,7 +80,7 @@
 
 \title{MA132: Foundations Lecture Notes}
 \author{Jo Evans}
-\date{2024-12-02}
+\date{2024-12-04}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -1017,44 +1017,25 @@ Now we want to create \(h\) from both \(f\) and \(g^{-1}\). To do this we want t
 
 Our challenge is to find suitable sets \(A_1\) and \(A_2\). We can see that \(A_2 \subset C\) since \(g^{-1}\) must be defined on \(A_2\). We can also see that in some situations \(A_2\) couldn't be the whole of \(C\) because doing this we could hit some elements of \(D\) twice and break the injectivity.
 
-Let us write \(i = g\circ f\). This function is injective on \(A\) and it's range is \(C\). We can similarly define \(j = f \circ g\) which will also be injective on \(B\) and whose range is \(D\).
+Now given an \(x_0 \in A\) we can create a sequence which might be finite of infinite by setting \(y_0 = f^{-1}(x_0)\) if \(x_0 \in C\), then setting \(x_1 = g^{-1}(y_0)\) if \(y_0 \in D\) and \(y_1 = f^{-1}(x_1)\) if \(x_1 \in C\) and continuing like this until you end up with an \(x\) which isn't in \(C\) or a \(y\) which isn't in \(D\).
 
-Now let us create some sequences of sets \(C_0 = A, C_1 = i(A), C_2=i(C_1), \dots, C_n = i(C_{n-1}), \dots\) and \(D_0 = B, D_1= j(B), \dots, D_n = j(D_{n-1}), \dots\). Then let us define \(C_\infty = \bigcap_n C_n\) and \(D_\infty = \bigcap_n D_n\). So \(C_\infty\) are points which will keep being in the range of \(i^n\) for any \(n\) and \(D_\infty\) similarly.
+Let us define
+\[ X_1 = \{ x \in A \,:\, \mbox{the sequence continues forever}\},  \]
+\[ X_2 = \{ x \in A \,:\, \mbox{the sequence stops in A}\},  \]
+\[ X_3 = \{ x \in A \,:\, \mbox{the sequence stops in B}\}.\] Similarly
+\[ Y_1 = \{ y \in B \,:\, \mbox{the sequence continues forever}\},  \]
+\[ Y_2 = \{ y \in B \,:\, \mbox{the sequence stops in A}\},  \]
+\[ Y_3 = \{ y \in B \,:\, \mbox{the sequence stops in B}\}.  \]
 
-We make the following claim:
-\begin{align}
-g(y) \in C_\infty &\Leftrightarrow y \in D_\infty, \\
-f(x) \in D_\infty &\Leftrightarrow x \in C_\infty.
-\end{align}
+Now we have the following
+\[ f(X_1) = Y_1,  \] we can see this as taking the image under \(f\) of an element \(x\) is like stepping one step back along these sequences.
+\[ f(X_2) = Y_2,  \] for the same reasons. However,
+\[ f(X_3) \neq Y_3  \] unless \(D=B\) as we are neglecting the elements that are in \(Y_3\) because the sequence stops immediately.
 
-Let us call
-\[ A_1 = \{ x \in A \,:\, x \notin C_\infty, \mbox{for the least} \,n \, \mbox{s.t.}\, x \notin C_n, i^{-n+1}(x) \notin C\} \]
-and
-\[ A_0 = \{ x \in A \,:\, x \notin C_\infty, \mbox{for the least} \, n \, \mbox{s.t.}\, x \notin C_n, i^{-n+1}(x) \in C, g^{-1}(i^{-n+1}(x)) \notin D \}.\] Then \(A_1\) and \(A_2\) are disjoint.
+On the other hand we do have
+\[ g^{-1}(X_3) = Y_3  \] this is because instead of taking one step backwards, using \(g^{-1}\) is like taking one step forwards along a sequence.
 
-Similarly,
-
-\[ B_1 = \{y \in B\,:\, y \notin B_\infty, \mbox{for the least}\, n \, \mbox{s.t.}\, y \notin D_n, j^{-n+1}(y) \notin D\}\]
-and
-\[ B_0 = \{y \in B\,:\, y \notin B_\infty, \mbox{for the least}\, n \, \mbox{s.t.}\, y \notin D_n, j^{-n+1}(y) \in D, f^{-1}(j^{-n+1}(y)) \notin C\}.\] The sets are also disjoint.
-
-Now we have our second claim:
-
-\begin{itemize}
-\item
-  \(x \in A_1\) if and only if \(f(x) \in B_0\)
-\item
-  \(x \in A_0\) if and only if \(g^{-1}(x) \in B_1\)
-\end{itemize}
-
-This second claim shows that
-
-\begin{itemize}
-\item
-  \(f|_{A_1} : A_1 \rightarrow B_0\) is a bijection and
-\item
-  \(g^{-1}|_{A_0} : A_0 \rightarrow B_1\) is a bijection.
-\end{itemize}
+We notice that for similar reasons we also have \(g^{-1}(X_1) = Y_1\).
 
 \begin{figure}
 \centering
@@ -1063,7 +1044,7 @@ This second claim shows that
 \end{figure}
 
 Now we have deconstructed into different bijections we can define \(h\) by saying
-\[ h(x) = \left\{ \begin{array}{cr} f(x) & x \in A_1 \cup A_\infty\\ g^{-1}(x) & x \in A_0 \end{array} \right.  \]
+\[ h(x) = \left\{ \begin{array}{cr} f(x) & x \in X_1 \cup X_2\\ g^{-1}(x) & x \in X_3 \end{array} \right.  \]
 \end{proof}
 
 \chapter{Relations}\label{relations}

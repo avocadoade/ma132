@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2024-12-02" />
+<meta name="date" content="2024-12-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -461,31 +461,21 @@ Figure 3.14: A picture of how we want to split up A
 </p>
 </div>
 <p>Our challenge is to find suitable sets <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span>. We can see that <span class="math inline">\(A_2 \subset C\)</span> since <span class="math inline">\(g^{-1}\)</span> must be defined on <span class="math inline">\(A_2\)</span>. We can also see that in some situations <span class="math inline">\(A_2\)</span> couldn’t be the whole of <span class="math inline">\(C\)</span> because doing this we could hit some elements of <span class="math inline">\(D\)</span> twice and break the injectivity.</p>
-<p>Let us write <span class="math inline">\(i = g\circ f\)</span>. This function is injective on <span class="math inline">\(A\)</span> and it’s range is <span class="math inline">\(C\)</span>. We can similarly define <span class="math inline">\(j = f \circ g\)</span> which will also be injective on <span class="math inline">\(B\)</span> and whose range is <span class="math inline">\(D\)</span>.</p>
-<p>Now let us create some sequences of sets <span class="math inline">\(C_0 = A, C_1 = i(A), C_2=i(C_1), \dots, C_n = i(C_{n-1}), \dots\)</span> and <span class="math inline">\(D_0 = B, D_1= j(B), \dots, D_n = j(D_{n-1}), \dots\)</span>. Then let us define <span class="math inline">\(C_\infty = \bigcap_n C_n\)</span> and <span class="math inline">\(D_\infty = \bigcap_n D_n\)</span>. So <span class="math inline">\(C_\infty\)</span> are points which will keep being in the range of <span class="math inline">\(i^n\)</span> for any <span class="math inline">\(n\)</span> and <span class="math inline">\(D_\infty\)</span> similarly.</p>
-<p>We make the following claim:
-<span class="math display">\[\begin{align}
-g(y) \in C_\infty &amp;\Leftrightarrow y \in D_\infty, \\
-f(x) \in D_\infty &amp;\Leftrightarrow x \in C_\infty.
-\end{align}\]</span></p>
-<p>Let us call
-<span class="math display">\[ A_1 = \{ x \in A \,:\, x \notin C_\infty, \mbox{for the least} \,n \, \mbox{s.t.}\, x \notin C_n, i^{-n+1}(x) \notin C\} \]</span>
-and
-<span class="math display">\[ A_0 = \{ x \in A \,:\, x \notin C_\infty, \mbox{for the least} \, n \, \mbox{s.t.}\, x \notin C_n, i^{-n+1}(x) \in C, g^{-1}(i^{-n+1}(x)) \notin D \}.\]</span> Then <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span> are disjoint.</p>
-<p>Similarly,</p>
-<p><span class="math display">\[ B_1 = \{y \in B\,:\, y \notin B_\infty, \mbox{for the least}\, n \, \mbox{s.t.}\, y \notin D_n, j^{-n+1}(y) \notin D\}\]</span>
-and
-<span class="math display">\[ B_0 = \{y \in B\,:\, y \notin B_\infty, \mbox{for the least}\, n \, \mbox{s.t.}\, y \notin D_n, j^{-n+1}(y) \in D, f^{-1}(j^{-n+1}(y)) \notin C\}.\]</span> The sets are also disjoint.</p>
-<p>Now we have our second claim:</p>
-<ul>
-<li><p><span class="math inline">\(x \in A_1\)</span> if and only if <span class="math inline">\(f(x) \in B_0\)</span></p></li>
-<li><p><span class="math inline">\(x \in A_0\)</span> if and only if <span class="math inline">\(g^{-1}(x) \in B_1\)</span></p></li>
-</ul>
-<p>This second claim shows that</p>
-<ul>
-<li><p><span class="math inline">\(f|_{A_1} : A_1 \rightarrow B_0\)</span> is a bijection and</p></li>
-<li><p><span class="math inline">\(g^{-1}|_{A_0} : A_0 \rightarrow B_1\)</span> is a bijection.</p></li>
-</ul>
+<p>Now given an <span class="math inline">\(x_0 \in A\)</span> we can create a sequence which might be finite of infinite by setting <span class="math inline">\(y_0 = f^{-1}(x_0)\)</span> if <span class="math inline">\(x_0 \in C\)</span>, then setting <span class="math inline">\(x_1 = g^{-1}(y_0)\)</span> if <span class="math inline">\(y_0 \in D\)</span> and <span class="math inline">\(y_1 = f^{-1}(x_1)\)</span> if <span class="math inline">\(x_1 \in C\)</span> and continuing like this until you end up with an <span class="math inline">\(x\)</span> which isn’t in <span class="math inline">\(C\)</span> or a <span class="math inline">\(y\)</span> which isn’t in <span class="math inline">\(D\)</span>.</p>
+<p>Let us define
+<span class="math display">\[ X_1 = \{ x \in A \,:\, \mbox{the sequence continues forever}\},  \]</span>
+<span class="math display">\[ X_2 = \{ x \in A \,:\, \mbox{the sequence stops in A}\},  \]</span>
+<span class="math display">\[ X_3 = \{ x \in A \,:\, \mbox{the sequence stops in B}\}.\]</span> Similarly
+<span class="math display">\[ Y_1 = \{ y \in B \,:\, \mbox{the sequence continues forever}\},  \]</span>
+<span class="math display">\[ Y_2 = \{ y \in B \,:\, \mbox{the sequence stops in A}\},  \]</span>
+<span class="math display">\[ Y_3 = \{ y \in B \,:\, \mbox{the sequence stops in B}\}.  \]</span></p>
+<p>Now we have the following
+<span class="math display">\[ f(X_1) = Y_1,  \]</span> we can see this as taking the image under <span class="math inline">\(f\)</span> of an element <span class="math inline">\(x\)</span> is like stepping one step back along these sequences.
+<span class="math display">\[ f(X_2) = Y_2,  \]</span> for the same reasons. However,
+<span class="math display">\[ f(X_3) \neq Y_3  \]</span> unless <span class="math inline">\(D=B\)</span> as we are neglecting the elements that are in <span class="math inline">\(Y_3\)</span> because the sequence stops immediately.</p>
+<p>On the other hand we do have
+<span class="math display">\[ g^{-1}(X_3) = Y_3  \]</span> this is because instead of taking one step backwards, using <span class="math inline">\(g^{-1}\)</span> is like taking one step forwards along a sequence.</p>
+<p>We notice that for similar reasons we also have <span class="math inline">\(g^{-1}(X_1) = Y_1\)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-23"></span>
 <img src="CBS3.png" alt="A picture of the bijections we've constructed"  />
 <p class="caption">
@@ -493,7 +483,7 @@ Figure 3.15: A picture of the bijections we’ve constructed
 </p>
 </div>
 <p>Now we have deconstructed into different bijections we can define <span class="math inline">\(h\)</span> by saying
-<span class="math display">\[ h(x) = \left\{ \begin{array}{cr} f(x) &amp; x \in A_1 \cup A_\infty\\ g^{-1}(x) &amp; x \in A_0 \end{array} \right.  \]</span></p>
+<span class="math display">\[ h(x) = \left\{ \begin{array}{cr} f(x) &amp; x \in X_1 \cup X_2\\ g^{-1}(x) &amp; x \in X_3 \end{array} \right.  \]</span></p>
 </div>
 
 </div>
