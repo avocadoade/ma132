@@ -76,3 +76,8 @@ infinite-sets
 countability
 algebraic-and-trancendental-numbers
 infinite-cardinalities
+advice-and-information-for-the-exam
+format-of-the-exam
+list-of-bookwork-topics
+other-topics-you-should-be-familiar-with
+guide-to-past-papers
